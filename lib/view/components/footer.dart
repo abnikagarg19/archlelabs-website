@@ -1,0 +1,179 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import '../../responsive/layouts.dart';
+import '../../theme/app_theme.dart';
+import '../../utils/constants.dart';
+
+class Footer extends StatelessWidget {
+  const Footer({
+    super.key,
+  });
+  @override
+  Widget build(BuildContext context) {
+    return ResponsiveLayout(
+      largeScreen: _footer(context, 1200.0),
+      // We will make this in a bit
+      smallScreen: _footer(context, MediaQuery.of(context).size.width * .9),
+      mediumScreen: _footer(context, 770.0),
+    );
+  }
+
+  Widget _footer(context, width) {
+    return LayoutBuilder(builder: (context, constraints) {
+      return Container(
+          width: MediaQuery.of(context).size.width,
+          padding: EdgeInsets.only(bottom: 20),
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage(
+                    "assets/images/contact us.png",
+                  ),
+                  fit: BoxFit.fill)),
+          child: Center(
+            child: Container(
+              constraints: BoxConstraints(maxWidth: width),
+              child: Flex(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.start,
+              direction: constraints.maxWidth > 800
+                    ? Axis.horizontal
+                    : Axis.vertical,
+                children: [
+                  Expanded(
+                    flex: constraints.maxWidth > 800.0 ? 1 : 0,
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: 70,
+                          ),
+                          Text(
+                            "Get In Touch",
+                            style: GoogleFonts.openSans(
+                              color: AppTheme.whiteColor,
+                              fontWeight: FontWeight.w600,
+                              fontSize: Constant.headingText(context),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 60,
+                          ),
+                          Text(
+                            "Collaboration Starts here",
+                            style: GoogleFonts.openSans(
+                              color: AppTheme.whiteColor,
+                              fontSize: Constant.textFourty(context),
+                              fontWeight: FontWeight.w300,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            "Innovators, interns, or investors—let’s create together",
+                            style: GoogleFonts.openSans(
+                              color: AppTheme.whiteColor,
+                              fontSize: Constant.mediumbody(context),
+                              fontWeight: FontWeight.w300,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 30,
+                          ),
+                          Row(
+                            children: [
+                              SvgPicture.asset(
+                                "assets/images/email.svg",
+                                height: 20,
+                              ),
+                              Text(
+                                "  Alois@archlelabs.com",
+                                style: GoogleFonts.openSans(
+                                  color: AppTheme.whiteColor,
+                                  fontSize: Constant.mediumbody(context),
+                                  fontWeight: FontWeight.w300,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 30,
+                          ),
+                          Row(
+                            children: [
+                              SvgPicture.asset(
+                                "assets/images/mingcute_phone-fill.svg",
+                                height: 20,
+                              ),
+                              Text(
+                                "  +91 9444725511",
+                                style: GoogleFonts.openSans(
+                                  color: AppTheme.whiteColor,
+                                  fontSize: Constant.mediumbody(context),
+                                  fontWeight: FontWeight.w300,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 30,
+                          ),
+                          Text(
+                            "Connect on socials",
+                            style: GoogleFonts.openSans(
+                              color: AppTheme.whiteColor,
+                              fontSize: Constant.textFourty(context),
+                              fontWeight: FontWeight.w300,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            children: [
+                              SvgPicture.asset(
+                                "assets/images/Vector.svg",
+                                height: 20,
+                              ),
+                              SizedBox(
+                                width: 30,
+                              ),
+                              SvgPicture.asset(
+                                "assets/images/linkedin.svg",
+                                height: 20,
+                              ),
+                              SizedBox(
+                                width: 30,
+                              ),
+                              SvgPicture.asset(
+                                "assets/images/insta.svg",
+                                height: 20,
+                              ),
+                            ],
+                          ),
+                           SizedBox(
+                            height: 30,
+                          ),
+                        ]),
+                  ),
+                  Expanded(
+                      flex: constraints.maxWidth > 800? 1 : 0,
+                      child: Row(mainAxisAlignment:constraints.maxWidth >800? MainAxisAlignment.end: MainAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            "assets/images/logo.png",
+                            height:constraints.maxWidth > 800? 120 : 70,
+                            fit: BoxFit.cover,
+                            width:constraints.maxWidth > 800? null : 150,
+                          ),
+                        ],
+                      ))
+                ],
+              ),
+            ),
+          ));
+    });
+  }
+}
