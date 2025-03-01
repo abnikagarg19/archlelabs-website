@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 import '../../responsive/layouts.dart';
 import '../../theme/app_theme.dart';
@@ -20,6 +23,31 @@ class Footer extends StatelessWidget {
     );
   }
 
+  void _launchMailClient(String targetEmail) async {
+    final Uri emailLaunchUri = Uri(
+      scheme: 'mailto',
+      path: 'example@example.com',
+      queryParameters: {
+        'subject': 'Hello from Flutter Web',
+        'body': 'This is a test email.'
+      },
+    );
+
+    if (await canLaunchUrl(emailLaunchUri)) {
+      await launchUrl(emailLaunchUri);
+    } else {
+      print('Could not launch email client');
+    }
+  }
+
+  launchurl(emailLaunchUri) async {
+    if (await canLaunchUrl(emailLaunchUri)) {
+      await launchUrl(emailLaunchUri);
+    } else {
+      print('Could not launch email client');
+    }
+  }
+
   Widget _footer(context, width) {
     return LayoutBuilder(builder: (context, constraints) {
       return Container(
@@ -37,7 +65,7 @@ class Footer extends StatelessWidget {
               child: Flex(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.start,
-              direction: constraints.maxWidth > 800
+                direction: constraints.maxWidth > 800
                     ? Axis.horizontal
                     : Axis.vertical,
                 children: [
@@ -82,21 +110,26 @@ class Footer extends StatelessWidget {
                           SizedBox(
                             height: 30,
                           ),
-                          Row(
-                            children: [
-                              SvgPicture.asset(
-                                "assets/images/email.svg",
-                                height: 20,
-                              ),
-                              Text(
-                                "  Alois@archlelabs.com",
-                                style: GoogleFonts.openSans(
-                                  color: AppTheme.whiteColor,
-                                  fontSize: Constant.mediumbody(context),
-                                  fontWeight: FontWeight.w300,
+                          InkWell(
+                            onTap: () {
+                              _launchMailClient("alois@archlelabs.com");
+                            },
+                            child: Row(
+                              children: [
+                                SvgPicture.asset(
+                                  "assets/images/email.svg",
+                                  height: 20,
                                 ),
-                              ),
-                            ],
+                                Text(
+                                  "  alois@archlelabs.com",
+                                  style: GoogleFonts.openSans(
+                                    color: AppTheme.whiteColor,
+                                    fontSize: Constant.mediumbody(context),
+                                    fontWeight: FontWeight.w300,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                           SizedBox(
                             height: 30,
@@ -140,33 +173,57 @@ class Footer extends StatelessWidget {
                               SizedBox(
                                 width: 30,
                               ),
-                              SvgPicture.asset(
-                                "assets/images/linkedin.svg",
-                                height: 20,
+                              InkWell(
+                                onTap: () {
+                                 launchurl(Uri.parse("https://www.linkedin.com/company/archlelabs/posts/?feedView=all"));
+                                },
+                                child: SvgPicture.asset(
+                                  "assets/images/linkedin.svg",
+                                  height: 20,
+                                ),
                               ),
                               SizedBox(
                                 width: 30,
                               ),
-                              SvgPicture.asset(
-                                "assets/images/insta.svg",
-                                height: 20,
+                              InkWell(
+                                onTap: () {
+                                  launchurl(Uri.parse("https://www.instagram.com/archlelabs?igsh=MW5kM3JsM2NvZ21zdQ%3D%3D"));
+                                },
+                                child: SvgPicture.asset(
+                                  "assets/images/insta.svg",
+                                  height: 20,
+                                ),
                               ),
                             ],
                           ),
-                           SizedBox(
+                          SizedBox(
                             height: 30,
                           ),
                         ]),
                   ),
                   Expanded(
-                      flex: constraints.maxWidth > 800? 1 : 0,
-                      child: Row(mainAxisAlignment:constraints.maxWidth >800? MainAxisAlignment.end: MainAxisAlignment.start,
+                      flex: constraints.maxWidth > 800 ? 1 : 0,
+                      child: Row(
+                        mainAxisAlignment: constraints.maxWidth > 800
+                            ? MainAxisAlignment.end
+                            : MainAxisAlignment.start,
                         children: [
-                          Image.asset(
-                            "assets/images/logo.png",
-                            height:constraints.maxWidth > 800? 120 : 70,
-                            fit: BoxFit.cover,
-                            width:constraints.maxWidth > 800? null : 150,
+                          Column(
+                            children: [
+                              Image.asset(
+                                "assets/images/logo.png",
+                                height: constraints.maxWidth > 800 ? 120 : 70,
+                                fit: BoxFit.cover,
+                                width: constraints.maxWidth > 800 ? null : 150,
+                              ),
+                              SizedBox(height: 20,),
+                               Image.asset(
+                                "assets/images/makeinindia.png",
+                                height: constraints.maxWidth > 800 ? 200 : 100,
+                                fit: BoxFit.cover,
+                                width: constraints.maxWidth > 800 ? null : 150,
+                              ),
+                            ],
                           ),
                         ],
                       ))

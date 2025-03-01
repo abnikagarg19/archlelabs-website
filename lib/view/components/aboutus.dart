@@ -7,7 +7,7 @@ import '../../utils/constants.dart';
 import '../../utils/globals.dart';
 
 class AboutusWidget extends StatelessWidget {
-  const AboutusWidget({
+  AboutusWidget({
     super.key,
   });
 
@@ -21,6 +21,58 @@ class AboutusWidget extends StatelessWidget {
     );
   }
 
+  List valuesList = [
+    {
+      "title": "Relentless Innovation",
+      "details":
+          "We push boundaries to create breakthrough healthcare solutions"
+    },
+    {
+      "title": "User-Centric Design",
+      "details":
+          "Our products and services are developed with end-users—healthcare professionals, patients, and caregivers—at the core, ensuring intuitive, practical solutions that enhance everyday experiences."
+    },
+    {
+      "title": "Solution-Driven Approach",
+      "details":
+          "We focus on addressing real-world healthcare obstacles by crafting effective, scalable solutions that improve accessibility and outcomes for all stakeholders."
+    },
+    {
+      "title": "Sustainability and Responsibility",
+      "details":
+          "We prioritize minimizing environmental impact and championing public health globally, particularly in underserved communities, to ensure our innovations are both ethical and sustainable."
+    },
+    {
+      "title": "Collaboration and Diversity",
+      "details":
+          "We unite diverse perspectives from multidisciplinary teams to spur creativity. Our inclusive culture and partnerships with the broader medical community foster dynamic problem-solving and exceptional results."
+    },
+    {
+      "title": "Human-Centered Commitment",
+      "details":
+          "Everything we do is driven by empathy and compassion. By centering our efforts on dignity and care, we seek to enhance the well-being of individuals and societies alike."
+    },
+    {
+      "title": "Precision and Reliability",
+      "details":
+          "Our commitment to accuracy and consistent performance instills confidence in clinicians, patients, and caregivers who rely on our technologies."
+    },
+    {
+      "title": "Timeless Quality",
+      "details":
+          "We uphold the highest standards of excellence, ensuring our solutions deliver long-lasting value and remain relevant in a rapidly evolving healthcare landscape.."
+    },
+    {
+      "title": "Continuous Development ",
+      "details":
+          "Adaptability and learning are at the heart of our growth. We invest in ongoing research, development, and education to keep pace with emerging needs and opportunities."
+    },
+    {
+      "title": "Pioneering Tomorrow",
+      "details":
+          "We anticipate future trends in healthcare, actively shaping a more connected and healthier world for generations to come."
+    },
+  ];
   Widget _aboutus(context, width) {
     return LayoutBuilder(builder: (context, constraints) {
       return Container(
@@ -33,14 +85,16 @@ class AboutusWidget extends StatelessWidget {
               child: Image.asset(
                 "assets/images/about us.gif",
                 fit: BoxFit.cover,
-                opacity: AlwaysStoppedAnimation(0.2), // Adjust transparency
+                alignment: Alignment.topCenter,
+                opacity:AlwaysStoppedAnimation(0.3),
+             //  color: const Color.fromARGB(42, 255, 255, 255),
               ),
             ),
 
             // Additional Overlay Image
             Positioned.fill(
               child: Image.asset(
-                "assets/images/gradient.png",
+                "assets/images/gradient.png",  alignment: Alignment.bottomLeft,
                 fit: BoxFit.cover,
               ),
             ),
@@ -53,23 +107,60 @@ class AboutusWidget extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(height: 100),
-                    Text(
-                      "About Us",
-                      style: GoogleFonts.bebasNeue(
-                        color: AppTheme.black,
-                        fontSize: Constant.headingText(context),
-                        letterSpacing: 5,
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    Text(
-                      "Archle Labs is an advanced research center for health and life sciences engineering, committed to revolutionizing the healthcare field. We combine cutting-edge technology, interdisciplinary expertise fueled by  unwavering passion for innovation to tackle the world’s most pressing medical challenges. By developing novel solutions and services, we aim to elevate human health, enhance patient outcomes, and transform global healthcare practices.",
-                      style: GoogleFonts.openSans(
-                        color: AppTheme.black,
-                        fontSize: Constant.mediumbody(context),
-                        height: 1.5,
-                      ),
+                    Row(
+                      children: [
+                        if(constraints.maxWidth>800)
+                        Stack(
+                          clipBehavior: Clip.none,
+                          children: [
+                            Image.asset(
+                              width: 350,
+                              height: 500,
+                              "assets/images/space2.png",
+                              fit: BoxFit.fitHeight,
+                            ),
+                            Positioned(
+                              top: 200,
+                              right: -250,
+                              child:  Text(
+                                "About Us",
+                                style: GoogleFonts.openSans(
+                                  color: AppTheme.black,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: Constant.mainHeading(context),
+                                  letterSpacing: 3,
+                                ),
+                              ),)
+                          ],
+                        ),
+                        SizedBox(width: 50,),
+                        Expanded(
+                          child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const SizedBox(height: 200),
+                                 if(constraints.maxWidth<800)
+                              Text(
+                                "About Us",
+                                style: GoogleFonts.openSans(
+                                  color: AppTheme.black,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: Constant.mainHeading(context),
+                                  letterSpacing: 3,
+                                ),
+                              ),
+                              const SizedBox(height: 20),
+                              Text(
+                                "Archle Labs is an advanced research center for health and life sciences engineering, committed to revolutionizing the healthcare field. We combine cutting-edge technology, interdisciplinary expertise fueled by  unwavering passion for innovation to tackle the world’s most pressing medical challenges. By developing novel solutions and services, we aim to elevate human health, enhance patient outcomes, and transform global healthcare practices.",
+                                style: GoogleFonts.openSans(
+                                  color: AppTheme.black,
+                                  fontSize: Constant.mediumbody(context),
+                                  height: 1.5,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                     SizedBox(
                       height: 60,
@@ -93,7 +184,59 @@ class AboutusWidget extends StatelessWidget {
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    const SizedBox(height: 40),
+                    const SizedBox(height: 60),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: List.generate(
+                          valuesList
+                              .length, // Replace with the total number of items
+                          (index) {
+                            return Container(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 20, vertical: 20),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8),
+                                  color: AppTheme.textBlackColor),
+                              width:
+                                  250, // Ensure consistent width for each item
+
+                              height: 230,
+                              margin: const EdgeInsets.only(
+                                  right: 44), // Add spacing between items
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "${valuesList[index]["title"]}",
+                                    style: GoogleFonts.openSans(
+                                      fontWeight: FontWeight.w700,
+                                      color: AppTheme.whiteColor,
+                                      fontSize: Constant.mediumbody(context),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 12,
+                                  ),
+                                  Text(
+                                    "${valuesList[index]["details"]}",
+                                    style: GoogleFonts.openSans(
+                                      fontWeight: FontWeight.w400,
+                                      color: AppTheme.whiteColor,
+                                      fontSize: 13,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 40,
+                    ),
                   ],
                 ),
               ),
@@ -115,9 +258,10 @@ class AboutusWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-         
           Expanded(
-            child:constraints.maxWidth>800? buildTextBigContent(title, description, context): buildTextSmallContent(title, description, context),
+            child: constraints.maxWidth > 800
+                ? buildTextBigContent(title, description, context)
+                : buildTextSmallContent(title, description, context),
           ),
           SizedBox(width: 40), // Optional spacing between text and image
           Expanded(
@@ -152,11 +296,29 @@ class AboutusWidget extends StatelessWidget {
             height: 1.5,
           ),
         ),
-       
+        const SizedBox(height: 30),
+        Text(
+          "Our Mission",
+          style: GoogleFonts.bebasNeue(
+            color: AppTheme.black,
+            fontSize: Constant.subheadingText(context),
+            letterSpacing: 5,
+          ),
+        ),
+        const SizedBox(height: 10),
+        Text(
+          "Our mission is to harness rigorous, interdisciplinary research and advanced engineering methodologies to drive transformative solutions for complex healthcare challenges—ultimately fostering equitable access and vibrant global health.",
+          style: GoogleFonts.openSans(
+            color: AppTheme.black,
+            fontSize: Constant.mediumbody(context),
+            height: 1.5,
+          ),
+        ),
       ],
     );
   }
- Widget buildTextSmallContent(String title, String description, context) {
+
+  Widget buildTextSmallContent(String title, String description, context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -177,7 +339,6 @@ class AboutusWidget extends StatelessWidget {
             height: 1.5,
           ),
         ),
-     
       ],
     );
   }

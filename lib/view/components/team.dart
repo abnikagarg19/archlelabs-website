@@ -61,13 +61,13 @@ class _TeamWidgetState extends State<TeamWidget> {
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisSpacing: 30,
+                  crossAxisSpacing: 60,
                   //  tileBottomSpace: 20,
                   mainAxisExtent: ResponsiveLayout.isMediumScreen(context)
                       ? 280
                       : ResponsiveLayout.isSmallScreen(context)
                           ? 250
-                          : 380,
+                          : 400,
                   mainAxisSpacing: 20,
                   crossAxisCount: ResponsiveLayout.isMediumScreen(context) ||
                           ResponsiveLayout.isSmallScreen(context)
@@ -81,7 +81,7 @@ class _TeamWidgetState extends State<TeamWidget> {
                         ? 220
                         : ResponsiveLayout.isSmallScreen(context)
                             ? 200
-                            : 300;
+                            : 329;
                     return GestureDetector(
                       onTap: () {},
                       child: Column(
@@ -104,7 +104,8 @@ class _TeamWidgetState extends State<TeamWidget> {
                               children: [
                                 Image.network(
                                   alignment: Alignment.topCenter,
-                                  "${_controller.teamList.first.data![index].profileUrl}",
+                               
+                                 "${_controller.teamList.first.data![index].profileUrl}",
                                   height: height,
                                   width: ResponsiveLayout.isMediumScreen(
                                           context)

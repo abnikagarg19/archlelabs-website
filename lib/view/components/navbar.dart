@@ -13,8 +13,12 @@ void _scrollToSection(String section) {
   if (section == "About Us") {
     targetKey = Globals.container1Key;
   } else if (section == "Blog") {
-    targetKey = Globals.container3Key;
-  } else {
+    targetKey = Globals.container2Key;
+  } 
+  else if (section == "Home") {
+    targetKey = Globals.container1Key;
+  } 
+  else {
     targetKey = Globals.container2Key;
   }
 
