@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../controller/homeController.dart';
 import '../../responsive/layouts.dart';
@@ -28,7 +29,13 @@ class _TeamWidgetState extends State<TeamWidget> {
       mediumScreen: _team(context, 770.0),
     );
   }
-
+  launchurl(emailLaunchUri) async {
+    if (await canLaunchUrl(emailLaunchUri)) {
+      await launchUrl(emailLaunchUri);
+    } else {
+      print('Could not launch email client');
+    }
+  }
   Widget _team(context, width) {
     return LayoutBuilder(builder: (_context, constraints) {
       return Container(
@@ -163,7 +170,7 @@ class _TeamWidgetState extends State<TeamWidget> {
                           Row(
                             children: [
                               InkWell(
-                               // onTap: () => launchUrl,
+                               onTap: () => launchurl(Uri.parse("${_controller.teamList.first.data![index].linkedin}")),
                                 child: SvgPicture.asset(
                                   "assets/images/linkedin.svg",
                                   height: 16,

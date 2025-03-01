@@ -81,8 +81,8 @@ class BlogDetails extends StatelessWidget {
                     else
                       Column(
                         children: [
-                          Image.asset(
-                            "assets/images/art1.png",
+                         Image.network(
+                            "${_controller.blogsListItems.images![0]}", 
                             height: 400,
                             fit: BoxFit.cover,
                           ),
@@ -127,25 +127,25 @@ class BlogDetails extends StatelessWidget {
                   direction:
                       constraints.maxWidth > 800 ? Axis.horizontal : Axis.vertical,
                   children: [
-                    Expanded(
-                        flex: constraints.maxWidth > 800 ? 6 : 0,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Flexible(
-                              child: Text(
-                                "Unlocking the future",
-                                style: GoogleFonts.openSans(
-                                    color: AppTheme.whiteColor,
-                                    height: 1.5,
-                                    fontWeight: FontWeight.w200,
-                                    fontSize: Constant.mainHeading(context),
-                                    letterSpacing: 1),
-                                textAlign: TextAlign.start,
-                              ),
-                            ),
-                          ],
-                        )),
+                    // Expanded(
+                    //     flex: constraints.maxWidth > 800 ? 6 : 0,
+                    //     child: Row(
+                    //       mainAxisAlignment: MainAxisAlignment.end,
+                    //       children: [
+                    //         Flexible(
+                    //           child: Text(
+                    //             "Unlocking the future",
+                    //             style: GoogleFonts.openSans(
+                    //                 color: AppTheme.whiteColor,
+                    //                 height: 1.5,
+                    //                 fontWeight: FontWeight.w200,
+                    //                 fontSize: Constant.mainHeading(context),
+                    //                 letterSpacing: 1),
+                    //             textAlign: TextAlign.start,
+                    //           ),
+                    //         ),
+                    //       ],
+                    //     )),
                     Expanded(
                       flex: constraints.maxWidth > 800 ? 6 : 0,
                       child: Padding(
@@ -155,7 +155,7 @@ class BlogDetails extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "We are working on innovations that will redefine Health tech. At Archle Labs  innovation isn’t just an idea—it’s a journey.We are working on innovations that will redefine Health tech. At Archle Labs  innovation isn’t just an idea—it’s a journey.We are working on innovations that will redefine Health tech. At Archle Labs  innovation isn’t just an idea—it’s a journey. We’re crafting products that push boundaries, redefine industries, and transform how we live, work, and connect. ",
+                              "${_controller.blogsListItems.body2}",
                               style: GoogleFonts.openSans(
                                   color: Color.fromRGBO(166, 166, 166, 1),
                                   fontSize: Constant.body(context),
@@ -183,7 +183,7 @@ class BlogDetails extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "We are working on innovations that will redefine Health tech. At Archle Labs  innovation isn’t just an idea—it’s a journey.We are working on innovations that will redefine Health tech. At Archle Labs  innovation isn’t just an idea—it’s a journey.We are working on innovations that will redefine Health tech. At Archle Labs  innovation isn’t just an idea—it’s a journey. We’re crafting products that push boundaries, redefine industries, and transform how we live, work, and connect. ",
+                             "${_controller.blogsListItems.body3}",
                               style: GoogleFonts.openSans(
                                   color: Color.fromRGBO(166, 166, 166, 1),
                                   fontSize: Constant.body(context),
@@ -198,8 +198,8 @@ class BlogDetails extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            Image.asset(
-                              "assets/images/art1.png",
+                          Image.network(
+                            "${_controller.blogsListItems.images![2]}", 
                               height: 400,
                               fit: BoxFit.cover,
                               width: constraints.maxWidth > 800
