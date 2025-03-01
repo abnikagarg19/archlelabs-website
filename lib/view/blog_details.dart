@@ -199,7 +199,7 @@ class BlogDetails extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                           Image.network(
-                            "${_controller.blogsListItems.images![2]}", 
+                            "${_controller.blogsListItems.images![1]}", 
                               height: 400,
                               fit: BoxFit.cover,
                               width: constraints.maxWidth > 800

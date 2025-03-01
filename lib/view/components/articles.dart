@@ -153,7 +153,7 @@ class ArticlesWidget extends StatelessWidget {
                               SingleChildScrollView(
                                 scrollDirection: Axis.horizontal,
                                 child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.center,crossAxisAlignment: CrossAxisAlignment.start,
                                   children: List.generate(
                                     _controller.blogsListItems
                                         .length, // Replace with the total number of items
@@ -179,8 +179,8 @@ class ArticlesWidget extends StatelessWidget {
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
-                                              Image.asset(
-                                                "assets/images/art1.png",
+                                             Image.network(
+                                              "${_controller.blogsListItems[index].images![0]}",
                                                 height: 200,
                                                 width: 300,
                                                 fit: BoxFit.cover,
@@ -196,6 +196,8 @@ class ArticlesWidget extends StatelessWidget {
                                                   fontSize: Constant.mediumbody(
                                                       context),
                                                 ),
+                                                maxLines: 1,
+                                                overflow: TextOverflow.ellipsis,
                                               ),
                                               const SizedBox(
                                                 height: 6,
@@ -206,8 +208,9 @@ class ArticlesWidget extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   color: AppTheme.black,
                                                   fontSize: Constant.smallbody(
-                                                      context),
-                                                ),
+                                                      context), 
+                                                ), maxLines: 4,
+                                                overflow: TextOverflow.ellipsis,
                                               ),
                                             ],
                                           ),
