@@ -328,15 +328,17 @@ class _ContactUsState extends State<ContactUs>
                 child: Container(
                   margin: EdgeInsets.only(left: 100),
                   width: double.infinity,
-                  padding: EdgeInsets.only(top: 10),
+               
                   height: 45,
                   decoration: BoxDecoration(color: AppTheme.black),
-                  child: Text(
-                    "             Send",
-                    style: GoogleFonts.openSans(
-                      color: AppTheme.whiteColor,
-                      fontWeight: FontWeight.w600,
-                      fontSize: Constant.body(context),
+                  child: Center(
+                    child: Text(
+                      "Send",
+                      style: GoogleFonts.openSans(
+                        color: AppTheme.whiteColor,
+                        fontWeight: FontWeight.w600,
+                        fontSize: Constant.body(context),
+                      ),
                     ),
                   ),
                 ),
@@ -571,15 +573,17 @@ class _ContactUsState extends State<ContactUs>
                 child: Container(
                   margin: EdgeInsets.only(left: 100),
                   width: double.infinity,
-                  padding: EdgeInsets.only(top: 10),
+                 
                   height: 45,
                   decoration: BoxDecoration(color: AppTheme.black),
-                  child: Text(
-                    "             Send",
-                    style: GoogleFonts.openSans(
-                      color: AppTheme.whiteColor,
-                      fontWeight: FontWeight.w600,
-                      fontSize: Constant.body(context),
+                  child: Center(
+                    child: Text(
+                      "Send",
+                      style: GoogleFonts.openSans(
+                        color: AppTheme.whiteColor,
+                        fontWeight: FontWeight.w600,
+                        fontSize: Constant.body(context),
+                      ),
                     ),
                   ),
                 ),
@@ -856,15 +860,17 @@ class _ContactUsState extends State<ContactUs>
                 child: Container(
                   margin: EdgeInsets.only(left: 100),
                   width: double.infinity,
-                  padding: EdgeInsets.only(top: 10),
+                 
                   height: 45,
                   decoration: BoxDecoration(color: AppTheme.black),
-                  child: Text(
-                    "             Send",
-                    style: GoogleFonts.openSans(
-                      color: AppTheme.whiteColor,
-                      fontWeight: FontWeight.w600,
-                      fontSize: Constant.body(context),
+                  child: Center(
+                    child: Text(
+                       "Send",
+                      style: GoogleFonts.openSans(
+                        color: AppTheme.whiteColor,
+                        fontWeight: FontWeight.w600,
+                        fontSize: Constant.body(context),
+                      ),
                     ),
                   ),
                 ),
@@ -1142,15 +1148,17 @@ class _ContactUsState extends State<ContactUs>
               child: Container(
                 margin: EdgeInsets.only(left: 100),
                 width: double.infinity,
-                padding: EdgeInsets.only(top: 10),
+               
                 height: 45,
                 decoration: BoxDecoration(color: AppTheme.black),
-                child: Text(
-                  "             Send",
-                  style: GoogleFonts.openSans(
-                    color: AppTheme.whiteColor,
-                    fontWeight: FontWeight.w600,
-                    fontSize: Constant.body(context),
+                child: Center(
+                  child: Text(
+                     "Send",
+                    style: GoogleFonts.openSans(
+                      color: AppTheme.whiteColor,
+                      fontWeight: FontWeight.w600,
+                      fontSize: Constant.body(context),
+                    ),
                   ),
                 ),
               ),
@@ -1300,10 +1308,13 @@ class _ContactUsState extends State<ContactUs>
                   onTap: () {
                     onTabPress(i);
                   },
+                  
+                  highlightColor: AppTheme.black.withOpacity(0.6),
+                    hoverColor: AppTheme.black.withOpacity(0.6),
                   child: AnimatedContainer(
-                    duration: Duration(milliseconds: 300),
-                    margin: EdgeInsets.only(left: 10),
-                    padding: EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+                    duration:const Duration(milliseconds: 300),
+                    margin:const EdgeInsets.only(left: 10),
+                    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
                       color: i == selectIndex

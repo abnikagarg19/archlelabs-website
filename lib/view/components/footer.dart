@@ -76,14 +76,14 @@ class Footer extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           SizedBox(
-                            height: 40,
+                            height: 60,
                           ),
                           Text(
                             "Collaboration Starts here",
                             style: GoogleFonts.openSans(
                               color: AppTheme.whiteColor,
                               fontSize: Constant.textFourty(context),
-                              fontWeight: FontWeight.w300,
+                              fontWeight: FontWeight.w600,
                             ),
                           ),
                           SizedBox(
@@ -98,7 +98,7 @@ class Footer extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            height: 30,
+                            height: 20,
                           ),
                           InkWell(
                             onTap: () {
@@ -122,7 +122,7 @@ class Footer extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            height: 30,
+                            height: 20,
                           ),
                           Row(
                             children: [
@@ -141,7 +141,7 @@ class Footer extends StatelessWidget {
                             ],
                           ),
                           SizedBox(
-                            height: 30,
+                            height: 20,
                           ),
                           Text(
                             "Connect on socials",
@@ -189,7 +189,7 @@ class Footer extends StatelessWidget {
                             ],
                           ),
                           SizedBox(
-                            height: 30,
+                            height: 20,
                           ),
                         ]),
                   ),
@@ -201,13 +201,13 @@ class Footer extends StatelessWidget {
                             : MainAxisAlignment.start,
                         children: [
                           Expanded(
-                            child: Column(
+                            child: Column(crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 SizedBox(
                                   height: 40,
                                 ),
                                 Align(
-                                  alignment: Alignment.topCenter,
+                                  alignment: Alignment.topRight,
                                   child: Image.asset(
                                     "assets/images/logo.png",
                                     height:
@@ -219,7 +219,7 @@ class Footer extends StatelessWidget {
                                 ),
                                 Image.asset(
                                   "assets/images/skill4.png",
-                                  height: 100,
+                                  height: 80,
                                   fit: BoxFit.cover,
                                   //  width: constraints.maxWidth > 800 ? null : 150,
                                 ),
@@ -228,7 +228,7 @@ class Footer extends StatelessWidget {
                                 ),
                                 Image.asset(
                                   "assets/images/skill3.png",
-                                  height: 60,
+                                  height: 50,
                                   fit: BoxFit.cover,
                                   //  width: constraints.maxWidth > 800 ? null : 150,
                                 ),

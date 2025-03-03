@@ -179,116 +179,67 @@ class AboutusWidget extends StatelessWidget {
                         fontSize: Constant.subheadingText(context),
                         letterSpacing: 5,
                       ),
-                    ),
-                    const SizedBox(height: 20),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: List.generate(
-                          5, // Replace with the total number of items
-                          (index) {
-                            return Container(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 30, vertical: 20),
-                              decoration: BoxDecoration(
-                                  color: index % 2 != 0
-                                      ? Colors.transparent
-                                      : AppTheme.black),
-                              width:
-                                  220, // Ensure consistent width for each item
-
-                              height: 200,
-                              // Add spacing between items
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "${valuesList[index]["title"]}",
-                                    style: GoogleFonts.openSans(
-                                      fontWeight: FontWeight.w700,
-                                      color: index % 2 == 0
-                                          ? AppTheme.whiteColor
-                                          : AppTheme.black,
-                                      fontSize: Constant.mediumbody(context),
-                                    ),
+                    ),  const SizedBox(height: 20),
+                    GridView.custom(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisSpacing: 0,
+                        //  tileBottomSpace: 20,
+                        mainAxisExtent: ResponsiveLayout.isMediumScreen(context)
+                            ? 200
+                            : ResponsiveLayout.isSmallScreen(context)
+                                ? 280
+                                : 200,
+                        mainAxisSpacing: 0,
+                        crossAxisCount:
+                            ResponsiveLayout.isMediumScreen(context) ||
+                                    ResponsiveLayout.isSmallScreen(context)
+                                ? 3
+                                : 5,
+                      ),
+                      childrenDelegate: SliverChildBuilderDelegate(
+                        childCount: valuesList.length,
+                        (context, index) {
+                          return Container(
+                            decoration: BoxDecoration(
+                                color: index % 2 != 0
+                                    ? Colors.transparent
+                                    : AppTheme.black),
+                                    padding: EdgeInsets.symmetric(vertical: ResponsiveLayout.isLargeScreen(context)?30: 12, horizontal: ResponsiveLayout.isLargeScreen(context)?30: 12),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "${valuesList[index]["title"]}",
+                                  style: GoogleFonts.openSans(
+                                    fontWeight: FontWeight.w700,
+                                    color: index % 2 == 0
+                                        ? AppTheme.whiteColor
+                                        : AppTheme.black,
+                                    fontSize: Constant.mediumbody(context),
                                   ),
-                                  const SizedBox(
-                                    height: 12,
+                                ),
+                                const SizedBox(
+                                  height: 12,
+                                ),
+                                Text(
+                                  "${valuesList[index]["details"]}",
+                                  style: GoogleFonts.openSans(
+                                    fontWeight: FontWeight.w400,
+                                    color: index % 2 == 0
+                                        ? AppTheme.whiteColor
+                                        : AppTheme.black,
+                                    fontSize: 13,
                                   ),
-                                  Text(
-                                    "${valuesList[index]["details"]}",
-                                    style: GoogleFonts.openSans(
-                                      fontWeight: FontWeight.w400,
-                                      color: index % 2 == 0
-                                          ? AppTheme.whiteColor
-                                          : AppTheme.black,
-                                      fontSize: 13,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            );
-                          },
-                        ),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
                       ),
                     ),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: List.generate(
-                          10, // Replace with the total number of items
-                          (index) {
-                            if (index < 5) {
-                              return Container();
-                            }
-                            return Container(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 30, vertical: 20),
-                              decoration: BoxDecoration(
-                                  color: index % 2 != 0
-                                      ? Colors.transparent
-                                      : AppTheme.black),
-                              width:
-                                  220, // Ensure consistent width for each item
-
-                              height: 200,
-                              // Add spacing between items
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "${valuesList[index]["title"]}",
-                                    style: GoogleFonts.openSans(
-                                      fontWeight: FontWeight.w700,
-                                      color: index % 2 == 0
-                                          ? AppTheme.whiteColor
-                                          : AppTheme.black,
-                                      fontSize: Constant.mediumbody(context),
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    height: 12,
-                                  ),
-                                  Text(
-                                    "${valuesList[index]["details"]}",
-                                    style: GoogleFonts.openSans(
-                                      fontWeight: FontWeight.w400,
-                                      color: index % 2 == 0
-                                          ? AppTheme.whiteColor
-                                          : AppTheme.black,
-                                      fontSize: 13,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            );
-                          },
-                        ),
-                      ),
-                    ),
-                    SizedBox(
+                 SizedBox(
                       height: 40,
                     ),
                     Text(

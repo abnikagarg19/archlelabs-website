@@ -13,6 +13,7 @@ import 'components/aboutus.dart';
 import 'components/articles.dart';
 import 'components/contactus.dart';
 import 'components/footer.dart';
+import 'components/our_focus.dart';
 import 'components/started_widget.dart';
 
 class HomeWidgets extends StatelessWidget {
@@ -90,7 +91,21 @@ class HomeWidgets extends StatelessWidget {
                 key: ValueKey(robotimage),
                 fit: BoxFit.cover,
               ),
-              StartedWidget(),
+              Container(
+                margin: EdgeInsets.symmetric(vertical: 40),
+                constraints: BoxConstraints(
+                    maxWidth: MediaQuery.of(context).size.width * .8),
+                child: Text(
+                  "We revolutionize healthcare with rigorous research and bold innovation. By merging expertise across science, technology, and medicine, we create transformative solutions that tackle the world’s most urgent medical challenges, driving scalable, real-world impact ",
+                  style: GoogleFonts.openSans(
+                      color: const Color.fromARGB(255, 255, 255, 255),
+                      fontSize: Constant.smallbheadingText(context),
+                      height: 2.5),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            
+              StartedWidget(),  OurFocus(),
               AboutusWidget(),
               TeamWidget(),
               ArticlesWidget(),

@@ -35,10 +35,10 @@ class StartedWidget extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(
-            height: 50,
+            height: 60,
           ),
           Text(
-            "How it all started",
+            "Our Story",
             style: GoogleFonts.bebasNeue(
                 color: AppTheme.whiteColor,
                 fontSize: Constant.headingText(context),
@@ -51,7 +51,7 @@ class StartedWidget extends StatelessWidget {
           Container(
              constraints: BoxConstraints(maxWidth: width),
             child: Text(
-              "At Archle Labs, we’re on a mission to create a future of healthcare through  rigorous research, advanced engineering, and bold innovation. By uniting diverse expertise across the fields of science, technology, and medicine, we create transformative solutions that address the world’s most urgent medical challenges. Our approach is grounded in user-centric design and measurable outcomes, ensuring each innovation is both practical and accessible for healthcare professionals and patients alike. We combine visionary thinking with real-world implementation to bridge gaps in modern healthcare, aiming to positively impact communities on a global scale.",
+              "Archle Labs, founded by Alois Sajo Devasagayam, began taking shape during the COVID-19 pandemic to address critical gaps in healthcare, particularly for the elderly who struggled in isolation without proper support. The vision was deeply influenced by a firsthand experience of witnessing the sacrifices of a devoted caregiver tending to bedridden parents, revealing the silent hardships faced by those dedicating their lives to loved ones. This realization underscored the need for technology-driven solutions that extend beyond patient care to also empower caregivers. ",
               style: GoogleFonts.openSans(
                   color: const Color.fromARGB(255, 255, 255, 255),
                   fontSize: Constant.smallbheadingText(context),
@@ -65,13 +65,40 @@ class StartedWidget extends StatelessWidget {
            Container(
              constraints: BoxConstraints(maxWidth: width),
             child: Text(
-            "We revolutionize healthcare with rigorous research and bold innovation. By merging expertise across science, technology, and medicine, we create transformative solutions that tackle the world’s most urgent medical challenges, driving scalable, real-world impact. ",
+            "With an initial focus on remote elderly care, the venture gained momentum through the belief and guidance of a mentor-investor, whose untimely passing became a defining moment—transforming a promising idea into an unshakable mission to revolutionize healthcare accessibility. ",
             style: GoogleFonts.openSans(
                  color: const Color.fromARGB(255, 255, 255, 255),
                 fontSize: Constant.smallbheadingText(context),
                 height: 2.5),
             textAlign: TextAlign.center,
           ),),
+           SizedBox(
+            height: 30,
+          ),
+           Container(
+             constraints: BoxConstraints(maxWidth: width),
+            child: Text(
+            "Despite numerous challenges, unwavering commitment propelled the venture forward. The expertise of key stakeholders refined the vision, while insights from medical professionals strengthened solution development. Strategic connections further opened doors to opportunities, enabling structured planning, product refinement, and system design. These collective efforts ultimately led to the creation of advanced, real-world healthcare solutions that bridge the gap between patient needs and caregiver support.",
+            style: GoogleFonts.openSans(
+                 color: const Color.fromARGB(255, 255, 255, 255),
+                fontSize: Constant.smallbheadingText(context),
+                height: 2.5),
+            textAlign: TextAlign.center,
+          ),),
+           SizedBox(
+            height: 30,
+          ),
+           Container(
+             constraints: BoxConstraints(maxWidth: width),
+            child: Text(
+            "Now in the product development phase, the company is evolving with a dedicated core-team  committed to pioneering healthcare solutions. Attracting investor interest and strategic partnerships, it remains focused on refining innovations, expanding collaborations, and securing resources for full-scale implementation. What began as a spark of empathy is steadily transforming into a force for change, driven by a resolute commitment to making superior medical care accessible to all.",
+            style: GoogleFonts.openSans(
+                 color: const Color.fromARGB(255, 255, 255, 255),
+                fontSize: Constant.smallbheadingText(context),
+                height: 2.5),
+            textAlign: TextAlign.center,
+          ),),
+          
            SizedBox(
             height: 50,
           ),
