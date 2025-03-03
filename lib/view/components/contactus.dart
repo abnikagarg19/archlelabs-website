@@ -1192,7 +1192,7 @@ class _ContactUsState extends State<ContactUs>
                     margin: EdgeInsets.only(left: 10),
                     padding: EdgeInsets.symmetric(vertical: 20),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
+                   //   borderRadius: BorderRadius.circular(12),
                       color: i == selectIndex
                           ? AppTheme.whiteColor
                           : AppTheme.black,
@@ -1223,7 +1223,7 @@ class _ContactUsState extends State<ContactUs>
                       padding: EdgeInsets.symmetric(vertical: 20),
                       margin: EdgeInsets.only(left: 10),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
+                       
                         color: i + 1 == selectIndex
                             ? AppTheme.whiteColor
                             : AppTheme.black,

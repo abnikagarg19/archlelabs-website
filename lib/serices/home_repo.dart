@@ -12,7 +12,7 @@ class HomepageService {
   final String noInternetMessage =
       'Connection to API server failed due to internet connection';
   Future<Response> getBlogs() async {
-    var ur = Uri.parse(AppUrls.BASE_URL + AppUrls.getBlogs + "?page=1&size=50");
+    var ur = Uri.parse(AppUrls.BASE_URL + AppUrls.getBlogs + "?page=1&size=100");
 
     try {
       final response = await http.get(ur, headers: {

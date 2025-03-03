@@ -30,47 +30,47 @@ class AboutusWidget extends StatelessWidget {
     {
       "title": "User-Centric Design",
       "details":
-          "Our products and services are developed with end-users—healthcare professionals, patients, and caregivers—at the core, ensuring intuitive, practical solutions that enhance everyday experiences."
+          "Our solutions prioritize healthcare professionals, patients, and caregivers."
     },
     {
       "title": "Solution-Driven Approach",
       "details":
-          "We focus on addressing real-world healthcare obstacles by crafting effective, scalable solutions that improve accessibility and outcomes for all stakeholders."
+          "Multidisciplinary teamwork fuels creativity and problem-solving."
     },
     {
       "title": "Sustainability and Responsibility",
       "details":
-          "We prioritize minimizing environmental impact and championing public health globally, particularly in underserved communities, to ensure our innovations are both ethical and sustainable."
+          "We innovate ethically, minimizing environmental impact and improving public health"
     },
     {
       "title": "Collaboration and Diversity",
       "details":
-          "We unite diverse perspectives from multidisciplinary teams to spur creativity. Our inclusive culture and partnerships with the broader medical community foster dynamic problem-solving and exceptional results."
+          "We anticipate trends, shaping a healthier future."
     },
     {
       "title": "Human-Centered Commitment",
       "details":
-          "Everything we do is driven by empathy and compassion. By centering our efforts on dignity and care, we seek to enhance the well-being of individuals and societies alike."
+          "Empathy and care drive the mission to enhance well-being."
     },
     {
       "title": "Precision and Reliability",
       "details":
-          "Our commitment to accuracy and consistent performance instills confidence in clinicians, patients, and caregivers who rely on our technologies."
+          "We ensure accuracy and consistency in every solution"
     },
     {
       "title": "Timeless Quality",
       "details":
-          "We uphold the highest standards of excellence, ensuring our solutions deliver long-lasting value and remain relevant in a rapidly evolving healthcare landscape.."
+          "Our high standards ensure long-lasting value in healthcare."
     },
     {
       "title": "Continuous Development ",
       "details":
-          "Adaptability and learning are at the heart of our growth. We invest in ongoing research, development, and education to keep pace with emerging needs and opportunities."
+          " We embrace learning, research, and adaptability."
     },
     {
       "title": "Pioneering Tomorrow",
       "details":
-          "We anticipate future trends in healthcare, actively shaping a more connected and healthier world for generations to come."
+          "We anticipate trends, shaping a healthier future."
     },
   ];
   Widget _aboutus(context, width) {
@@ -172,7 +172,114 @@ class AboutusWidget extends StatelessWidget {
                             "To revolutionize medical science, forging a future where no challenge is insurmountable and every life thrives.",
                         constraints: constraints,
                         context: context),
-                    SizedBox(
+                  
+                   const SizedBox(height: 30),
+        Text(
+          "Our Values",
+          style: GoogleFonts.bebasNeue(
+            color: AppTheme.black,
+            fontSize: Constant.subheadingText(context),
+            letterSpacing: 5,
+          ),
+        ),
+        const SizedBox(height: 20),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: List.generate(
+                         5, // Replace with the total number of items
+                          (index) {
+                            return Container(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 30, vertical: 20),
+                              decoration: BoxDecoration(
+                                 
+                                  color:index%2!=0?AppTheme.whiteColor: AppTheme.black),
+                              width:
+                                  220, // Ensure consistent width for each item
+
+                              height: 200,
+                             // Add spacing between items
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "${valuesList[index]["title"]}",
+                                    style: GoogleFonts.openSans(
+                                      fontWeight: FontWeight.w700,
+                                      color:index%2==0?AppTheme.whiteColor: AppTheme.black,
+                                      fontSize: Constant.mediumbody(context),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 12,
+                                  ),
+                                  Text(
+                                    "${valuesList[index]["details"]}",
+                                    style: GoogleFonts.openSans(
+                                      fontWeight: FontWeight.w400,
+                                      color:index%2==0?AppTheme.whiteColor: AppTheme.black,
+                                      fontSize: 13,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                    ),
+                     SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: List.generate(
+                        10, // Replace with the total number of items
+                          (index) {
+                            if(index<5){
+                              return Container();
+                            }
+                            return Container(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 30, vertical: 20),
+                              decoration: BoxDecoration(
+                                 
+                                  color:index%2!=0?AppTheme.whiteColor: AppTheme.black),
+                              width:
+                                  220, // Ensure consistent width for each item
+
+                              height: 200,
+                             // Add spacing between items
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "${valuesList[index]["title"]}",
+                                    style: GoogleFonts.openSans(
+                                      fontWeight: FontWeight.w700,
+                                      color:index%2==0?AppTheme.whiteColor: AppTheme.black,
+                                      fontSize: Constant.mediumbody(context),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 12,
+                                  ),
+                                  Text(
+                                    "${valuesList[index]["details"]}",
+                                    style: GoogleFonts.openSans(
+                                      fontWeight: FontWeight.w400,
+                                      color:index%2==0?AppTheme.whiteColor: AppTheme.black,
+                                      fontSize: 13,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                    ),  SizedBox(
                       height: 40,
                     ),
                     Text(
@@ -184,57 +291,7 @@ class AboutusWidget extends StatelessWidget {
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    const SizedBox(height: 60),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: List.generate(
-                          valuesList
-                              .length, // Replace with the total number of items
-                          (index) {
-                            return Container(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 20, vertical: 20),
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  color: AppTheme.textBlackColor),
-                              width:
-                                  250, // Ensure consistent width for each item
-
-                              height: 230,
-                              margin: const EdgeInsets.only(
-                                  right: 44), // Add spacing between items
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "${valuesList[index]["title"]}",
-                                    style: GoogleFonts.openSans(
-                                      fontWeight: FontWeight.w700,
-                                      color: AppTheme.whiteColor,
-                                      fontSize: Constant.mediumbody(context),
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    height: 12,
-                                  ),
-                                  Text(
-                                    "${valuesList[index]["details"]}",
-                                    style: GoogleFonts.openSans(
-                                      fontWeight: FontWeight.w400,
-                                      color: AppTheme.whiteColor,
-                                      fontSize: 13,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            );
-                          },
-                        ),
-                      ),
-                    ),
-                    SizedBox(
+                   SizedBox(
                       height: 40,
                     ),
                   ],

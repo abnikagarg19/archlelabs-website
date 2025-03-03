@@ -63,7 +63,7 @@ class Footer extends StatelessWidget {
             child: Container(
               constraints: BoxConstraints(maxWidth: width),
               child: Flex(
-                crossAxisAlignment: CrossAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 direction: constraints.maxWidth > 800
                     ? Axis.horizontal
@@ -73,20 +73,10 @@ class Footer extends StatelessWidget {
                     flex: constraints.maxWidth > 800.0 ? 1 : 0,
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           SizedBox(
-                            height: 70,
-                          ),
-                          Text(
-                            "Get In Touch",
-                            style: GoogleFonts.openSans(
-                              color: AppTheme.whiteColor,
-                              fontWeight: FontWeight.w600,
-                              fontSize: Constant.headingText(context),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 60,
+                            height: 40,
                           ),
                           Text(
                             "Collaboration Starts here",
@@ -175,7 +165,8 @@ class Footer extends StatelessWidget {
                               ),
                               InkWell(
                                 onTap: () {
-                                 launchurl(Uri.parse("https://www.linkedin.com/company/archlelabs/posts/?feedView=all"));
+                                  launchurl(Uri.parse(
+                                      "https://www.linkedin.com/company/archlelabs/posts/?feedView=all"));
                                 },
                                 child: SvgPicture.asset(
                                   "assets/images/linkedin.svg",
@@ -187,7 +178,8 @@ class Footer extends StatelessWidget {
                               ),
                               InkWell(
                                 onTap: () {
-                                  launchurl(Uri.parse("https://www.instagram.com/archlelabs?igsh=MW5kM3JsM2NvZ21zdQ%3D%3D"));
+                                  launchurl(Uri.parse(
+                                      "https://www.instagram.com/archlelabs?igsh=MW5kM3JsM2NvZ21zdQ%3D%3D"));
                                 },
                                 child: SvgPicture.asset(
                                   "assets/images/insta.svg",
@@ -208,22 +200,49 @@ class Footer extends StatelessWidget {
                             ? MainAxisAlignment.end
                             : MainAxisAlignment.start,
                         children: [
-                          Column(
-                            children: [
-                              Image.asset(
-                                "assets/images/logo.png",
-                                height: constraints.maxWidth > 800 ? 120 : 70,
-                                fit: BoxFit.cover,
-                                width: constraints.maxWidth > 800 ? null : 150,
-                              ),
-                              SizedBox(height: 20,),
-                               Image.asset(
-                                "assets/images/makeinindia.png",
-                                height: constraints.maxWidth > 800 ? 200 : 100,
-                                fit: BoxFit.cover,
-                                width: constraints.maxWidth > 800 ? null : 150,
-                              ),
-                            ],
+                          Expanded(
+                            child: Column(
+                              children: [
+                                SizedBox(
+                                  height: 40,
+                                ),
+                                Align(
+                                  alignment: Alignment.topCenter,
+                                  child: Image.asset(
+                                    "assets/images/logo.png",
+                                    height:
+                                        constraints.maxWidth > 800 ? 120 : 70,
+                                    fit: BoxFit.cover,
+                                    width:
+                                        constraints.maxWidth > 800 ? null : 150,
+                                  ),
+                                ),
+                                Image.asset(
+                                  "assets/images/skill4.png",
+                                  height: 100,
+                                  fit: BoxFit.cover,
+                                  //  width: constraints.maxWidth > 800 ? null : 150,
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Image.asset(
+                                  "assets/images/skill3.png",
+                                  height: 60,
+                                  fit: BoxFit.cover,
+                                  //  width: constraints.maxWidth > 800 ? null : 150,
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Image.asset(
+                                  "assets/images/skill2.png",
+                                  height: 80,
+                                  fit: BoxFit.cover,
+                                  //  width: constraints.maxWidth > 800 ? null : 150,
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ))
