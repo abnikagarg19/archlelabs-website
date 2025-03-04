@@ -61,7 +61,7 @@ class _ContactUsState extends State<ContactUs>
   final inestFormQuery = GlobalKey<FormState>();
 
   int selectIndex = 3;
-int hoverIndex=-1;
+  int hoverIndex = -1;
   final formTypes = ["Hire", "Investors", "Press release", "Queries"];
 
   Widget _widget(
@@ -1194,25 +1194,28 @@ int hoverIndex=-1;
                       onTabPress(i);
                     },
                     onHover: (isHovering) {
-        if (isHovering) {
-          setState(() {
-            hoverIndex = i; // Add a hover index variable
-          });
-        } else {
-          setState(() {
-            hoverIndex = -1;
-          });
-        }
-      },
+                      if (isHovering) {
+                        setState(() {
+                          hoverIndex = i; // Add a hover index variable
+                        });
+                      } else {
+                        setState(() {
+                          hoverIndex = -1;
+                        });
+                      }
+                    },
                     child: AnimatedContainer(
                       duration: Duration(milliseconds: 300),
                       margin: EdgeInsets.only(left: 10),
-                      padding: EdgeInsets.symmetric(vertical: 35),
+                      padding: EdgeInsets.symmetric(vertical: 25),
                       decoration: BoxDecoration(
                         //   borderRadius: BorderRadius.circular(12),
                         color: i == selectIndex
                             ? AppTheme.whiteColor
-                            : (i == hoverIndex ? Colors.grey[700] : AppTheme.black),),
+                            : (i == hoverIndex
+                                ? Colors.grey[700]
+                                : AppTheme.black),
+                      ),
                       child: Center(
                         child: Text(
                           "${formTypes[i]}",
@@ -1234,28 +1237,30 @@ int hoverIndex=-1;
                       child: Material(
                     color: Colors.transparent, // Keeps background transparent
                     child: InkWell(
-                     onTap: () {
-                      onTabPress(i+1);
-                    },
-                    onHover: (isHovering) {
-        if (isHovering) {
-          setState(() {
-            hoverIndex = i+1; // Add a hover index variable
-          });
-        } else {
-          setState(() {
-            hoverIndex = -1;
-          });
-        }
-      },
+                      onTap: () {
+                        onTabPress(i + 1);
+                      },
+                      onHover: (isHovering) {
+                        if (isHovering) {
+                          setState(() {
+                            hoverIndex = i + 1; // Add a hover index variable
+                          });
+                        } else {
+                          setState(() {
+                            hoverIndex = -1;
+                          });
+                        }
+                      },
                       child: AnimatedContainer(
                         duration: Duration(milliseconds: 300),
-                        padding: EdgeInsets.symmetric(vertical: 35),
+                        padding: EdgeInsets.symmetric(vertical: 25),
                         margin: EdgeInsets.only(left: 10),
                         decoration: BoxDecoration(
                           color: i + 1 == selectIndex
                               ? AppTheme.whiteColor
-                              :  (i+1 == hoverIndex ? Colors.grey[700] : AppTheme.black),
+                              : (i + 1 == hoverIndex
+                                  ? Colors.grey[700]
+                                  : AppTheme.black),
                         ),
                         child: Center(
                           child: Text(
@@ -1332,7 +1337,6 @@ int hoverIndex=-1;
                   onTap: () {
                     onTabPress(i);
                   },
-               
                   child: AnimatedContainer(
                     duration: const Duration(milliseconds: 300),
                     margin: const EdgeInsets.only(left: 10),
@@ -1342,7 +1346,9 @@ int hoverIndex=-1;
                       borderRadius: BorderRadius.circular(12),
                       color: i == selectIndex
                           ? AppTheme.whiteColor
-                          :  (i == hoverIndex ? Colors.grey[700] : AppTheme.black), // Change color on hover,
+                          : (i == hoverIndex
+                              ? Colors.grey[700]
+                              : AppTheme.black), // Change color on hover,
                     ),
                     child: Center(
                       child: Text(

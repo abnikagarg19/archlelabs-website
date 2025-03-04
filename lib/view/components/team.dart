@@ -128,6 +128,7 @@ class _TeamWidgetState extends State<TeamWidget> {
                                                     ? 250
                                                     : 380,
                                             fit: BoxFit.cover,
+                                            filterQuality: FilterQuality.high,
                                           ),
                                           AnimatedPositioned(
                                             bottom: isHover &&
