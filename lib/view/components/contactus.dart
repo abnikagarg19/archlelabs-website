@@ -61,7 +61,7 @@ class _ContactUsState extends State<ContactUs>
   final inestFormQuery = GlobalKey<FormState>();
 
   int selectIndex = 3;
-
+int hoverIndex=-1;
   final formTypes = ["Hire", "Investors", "Press release", "Queries"];
 
   Widget _widget(
@@ -328,7 +328,6 @@ class _ContactUsState extends State<ContactUs>
                 child: Container(
                   margin: EdgeInsets.only(left: 100),
                   width: double.infinity,
-               
                   height: 45,
                   decoration: BoxDecoration(color: AppTheme.black),
                   child: Center(
@@ -573,7 +572,6 @@ class _ContactUsState extends State<ContactUs>
                 child: Container(
                   margin: EdgeInsets.only(left: 100),
                   width: double.infinity,
-                 
                   height: 45,
                   decoration: BoxDecoration(color: AppTheme.black),
                   child: Center(
@@ -860,12 +858,11 @@ class _ContactUsState extends State<ContactUs>
                 child: Container(
                   margin: EdgeInsets.only(left: 100),
                   width: double.infinity,
-                 
                   height: 45,
                   decoration: BoxDecoration(color: AppTheme.black),
                   child: Center(
                     child: Text(
-                       "Send",
+                      "Send",
                       style: GoogleFonts.openSans(
                         color: AppTheme.whiteColor,
                         fontWeight: FontWeight.w600,
@@ -1148,12 +1145,11 @@ class _ContactUsState extends State<ContactUs>
               child: Container(
                 margin: EdgeInsets.only(left: 100),
                 width: double.infinity,
-               
                 height: 45,
                 decoration: BoxDecoration(color: AppTheme.black),
                 child: Center(
                   child: Text(
-                     "Send",
+                    "Send",
                     style: GoogleFonts.openSans(
                       color: AppTheme.whiteColor,
                       fontWeight: FontWeight.w600,
@@ -1191,29 +1187,42 @@ class _ContactUsState extends State<ContactUs>
             child: Row(
               children: [
                 Expanded(
-                    child: InkWell(
-                  onTap: () {
-                    onTabPress(i);
-                  },
-                  child: AnimatedContainer(
-                    duration: Duration(milliseconds: 300),
-                    margin: EdgeInsets.only(left: 10),
-                    padding: EdgeInsets.symmetric(vertical: 35),
-                    decoration: BoxDecoration(
-                   //   borderRadius: BorderRadius.circular(12),
-                      color: i == selectIndex
-                          ? AppTheme.whiteColor
-                          : AppTheme.black,
-                    ),
-                    child: Center(
-                      child: Text(
-                        "${formTypes[i]}",
-                        style: GoogleFonts.openSans(
-                          color: i == selectIndex
-                              ? AppTheme.black
-                              : AppTheme.whiteColor,
-                          fontWeight: FontWeight.w600,
-                          fontSize: Constant.smallbheadingText(context),
+                    child: Material(
+                  color: Colors.transparent, // Keeps background transparent
+                  child: InkWell(
+                    onTap: () {
+                      onTabPress(i);
+                    },
+                    onHover: (isHovering) {
+        if (isHovering) {
+          setState(() {
+            hoverIndex = i; // Add a hover index variable
+          });
+        } else {
+          setState(() {
+            hoverIndex = -1;
+          });
+        }
+      },
+                    child: AnimatedContainer(
+                      duration: Duration(milliseconds: 300),
+                      margin: EdgeInsets.only(left: 10),
+                      padding: EdgeInsets.symmetric(vertical: 35),
+                      decoration: BoxDecoration(
+                        //   borderRadius: BorderRadius.circular(12),
+                        color: i == selectIndex
+                            ? AppTheme.whiteColor
+                            : (i == hoverIndex ? Colors.grey[700] : AppTheme.black),),
+                      child: Center(
+                        child: Text(
+                          "${formTypes[i]}",
+                          style: GoogleFonts.openSans(
+                            color: i == selectIndex
+                                ? AppTheme.black
+                                : AppTheme.whiteColor,
+                            fontWeight: FontWeight.w600,
+                            fontSize: Constant.smallbheadingText(context),
+                          ),
                         ),
                       ),
                     ),
@@ -1222,29 +1231,42 @@ class _ContactUsState extends State<ContactUs>
                 if (i + 1 < formTypes.length) ...[
                   SizedBox(width: 8), // Space between two containers
                   Expanded(
-                      child: InkWell(
-                    onTap: () {
-                      onTabPress(i + 1);
+                      child: Material(
+                    color: Colors.transparent, // Keeps background transparent
+                    child: InkWell(
+                     onTap: () {
+                      onTabPress(i+1);
                     },
-                    child: AnimatedContainer(
-                      duration: Duration(milliseconds: 300),
-                      padding: EdgeInsets.symmetric(vertical: 35),
-                      margin: EdgeInsets.only(left: 10),
-                      decoration: BoxDecoration(
-                       
-                        color: i + 1 == selectIndex
-                            ? AppTheme.whiteColor
-                            : AppTheme.black,
-                      ),
-                      child: Center(
-                        child: Text(
-                          "${formTypes[i + 1]}",
-                          style: GoogleFonts.openSans(
-                            color: i + 1 == selectIndex
-                                ? AppTheme.black
-                                : AppTheme.whiteColor,
-                            fontWeight: FontWeight.w600,
-                            fontSize: Constant.smallbheadingText(context),
+                    onHover: (isHovering) {
+        if (isHovering) {
+          setState(() {
+            hoverIndex = i+1; // Add a hover index variable
+          });
+        } else {
+          setState(() {
+            hoverIndex = -1;
+          });
+        }
+      },
+                      child: AnimatedContainer(
+                        duration: Duration(milliseconds: 300),
+                        padding: EdgeInsets.symmetric(vertical: 35),
+                        margin: EdgeInsets.only(left: 10),
+                        decoration: BoxDecoration(
+                          color: i + 1 == selectIndex
+                              ? AppTheme.whiteColor
+                              :  (i+1 == hoverIndex ? Colors.grey[700] : AppTheme.black),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "${formTypes[i + 1]}",
+                            style: GoogleFonts.openSans(
+                              color: i + 1 == selectIndex
+                                  ? AppTheme.black
+                                  : AppTheme.whiteColor,
+                              fontWeight: FontWeight.w600,
+                              fontSize: Constant.smallbheadingText(context),
+                            ),
                           ),
                         ),
                       ),
@@ -1291,7 +1313,8 @@ class _ContactUsState extends State<ContactUs>
         Text(
           "Contact Us",
           style: GoogleFonts.bebasNeue(
-            color: AppTheme.whiteColor, letterSpacing: 6,
+            color: AppTheme.whiteColor,
+            letterSpacing: 6,
             fontWeight: FontWeight.w600,
             fontSize: Constant.headingText(context),
           ),
@@ -1309,18 +1332,17 @@ class _ContactUsState extends State<ContactUs>
                   onTap: () {
                     onTabPress(i);
                   },
-                  
-                  highlightColor: AppTheme.black.withOpacity(0.6),
-                    hoverColor: AppTheme.black.withOpacity(0.6),
+               
                   child: AnimatedContainer(
-                    duration:const Duration(milliseconds: 300),
-                    margin:const EdgeInsets.only(left: 10),
-                    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+                    duration: const Duration(milliseconds: 300),
+                    margin: const EdgeInsets.only(left: 10),
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
                       color: i == selectIndex
                           ? AppTheme.whiteColor
-                          : AppTheme.black,
+                          :  (i == hoverIndex ? Colors.grey[700] : AppTheme.black), // Change color on hover,
                     ),
                     child: Center(
                       child: Text(
