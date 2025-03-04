@@ -114,7 +114,7 @@ class HomeWidgets extends StatelessWidget {
                   "We revolutionize healthcare with rigorous research and bold innovation. By merging expertise across science, technology, and medicine, we create transformative solutions that tackle the world’s most urgent medical challenges, driving scalable, real-world impact ",
                   style: GoogleFonts.openSans(
                       color: const Color.fromARGB(255, 255, 255, 255),
-                      fontSize: Constant.smallbheadingText(context),
+                      fontSize: Constant.TextSize20(context),
                       height: 2.5),
                   textAlign: TextAlign.center,
                 ),

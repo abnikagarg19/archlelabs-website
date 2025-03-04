@@ -54,7 +54,7 @@ class StartedWidget extends StatelessWidget {
               "Archle Labs, founded by Alois Sajo Devasagayam, began taking shape during the COVID-19 pandemic to address critical gaps in healthcare, particularly for the elderly who struggled in isolation without proper support. The vision was deeply influenced by a firsthand experience of witnessing the sacrifices of a devoted caregiver tending to bedridden parents, revealing the silent hardships faced by those dedicating their lives to loved ones. This realization underscored the need for technology-driven solutions that extend beyond patient care to also empower caregivers. ",
               style: GoogleFonts.openSans(
                   color: const Color.fromARGB(255, 255, 255, 255),
-                  fontSize: Constant.smallbheadingText(context),
+                  fontSize: Constant.TextSize20(context),
                   height: 2.5),
               textAlign: TextAlign.center,
             ),
@@ -68,7 +68,7 @@ class StartedWidget extends StatelessWidget {
             "With an initial focus on remote elderly care, the venture gained momentum through the belief and guidance of a mentor-investor, whose untimely passing became a defining moment—transforming a promising idea into an unshakable mission to revolutionize healthcare accessibility. ",
             style: GoogleFonts.openSans(
                  color: const Color.fromARGB(255, 255, 255, 255),
-                fontSize: Constant.smallbheadingText(context),
+                fontSize: Constant.TextSize20(context),
                 height: 2.5),
             textAlign: TextAlign.center,
           ),),
@@ -81,7 +81,7 @@ class StartedWidget extends StatelessWidget {
             "Despite numerous challenges, unwavering commitment propelled the venture forward. The expertise of key stakeholders refined the vision, while insights from medical professionals strengthened solution development. Strategic connections further opened doors to opportunities, enabling structured planning, product refinement, and system design. These collective efforts ultimately led to the creation of advanced, real-world healthcare solutions that bridge the gap between patient needs and caregiver support.",
             style: GoogleFonts.openSans(
                  color: const Color.fromARGB(255, 255, 255, 255),
-                fontSize: Constant.smallbheadingText(context),
+                fontSize: Constant.TextSize20(context),
                 height: 2.5),
             textAlign: TextAlign.center,
           ),),
@@ -94,7 +94,7 @@ class StartedWidget extends StatelessWidget {
             "Now in the product development phase, the company is evolving with a dedicated core-team  committed to pioneering healthcare solutions. Attracting investor interest and strategic partnerships, it remains focused on refining innovations, expanding collaborations, and securing resources for full-scale implementation. What began as a spark of empathy is steadily transforming into a force for change, driven by a resolute commitment to making superior medical care accessible to all.",
             style: GoogleFonts.openSans(
                  color: const Color.fromARGB(255, 255, 255, 255),
-                fontSize: Constant.smallbheadingText(context),
+                fontSize: Constant.TextSize20(context),
                 height: 2.5),
             textAlign: TextAlign.center,
           ),),
