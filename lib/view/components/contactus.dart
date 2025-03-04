@@ -1187,7 +1187,7 @@ class _ContactUsState extends State<ContactUs>
         ),
         for (int i = 0; i < formTypes.length; i += 2)
           Padding(
-            padding: const EdgeInsets.only(bottom: 20),
+            padding: const EdgeInsets.only(bottom: 32),
             child: Row(
               children: [
                 Expanded(
@@ -1198,7 +1198,7 @@ class _ContactUsState extends State<ContactUs>
                   child: AnimatedContainer(
                     duration: Duration(milliseconds: 300),
                     margin: EdgeInsets.only(left: 10),
-                    padding: EdgeInsets.symmetric(vertical: 20),
+                    padding: EdgeInsets.symmetric(vertical: 35),
                     decoration: BoxDecoration(
                    //   borderRadius: BorderRadius.circular(12),
                       color: i == selectIndex
@@ -1228,7 +1228,7 @@ class _ContactUsState extends State<ContactUs>
                     },
                     child: AnimatedContainer(
                       duration: Duration(milliseconds: 300),
-                      padding: EdgeInsets.symmetric(vertical: 20),
+                      padding: EdgeInsets.symmetric(vertical: 35),
                       margin: EdgeInsets.only(left: 10),
                       decoration: BoxDecoration(
                        
@@ -1255,24 +1255,25 @@ class _ContactUsState extends State<ContactUs>
             ),
           ),
         SizedBox(
-          height: 70,
+          height: 100,
         ),
         Text(
           "Contact Us",
-          style: GoogleFonts.openSans(
+          style: GoogleFonts.bebasNeue(
             color: AppTheme.whiteColor,
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w400,
+            letterSpacing: 6,
             fontSize: Constant.headingText(context),
           ),
         ),
         SizedBox(
-          height: 30,
+          height: 16,
         ),
         Text(
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget turpis quis ante condimentum ultrices. Fusce non diam vel mi consequat viverra eget at orci. Fusce non diam vel mi consequat viverra eget at orci.  ",
           style: GoogleFonts.openSans(
             color: AppTheme.whiteColor,
-            fontSize: Constant.mediumbody(context),
+            fontSize: Constant.body(context),
             fontWeight: FontWeight.w300,
           ),
         ),
@@ -1289,8 +1290,8 @@ class _ContactUsState extends State<ContactUs>
         ),
         Text(
           "Contact Us",
-          style: GoogleFonts.openSans(
-            color: AppTheme.whiteColor,
+          style: GoogleFonts.bebasNeue(
+            color: AppTheme.whiteColor, letterSpacing: 6,
             fontWeight: FontWeight.w600,
             fontSize: Constant.headingText(context),
           ),

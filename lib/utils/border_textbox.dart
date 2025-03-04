@@ -76,7 +76,7 @@ class _InputTextFieldMaxlinesState extends State<BorderedTextbox> {
               )),
               
          
-          contentPadding: const EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+          contentPadding: const EdgeInsetsDirectional.fromSTEB(15, 15, 8, 8),
           hintText: widget.hintText,
           
           floatingLabelStyle:

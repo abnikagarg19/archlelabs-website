@@ -38,6 +38,7 @@ class ArticlesWidget extends StatelessWidget {
                
                 width: MediaQuery.sizeOf(context).width,
                 decoration: BoxDecoration(
+                  color: AppTheme.whiteColor,
                     image: DecorationImage(
                         image: AssetImage(
                           "assets/images/art.gif",
@@ -46,9 +47,10 @@ class ArticlesWidget extends StatelessWidget {
                 child: ClipRRect(
                   child: BackdropFilter(
                    
-                    filter: ImageFilter.blur(sigmaX: 15.0, sigmaY: 15.0),
+                    filter: ImageFilter.blur(sigmaX: 30.0, sigmaY: 30.0),
                     child: Center(
                       child: Container(
+                        
                         constraints: BoxConstraints(maxWidth: width),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -75,6 +77,7 @@ class ArticlesWidget extends StatelessWidget {
                                   });
                                 },
                                 child: Flex(
+                                  mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
                                   direction: constraints.maxWidth > 800
                                       ? Axis.horizontal
                                       : Axis.vertical,
@@ -90,13 +93,13 @@ class ArticlesWidget extends StatelessWidget {
                                           children: [
                                             Image.network(
                                               "${_controller.blogsListItems[0].images![0]}",
-                                              height: 250,
+                                              height:constraints.maxWidth > 800?343 :250,
                                               fit: BoxFit.cover,
                                               width: constraints.maxWidth > 800
                                                   ? constraints.maxWidth > 1200
-                                                      ? 500
+                                                      ? 573
                                                       : 300
-                                                  : 220,
+                                                  :null,
                                             ),
                                           ],
                                         )),
@@ -133,7 +136,7 @@ class ArticlesWidget extends StatelessWidget {
                                               style: GoogleFonts.openSans(
                                                   color: AppTheme.black,
                                                   fontSize:
-                                                      Constant.body(context),
+                                                      Constant.TextSize20(context),
                                                   height: 2),
                                             ),
                                           ],
@@ -172,21 +175,21 @@ class ArticlesWidget extends StatelessWidget {
                                         child: Container(
                                           width:
                                               300, // Ensure consistent width for each item
-                                          margin: const EdgeInsets.only(
+                                          margin:  EdgeInsets.only(
                                               right:
-                                                  100), // Add spacing between items
+                                                constraints.maxWidth >800?   200:80), // Add spacing between items
                                           child: Column(
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
                                              Image.network(
                                               "${_controller.blogsListItems[index].images![0]}",
-                                                height: 200,
-                                                width: 300,
+                                                height: 230,
+                                                width: 280,
                                                 fit: BoxFit.cover,
                                               ),
                                               const SizedBox(
-                                                height: 6,
+                                                height: 20,
                                               ),
                                               Text(
                                                 "${_controller.blogsListItems[index].title}",
@@ -200,12 +203,12 @@ class ArticlesWidget extends StatelessWidget {
                                                 overflow: TextOverflow.ellipsis,
                                               ),
                                               const SizedBox(
-                                                height: 6,
+                                                height: 12,
                                               ),
                                               Text(
                                                 "${_controller.blogsListItems[index].subTitle![0]}",
                                                 style: GoogleFonts.openSans(
-                                                  fontWeight: FontWeight.w400,
+                                                  fontWeight: FontWeight.w500,
                                                   color: AppTheme.black,
                                                   fontSize: Constant.smallbody(
                                                       context), 
@@ -221,7 +224,7 @@ class ArticlesWidget extends StatelessWidget {
                                 ),
                               ),
                             SizedBox(
-                              height: 40,
+                              height: 100,
                             ),
                           ],
                         ),

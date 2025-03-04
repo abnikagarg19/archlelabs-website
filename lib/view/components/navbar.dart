@@ -7,25 +7,28 @@ import '../../theme/app_theme.dart';
 import '../../utils/constants.dart';
 import '../../utils/globals.dart';
 
-void _scrollToSection(String section) {
+void scrollToSection(String section) {
   GlobalKey targetKey;
 
   if (section == "About Us") {
     targetKey = Globals.container1Key;
-  } else if (section == "Blog") {
+  } else if (section == "Articles") {
     targetKey = Globals.container2Key;
   } 
   else if (section == "Home") {
     targetKey = Globals.container1Key;
   } 
+   else if (section == "Our Focus") {
+    targetKey = Globals.container4Key;
+  } 
   else {
     targetKey = Globals.container2Key;
   }
 
-  _scrollToContainer(targetKey);
+scrollToContainer(targetKey);
 }
 
-final navLinks = ["Home", "About Us", "Blog", "Contact us"];
+final navLinks = ["Home", "About Us","Our Focus", "Articles", "Contact us"];
 List<Widget> navItem() {
   return navLinks.map((text) {
     return Padding(
@@ -37,12 +40,12 @@ List<Widget> navItem() {
             Get.offAllNamed("/")?.then((_) {
               // Delay ensures that scrolling happens after navigation completes
               Future.delayed(Duration(milliseconds: 300), () {
-                _scrollToSection(text);
+                scrollToSection(text);
               });
             });
           } else {
             // Already on home, just scroll
-            _scrollToSection(text);
+            scrollToSection(text);
           }
         
         },
@@ -56,7 +59,7 @@ List<Widget> navItem() {
   }).toList();
 }
 
-void _scrollToContainer(GlobalKey key) {
+void scrollToContainer(GlobalKey key) {
   final context = key.currentContext;
   if (context != null) {
     Scrollable.ensureVisible(

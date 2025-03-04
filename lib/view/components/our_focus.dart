@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../responsive/layouts.dart';
 import '../../theme/app_theme.dart';
 import '../../utils/constants.dart';
+import '../../utils/globals.dart';
 
 class OurFocus extends StatelessWidget {
    OurFocus({super.key});
@@ -44,6 +45,7 @@ class OurFocus extends StatelessWidget {
   Widget _ourFocus(context, width) {
     return LayoutBuilder(builder: (context, constraints) {
       return Container(
+        key: Globals.container4Key,
         decoration: BoxDecoration(color: Color.fromRGBO(15, 15, 15, 1)),
         width: double.infinity,
         child: Center(
@@ -70,7 +72,7 @@ class OurFocus extends StatelessWidget {
                 ),
                 Align(alignment: Alignment.center,
                   child: Container(
-                    constraints: BoxConstraints(maxWidth: 600),
+                    constraints: BoxConstraints(maxWidth: 700),
                     child: GridView.custom(
                       shrinkWrap: true,
                       physics: NeverScrollableScrollPhysics(),
@@ -82,7 +84,7 @@ class OurFocus extends StatelessWidget {
                             ? 280
                             : ResponsiveLayout.isSmallScreen(context)
                                 ? 290
-                                : 200,
+                                : 336,
                         mainAxisSpacing: 0,
                         
                         crossAxisCount: ResponsiveLayout.isMediumScreen(context) ||
@@ -100,9 +102,10 @@ class OurFocus extends StatelessWidget {
                                     ? Colors.white
                                     : AppTheme.black),
                             padding:
-                                EdgeInsets.symmetric(vertical: 30, horizontal: ResponsiveLayout.isLargeScreen(context)?30: 20),
+                                EdgeInsets.symmetric( horizontal: ResponsiveLayout.isLargeScreen(context)?50: 20),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
                                   "${valuesList[index]["title"]}",
@@ -111,7 +114,7 @@ class OurFocus extends StatelessWidget {
                                     color: index ==1|| index ==2
                                         ? AppTheme.whiteColor
                                         : AppTheme.black,
-                                    fontSize: Constant.mediumbody(context),
+                                    fontSize: Constant.smallbheadingText(context),
                                   ),
                                 ),
                                 const SizedBox(
@@ -124,7 +127,7 @@ class OurFocus extends StatelessWidget {
                                      color: index ==1|| index ==2
                                         ? AppTheme.whiteColor
                                         : AppTheme.black,
-                                    fontSize: 13,
+                                  fontSize: Constant.mediumbody(context),
                                   ),
                                 ),
                               ],

@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+     precacheImage(const AssetImage("assets/images/robo.png"), context);
     precacheImage(const AssetImage('assets/images/about us.gif'), context);
     return GetMaterialApp(
       title: 'Archle Labs',

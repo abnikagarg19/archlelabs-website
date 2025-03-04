@@ -47,6 +47,21 @@ class HomeWidgets extends StatelessWidget {
             child: ListView.separated(
               itemBuilder: (BuildContext context, int index) {
                 return ListTile(
+                  onTap: () {
+                    Get.back();
+                    if (Get.currentRoute != "/") {
+                      // Navigate to home first
+                      Get.offAllNamed("/")?.then((_) {
+                        // Delay ensures that scrolling happens after navigation completes
+                        Future.delayed(Duration(milliseconds: 300), () {
+                          scrollToSection(navLinks[index]);
+                        });
+                      });
+                    } else {
+                      // Already on home, just scroll
+                      scrollToSection(navLinks[index]);
+                    }
+                  },
                   title: Text(
                     navLinks[index],
                     style: TextStyle(
@@ -104,8 +119,8 @@ class HomeWidgets extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
-            
-              StartedWidget(),  OurFocus(),
+              StartedWidget(),
+              OurFocus(),
               AboutusWidget(),
               TeamWidget(),
               ArticlesWidget(),

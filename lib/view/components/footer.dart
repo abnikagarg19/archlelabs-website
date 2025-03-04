@@ -82,7 +82,7 @@ class Footer extends StatelessWidget {
                             "Collaboration Starts here",
                             style: GoogleFonts.openSans(
                               color: AppTheme.whiteColor,
-                              fontSize: Constant.textFourty(context),
+                              fontSize: Constant.textFourtyEight(context),
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -93,7 +93,7 @@ class Footer extends StatelessWidget {
                             "Innovators, interns, or investors—let’s create together",
                             style: GoogleFonts.openSans(
                               color: AppTheme.whiteColor,
-                              fontSize: Constant.mediumbody(context),
+                              fontSize: Constant.smallbheadingText(context),
                               fontWeight: FontWeight.w300,
                             ),
                           ),
@@ -134,14 +134,14 @@ class Footer extends StatelessWidget {
                                 "  +91 9444725511",
                                 style: GoogleFonts.openSans(
                                   color: AppTheme.whiteColor,
-                                  fontSize: Constant.mediumbody(context),
+                                  fontSize: Constant.body(context),
                                   fontWeight: FontWeight.w300,
                                 ),
                               ),
                             ],
                           ),
                           SizedBox(
-                            height: 20,
+                            height: 24,
                           ),
                           Text(
                             "Connect on socials",
@@ -152,16 +152,16 @@ class Footer extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            height: 10,
+                            height: 32,
                           ),
                           Row(
                             children: [
                               SvgPicture.asset(
                                 "assets/images/Vector.svg",
-                                height: 20,
+                                height: 36,
                               ),
                               SizedBox(
-                                width: 30,
+                                width: 24,
                               ),
                               InkWell(
                                 onTap: () {
@@ -170,11 +170,11 @@ class Footer extends StatelessWidget {
                                 },
                                 child: SvgPicture.asset(
                                   "assets/images/linkedin.svg",
-                                  height: 20,
+                                  height: 36,
                                 ),
                               ),
                               SizedBox(
-                                width: 30,
+                                width: 24,
                               ),
                               InkWell(
                                 onTap: () {
@@ -183,7 +183,7 @@ class Footer extends StatelessWidget {
                                 },
                                 child: SvgPicture.asset(
                                   "assets/images/insta.svg",
-                                  height: 20,
+                                  height: 36,
                                 ),
                               ),
                             ],
@@ -201,25 +201,26 @@ class Footer extends StatelessWidget {
                             : MainAxisAlignment.start,
                         children: [
                           Expanded(
-                            child: Column(crossAxisAlignment: CrossAxisAlignment.end,
+                            child: Column(crossAxisAlignment:constraints.maxWidth > 800? CrossAxisAlignment.end:CrossAxisAlignment.start,
+                          
                               children: [
                                 SizedBox(
                                   height: 40,
                                 ),
-                                Align(
-                                  alignment: Alignment.topRight,
-                                  child: Image.asset(
-                                    "assets/images/logo.png",
-                                    height:
-                                        constraints.maxWidth > 800 ? 120 : 70,
-                                    fit: BoxFit.cover,
-                                    width:
-                                        constraints.maxWidth > 800 ? null : 150,
-                                  ),
+                                Image.asset(
+                                  "assets/images/logo.png",
+                                  height:
+                                      constraints.maxWidth > 800 ? 150 : 70,
+                                  fit: BoxFit.cover,
+                                  width:
+                                      constraints.maxWidth > 800 ? null : 150,
+                                ),SizedBox(
+                                  height: 40,
                                 ),
                                 Image.asset(
                                   "assets/images/skill4.png",
-                                  height: 80,
+                               height:
+                                        constraints.maxWidth > 800 ? 120 : 70,
                                   fit: BoxFit.cover,
                                   //  width: constraints.maxWidth > 800 ? null : 150,
                                 ),
@@ -228,7 +229,8 @@ class Footer extends StatelessWidget {
                                 ),
                                 Image.asset(
                                   "assets/images/skill3.png",
-                                  height: 50,
+                                  height:
+                                        constraints.maxWidth > 800 ? 100 : 60,
                                   fit: BoxFit.cover,
                                   //  width: constraints.maxWidth > 800 ? null : 150,
                                 ),
@@ -237,7 +239,8 @@ class Footer extends StatelessWidget {
                                 ),
                                 Image.asset(
                                   "assets/images/skill2.png",
-                                  height: 80,
+                                   height:
+                                        constraints.maxWidth > 800 ? 120 : 70,
                                   fit: BoxFit.cover,
                                   //  width: constraints.maxWidth > 800 ? null : 150,
                                 ),

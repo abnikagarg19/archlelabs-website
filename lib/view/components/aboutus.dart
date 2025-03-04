@@ -14,7 +14,7 @@ class AboutusWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsiveLayout(
-      largeScreen: _aboutus(context, 1200.0),
+      largeScreen: _aboutus(context, 1230.0),
       // We will make this in a bit
       smallScreen: _aboutus(context, MediaQuery.of(context).size.width * .9),
       mediumScreen: _aboutus(context, 770.0),
@@ -75,13 +75,18 @@ class AboutusWidget extends StatelessWidget {
         child: Stack(
           children: [
             // Background GIF
-            Positioned.fill(
+            Positioned(
+              top: 0,
+              bottom:500,
+              right:0,
+              left:0,
               child: Image.asset(
-                "assets/images/about us.gif",
+                "assets/images/about.gif",
                 fit: BoxFit.cover,
-                alignment: Alignment.topCenter,
-                opacity: AlwaysStoppedAnimation(0.3),
-                //  color: const Color.fromARGB(42, 255, 255, 255),
+            opacity: AlwaysStoppedAnimation(0.4),
+                alignment: Alignment.bottomRight,
+              
+                
               ),
             ),
 
@@ -89,7 +94,7 @@ class AboutusWidget extends StatelessWidget {
             Positioned.fill(
               child: Image.asset(
                 "assets/images/gradient.png",
-                alignment: Alignment.bottomLeft,
+              //  alignment: Alignment.bottomLeft,
                 fit: BoxFit.cover,
               ),
             ),
@@ -115,14 +120,14 @@ class AboutusWidget extends StatelessWidget {
                                 fit: BoxFit.fitHeight,
                               ),
                               Positioned(
-                                top: 200,
-                                right: -250,
+                                top: 120,
+                                right: -370,
                                 child: Text(
                                   "About Us",
                                   style: GoogleFonts.openSans(
                                     color: AppTheme.black,
                                     fontWeight: FontWeight.w600,
-                                    fontSize: Constant.mainHeading(context),
+                                    fontSize: Constant.bigFont94(context),
                                     letterSpacing: 3,
                                   ),
                                 ),
@@ -136,14 +141,14 @@ class AboutusWidget extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const SizedBox(height: 200),
+                              const SizedBox(height: 180),
                               if (constraints.maxWidth < 800)
                                 Text(
                                   "About Us",
                                   style: GoogleFonts.openSans(
                                     color: AppTheme.black,
                                     fontWeight: FontWeight.w600,
-                                    fontSize: Constant.mainHeading(context),
+                                    fontSize: Constant.bigFont94(context),
                                     letterSpacing: 3,
                                   ),
                                 ),
@@ -152,7 +157,7 @@ class AboutusWidget extends StatelessWidget {
                                 "Archle Labs is an advanced research center for health and life sciences engineering, committed to revolutionizing the healthcare field. We combine cutting-edge technology, interdisciplinary expertise fueled by  unwavering passion for innovation to tackle the world’s most pressing medical challenges. By developing novel solutions and services, we aim to elevate human health, enhance patient outcomes, and transform global healthcare practices.",
                                 style: GoogleFonts.openSans(
                                   color: AppTheme.black,
-                                  fontSize: Constant.mediumbody(context),
+                                  fontSize: Constant.TextSize20(context),
                                   height: 1.5,
                                 ),
                               ),
@@ -171,7 +176,7 @@ class AboutusWidget extends StatelessWidget {
                             "To revolutionize medical science, forging a future where no challenge is insurmountable and every life thrives.",
                         constraints: constraints,
                         context: context),
-                    const SizedBox(height: 30),
+                    const SizedBox(height: 50),
                     Text(
                       "Our Values",
                       style: GoogleFonts.bebasNeue(
@@ -179,7 +184,7 @@ class AboutusWidget extends StatelessWidget {
                         fontSize: Constant.subheadingText(context),
                         letterSpacing: 5,
                       ),
-                    ),  const SizedBox(height: 20),
+                    ),  const SizedBox(height: 50),
                     GridView.custom(
                       shrinkWrap: true,
                       physics: NeverScrollableScrollPhysics(),
@@ -230,7 +235,7 @@ class AboutusWidget extends StatelessWidget {
                                     color: index % 2 == 0
                                         ? AppTheme.whiteColor
                                         : AppTheme.black,
-                                    fontSize: 13,
+                                    fontSize: 12,
                                   ),
                                 ),
                               ],
@@ -240,7 +245,7 @@ class AboutusWidget extends StatelessWidget {
                       ),
                     ),
                  SizedBox(
-                      height: 40,
+                      height: 80,
                     ),
                     Text(
                       "Our team of scientists, engineers, and healthcare professionals works collaboratively to expand the horizons of diagnostics, therapeutics, and primary care services/ comprehensive care services. Through rigorous research, forward-thinking partnerships, and a relentless drive for breakthroughs, we continuously push the boundaries of healthcare and medical science—creating transformative technologies that will redefine patient care worldwide.",
@@ -252,7 +257,7 @@ class AboutusWidget extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(
-                      height: 40,
+                      height: 80,
                     ),
                   ],
                 ),
@@ -280,7 +285,7 @@ class AboutusWidget extends StatelessWidget {
                 ? buildTextBigContent(title, description, context)
                 : buildTextSmallContent(title, description, context),
           ),
-          SizedBox(width: 40), // Optional spacing between text and image
+          SizedBox(width: 60), // Optional spacing between text and image
           Expanded(
             // Ensures the image respects the size constraints
 
@@ -309,7 +314,7 @@ class AboutusWidget extends StatelessWidget {
           description,
           style: GoogleFonts.openSans(
             color: AppTheme.black,
-            fontSize: Constant.mediumbody(context),
+            fontSize: Constant.TextSize20(context),
             height: 1.5,
           ),
         ),
@@ -327,7 +332,7 @@ class AboutusWidget extends StatelessWidget {
           "Our mission is to harness rigorous, interdisciplinary research and advanced engineering methodologies to drive transformative solutions for complex healthcare challenges—ultimately fostering equitable access and vibrant global health.",
           style: GoogleFonts.openSans(
             color: AppTheme.black,
-            fontSize: Constant.mediumbody(context),
+            fontSize: Constant.TextSize20(context),
             height: 1.5,
           ),
         ),
