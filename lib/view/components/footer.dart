@@ -158,7 +158,7 @@ class Footer extends StatelessWidget {
                             children: [
                               SvgPicture.asset(
                                 "assets/images/Vector.svg",
-                                height: 36,
+                                height: 24,
                               ),
                               SizedBox(
                                 width: 24,
@@ -170,7 +170,7 @@ class Footer extends StatelessWidget {
                                 },
                                 child: SvgPicture.asset(
                                   "assets/images/linkedin.svg",
-                                  height: 36,
+                                  height: 24,
                                 ),
                               ),
                               SizedBox(
@@ -183,7 +183,7 @@ class Footer extends StatelessWidget {
                                 },
                                 child: SvgPicture.asset(
                                   "assets/images/insta.svg",
-                                  height: 36,
+                                  height: 24,
                                 ),
                               ),
                             ],
