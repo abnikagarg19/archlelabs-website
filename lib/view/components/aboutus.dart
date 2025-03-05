@@ -254,7 +254,7 @@ class AboutusWidget extends StatelessWidget {
                         fontSize: Constant.mediumbody(context),
                         height: 2,
                       ),
-                      textAlign: TextAlign.center,
+                    
                     ),
                     SizedBox(
                       height: 80,
