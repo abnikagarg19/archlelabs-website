@@ -56,7 +56,7 @@ class StartedWidget extends StatelessWidget {
                   color: const Color.fromARGB(255, 255, 255, 255),
                   fontSize: Constant.TextSize20(context),
                   height: 2.5),
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.start,
             ),
           ),
           SizedBox(
@@ -70,7 +70,7 @@ class StartedWidget extends StatelessWidget {
                  color: const Color.fromARGB(255, 255, 255, 255),
                 fontSize: Constant.TextSize20(context),
                 height: 2.5),
-            textAlign: TextAlign.center,
+            textAlign: TextAlign.start,
           ),),
            SizedBox(
             height: 30,
@@ -83,7 +83,7 @@ class StartedWidget extends StatelessWidget {
                  color: const Color.fromARGB(255, 255, 255, 255),
                 fontSize: Constant.TextSize20(context),
                 height: 2.5),
-            textAlign: TextAlign.center,
+           textAlign: TextAlign.start,
           ),),
            SizedBox(
             height: 30,
@@ -96,7 +96,7 @@ class StartedWidget extends StatelessWidget {
                  color: const Color.fromARGB(255, 255, 255, 255),
                 fontSize: Constant.TextSize20(context),
                 height: 2.5),
-            textAlign: TextAlign.center,
+            textAlign: TextAlign.start,
           ),),
           
            SizedBox(

@@ -95,7 +95,7 @@ class _TeamWidgetState extends State<TeamWidget> {
                                       ? 220
                                       : ResponsiveLayout.isSmallScreen(context)
                                           ? 280
-                                          : 329;
+                                          : 320;
                               return GestureDetector(
                                 onTap: () {},
                                 child: Column(
@@ -164,6 +164,7 @@ class _TeamWidgetState extends State<TeamWidget> {
                                                             216, 252, 248, 248),
                                                         fontSize: 12,
                                                         height: 2),
+                                                      
                                                   ),
                                                 ),
                                               ),
@@ -180,8 +181,8 @@ class _TeamWidgetState extends State<TeamWidget> {
                                       style: GoogleFonts.openSans(
                                         fontWeight: FontWeight.w600,
                                         color: AppTheme.whiteColor,
-                                        fontSize: Constant.TextSize20(context),
-                                      ),
+                                        fontSize: Constant.body(context),
+                                      ),  maxLines: 1,
                                     ),
                                     SizedBox(
                                       height: 6,
@@ -203,7 +204,7 @@ class _TeamWidgetState extends State<TeamWidget> {
                                             color: const Color.fromARGB(
                                                 214, 233, 233, 233),
                                             fontSize:
-                                                Constant.smallbody(context),
+                                                Constant.mediumbody(context),
                                           ),
                                         ),
                                       ],

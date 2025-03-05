@@ -60,9 +60,30 @@ class _ContactUsState extends State<ContactUs>
   final pressFormKey = GlobalKey<FormState>();
   final inestFormQuery = GlobalKey<FormState>();
 
-  int selectIndex = 3;
+  int selectIndex = 0;
   int hoverIndex = -1;
-  final formTypes = ["Hire", "Investors", "Press release", "Queries"];
+  final formTypes = [
+    {
+      "title": "Queries",
+      "des":
+          "Collaborate with Archle Labs to pioneer cutting-edge advancements in health and life sciences. Together, we can redefine the future of healthcare through innovation, research, and transformative solutions."
+    },
+    {
+      "title": "Investors",
+      "des":
+          "Partner with Archle Labs to redefine patient care through cutting-edge innovation. Invest in transformative innovations that redefine healthcare and create lasting global impact."
+    },
+    {
+      "title": "Press release",
+      "des":
+          "Collaborate with Archle Labs to pioneer cutting-edge advancements in health and life sciences. Together, we can redefine the future of healthcare through innovation, research, and transformative solutions."
+    },
+    {
+      "title": "Hire",
+      "des":
+          "Advance your career with Archle Labs and be at the forefront of innovation in health and life sciences. Join a team of visionary researchers,doctors  and engineers shaping the future of healthcare through groundbreaking discoveries."
+    },
+  ];
 
   Widget _widget(
     context,
@@ -118,13 +139,13 @@ class _ContactUsState extends State<ContactUs>
   buildSwitchForms(context) {
     switch (selectIndex) {
       case 0:
-        return buildHireForm(context);
+        return buildQueryForm(context);
       case 1:
         return buildInvestorForm(context);
       case 3:
         return buildPressRelease(context);
       default:
-        return buildQueryForm(context);
+        return buildHireForm(context);
     }
   }
 
@@ -146,7 +167,7 @@ class _ContactUsState extends State<ContactUs>
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "${formTypes[selectIndex]}",
+                      "${formTypes[selectIndex]["title"]}",
                       style: GoogleFonts.openSans(
                         color: AppTheme.black,
                         fontWeight: FontWeight.w600,
@@ -382,7 +403,7 @@ class _ContactUsState extends State<ContactUs>
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "${formTypes[selectIndex]}",
+                      "${formTypes[selectIndex]["title"]}",
                       style: GoogleFonts.openSans(
                         color: AppTheme.black,
                         fontWeight: FontWeight.w600,
@@ -612,7 +633,7 @@ class _ContactUsState extends State<ContactUs>
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "${formTypes[selectIndex]}",
+                      "${formTypes[selectIndex]["title"]}",
                       style: GoogleFonts.openSans(
                         color: AppTheme.black,
                         fontWeight: FontWeight.w600,
@@ -1207,7 +1228,7 @@ class _ContactUsState extends State<ContactUs>
                     child: AnimatedContainer(
                       duration: Duration(milliseconds: 300),
                       margin: EdgeInsets.only(left: 10),
-                      padding: EdgeInsets.symmetric(vertical: 25),
+                      padding: EdgeInsets.symmetric(vertical: 20),
                       decoration: BoxDecoration(
                         //   borderRadius: BorderRadius.circular(12),
                         color: i == selectIndex
@@ -1218,7 +1239,7 @@ class _ContactUsState extends State<ContactUs>
                       ),
                       child: Center(
                         child: Text(
-                          "${formTypes[i]}",
+                          "${formTypes[i]["title"]}",
                           style: GoogleFonts.openSans(
                             color: i == selectIndex
                                 ? AppTheme.black
@@ -1253,7 +1274,7 @@ class _ContactUsState extends State<ContactUs>
                       },
                       child: AnimatedContainer(
                         duration: Duration(milliseconds: 300),
-                        padding: EdgeInsets.symmetric(vertical: 25),
+                        padding: EdgeInsets.symmetric(vertical: 20),
                         margin: EdgeInsets.only(left: 10),
                         decoration: BoxDecoration(
                           color: i + 1 == selectIndex
@@ -1264,7 +1285,7 @@ class _ContactUsState extends State<ContactUs>
                         ),
                         child: Center(
                           child: Text(
-                            "${formTypes[i + 1]}",
+                            "${formTypes[i + 1]["title"]}",
                             style: GoogleFonts.openSans(
                               color: i + 1 == selectIndex
                                   ? AppTheme.black
@@ -1297,8 +1318,7 @@ class _ContactUsState extends State<ContactUs>
           height: 16,
         ),
         Text(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget turpis quis ante condimentum ultrices. Fusce non diam vel mi consequat viverra eget at orci. Fusce non diam vel mi consequat viverra eget at orci.  ",
-          style: GoogleFonts.openSans(
+         "${formTypes[selectIndex]["des"]}",  style: GoogleFonts.openSans(
             color: AppTheme.whiteColor,
             fontSize: Constant.body(context),
             fontWeight: FontWeight.w300,
@@ -1352,7 +1372,7 @@ class _ContactUsState extends State<ContactUs>
                     ),
                     child: Center(
                       child: Text(
-                        "${formTypes[i]}",
+                        "${formTypes[i]["title"]}",
                         style: GoogleFonts.openSans(
                           color: i == selectIndex
                               ? AppTheme.black
