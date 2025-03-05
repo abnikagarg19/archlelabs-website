@@ -28,7 +28,7 @@ void scrollToSection(String section) {
 scrollToContainer(targetKey);
 }
 
-final navLinks = ["Home", "About Us","Our Focus", "Articles", "Contact us"];
+final navLinks = ["Home", "Our Focus","About Us", "Articles", "Contact us"];
 List<Widget> navItem() {
   return navLinks.map((text) {
     return Padding(
