@@ -146,7 +146,7 @@ class OurFocus extends StatelessWidget {
                   style: GoogleFonts.openSans(
                     color: AppTheme.whiteColor,
                     fontWeight: FontWeight.w700,
-                    fontSize: Constant.mediumbody(context),
+                    fontSize: Constant.smallbheadingText(context),
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -155,7 +155,7 @@ class OurFocus extends StatelessWidget {
                   style: GoogleFonts.openSans(
                     color: AppTheme.whiteColor,
                     fontWeight: FontWeight.w400,
-                    fontSize: Constant.mediumbody(context),
+                    fontSize: Constant.TextSize20(context),
                     height: 1.5,
                   ),
                 ),
@@ -167,7 +167,7 @@ class OurFocus extends StatelessWidget {
                   style: GoogleFonts.openSans(
                     color: AppTheme.whiteColor,
                     fontWeight: FontWeight.w700,
-                    fontSize: Constant.mediumbody(context),
+                    fontSize: Constant.smallbheadingText(context),
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -176,7 +176,7 @@ class OurFocus extends StatelessWidget {
                   style: GoogleFonts.openSans(
                     color: AppTheme.whiteColor,
                     fontWeight: FontWeight.w400,
-                    fontSize: Constant.mediumbody(context),
+                    fontSize: Constant.TextSize20(context),
                     height: 1.5,
                   ),
                 ),

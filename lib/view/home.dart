@@ -5,6 +5,7 @@ import 'package:archlelabswebsite/utils/constants.dart';
 import 'package:archlelabswebsite/view/components/navbar.dart';
 import 'package:archlelabswebsite/view/components/team.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../utils/globals.dart';
@@ -16,10 +17,18 @@ import 'components/footer.dart';
 import 'components/our_focus.dart';
 import 'components/started_widget.dart';
 
-class HomeWidgets extends StatelessWidget {
+class HomeWidgets extends StatefulWidget {
   HomeWidgets({super.key});
+
+  @override
+  State<HomeWidgets> createState() => _HomeWidgetsState();
+}
+
+class _HomeWidgetsState extends State<HomeWidgets> {
   String robotimage = "assets/images/robo.png";
+
   final _controller = Get.put<HomeController>(HomeController());
+bool isloaded=false;
   void _scrollToContainer(GlobalKey key) {
     final context = key.currentContext;
     if (context != null) {
@@ -30,7 +39,22 @@ class HomeWidgets extends StatelessWidget {
       );
     }
   }
-
+     final _image = AssetImage('assets/images/robo.png');
+@override
+  void initState() {
+    super.initState();
+     Future.delayed(Duration(milliseconds: 300), () {
+               setState(() {
+                 isloaded =true;
+               });
+              });
+    // Add your own initState code here
+  }
+@override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    precacheImage(_image, context);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,7 +104,7 @@ class HomeWidgets extends StatelessWidget {
           ),
         ),
       ),
-      body: SingleChildScrollView(
+      body: !isloaded? Center(child: CircularProgressIndicator(color: Colors.white,),) :SingleChildScrollView(
         controller: Globals.scrollController,
         child: Center(
           child: Column(
@@ -89,21 +113,19 @@ class HomeWidgets extends StatelessWidget {
               SizedBox(
                 height: 120,
               ),
-              ParallaxWidget(
-                movementFactor: 0.5, // Adjust movement factor as desired
-                child: Text(
-                  "Unlocking the future\nof Innovations",
-                  style: GoogleFonts.bebasNeue(
-                      color: AppTheme.whiteColor,
-                      height: 1.5,
-                      fontSize: Constant.mainHeading(context),
-                      letterSpacing: 5),
-                  textAlign: TextAlign.center,
-                ),
+              Text(
+                "Unlocking the future\nof Innovations",
+                style: TextStyle(
+                    color: AppTheme.whiteColor,
+                    height: 1.5,
+                    fontSize: Constant.mainHeading(context),
+                    letterSpacing: 5),
+                textAlign: TextAlign.center,
               ),
-              Image.asset(
-                robotimage,
-                key: ValueKey(robotimage),
+              Image(
+                image: _image,
+                gaplessPlayback: true,
+               // key: ValueKey(robotimage),
                 fit: BoxFit.cover,
               ),
               Container(

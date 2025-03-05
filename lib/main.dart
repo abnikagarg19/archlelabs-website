@@ -5,7 +5,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'routes/app_routes.dart';
 import 'view/components/speech.dart';
 import 'package:get/get.dart';
-void main() {
+Future<void> main() async { WidgetsFlutterBinding.ensureInitialized();
+  await Future.delayed(const Duration(milliseconds: 400));
+
   runApp(const MyApp());
 }
 
@@ -21,7 +23,8 @@ class MyApp extends StatelessWidget {
       title: 'Archle Labs',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: GoogleFonts.openSans().fontFamily,
+       // fontFamily: GoogleFonts.bebasNeue().fontFamily,
+        fontFamily: 'Bebasnue',
         useMaterial3: false,
       ),
        getPages:appRoutes(),
