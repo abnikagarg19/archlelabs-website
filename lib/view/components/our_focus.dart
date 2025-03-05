@@ -143,9 +143,9 @@ class OurFocus extends StatelessWidget {
                 ),
                 Text(
                   "Cutting-Edge Research",
-                  style: GoogleFonts.openSans(
+                  style: GoogleFonts.bebasNeue(
                     color: AppTheme.whiteColor,
-                    fontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.w500,  letterSpacing: 5,
                     fontSize: Constant.smallbheadingText(context),
                   ),
                 ),
@@ -154,7 +154,7 @@ class OurFocus extends StatelessWidget {
                   "We blend interdisciplinary thinking and frontier technologies to accelerate breakthroughs in diagnostics, therapeutics, and primary care.",
                   style: GoogleFonts.openSans(
                     color: AppTheme.whiteColor,
-                    fontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.w300,
                     fontSize: Constant.TextSize20(context),
                     height: 1.5,
                   ),
@@ -164,21 +164,19 @@ class OurFocus extends StatelessWidget {
                 ),
                 Text(
                   "Global Impact through equitable health",
-                  style: GoogleFonts.openSans(
+                  style: GoogleFonts.bebasNeue(
                     color: AppTheme.whiteColor,
-                    fontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.w500,  letterSpacing: 5,
                     fontSize: Constant.smallbheadingText(context),
                   ),
                 ),
                 const SizedBox(height: 10),
                 Text(
                   "Redefine healthcare with scalable, sustainable models that transcend financial and geographical barriers. By fusing advanced technology with a human-first approach, we close critical gaps in access, delivering equitable, high-impact medical solutions.",
-                  style: GoogleFonts.openSans(
-                    color: AppTheme.whiteColor,
-                    fontWeight: FontWeight.w400,
-                    fontSize: Constant.TextSize20(context),
-                    height: 1.5,
-                  ),
+                  style:  GoogleFonts.openSans( fontWeight: FontWeight.w300,
+                 color: const Color.fromARGB(255, 255, 255, 255),
+                fontSize: Constant.TextSize20(context),
+                height: 1.5),
                 ),
                 SizedBox(
                   height: 50,

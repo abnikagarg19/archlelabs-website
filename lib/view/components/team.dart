@@ -79,14 +79,14 @@ class _TeamWidgetState extends State<TeamWidget> {
       "des":
           "I design with empathy, curiosity, and just the right amount of obsession over the tiniest details. As a self-taught UX designer, I love decoding human behavior and transforming complex ideas into seamless, intuitive experiences. When I'm not crafting digital interfaces, you’ll find me lost in books about psychology, experimenting with colors, or perfecting my legendary rajma chawal recipe that is certified best by my family. I believe great design isn’t just about how things look, it’s about how they make people feel."
     },
-     {
-      "name": "Abnika Garg",
-      "designation": "Flutter Developer",
-      "linkedin": "https://www.linkedin.com/in/abnika-garg-135b0a165/",
-      "image": "assets/team/abnika.jpeg",
-      "des":
-          "I build sleek, high-performing apps with Flutter while keeping the backend running smoothly ensuring great user experience. With four years of experience and a B.Tech in ECE, I specialize in crafting responsive UIs, real-time features, and powerful APIs. When I’m not coding, I’m exploring new tech, solving puzzles, or on a never-ending quest to build something truly surprising."
-    },
+    //  {
+    //   "name": "Abnika Garg",
+    //   "designation": "Flutter Developer",
+    //   "linkedin": "https://www.linkedin.com/in/abnika-garg-135b0a165/",
+    //   "image": "assets/team/abnika.jpeg",
+    //   "des":
+    //       "I build sleek, high-performing apps with Flutter while keeping the backend running smoothly ensuring great user experience. With four years of experience and a B.Tech in ECE, I specialize in crafting responsive UIs, real-time features, and powerful APIs. When I’m not coding, I’m exploring new tech, solving puzzles, or on a never-ending quest to build something truly surprising."
+    // },
     {
       "name": "Dr.Suneera C M",
       "designation": "Principle NLP Scientist",

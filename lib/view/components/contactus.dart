@@ -98,6 +98,7 @@ class _ContactUsState extends State<ContactUs>
                   image: AssetImage(
                     "assets/images/contact.png",
                   ),
+                  opacity: 0.5,
                   fit: BoxFit.fill)),
           child: Center(
             child: Container(
