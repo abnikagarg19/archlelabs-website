@@ -15,6 +15,7 @@ import 'components/articles.dart';
 import 'components/contactus.dart';
 import 'components/footer.dart';
 import 'components/our_focus.dart';
+import 'components/started_widget.dart';
 
 class HomeWidgets extends StatefulWidget {
   HomeWidgets({super.key});
@@ -25,7 +26,7 @@ class HomeWidgets extends StatefulWidget {
 
 class _HomeWidgetsState extends State<HomeWidgets> {
   String robotimage = "assets/images/robo.png";
-
+  String robotimage2 = "assets/images/robohover.png";
   final _controller = Get.put<HomeController>(HomeController());
   bool isloaded = false;
   void _scrollToContainer(GlobalKey key) {
@@ -90,6 +91,8 @@ class _HomeWidgetsState extends State<HomeWidgets> {
   }
 
   final _image = AssetImage('assets/images/robo.png');
+  final _image2 = AssetImage('assets/images/robohover.png');
+
   @override
   void initState() {
     super.initState();
@@ -105,127 +108,212 @@ class _HomeWidgetsState extends State<HomeWidgets> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     precacheImage(_image, context);
+    precacheImage(_image2, context);
+  }
+
+  double offset = 0;
+  bool updateOffsetAccordingToScroll(ScrollNotification scrollNotification) {
+    setState(() => offset = scrollNotification.metrics.pixels);
+    print(scrollNotification.metrics.pixels);
+    return true;
   }
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: AppTheme.black,
-      key: Globals.scaffoldKey,
-      appBar: PreferredSize(
-        
-        preferredSize: Size.fromHeight(90),
-        child: AppBar(
-          automaticallyImplyLeading: false,
-
-        actions: <Widget>[Container()],
-            toolbarHeight: 90.0,
-            backgroundColor: Colors.transparent,
-            title: ResponsiveLayout(
-              largeScreen: buildHeader(),
-              // We will make this in a bit
-              smallScreen: buildMobileHeader(),
-              mediumScreen: buildHeader(),
-            )),
-      ),
-      endDrawer: Drawer(
         backgroundColor: AppTheme.black,
-        child: SafeArea(
-          child: Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 16.0,
-              vertical: 24.0,
-            ),
-            child: ListView.separated(
-              itemBuilder: (BuildContext context, int index) {
-                return ListTile(
-                  onTap: () {
-                    Get.back();
-                    if (Get.currentRoute != "/") {
-                      // Navigate to home first
-                      Get.offAllNamed("/")?.then((_) {
-                        // Delay ensures that scrolling happens after navigation completes
-                        Future.delayed(Duration(milliseconds: 300), () {
-                          scrollToSection(navLinks[index]);
+        key: Globals.scaffoldKey,
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(90),
+          child: AppBar(
+              automaticallyImplyLeading: false,
+              actions: <Widget>[Container()],
+              toolbarHeight: 90.0,
+              backgroundColor: Colors.transparent,
+              title: ResponsiveLayout(
+                largeScreen: buildHeader(),
+                // We will make this in a bit
+                smallScreen: buildMobileHeader(),
+                mediumScreen: buildHeader(),
+              )),
+        ),
+        endDrawer: Drawer(
+          backgroundColor: AppTheme.black,
+          child: SafeArea(
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 16.0,
+                vertical: 24.0,
+              ),
+              child: ListView.separated(
+                itemBuilder: (BuildContext context, int index) {
+                  return ListTile(
+                    onTap: () {
+                      Get.back();
+                      if (Get.currentRoute != "/") {
+                        // Navigate to home first
+                        Get.offAllNamed("/")?.then((_) {
+                          // Delay ensures that scrolling happens after navigation completes
+                          Future.delayed(Duration(milliseconds: 300), () {
+                            scrollToSection(navLinks[index]);
+                          });
                         });
-                      });
-                    } else {
-                      // Already on home, just scroll
-                      scrollToSection(navLinks[index]);
-                    }
-                  },
-                  title: Text(
-                    navLinks[index],
-                    style: TextStyle(
-                      color: Colors.white,
+                      } else {
+                        // Already on home, just scroll
+                        scrollToSection(navLinks[index]);
+                      }
+                    },
+                    title: Text(
+                      navLinks[index],
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
                     ),
-                  ),
-                );
-              },
-              separatorBuilder: (BuildContext context, int index) {
-                return SizedBox(
-                  height: 10.0,
-                );
-              },
-              itemCount: navLinks.length,
+                  );
+                },
+                separatorBuilder: (BuildContext context, int index) {
+                  return SizedBox(
+                    height: 10.0,
+                  );
+                },
+                itemCount: navLinks.length,
+              ),
             ),
           ),
         ),
-      ),
-      body: !isloaded
-          ? Center(
-              child: CircularProgressIndicator(
-                color: Colors.white,
-              ),
-            )
-          : SingleChildScrollView(
-              controller: Globals.scrollController,
-              child: Center(
-                child: Column(
-                  children: <Widget>[
-                 //   Header(),
-                    SizedBox(
-                      height: 80,
-                    ),
-                    Text(
-                      "Unlocking the future\nof Innovations",
-                      style: TextStyle(
-                          color: AppTheme.whiteColor,
-                          height: 1.5,
-                          fontSize: Constant.mainHeading(context),
-                          letterSpacing: 5),
-                      textAlign: TextAlign.center,
-                    ),
-                    Image(
-                      image: _image,
-                      gaplessPlayback: true,
-                      // key: ValueKey(robotimage),
-                      fit: BoxFit.cover,
-                    ),
-                    Container(
-                      margin: EdgeInsets.symmetric(vertical: 40),
-                      constraints: BoxConstraints(
-                          maxWidth: MediaQuery.of(context).size.width * .8),
-                      child: Text(
-                        "We revolutionize healthcare with rigorous research and bold innovation. By merging expertise across science, technology, and medicine, we create transformative solutions that tackle the world’s most urgent medical challenges, driving scalable, real-world impact ",
-                        style: GoogleFonts.openSans(
-                            color: const Color.fromARGB(255, 255, 255, 255),
-                            fontSize: Constant.TextSize20(context),
-                            height: 2.5),
-                        textAlign: TextAlign.center,
+        body: !isloaded
+            ? Center(
+                child: CircularProgressIndicator(
+                  color: Colors.white,
+                ),
+              )
+            : NotificationListener<ScrollNotification>(
+                // When user scrolls, this will trigger onNotification.
+                // updateOffsetAccordingToScroll updates the offset
+                onNotification: updateOffsetAccordingToScroll,
+                child: Stack(
+                  children: [
+                    Positioned(
+                      // The hero image will be pushed up once user scrolls up
+                      // That is why it is multiplied negatively.
+                      top: -.35 * offset,
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: 80,
+                          ),
+                          Text(
+                            "Unlocking the future\nof Innovations",
+                            style: TextStyle(
+                                color: AppTheme.whiteColor,
+                                height: 1.5,
+                                fontSize: Constant.mainHeading(context),
+                                letterSpacing: 5),
+                            textAlign: TextAlign.center,
+                          )
+                              .animate(delay: 0.ms, )
+                              .moveY(
+                                  begin: 80,
+                                  end: 0,
+                                  duration: 400.ms,
+                                  curve: Curves.linear)
+                              .fadeIn(),
+                          Opacity(
+                            opacity: (offset / 300)
+                                .clamp(0.0, 1.0), // Controls fade-in effect
+                            child: Image(
+                              image: (offset > 50) ? _image2 : _image,
+                              width: width,
+                              gaplessPlayback: true,
+                              fit: BoxFit.fitWidth,
+                            )
+                                .animate(delay: 300.ms)
+                                .moveY(
+                                    begin:300,
+                                    end: 0,
+                                    duration: 400.ms,
+                                    curve: Curves.linear)
+                                .fadeIn(),
+                          ),
+                        ],
                       ),
                     ),
-                  //  StartedWidget(),
-                    OurFocus(),
-                    AboutusWidget(),
-                    TeamWidget(),
-                    ArticlesWidget(),
-                    ContactUs(),
-                    Footer()
+                    // Positioned(
+                    //   top: -.25 * offset,
+                    //   child: SizedBox(
+                    //     height: height,
+                    //     width: width,
+                    //     child: Align(
+                    //         alignment: Alignment(0, 0),
+                    //         child: Column(
+                    //           mainAxisSize: MainAxisSize.min,
+                    //           crossAxisAlignment: CrossAxisAlignment.start,
+                    //           children: <Widget>[
+                    //             Text(
+                    //               "Unlocking the future\nof Innovations",
+                    //               style: TextStyle(
+                    //                   color: AppTheme.whiteColor,
+                    //                   height: 1.5,
+                    //                   fontSize: Constant.mainHeading(context),
+                    //                   letterSpacing: 5),
+                    //               textAlign: TextAlign.center,
+                    //             ),
+                    //           ],
+                    //         )),
+                    //   ),
+                    // ),
+                    SingleChildScrollView(
+                      controller: Globals.scrollController,
+                      child: Center(
+                        child: Column(
+                          children: <Widget>[
+                            //   Header(),
+                            SizedBox(
+                              height: height,
+                            ),
+                            // Text(
+                            //   "Unlocking the future\nof Innovations",
+                            //   style: TextStyle(
+                            //       color: AppTheme.whiteColor,
+                            //       height: 1.5,
+                            //       fontSize: Constant.mainHeading(context),
+                            //       letterSpacing: 5),
+                            //   textAlign: TextAlign.center,
+                            // ),
+                            // Image(
+                            //   image: _image,
+                            //   gaplessPlayback: true,
+                            //   // key: ValueKey(robotimage),
+                            //   fit: BoxFit.cover,
+                            // ),
+                            // Container(
+                            //   margin: EdgeInsets.symmetric(vertical: 40),
+                            //   constraints: BoxConstraints(
+                            //       maxWidth: MediaQuery.of(context).size.width * .8),
+                            //   child: Text(
+                            //     "We revolutionize healthcare with rigorous research and bold innovation. By merging expertise across science, technology, and medicine, we create transformative solutions that tackle the world’s most urgent medical challenges, driving scalable, real-world impact ",
+                            //     style: GoogleFonts.openSans(
+                            //         color: const Color.fromARGB(255, 255, 255, 255),
+                            //         fontSize: Constant.TextSize20(context),
+                            //         height: 2.5),
+                            //     textAlign: TextAlign.center,
+                            //   ),
+                            // ),
+                            StartedWidget(),
+                            OurFocus(),
+                            AboutusWidget(),
+                            TeamWidget(),
+                            ArticlesWidget(),
+                            ContactUs(),
+                            Footer()
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
-              ),
-            ),
-    );
+              ));
   }
 }
