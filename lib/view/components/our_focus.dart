@@ -146,7 +146,7 @@ class OurFocus extends StatelessWidget {
                   style: GoogleFonts.bebasNeue(
                     color: AppTheme.whiteColor,
                     fontWeight: FontWeight.w500,  letterSpacing: 5,
-                    fontSize: Constant.smallbheadingText(context),
+                    fontSize: Constant.subheadingText(context),
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -167,7 +167,7 @@ class OurFocus extends StatelessWidget {
                   style: GoogleFonts.bebasNeue(
                     color: AppTheme.whiteColor,
                     fontWeight: FontWeight.w500,  letterSpacing: 5,
-                    fontSize: Constant.smallbheadingText(context),
+                    fontSize: Constant.subheadingText(context),
                   ),
                 ),
                 const SizedBox(height: 10),

@@ -15,7 +15,6 @@ import 'components/articles.dart';
 import 'components/contactus.dart';
 import 'components/footer.dart';
 import 'components/our_focus.dart';
-import 'components/started_widget.dart';
 
 class HomeWidgets extends StatefulWidget {
   HomeWidgets({super.key});
@@ -216,7 +215,7 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                         textAlign: TextAlign.center,
                       ),
                     ),
-                    StartedWidget(),
+                  //  StartedWidget(),
                     OurFocus(),
                     AboutusWidget(),
                     TeamWidget(),

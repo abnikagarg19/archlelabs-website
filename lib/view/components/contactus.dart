@@ -143,7 +143,7 @@ class _ContactUsState extends State<ContactUs>
         return buildQueryForm(context);
       case 1:
         return buildInvestorForm(context);
-      case 3:
+      case 2:
         return buildPressRelease(context);
       default:
         return buildHireForm(context);

@@ -81,16 +81,16 @@ class AboutusWidget extends StatelessWidget {
               right:0,
               left:0,
               child: Image.asset(
-                "assets/images/about.gif",
+                "assets/images/aboutus3.gif",
                 fit: BoxFit.cover,
-            opacity: AlwaysStoppedAnimation(0.4),
+           
                 alignment: Alignment.bottomRight,
               
                 
               ),
             ),
 
-            // Additional Overlay Image
+           // Additional Overlay Image
             Positioned.fill(
               child: Image.asset(
                 "assets/images/gradient.png",
@@ -98,7 +98,7 @@ class AboutusWidget extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-
+Positioned.fill(child: Container(color: const Color.fromRGBO(255, 255, 255, 0.54))),
             // Content Section
             Center(
               child: Container(
@@ -254,7 +254,7 @@ class AboutusWidget extends StatelessWidget {
                         fontSize: Constant.mediumbody(context),
                         height: 2,
                       ),
-                    
+                      textAlign: TextAlign.justify,
                     ),
                     SizedBox(
                       height: 80,
