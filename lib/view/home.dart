@@ -112,6 +112,26 @@ class _HomeWidgetsState extends State<HomeWidgets> {
     precacheImage(_image2, context);
   }
 
+  final GlobalKey _robotKey = GlobalKey(); // Key for tracking the widget
+  bool _animateRobot = false; // Flag to start animation
+  ScrollController _scrollController = ScrollController();
+
+  void _checkRobotVisibility() {
+    RenderBox? box = _robotKey.currentContext?.findRenderObject() as RenderBox?;
+    if (box != null) {
+      Offset position = box.localToGlobal(Offset.zero); // Get widget position
+      double widgetY = position.dy;
+
+      if (widgetY < MediaQuery.of(context).size.height * 0.8) {
+        if (!_animateRobot) {
+          setState(() {
+            _animateRobot = true; // Start animation when visible
+          });
+        }
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -275,7 +295,7 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                             //   Header(),
 
                             SizedBox(
-                              height: height ,
+                              height: height,
                             ),
                             SizedBox(
                               height: height,

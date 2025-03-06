@@ -105,7 +105,15 @@ class HomeController extends GetxController {
     print(scrollNotification.metrics.pixels);
     return true;
   }
-
+  bool isAboutuseVisble=false;
+changeAboutus(){
+  isAboutuseVisble=true;
+  update();
+}
+changenotAboutus(){
+  isAboutuseVisble=false;
+  update();
+}
   clearQuery() {
     firstnameQuery.clear();
     lastnameQuery.clear();
