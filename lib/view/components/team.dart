@@ -107,7 +107,8 @@ class _TeamWidgetState extends State<TeamWidget> {
   Widget _team(context, width) {
     return LayoutBuilder(builder: (_context, constraints) {
       return Container(
-          constraints: BoxConstraints(maxWidth: width),color: AppTheme.black,
+          constraints: BoxConstraints(maxWidth: width),
+          color: AppTheme.black,
           // decoration: BoxDecoration(
           //     image: DecorationImage(
           //         image: AssetImage(
@@ -204,29 +205,25 @@ class _TeamWidgetState extends State<TeamWidget> {
                                   child: Container(
                                     height: height,
                                     padding: EdgeInsets.symmetric(
-                                        horizontal: 20, vertical: 10),
+                                        horizontal: 6, vertical: 10),
                                     decoration: BoxDecoration(
                                         color:
                                             const Color.fromARGB(142, 0, 0, 0)),
-                                    child: RawScrollbar(
-                                      trackColor: Colors.transparent,
-                                      thumbColor: const Color.fromARGB(
-                                          255, 147, 146, 145),
-                                      radius: Radius.circular(12),
-                                    
-                                      thickness: 4,
-                                    mainAxisMargin: 30.0,
-                                      padding: EdgeInsets.only(right: 0, left:10),
-
-
-                                      
-                                      child: Theme(
-                                        data: ThemeData(
-                                            scrollbarTheme: ScrollbarThemeData(
-                                          thumbColor: WidgetStatePropertyAll(Colors.transparent),
-                                            trackColor: WidgetStatePropertyAll(Colors.transparent),
-                                        )),
-                                        child: SingleChildScrollView(
+                                    child: Theme(
+                                      data: ThemeData(
+                                          scrollbarTheme: ScrollbarThemeData(
+                                        thickness:
+                                            MaterialStateProperty.all(6),
+                                        radius: Radius.circular(8),
+                                     
+                                        thumbColor: MaterialStateProperty.all(
+                                           const Color.fromARGB(142, 181, 180, 180)),
+                                        minThumbLength:
+                                            30, // Ensures thumb doesn't get too small
+                                      )),
+                                      child: SingleChildScrollView(
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(horizontal: 16),
                                           child: Text(
                                             "${teamList[index]["des"]}",
                                             style: GoogleFonts.openSans(
@@ -234,7 +231,7 @@ class _TeamWidgetState extends State<TeamWidget> {
                                                     216, 252, 248, 248),
                                                 fontSize: 12,
                                                 height: 2),
-                                                textAlign: TextAlign.justify,
+                                            textAlign: TextAlign.justify,
                                           ),
                                         ),
                                       ),
