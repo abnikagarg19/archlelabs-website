@@ -300,6 +300,7 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                                 height: height,
                               ),
                             ),
+                               if(ResponsiveLayout.isLargeScreen(context))
                             SizedBox(
                               height: height,
                             ),
