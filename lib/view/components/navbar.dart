@@ -12,12 +12,14 @@ void scrollToSection(String section) {
 
   if (section == "About Us") {
     targetKey = Globals.container1Key;
-  } else if (section == "Articles") {
+  }
+   else if (section == "Home") {
+    targetKey = Globals.homekey;
+  } 
+   else if (section == "Articles") {
     targetKey = Globals.container2Key;
   } 
-  else if (section == "Home") {
-    targetKey = Globals.container1Key;
-  } 
+ 
    else if (section == "Our Focus") {
     targetKey = Globals.container4Key;
   } 

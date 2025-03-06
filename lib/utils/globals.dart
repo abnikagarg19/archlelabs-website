@@ -9,6 +9,7 @@ class Globals {
 
 
   static final GlobalKey container3Key = GlobalKey();
+   static final GlobalKey homekey = GlobalKey();
   static  final ScrollController scrollController = ScrollController();
 
 }

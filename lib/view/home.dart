@@ -30,16 +30,16 @@ class _HomeWidgetsState extends State<HomeWidgets> {
   String robotimage2 = "assets/images/robohover.png";
   final _controller = Get.put<HomeController>(HomeController());
   bool isloaded = false;
-  void _scrollToContainer(GlobalKey key) {
-    final context = key.currentContext;
-    if (context != null) {
-      Scrollable.ensureVisible(
-        context,
-        duration: Duration(milliseconds: 500), // Smooth animation
-        curve: Curves.easeInOut,
-      );
-    }
-  } // mobile header
+  // void _scrollToContainer(GlobalKey key) {
+  //   final context = key.currentContext;
+  //   if (context != null) {
+  //     Scrollable.ensureVisible(
+  //       context,
+  //       duration: Duration(milliseconds: 500), // Smooth animation
+  //       curve: Curves.easeInOut,
+  //     );
+  //   }
+  // } // mobile header
 
   Widget buildMobileHeader() {
     return SafeArea(
@@ -235,7 +235,7 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                                     duration: 400.ms,
                                     curve: Curves.linear)
                                 .fadeIn(),
-
+                        
                             // Image with slow appearance effect
                             AnimatedOpacity(
                               opacity: (_controller.offset.value / 500)
@@ -294,8 +294,11 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                           children: [
                             //   Header(),
                           if(ResponsiveLayout.isLargeScreen(context))
-                            SizedBox(
-                              height: height,
+                           Container(
+                        key: Globals.homekey,
+                              child: SizedBox(
+                                height: height,
+                              ),
                             ),
                             SizedBox(
                               height: height,
