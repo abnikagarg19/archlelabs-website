@@ -215,7 +215,7 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                         child: Column(
                           children: [
                             SizedBox(
-                              height: 80,
+                              height: 90,
                             ),
                             Text(
                               "Unlocking the future\nof Innovations",
@@ -230,34 +230,69 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                                   delay: 0.ms,
                                 )
                                 .moveY(
-                                    begin: 80,
+                                    begin: 400,
                                     end: 0,
-                                    duration: 400.ms,
+                                    duration: 1200.ms,
                                     curve: Curves.linear)
                                 .fadeIn(),
-                        
+
                             // Image with slow appearance effect
                             AnimatedOpacity(
-                              opacity: (_controller.offset.value / 500)
-                                  .clamp(0.0, 1.0), // Gradual fade-in
+                              opacity: _controller.offset.value > 600
+                                  ? 1
+                                  : 0, // Gradual fade-in
                               duration: Duration(
-                                  milliseconds: 500), // Smooth transition
+                                  milliseconds: 1200), // Smooth transition
                               child: Image(
-                                image: (_controller.offset.value > 50)
+                                image: (_controller.offset.value > 600)
                                     ? _image2
                                     : _image,
                                 width: width,
                                 gaplessPlayback: true,
                                 fit: BoxFit.fitWidth,
                               )
-                                  .animate(delay: 300.ms)
+                                  .animate(
+                                      delay: 300.ms,
+                                      target: _controller.offset.value > 600
+                                          ? 1
+                                          : 0)
                                   .moveY(
                                       begin: 300,
                                       end: 0,
-                                      duration: 800.ms,
-                                      curve: Curves.easeOut)
-                                  .fadeIn(),
+                                      duration: 1400.ms,
+                                      curve: Curves.linear)
+                                  .fadeIn(
+                                    duration: 1400.ms,
+                                  ),
                             ),
+                            // SizedBox(
+                            //   height: 200,
+                            // ),
+                            Container(
+                              margin: EdgeInsets.symmetric(vertical: 40),
+                              constraints: BoxConstraints(
+                                  maxWidth:
+                                      MediaQuery.of(context).size.width * .8),
+                              child: Text(
+                                "We revolutionize healthcare with rigorous research and bold innovation.By merging expertise\nacross science, technology, and medicine,we create transformative solutions that tackle the world’s\n most urgent medical challenges, driving scalable, real-world impact ",
+                                style: GoogleFonts.openSans(
+                                    color: const Color.fromARGB(
+                                        255, 255, 255, 255),
+                                    fontSize: Constant.TextSize20(context),
+                                    height: 2.5),
+                                textAlign: TextAlign.center,
+                              ),
+                            ).animate(
+                              delay: 0.ms,target: _controller.offset.value > 1200
+                                          ? 1
+                                          : 0
+                            )  .moveY(
+                                      begin: 300,
+                                      end: 0,
+                                      duration: 1400.ms,
+                                      curve: Curves.linear).fadeIn(
+                                    duration: 1400.ms,
+                                  ),
                           ],
                         ),
                       ),
@@ -293,17 +328,17 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                         child: Column(
                           children: [
                             //   Header(),
-                          if(ResponsiveLayout.isLargeScreen(context))
-                           Container(
-                        key: Globals.homekey,
-                              child: SizedBox(
+                            if (ResponsiveLayout.isLargeScreen(context))
+                              Container(
+                                key: Globals.homekey,
+                                child: SizedBox(
+                                  height: height+1200,
+                                ),
+                              ),
+                           // if (ResponsiveLayout.isLargeScreen(context))
+                              SizedBox(
                                 height: height,
                               ),
-                            ),
-                               if(ResponsiveLayout.isLargeScreen(context))
-                            SizedBox(
-                              height: height,
-                            ),
                             StartedWidget(),
                             OurFocus(),
                             // Text(

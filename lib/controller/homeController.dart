@@ -20,7 +20,7 @@ class HomeController extends GetxController {
 
     print("dhn");
     getTeams();
-     getDesignations();
+    getDesignations();
     getAllBlogs();
   }
 
@@ -99,30 +99,55 @@ class HomeController extends GetxController {
     print(filequery);
     update();
   }
+
   RxDouble offset = 0.0.obs;
   bool updateOffsetAccordingToScroll(ScrollNotification scrollNotification) {
-    offset.value= scrollNotification.metrics.pixels;
+    offset.value = scrollNotification.metrics.pixels;
     print(scrollNotification.metrics.pixels);
     return true;
   }
-  bool isAboutuseVisble=false;
-changeAboutus(){
-  isAboutuseVisble=true;
-  update();
-}
-changenotAboutus(){
-  isAboutuseVisble=false;
-  update();
-}
-  bool isOurFocus=false;
-changeisOurFocus(){
-  isOurFocus=true;
-  update();
-}
-changeisOurFocusNot(){
-  isOurFocus=false;
-  update();
-}
+
+  bool isOurStory = false;
+  changeOurStory(value) {
+    isOurStory = value;
+    update();
+  }
+
+ bool isVlaueSection = false;
+  changeisVlaueSection(value) {
+    isVlaueSection = value;
+    update();
+  }
+
+
+ bool isMissionSection= false;
+  changeisMissionSection(value) {
+    isMissionSection = value;
+    update();
+  }
+
+  bool isAboutuseVisble = false;
+  changeAboutus() {
+    isAboutuseVisble = true;
+    update();
+  }
+
+  changenotAboutus() {
+    isAboutuseVisble = false;
+    update();
+  }
+
+  bool isOurFocus = false;
+  changeisOurFocus() {
+    isOurFocus = true;
+    update();
+  }
+
+  changeisOurFocusNot() {
+    isOurFocus = false;
+    update();
+  }
+
   clearQuery() {
     firstnameQuery.clear();
     lastnameQuery.clear();
