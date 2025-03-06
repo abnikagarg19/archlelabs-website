@@ -33,9 +33,7 @@ class StartedWidget extends StatelessWidget {
           if (info.visibleFraction > 0.1) {
             print("visible");
             _controller.changeOurStory(true); // o
-          } else {
-            _controller.changeOurStory(false); // o
-          }
+          } 
         },
         // decoration: BoxDecoration(
         //     image: DecorationImage(
@@ -63,7 +61,7 @@ class StartedWidget extends StatelessWidget {
                 ),
               )
                   .animate(target: _controller.isOurStory ? 1 : 0)
-                  .fadeIn(delay: 200.ms, duration: 1200.ms),
+                  .fadeIn(delay: 200.ms, duration: 600.ms),
 
               // Additional Overlay Image
 
@@ -91,39 +89,26 @@ class StartedWidget extends StatelessWidget {
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Expanded(
-                            child: Container(
-                              child: Column(
-                                children: [
-                                  buildText(
-                                      _controller.isOurStory ? 1 : 0, text1),
-                                  SizedBox(
-                                    height: 30,
-                                  ),
-                                  buildText(
-                                      _controller.isOurStory ? 1 : 0, text2),
-                                ],
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 40,
-                          ),
-                          Expanded(
-                            child: Container(
-                              child: Column(
-                                children: [
-                                  buildText(
-                                      _controller.isOurStory ? 1 : 0, text3),
-                                  SizedBox(
-                                    height: 30,
-                                  ),
-                                  buildText(
-                                      _controller.isOurStory ? 1 : 0, text4),
-                                ],
-                              ),
-                            ),
-                          ),
+                        Flexible(child:  buildText(
+                              _controller.isOurStory ? 1 : 0, text1),)
+                          // SizedBox(
+                          //   width: 40,
+                          // ),
+                          // Expanded(
+                          //   child: Container(
+                          //     child: Column(
+                          //       children: [
+                          //         buildText(
+                          //             _controller.isOurStory ? 1 : 0, text3),
+                          //         SizedBox(
+                          //           height: 30,
+                          //         ),
+                          //         buildText(
+                          //             _controller.isOurStory ? 1 : 0, text4),
+                          //       ],
+                          //     ),
+                          //   ),
+                          // ),
                         ],
                       ),
                       // Container(
@@ -203,10 +188,17 @@ class StartedWidget extends StatelessWidget {
 }
 
 final String text1 = """
-  Archle Labs, founded by Alois Sajo Devasagayam, began taking shape during the COVID-19 pandemic to address critical gaps in healthcare.
-  Particularly for the elderly who struggled in isolation without proper support.The vision was deeply influenced by a firsthand
-  experience of witnessing the sacrifices of a devoted caregiver.
-  Tending to bedridden parents, revealing the silent hardships faced by those dedicating their lives to loved ones.
+Archle Labs, founded by Alois Sajo Devasagayam, emerged during the COVID-19 pandemic to address critical gaps in healthcare,
+ particularly the silent struggles of the elderly and their caregivers. Inspired by the profound sacrifices of a devoted 
+ caregiver tending to bedridden parents, the venture was driven by a vision to harness technology for transformative,
+  human-centered healthcare solutions. With early momentum fueled by a mentor-investor’s belief—whose untimely passing
+   became a defining catalyst—Archle Labs evolved from a promising concept into an unshakable mission to revolutionize
+  healthcare accessibility. Despite formidable challenges, the unwavering commitment of key stakeholders,
+   combined with medical expertise and strategic collaborations, refined the vision into tangible, real-world
+    solutions bridging the gap between patient care and caregiver support. Now in the product development phase,
+     the company continues to attract investor interest and forge strategic partnerships, relentlessly advancing its
+      innovations toward full-scale implementation. What began as a spark of empathy is now a pioneering force,
+       shaping the future of healthcare with a resolute commitment to making superior medical care universally accessible.
   """;
 
 final String text2 =
@@ -247,7 +239,7 @@ buildText(isshow, text) {
         textAlign: TextAlign.justify,
       )
           .animate(target: isshow)
-          .fadeIn(delay: (index * 800).ms) // Delay each line animation
+          .fadeIn(delay: (index * 500).ms) // Delay each line animation
           .moveY(begin: 50, end: 0, duration: 800.ms, curve: Curves.linear);
     }).toList(),
   );

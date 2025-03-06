@@ -112,7 +112,11 @@ class HomeController extends GetxController {
     isOurStory = value;
     update();
   }
-
+bool isTeam = false;
+  changeIsTeam(value) {
+    isTeam = value;
+    update();
+  }
  bool isVlaueSection = false;
   changeisVlaueSection(value) {
     isVlaueSection = value;

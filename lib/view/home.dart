@@ -238,7 +238,7 @@ class _HomeWidgetsState extends State<HomeWidgets> {
 
                             // Image with slow appearance effect
                             AnimatedOpacity(
-                              opacity: _controller.offset.value > 600
+                              opacity: _controller.offset.value > 200
                                   ? 1
                                   : 0, // Gradual fade-in
                               duration: Duration(
@@ -249,7 +249,10 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                                     : _image,
                                 width: width,
                                 gaplessPlayback: true,
-                                fit: BoxFit.fitWidth,
+                              //  height: 800,
+                                fit: MediaQuery.of(context).size.width > 800
+                                    ? BoxFit.fitWidth
+                                    : BoxFit.cover,
                               )
                                   .animate(
                                       delay: 300.ms,
@@ -282,17 +285,19 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                                     height: 2.5),
                                 textAlign: TextAlign.center,
                               ),
-                            ).animate(
-                              delay: 0.ms,target: _controller.offset.value > 1200
-                                          ? 1
-                                          : 0
-                            )  .moveY(
-                                      begin: 300,
-                                      end: 0,
-                                      duration: 1400.ms,
-                                      curve: Curves.linear).fadeIn(
+                            )
+                                .animate(
+                                    delay: 0.ms,
+                                    target:
+                                        _controller.offset.value > 1200 ? 1 : 0)
+                                .moveY(
+                                    begin: 300,
+                                    end: 0,
                                     duration: 1400.ms,
-                                  ),
+                                    curve: Curves.linear)
+                                .fadeIn(
+                                  duration: 1400.ms,
+                                ),
                           ],
                         ),
                       ),
@@ -332,13 +337,18 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                               Container(
                                 key: Globals.homekey,
                                 child: SizedBox(
-                                  height: height+1200,
+                                  height: height + 1200,
                                 ),
                               ),
-                           // if (ResponsiveLayout.isLargeScreen(context))
-                              SizedBox(
-                                height: height,
-                              ),
+                            // if (ResponsiveLayout.isLargeScreen(context))
+                             if (ResponsiveLayout.isLargeScreen(context))
+                            SizedBox(
+                              height: height,
+                            )
+                            else
+                               SizedBox(
+                              height: height,
+                            ),
                             StartedWidget(),
                             OurFocus(),
                             // Text(

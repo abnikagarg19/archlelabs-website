@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:archlelabswebsite/view/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -119,18 +121,19 @@ class AboutusWidget extends StatelessWidget {
                         if (info.visibleFraction > 0.05) {
                           print("visible");
                           _controller.changeAboutus(); // o
-                        } else if (info.visibleFraction < 0) {
+                        } else {
                           _controller.changenotAboutus(); // o
                         }
                       },
                       child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           if (constraints.maxWidth > 800)
                             Stack(
                               clipBehavior: Clip.none,
                               children: [
                                 AnimatedContainer(
-                                  duration: Duration(milliseconds: 500),
+                                  duration: Duration(milliseconds: 600),
                                   width: 350,
                                   height: _controller.isAboutuseVisble
                                       ? 500
@@ -140,9 +143,12 @@ class AboutusWidget extends StatelessWidget {
                                     fit: BoxFit.fitHeight,
                                   ),
                                 ),
-                                Positioned(
-                                  top: 120,
-                                  right: -370,
+                                AnimatedPositioned(
+                                  top: 80,
+                                  right: _controller.isAboutuseVisble
+                                      ? -370
+                                      : -900,
+                                  duration: Duration(milliseconds: 600),
                                   child: Text(
                                     "About Us",
                                     style: GoogleFonts.openSans(
@@ -173,7 +179,7 @@ class AboutusWidget extends StatelessWidget {
                                       letterSpacing: 3,
                                     ),
                                   ),
-                                const SizedBox(height: 20),
+                                const SizedBox(height: 40),
                                 Text(
                                   "Archle Labs is an advanced research center for health and life sciences engineering, committed to revolutionizing the healthcare field. We combine cutting-edge technology, interdisciplinary expertise fueled by  unwavering passion for innovation to tackle the world’s most pressing medical challenges. By developing novel solutions and services, we aim to elevate human health, enhance patient outcomes, and transform global healthcare practices.",
                                   style: GoogleFonts.openSans(
@@ -207,9 +213,10 @@ class AboutusWidget extends StatelessWidget {
                         if (info.visibleFraction > 0.05) {
                           print("visible");
                           _controller.changeisMissionSection(true); // o
-                        } else {
-                          // _controller.changeisMissionSection(false); // o
                         }
+                        // } else {
+                        //   _controller.changeisMissionSection(false); // o
+                        // }
                       },
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -217,24 +224,113 @@ class AboutusWidget extends StatelessWidget {
                           children: [
                             Expanded(
                               child: constraints.maxWidth > 800
-                                  ? buildTextBigContent(
-                                      "OUR VALUES",
-                                      "To revolutionize medical science, forging a future where no challenge is insurmountable and every life thrives.",
-                                      context)
+                                  ? Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "Our Vission",
+                                          style: GoogleFonts.bebasNeue(
+                                            color: AppTheme.black,
+                                            fontSize: Constant.subheadingText(
+                                                context),
+                                            letterSpacing: 5,
+                                          ),
+                                        )
+                                            .animate(
+                                              target:
+                                                  _controller.isMissionSection
+                                                      ? 1
+                                                      : 0,
+                                            ) // Ensure animation triggers
+                                            .moveY(
+                                                begin: 200,
+                                                end: 0,
+                                                delay: 200.ms,
+                                                duration: 500.ms,
+                                                curve: Curves.linear),
+                                        const SizedBox(height: 10),
+                                        Text(
+                                          "To revolutionize medical science, forging a future where no challenge is insurmountable and every life thrives.",
+                                          style: GoogleFonts.openSans(
+                                            color: AppTheme.black,
+                                            fontSize:
+                                                Constant.TextSize20(context),
+                                            height: 1.5,
+                                          ),
+                                        )
+                                            .animate(
+                                              target:
+                                                  _controller.isMissionSection
+                                                      ? 1
+                                                      : 0,
+                                            )
+                                            .fadeIn(
+                                                duration: 400
+                                                    .ms) // Gradual fade-in effect
+                                            .moveY(
+                                                begin: 200,
+                                                end: 0,
+                                                delay: 600.ms,
+                                                duration: 500.ms,
+                                                curve: Curves.linear),
+                                        const SizedBox(height: 30),
+                                        Text(
+                                          "Our Mission",
+                                          style: GoogleFonts.bebasNeue(
+                                            color: AppTheme.black,
+                                            fontSize: Constant.subheadingText(
+                                                context),
+                                            letterSpacing: 5,
+                                          ),
+                                        )
+                                            .animate(
+                                              target:
+                                                  _controller.isMissionSection
+                                                      ? 1
+                                                      : 0,
+                                            )
+                                            .fadeIn(
+                                                duration: 400
+                                                    .ms) // Gradual fade-in effect
+                                            .moveY(
+                                                begin: 200,
+                                                end: 0,
+                                                delay: 1000.ms,
+                                                duration: 500.ms,
+                                                curve: Curves.linear),
+                                        const SizedBox(height: 10),
+                                        Text(
+                                          "Our mission is to harness rigorous, interdisciplinary research and advanced engineering methodologies to drive transformative solutions for complex healthcare challenges—ultimately fostering equitable access and vibrant global health.",
+                                          style: GoogleFonts.openSans(
+                                            color: AppTheme.black,
+                                            fontSize:
+                                                Constant.TextSize20(context),
+                                            height: 1.5,
+                                          ),
+                                        )
+                                            .animate(
+                                              target:
+                                                  _controller.isMissionSection
+                                                      ? 1
+                                                      : 0,
+                                            )
+                                            .fadeIn(
+                                                duration: 400
+                                                    .ms) // Gradual fade-in effect
+                                            .moveY(
+                                                begin: 200,
+                                                end: 0,
+                                                delay: 1400.ms,
+                                                duration: 500.ms,
+                                                curve: Curves.linear),
+                                      ],
+                                    )
                                   : buildTextSmallContent(
                                       "OUR VALUES",
                                       "To revolutionize medical science, forging a future where no challenge is insurmountable and every life thrives.",
                                       context),
-                            )
-                                .animate(
-                                  target: _controller.isMissionSection ? 1 : 0,
-                                ) // Ensure animation triggers
-                                .moveX(
-                                    begin: -300,
-                                    end: 0,
-                                    delay: 200.ms,
-                                    duration: 800.ms,
-                                    curve: Curves.linear),
+                            ),
                             SizedBox(
                                 width:
                                     60), // Optional spacing between text and image
@@ -249,11 +345,9 @@ class AboutusWidget extends StatelessWidget {
                                 .animate(
                                   target: _controller.isAboutuseVisble ? 1 : 0,
                                 ) // Ensure animation triggers
-                                .moveX(
-                                    begin: 300,
-                                    end: 0,
+                                .fadeIn(
                                     delay: 200.ms,
-                                    duration: 800.ms,
+                                    duration: 600.ms,
                                     curve: Curves.linear),
                           ]),
                     ),
@@ -338,7 +432,15 @@ class AboutusWidget extends StatelessWidget {
                                           : AppTheme.black,
                                       fontSize: Constant.mediumbody(context),
                                     ),
-                                  ),
+                                  )
+                                      .animate(
+                                          target: _controller.isVlaueSection
+                                              ? 1
+                                              : 0)
+                                      .then(
+                                          delay: (Random().nextInt(10) * 100)
+                                              .ms) // Staggered delay
+                                      .fadeIn(delay: 1000.ms, duration: 800.ms),
                                   const SizedBox(height: 12),
                                   Text(
                                     "${valuesList[index]["details"]}",
@@ -349,7 +451,16 @@ class AboutusWidget extends StatelessWidget {
                                           : AppTheme.black,
                                       fontSize: 12,
                                     ),
-                                  ),
+                                  )
+                                      .animate(
+                                          target: _controller.isVlaueSection
+                                              ? 1
+                                              : 0)
+                                      .then(
+                                          delay: (Random().nextInt(10) * 100)
+                                              .ms) // Staggered delay
+                                      .fadeIn(delay: 1000.ms, duration: 800.ms),
+                                  const SizedBox(height: 12),
                                 ],
                               ),
                             )
@@ -357,8 +468,7 @@ class AboutusWidget extends StatelessWidget {
                                     target: _controller.isVlaueSection
                                         ? 1
                                         : 0) // Start animation when visible
-                                .then(
-                                    delay: (index * 100).ms) // Staggered delay
+
                                 .fadeIn(
                                     duration: 400.ms) // Gradual fade-in effect
                                 .moveY(

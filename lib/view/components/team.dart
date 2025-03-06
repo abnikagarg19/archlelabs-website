@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
-
+import 'package:visibility_detector/visibility_detector.dart';
+import 'dart:math';
 import '../../controller/homeController.dart';
 import '../../responsive/layouts.dart';
 import '../../theme/app_theme.dart';
@@ -106,190 +108,214 @@ class _TeamWidgetState extends State<TeamWidget> {
   ];
   Widget _team(context, width) {
     return LayoutBuilder(builder: (_context, constraints) {
-      return Container(
-          constraints: BoxConstraints(maxWidth: width),
-          color: AppTheme.black,
-          // decoration: BoxDecoration(
-          //     image: DecorationImage(
-          //         image: AssetImage(
-          //           "assets/images/brain WB.gif",
-          //         ),
-          //         fit: BoxFit.contain)),
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-            SizedBox(
-              height: 70,
-            ),
-            Text(
-              "Meet our team",
-              style: GoogleFonts.bebasNeue(
-                  color: AppTheme.whiteColor,
-                  fontSize: Constant.headingText(context),
-                  letterSpacing: 5),
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(
-              height: 70,
-            ),
-            GetBuilder<HomeController>(builder: (_controller) {
-              // return _controller.teamList.isNotEmpty
-              //     ? _controller.teamList.first.data!.isNotEmpty
-              return GridView.custom(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisSpacing: 60,
-                  //  tileBottomSpace: 20,
-                  mainAxisExtent: ResponsiveLayout.isMediumScreen(context)
-                      ? 280
-                      : ResponsiveLayout.isSmallScreen(context)
-                          ? 360
-                          : 400,
-                  mainAxisSpacing: 20,
-                  crossAxisCount: ResponsiveLayout.isMediumScreen(context) ||
-                          ResponsiveLayout.isSmallScreen(context)
-                      ? 2
-                      : 4,
-                ),
-                childrenDelegate: SliverChildBuilderDelegate(
-                  childCount: teamList.length,
-                  (context, index) {
-                    double height = ResponsiveLayout.isMediumScreen(context)
-                        ? 220
-                        : ResponsiveLayout.isSmallScreen(context)
+      return GetBuilder<HomeController>(builder: (_controller) {
+        return VisibilityDetector(
+          onVisibilityChanged: (VisibilityInfo info) {
+            print(info);
+            if (info.visibleFraction > 0.1) {
+              print("visible");
+              _controller.changeIsTeam(true); // o
+            } else {
+              _controller.changeIsTeam(false); // o
+            }
+          },
+          key: Key("Team"),
+          child: Container(
+              constraints: BoxConstraints(maxWidth: width),
+              color: AppTheme.black,
+              // decoration: BoxDecoration(
+              //     image: DecorationImage(
+              //         image: AssetImage(
+              //           "assets/images/brain WB.gif",
+              //         ),
+              //         fit: BoxFit.contain)),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: 70,
+                    ),
+                    Text(
+                      "Meet our team",
+                      style: GoogleFonts.bebasNeue(
+                          color: AppTheme.whiteColor,
+                          fontSize: Constant.headingText(context),
+                          letterSpacing: 5),
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(
+                      height: 70,
+                    ),
+
+                    // return _controller.teamList.isNotEmpty
+                    //     ? _controller.teamList.first.data!.isNotEmpty
+
+                    GridView.custom(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisSpacing: 60,
+                        mainAxisExtent: ResponsiveLayout.isMediumScreen(context)
                             ? 280
-                            : 320;
-                    return GestureDetector(
-                      onTap: () {},
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          MouseRegion(
-                            onEnter: (_) {
-                              setState(() {
-                                _controller.hovering(index);
-                                isHover = true;
-                              });
-                            },
-                            onExit: (_) {
-                              setState(() {
-                                _controller.exithovering(index);
-                                isHover = false;
-                              });
-                            },
-                            child: Stack(
-                              children: [
-                                Image.asset(
-                                  alignment: Alignment.topCenter,
-                                  "${teamList[index]["image"]}",
-                                  height: height,
-                                  width: ResponsiveLayout.isMediumScreen(
-                                          context)
+                            : ResponsiveLayout.isSmallScreen(context)
+                                ? 360
+                                : 400,
+                        mainAxisSpacing: 20,
+                        crossAxisCount:
+                            ResponsiveLayout.isMediumScreen(context) ||
+                                    ResponsiveLayout.isSmallScreen(context)
+                                ? 2
+                                : 4,
+                      ),
+                      childrenDelegate: SliverChildBuilderDelegate(
+                        childCount: teamList.length,
+                        (context, index) {
+                          double height =
+                              ResponsiveLayout.isMediumScreen(context)
+                                  ? 220
+                                  : ResponsiveLayout.isSmallScreen(context)
                                       ? 280
-                                      : ResponsiveLayout.isSmallScreen(context)
-                                          ? 250
-                                          : 380,
-                                  fit: BoxFit.cover,
-                                  filterQuality: FilterQuality.high,
-                                ),
-                                AnimatedPositioned(
-                                  bottom:
-                                      isHover && index == _controller.hoverIndex
-                                          ? 0
-                                          : -height, // Slide from -300 to 0
+                                      : 320;
 
-                                  left: 0,
-                                  right: 0,
+                          // Generate a random delay between 100ms and 600ms
+                          int randomDelay = Random().nextInt(500) + 300;
 
-                                  duration: Duration(milliseconds: 400),
-                                  child: Container(
-                                    height: height,
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 6, vertical: 10),
-                                    decoration: BoxDecoration(
-                                        color:
-                                            const Color.fromARGB(142, 0, 0, 0)),
-                                    child: Theme(
-                                      data: ThemeData(
-                                          scrollbarTheme: ScrollbarThemeData(
-                                        thickness:
-                                            MaterialStateProperty.all(6),
-                                        radius: Radius.circular(8),
-                                     
-                                        thumbColor: MaterialStateProperty.all(
-                                           const Color.fromARGB(142, 181, 180, 180)),
-                                        minThumbLength:
-                                            30, // Ensures thumb doesn't get too small
-                                      )),
-                                      child: SingleChildScrollView(
-                                        child: Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 16),
-                                          child: Text(
-                                            "${teamList[index]["des"]}",
-                                            style: GoogleFonts.openSans(
-                                                color: const Color.fromARGB(
-                                                    216, 252, 248, 248),
-                                                fontSize: 12,
-                                                height: 2),
-                                            textAlign: TextAlign.justify,
+                          return GestureDetector(
+                            onTap: () {},
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                MouseRegion(
+                                  onEnter: (_) {
+                                    setState(() {
+                                      _controller.hovering(index);
+                                    });
+                                  },
+                                  onExit: (_) {
+                                    setState(() {
+                                      _controller.exithovering(index);
+                                    });
+                                  },
+                                  child: Stack(
+                                    children: [
+                                      Image.asset(
+                                        alignment: Alignment.topCenter,
+                                        "${teamList[index]["image"]}",
+                                        height: height,
+                                        width: ResponsiveLayout.isMediumScreen(
+                                                context)
+                                            ? 280
+                                            : ResponsiveLayout.isSmallScreen(
+                                                    context)
+                                                ? 250
+                                                : 380,
+                                        fit: BoxFit.cover,
+                                        filterQuality: FilterQuality.high,
+                                      ),
+                                      AnimatedPositioned(
+                                        bottom: _controller.hoverIndex == index
+                                            ? 0
+                                            : -height, // Slide effect
+                                        left: 0,
+                                        right: 0,
+                                        duration: Duration(milliseconds: 400),
+                                        child: Container(
+                                          height: height,
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 6, vertical: 10),
+                                          decoration: BoxDecoration(
+                                              color:
+                                                  Color.fromARGB(142, 0, 0, 0)),
+                                          child: Theme(
+                                            data: ThemeData(
+                                                scrollbarTheme:
+                                                    ScrollbarThemeData(
+                                              thickness:
+                                                  MaterialStateProperty.all(6),
+                                              radius: Radius.circular(8),
+                                              thumbColor:
+                                                  MaterialStateProperty.all(
+                                                      Color.fromARGB(
+                                                          142, 181, 180, 180)),
+                                              minThumbLength: 30,
+                                            )),
+                                            child: SingleChildScrollView(
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 16),
+                                                child: Text(
+                                                  "${teamList[index]["des"]}",
+                                                  style: GoogleFonts.openSans(
+                                                      color: Color.fromARGB(
+                                                          216, 252, 248, 248),
+                                                      fontSize: 12,
+                                                      height: 2),
+                                                  textAlign: TextAlign.justify,
+                                                ),
+                                              ),
+                                            ),
                                           ),
                                         ),
                                       ),
-                                    ),
+                                    ],
                                   ),
+                                ), // Smooth fade-in effect
+                                SizedBox(height: 8),
+                                Text(
+                                  "${teamList[index]["name"]}",
+                                  style: GoogleFonts.openSans(
+                                    fontWeight: FontWeight.w600,
+                                    color: AppTheme.whiteColor,
+                                    fontSize: Constant.body(context),
+                                  ),
+                                  maxLines: 1,
                                 ),
+                                SizedBox(height: 6),
+                                Row(
+                                  children: [
+                                    InkWell(
+                                      onTap: () => launchurl(Uri.parse(
+                                          "${teamList[index]["linkedin"]}")),
+                                      child: SvgPicture.asset(
+                                        "assets/images/linkedin.svg",
+                                        height: 16,
+                                      ),
+                                    ),
+                                    Text(
+                                      "  ${teamList[index]["designation"]}",
+                                      style: GoogleFonts.openSans(
+                                        fontWeight: FontWeight.w700,
+                                        color:
+                                            Color.fromARGB(214, 233, 233, 233),
+                                        fontSize: Constant.mediumbody(context),
+                                      ),
+                                    ),
+                                  ],
+                                )
                               ],
                             ),
-                          ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            "${teamList[index]["name"]}",
-                            style: GoogleFonts.openSans(
-                              fontWeight: FontWeight.w600,
-                              color: AppTheme.whiteColor,
-                              fontSize: Constant.body(context),
-                            ),
-                            maxLines: 1,
-                          ),
-                          SizedBox(
-                            height: 6,
-                          ),
-                          Row(
-                            children: [
-                              InkWell(
-                                onTap: () => launchurl(Uri.parse(
-                                    "${teamList[index]["linkedin"]}")),
-                                child: SvgPicture.asset(
-                                  "assets/images/linkedin.svg",
-                                  height: 16,
-                                ),
-                              ),
-                              Text(
-                                "  ${teamList[index]["designation"]}",
-                                style: GoogleFonts.openSans(
-                                  fontWeight: FontWeight.w700,
-                                  color:
-                                      const Color.fromARGB(214, 233, 233, 233),
-                                  fontSize: Constant.mediumbody(context),
-                                ),
-                              ),
-                            ],
                           )
-                        ],
+                              .animate(
+                                  target: _controller.isTeam
+                                      ? 1
+                                      : 0) // Ensure animation triggers
+                              .then(
+                                          delay: (400 * index)
+                                              .ms) // Staggered delay
+                                      .fadeIn( duration: 1200.ms);
+                        },
                       ),
-                    );
-                  },
-                ),
-              );
-              //     : CircularProgressIndicator()
-              // : Container();
-            }),
-            SizedBox(
-              height: 40,
-            )
-          ]));
+                    ),
+                    //     : CircularProgressIndicator()
+                    // : Container();
+
+                    SizedBox(
+                      height: 40,
+                    )
+                  ])),
+        );
+      });
     });
   }
 }

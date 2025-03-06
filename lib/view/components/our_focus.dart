@@ -159,10 +159,12 @@ class OurFocus extends StatelessWidget {
                                         fontSize:
                                             Constant.smallbheadingText(context),
                                       ),
-) .animate(
-                                      target: _controller.isOurFocus
-                                          ? 1
-                                          : 0).fadeIn(delay: 1000.ms, duration: 800.ms),
+                                    )
+                                        .animate(
+                                            target:
+                                                _controller.isOurFocus ? 1 : 0)
+                                        .fadeIn(
+                                            delay: 1000.ms, duration: 800.ms),
                                     const SizedBox(
                                       height: 12,
                                     ),
@@ -175,10 +177,12 @@ class OurFocus extends StatelessWidget {
                                             : AppTheme.black,
                                         fontSize: Constant.mediumbody(context),
                                       ),
-                                    ) .animate(
-                                      target: _controller.isOurFocus
-                                          ? 1
-                                          : 0).fadeIn(delay: 1000.ms, duration: 800.ms),
+                                    )
+                                        .animate(
+                                            target:
+                                                _controller.isOurFocus ? 1 : 0)
+                                        .fadeIn(
+                                            delay: 1000.ms, duration: 800.ms),
                                   ],
                                 ),
                               )
@@ -195,7 +199,7 @@ class OurFocus extends StatelessWidget {
                                             : // Right to Center
                                             index % 4 == 2
                                                 ? 800.ms
-                                                :1200.ms,
+                                                : 1200.ms,
                                     begin: index % 4 == 0
                                         ? Offset(-300, 0)
                                         : // Left to Center
@@ -203,7 +207,7 @@ class OurFocus extends StatelessWidget {
                                             ? Offset(300, 0)
                                             : // Right to Center
                                             index % 4 == 2
-                                                ? Offset(-300,0)
+                                                ? Offset(-300, 0)
                                                 : // Top to Center
                                                 Offset(
                                                     300, 0), // Bottom to Center
