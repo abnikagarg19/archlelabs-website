@@ -19,9 +19,9 @@ class HomeController extends GetxController {
     super.onInit();
 
     print("dhn");
-    getTeams();
+   // getTeams();
     getDesignations();
-    getAllBlogs();
+    //getAllBlogs();
   }
 
   hovering(index) {

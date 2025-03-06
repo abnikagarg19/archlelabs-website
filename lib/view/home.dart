@@ -238,7 +238,7 @@ class _HomeWidgetsState extends State<HomeWidgets> {
 
                             // Image with slow appearance effect
                             AnimatedOpacity(
-                              opacity: _controller.offset.value > 200
+                              opacity: _controller.offset.value > 600
                                   ? 1
                                   : 0, // Gradual fade-in
                               duration: Duration(
@@ -383,7 +383,7 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                             // OurFocus(),
                             AboutusWidget(),
                             TeamWidget(),
-                            ArticlesWidget(),
+                         //   ArticlesWidget(),
                             ContactUs(),
                             Footer()
                           ],
