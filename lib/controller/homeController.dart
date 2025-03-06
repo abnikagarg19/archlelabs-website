@@ -114,6 +114,15 @@ changenotAboutus(){
   isAboutuseVisble=false;
   update();
 }
+  bool isOurFocus=false;
+changeisOurFocus(){
+  isOurFocus=true;
+  update();
+}
+changeisOurFocusNot(){
+  isOurFocus=false;
+  update();
+}
   clearQuery() {
     firstnameQuery.clear();
     lastnameQuery.clear();
