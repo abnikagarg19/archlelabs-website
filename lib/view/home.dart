@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import '../utils/globals.dart';
 import '../utils/parallax.dart';
 import 'components/aboutus.dart';
@@ -111,13 +112,6 @@ class _HomeWidgetsState extends State<HomeWidgets> {
     precacheImage(_image2, context);
   }
 
-  double offset = 0;
-  bool updateOffsetAccordingToScroll(ScrollNotification scrollNotification) {
-    setState(() => offset = scrollNotification.metrics.pixels);
-    print(scrollNotification.metrics.pixels);
-    return true;
-  }
-
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -192,54 +186,63 @@ class _HomeWidgetsState extends State<HomeWidgets> {
             : NotificationListener<ScrollNotification>(
                 // When user scrolls, this will trigger onNotification.
                 // updateOffsetAccordingToScroll updates the offset
-                onNotification: updateOffsetAccordingToScroll,
+                onNotification: _controller.updateOffsetAccordingToScroll,
                 child: Stack(
                   children: [
-                    Positioned(
-                      // The hero image will be pushed up once user scrolls up
-                      // That is why it is multiplied negatively.
-                      top: -.35 * offset,
-                      child: Column(
-                        children: [
-                          SizedBox(
-                            height: 80,
-                          ),
-                          Text(
-                            "Unlocking the future\nof Innovations",
-                            style: TextStyle(
-                                color: AppTheme.whiteColor,
-                                height: 1.5,
-                                fontSize: Constant.mainHeading(context),
-                                letterSpacing: 5),
-                            textAlign: TextAlign.center,
-                          )
-                              .animate(delay: 0.ms, )
-                              .moveY(
-                                  begin: 80,
-                                  end: 0,
-                                  duration: 400.ms,
-                                  curve: Curves.linear)
-                              .fadeIn(),
-                          Opacity(
-                            opacity: (offset / 300)
-                                .clamp(0.0, 1.0), // Controls fade-in effect
-                            child: Image(
-                              image: (offset > 50) ? _image2 : _image,
-                              width: width,
-                              gaplessPlayback: true,
-                              fit: BoxFit.fitWidth,
+                    Obx(
+                      () => Positioned(
+                        top: -.35 * _controller.offset.value,
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              height: 80,
+                            ),
+                            Text(
+                              "Unlocking the future\nof Innovations",
+                              style: TextStyle(
+                                  color: AppTheme.whiteColor,
+                                  height: 1.5,
+                                  fontSize: Constant.mainHeading(context),
+                                  letterSpacing: 5),
+                              textAlign: TextAlign.center,
                             )
-                                .animate(delay: 300.ms)
+                                .animate(
+                                  delay: 0.ms,
+                                )
                                 .moveY(
-                                    begin:300,
+                                    begin: 80,
                                     end: 0,
                                     duration: 400.ms,
                                     curve: Curves.linear)
                                 .fadeIn(),
-                          ),
-                        ],
+
+                            // Image with slow appearance effect
+                            AnimatedOpacity(
+                              opacity: (_controller.offset.value / 500)
+                                  .clamp(0.0, 1.0), // Gradual fade-in
+                              duration: Duration(
+                                  milliseconds: 500), // Smooth transition
+                              child: Image(
+                                image: (_controller.offset.value > 50)
+                                    ? _image2
+                                    : _image,
+                                width: width,
+                                gaplessPlayback: true,
+                                fit: BoxFit.fitWidth,
+                              )
+                                  .animate(delay: 300.ms)
+                                  .moveY(
+                                      begin: 300,
+                                      end: 0,
+                                      duration: 800.ms,
+                                      curve: Curves.easeOut)
+                                  .fadeIn(),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
+
                     // Positioned(
                     //   top: -.25 * offset,
                     //   child: SizedBox(
@@ -268,11 +271,17 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                       controller: Globals.scrollController,
                       child: Center(
                         child: Column(
-                          children: <Widget>[
+                          children: [
                             //   Header(),
+
+                            SizedBox(
+                              height: height ,
+                            ),
                             SizedBox(
                               height: height,
                             ),
+                            StartedWidget(),
+                            OurFocus(),
                             // Text(
                             //   "Unlocking the future\nof Innovations",
                             //   style: TextStyle(
@@ -301,8 +310,8 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                             //     textAlign: TextAlign.center,
                             //   ),
                             // ),
-                            StartedWidget(),
-                            OurFocus(),
+                            // StartedWidget(),
+                            // OurFocus(),
                             AboutusWidget(),
                             TeamWidget(),
                             ArticlesWidget(),

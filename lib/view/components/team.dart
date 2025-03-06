@@ -107,7 +107,7 @@ class _TeamWidgetState extends State<TeamWidget> {
   Widget _team(context, width) {
     return LayoutBuilder(builder: (_context, constraints) {
       return Container(
-          constraints: BoxConstraints(maxWidth: width),
+          constraints: BoxConstraints(maxWidth: width),color: AppTheme.black,
           // decoration: BoxDecoration(
           //     image: DecorationImage(
           //         image: AssetImage(

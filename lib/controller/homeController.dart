@@ -99,6 +99,12 @@ class HomeController extends GetxController {
     print(filequery);
     update();
   }
+  RxDouble offset = 0.0.obs;
+  bool updateOffsetAccordingToScroll(ScrollNotification scrollNotification) {
+    offset.value= scrollNotification.metrics.pixels;
+    print(scrollNotification.metrics.pixels);
+    return true;
+  }
 
   clearQuery() {
     firstnameQuery.clear();
