@@ -293,7 +293,7 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                         child: Column(
                           children: [
                             //   Header(),
-
+                          if(ResponsiveLayout.isLargeScreen(context))
                             SizedBox(
                               height: height,
                             ),
