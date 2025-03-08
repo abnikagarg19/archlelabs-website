@@ -17,7 +17,7 @@ Future<void> main() async {
 
 class MyApp extends StatelessWidget {
   MyApp({super.key});
-
+//Flutter 3.24.1 • channel stable • https://github.com/flutter/flutter.git
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
