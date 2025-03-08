@@ -383,7 +383,7 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                             // OurFocus(),
                             AboutusWidget(),
                             TeamWidget(),
-                         //   ArticlesWidget(),
+                            ArticlesWidget(),
                             ContactUs(),
                             Footer()
                           ],

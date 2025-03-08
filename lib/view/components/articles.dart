@@ -100,6 +100,8 @@ class ArticlesWidget extends StatelessWidget {
                                                       ? 573
                                                       : 300
                                                   :null,
+                                                   colorBlendMode: BlendMode.darken,
+                                                   color: const Color.fromARGB(22, 0, 0, 0),
                                             ),
                                           ],
                                         )),
@@ -186,7 +188,8 @@ class ArticlesWidget extends StatelessWidget {
                                               "${_controller.blogsListItems[index].images![0]}",
                                                 height: 230,
                                                 width: 280,
-                                                fit: BoxFit.cover,
+                                                fit: BoxFit.cover,   colorBlendMode: BlendMode.darken,
+                                                   color: const Color.fromARGB(22, 0, 0, 0),
                                               ),
                                               const SizedBox(
                                                 height: 20,

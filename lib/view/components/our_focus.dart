@@ -55,9 +55,9 @@ class OurFocus extends StatelessWidget {
             if (info.visibleFraction > 0.1) {
               print("visible");
               _controller.changeisOurFocus(); // o
-            } else {
-              _controller.changeisOurFocusNot(); // o
-            }
+            } //else {
+             // _controller.changeisOurFocusNot(); // o
+           // }
           },
           key: Globals.container4Key,
           child: Container(

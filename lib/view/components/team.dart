@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_svg/svg.dart';
@@ -115,9 +116,9 @@ class _TeamWidgetState extends State<TeamWidget> {
             if (info.visibleFraction > 0.1) {
               print("visible");
               _controller.changeIsTeam(true); // o
-            } else {
-              _controller.changeIsTeam(false); // o
-            }
+            } //else {
+             // _controller.changeIsTeam(false); // o
+          //  }
           },
           key: Key("Team"),
           child: Container(
@@ -198,6 +199,7 @@ class _TeamWidgetState extends State<TeamWidget> {
                                   },
                                   child: Stack(
                                     children: [
+                                     
                                       Image.asset(
                                         alignment: Alignment.topCenter,
                                         "${teamList[index]["image"]}",

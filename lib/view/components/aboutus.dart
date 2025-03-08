@@ -1,12 +1,9 @@
 import 'dart:math';
-
-import 'package:archlelabswebsite/view/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:visibility_detector/visibility_detector.dart';
-
 import '../../controller/homeController.dart';
 import '../../responsive/layouts.dart';
 import '../../theme/app_theme.dart';
@@ -121,9 +118,9 @@ class AboutusWidget extends StatelessWidget {
                         if (info.visibleFraction > 0.05) {
                           print("visible");
                           _controller.changeAboutus(); // o
-                        } else {
-                          _controller.changenotAboutus(); // o
-                        }
+                        } //else {
+                        // _controller.changenotAboutus(); // o
+                        // }
                       },
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -229,7 +226,7 @@ class AboutusWidget extends StatelessWidget {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          "Our Vission",
+                                          "Our Vision",
                                           style: GoogleFonts.bebasNeue(
                                             color: AppTheme.black,
                                             fontSize: Constant.subheadingText(
@@ -242,13 +239,20 @@ class AboutusWidget extends StatelessWidget {
                                                   _controller.isMissionSection
                                                       ? 1
                                                       : 0,
-                                            ) // Ensure animation triggers
+                                            )
+                                            .fadeIn(
+                                              duration: 600.ms,
+                                              curve: Curves
+                                                  .easeOut, // Smooth fade-in
+                                            )
                                             .moveY(
-                                                begin: 200,
-                                                end: 0,
-                                                delay: 200.ms,
-                                                duration: 500.ms,
-                                                curve: Curves.linear),
+                                              begin:
+                                                  50, // Moves from lower position
+                                              end: 0,
+                                              delay: 200.ms,
+                                              duration: 500.ms,
+                                              curve: Curves.easeOut,
+                                            ),
                                         const SizedBox(height: 10),
                                         Text(
                                           "To revolutionize medical science, forging a future where no challenge is insurmountable and every life thrives.",
@@ -266,14 +270,17 @@ class AboutusWidget extends StatelessWidget {
                                                       : 0,
                                             )
                                             .fadeIn(
-                                                duration: 400
-                                                    .ms) // Gradual fade-in effect
+                                              duration: 600.ms,
+                                              curve: Curves.easeOut,
+                                            )
                                             .moveY(
-                                                begin: 200,
-                                                end: 0,
-                                                delay: 600.ms,
-                                                duration: 500.ms,
-                                                curve: Curves.linear),
+                                              begin:
+                                                  50, // Moves from lower position
+                                              end: 0,
+                                              delay: 600.ms,
+                                              duration: 500.ms,
+                                              curve: Curves.easeOut,
+                                            ),
                                         const SizedBox(height: 30),
                                         Text(
                                           "Our Mission",
@@ -291,14 +298,16 @@ class AboutusWidget extends StatelessWidget {
                                                       : 0,
                                             )
                                             .fadeIn(
-                                                duration: 400
-                                                    .ms) // Gradual fade-in effect
+                                              duration: 600.ms,
+                                              curve: Curves.linear,
+                                            )
                                             .moveY(
-                                                begin: 200,
-                                                end: 0,
-                                                delay: 1000.ms,
-                                                duration: 500.ms,
-                                                curve: Curves.linear),
+                                              begin: 50,
+                                              end: 0,
+                                              delay: 1000.ms,
+                                              duration: 500.ms,
+                                              curve: Curves.easeOut,
+                                            ),
                                         const SizedBox(height: 10),
                                         Text(
                                           "Our mission is to harness rigorous, interdisciplinary research and advanced engineering methodologies to drive transformative solutions for complex healthcare challenges—ultimately fostering equitable access and vibrant global health.",
@@ -316,14 +325,16 @@ class AboutusWidget extends StatelessWidget {
                                                       : 0,
                                             )
                                             .fadeIn(
-                                                duration: 400
-                                                    .ms) // Gradual fade-in effect
+                                              duration: 600.ms,
+                                              curve: Curves.linear,
+                                            )
                                             .moveY(
-                                                begin: 200,
-                                                end: 0,
-                                                delay: 1400.ms,
-                                                duration: 500.ms,
-                                                curve: Curves.linear),
+                                              begin: 50,
+                                              end: 0,
+                                              delay: 1400.ms,
+                                              duration: 500.ms,
+                                              curve: Curves.easeOut,
+                                            ),
                                       ],
                                     )
                                   : buildTextSmallContent(
@@ -366,9 +377,9 @@ class AboutusWidget extends StatelessWidget {
                       onVisibilityChanged: (VisibilityInfo info) {
                         if (info.visibleFraction > 0.05) {
                           _controller.changeisVlaueSection(true);
-                        } else {
-                          _controller.changeisVlaueSection(false);
-                        }
+                        } // else {
+                        //  _controller.changeisVlaueSection(false);
+                        //   }
                       },
                       child: GridView.custom(
                         shrinkWrap: true,

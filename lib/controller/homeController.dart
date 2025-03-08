@@ -21,7 +21,7 @@ class HomeController extends GetxController {
     print("dhn");
    // getTeams();
     getDesignations();
-    //getAllBlogs();
+    getAllBlogs();
   }
 
   hovering(index) {
