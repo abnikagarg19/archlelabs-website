@@ -378,7 +378,7 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                             // StartedWidget(),
                             // OurFocus(),
                             AboutusWidget(),
-                            TeamWidget(),
+                         //   TeamWidget(),
                             ArticlesWidget(),
                             ContactUs(),
                             Footer()
