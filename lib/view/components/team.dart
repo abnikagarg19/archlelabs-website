@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_avif/flutter_avif.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -93,7 +94,7 @@ class _TeamWidgetState extends State<TeamWidget> {
       "name": "Dr.Suneera C M",
       "designation": "Principle NLP Scientist",
       "linkedin": "https://www.linkedin.com/in/suneera-c-moideen/",
-      "image": "assets/team/suneera.jpg",
+      "image": "assets/team/suneera.avif",
       "des":
           "As Principal NLP Scientist, I lead our AI team in crafting intelligent, user-friendly healthcare communication systems with a dash of linguistic wizardry. Armed with a PhD from NIT Calicut, six years of research, and honors like the ACM India Anveshan Setu Fellowship, I blend academic rigor with real-world innovation. When I’m not pioneering breakthrough projects, I embrace the delightful chaos of motherhood and a well-timed movie night ."
     },
@@ -101,7 +102,7 @@ class _TeamWidgetState extends State<TeamWidget> {
       "name": "Mohan Raja",
       "designation": "Application Developer",
       "linkedin": "https://www.linkedin.com/in/mogeoeg2224/",
-      "image": "assets/team/mohan.jpg",
+      "image": "assets/team/mohan.avif",
       "des":
           "I'm an Application Developer with 6.5 years of experience, turning complex backend challenges into seamless solutions. I've worked on projects like Marsh Insurance and FedEx, earned certifications in Microsoft AI, AWS, and CockroachDB, and even bagged the 2023 IAF Young Entrepreneur Award for CX. When I’m not coding, you’ll find me playing cricket, trekking, or whipping up a killer non-veg dish."
     }
@@ -199,7 +200,7 @@ class _TeamWidgetState extends State<TeamWidget> {
                                   child: Stack(
                                     children: [
                                      
-                                      Image.asset(
+                                     AvifImage.asset(
                                         alignment: Alignment.topCenter,
                                         "${teamList[index]["image"]}",
                                         height: height,

@@ -3,6 +3,7 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  flutter_avif_windows
   flutter_tts
   url_launcher_windows
 )
