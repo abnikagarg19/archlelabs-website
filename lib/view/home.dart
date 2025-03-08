@@ -329,7 +329,7 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                         child: Column(
                           children: [
                             //   Header(),
-                            if (ResponsiveLayout.isLargeScreen(context))
+                         //   if (ResponsiveLayout.isLargeScreen(context))
                               Container(
                                 key: Globals.homekey,
                                 child: SizedBox(
@@ -378,7 +378,7 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                             // StartedWidget(),
                             // OurFocus(),
                             AboutusWidget(),
-                            TeamWidget(),
+                           // TeamWidget(),
                             ArticlesWidget(),
                             ContactUs(),
                             Footer()
