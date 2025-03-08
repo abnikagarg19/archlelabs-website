@@ -212,7 +212,7 @@ class _TeamWidgetState extends State<TeamWidget> {
                                                 ? 250
                                                 : 380,
                                                 fit: BoxFit.cover,
-                                                  filterQuality: FilterQuality.high,
+                                                  filterQuality: FilterQuality.high, alignment: Alignment.topCenter,
                                         progressIndicatorBuilder: (context, url,
                                                 downloadProgress) =>
                                             CircularProgressIndicator(

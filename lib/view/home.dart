@@ -237,14 +237,42 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                                 .fadeIn(),
 
                             // Image with slow appearance effect
+                          
+                            // AnimatedOpacity(
+                            //   opacity: _controller.offset.value > 500
+                            //       ? 1
+                            //       : 0, // Gradual fade-in
+                            //   duration: Duration(
+                            //       milliseconds: 1200), // Smooth transition
+                            //   child: Image(
+                            //     image: (_controller.offset.value > 600)
+                            //         ? _image2
+                            //         : _image,
+                            //     width: width,
+                            //     gaplessPlayback: true,
+                            //   //  height: 800,
+                            //     fit: MediaQuery.of(context).size.width > 800
+                            //         ? BoxFit.fitWidth
+                            //         : BoxFit.cover,
+                            //   )
+                            //       .animate(
+                            //           delay: 300.ms,
+                            //           target: _controller.offset.value > 600
+                            //               ? 1
+                            //               : 0)
+                                 
+                            //       .fadeIn(
+                            //         duration: 1400.ms,
+                            //       ),
+                            // ),
                             AnimatedOpacity(
-                              opacity: _controller.offset.value > 500
+                              opacity: _controller.offset.value > 50
                                   ? 1
                                   : 0, // Gradual fade-in
                               duration: Duration(
                                   milliseconds: 1200), // Smooth transition
                               child: Image(
-                                image: (_controller.offset.value > 600)
+                                image: (_controller.offset.value > 100)
                                     ? _image2
                                     : _image,
                                 width: width,
@@ -256,7 +284,7 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                               )
                                   .animate(
                                       delay: 300.ms,
-                                      target: _controller.offset.value > 600
+                                      target: _controller.offset.value > 50
                                           ? 1
                                           : 0)
                                  
@@ -264,10 +292,7 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                                     duration: 1400.ms,
                                   ),
                             ),
-                            // SizedBox(
-                            //   height: 200,
-                            // ),
-                            Container(
+                             Container(
                               margin: EdgeInsets.symmetric(vertical: 40),
                               constraints: BoxConstraints(
                                   maxWidth:
@@ -285,15 +310,42 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                                 .animate(
                                     delay: 0.ms,
                                     target:
-                                        _controller.offset.value > 1000 ? 1 : 0)
+                                        _controller.offset.value > 100 ? 1 : 0)
                                 .moveY(
-                                    begin: 300,
+                                    begin: 100,
                                     end: 0,
-                                    duration: 1400.ms,
+                                    duration: 600.ms,
                                     curve: Curves.linear)
                                 .fadeIn(
-                                  duration: 1400.ms,
+                                  duration: 600.ms,
                                 ),
+                            // Container(
+                            //   margin: EdgeInsets.symmetric(vertical: 40),
+                            //   constraints: BoxConstraints(
+                            //       maxWidth:
+                            //           MediaQuery.of(context).size.width * .8),
+                            //   child: Text(
+                            //     "We revolutionize healthcare with rigorous research and bold innovation.By merging expertise\nacross science, technology, and medicine,we create transformative solutions that tackle the world’s\n most urgent medical challenges, driving scalable, real-world impact ",
+                            //     style: GoogleFonts.openSans(
+                            //         color: const Color.fromARGB(
+                            //             255, 255, 255, 255),
+                            //         fontSize: Constant.TextSize20(context),
+                            //         height: 2.5),
+                            //     textAlign: TextAlign.center,
+                            //   ),
+                            // )
+                            //     .animate(
+                            //         delay: 0.ms,
+                            //         target:
+                            //             _controller.offset.value > 1000 ? 1 : 0)
+                            //     .moveY(
+                            //         begin: 300,
+                            //         end: 0,
+                            //         duration: 1400.ms,
+                            //         curve: Curves.linear)
+                            //     .fadeIn(
+                            //       duration: 1400.ms,
+                            //     ),
                           ],
                         ),
                       ),
@@ -330,20 +382,20 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                           children: [
                             //   Header(),
                          //   if (ResponsiveLayout.isLargeScreen(context))
-                              Container(
-                                key: Globals.homekey,
-                                child: SizedBox(
-                                  height: height + 1200,
-                                ),
-                              ),
+                              // Container(
+                              //   key: Globals.homekey,
+                              //   child: SizedBox(
+                              //     height: height + 1200,
+                              //   ),
+                              // ),
                             // if (ResponsiveLayout.isLargeScreen(context))
                              if (ResponsiveLayout.isLargeScreen(context))
                             SizedBox(
-                              height: height,
+                              height: height+height + 1200,
                             )
                             else
                                SizedBox(
-                              height: height,
+                              height: height+ 500,
                             ),
                             StartedWidget(),
                             OurFocus(),

@@ -93,15 +93,15 @@ class ArticlesWidget extends StatelessWidget {
                                           children: [
                                             Image.network(
                                               "${_controller.blogsListItems[0].images![0]}",
-                                              height:constraints.maxWidth > 800?343 :250,
+                                              height:constraints.maxWidth > 800?343 :200,
                                               fit: BoxFit.cover,
                                               width: constraints.maxWidth > 800
                                                   ? constraints.maxWidth > 1200
                                                       ? 573
                                                       : 300
                                                   :null,
-                                                   colorBlendMode: BlendMode.darken,
-                                                   color: const Color.fromARGB(22, 0, 0, 0),
+                                                   colorBlendMode: BlendMode.saturation,
+                                                   color:   Colors.grey,
                                             ),
                                           ],
                                         )),
@@ -188,8 +188,8 @@ class ArticlesWidget extends StatelessWidget {
                                               "${_controller.blogsListItems[index].images![0]}",
                                                 height: 230,
                                                 width: 280,
-                                                fit: BoxFit.cover,   colorBlendMode: BlendMode.darken,
-                                                   color: const Color.fromARGB(22, 0, 0, 0),
+                                                fit: BoxFit.cover,     colorBlendMode: BlendMode.saturation,
+                                                   color:   Colors.grey,
                                               ),
                                               const SizedBox(
                                                 height: 20,
