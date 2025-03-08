@@ -101,7 +101,7 @@ class _ContactUsState extends State<ContactUs>
                   image: AssetImage(
                     "assets/images/contact.png",
                   ),
-                  opacity: 0.5,
+                  opacity: 1,
                   fit: BoxFit.cover)),
           child: Center(
             child: Container(
@@ -947,13 +947,16 @@ class _ContactUsState extends State<ContactUs>
                                   style: GoogleFonts.openSans(
                                       color: AppTheme.textBlackColor,
                                       fontSize: 13),
+                                      overflow: TextOverflow.ellipsis,
+                                      maxLines: 1,
                                 ),
                                 
                                 items: _controller.designationList
                                     .map<DropdownMenuItem<String>>((data) {
                                   return DropdownMenuItem<String>(
                                     value: data["id"].toString(),
-                                    child: Text(data["job_title"].toString()),
+                                    child: Text(data["job_title"].toString(),   overflow: TextOverflow.ellipsis,
+                                      maxLines: 1,),
                                   );
                                 }).toList(),
                                 validator: (value) {
