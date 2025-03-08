@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_avif/flutter_avif.dart';
@@ -117,8 +118,8 @@ class _TeamWidgetState extends State<TeamWidget> {
               print("visible");
               _controller.changeIsTeam(true); // o
             } //else {
-             // _controller.changeIsTeam(false); // o
-          //  }
+            // _controller.changeIsTeam(false); // o
+            //  }
           },
           key: Key("Team"),
           child: Container(
@@ -199,10 +200,9 @@ class _TeamWidgetState extends State<TeamWidget> {
                                   },
                                   child: Stack(
                                     children: [
-                                     
-                                     AvifImage.asset(
-                                        alignment: Alignment.topCenter,
-                                        "${teamList[index]["image"]}",
+                                      CachedNetworkImage(
+                                        imageUrl:
+                                            "https://d1373q3uxwse19.cloudfront.net/website/team/0990b9cc5ecf4ddd9c36c9e5649bf22e_aaDr.Siri Karthika R (Siri).jpg",
                                         height: height,
                                         width: ResponsiveLayout.isMediumScreen(
                                                 context)
@@ -211,9 +211,30 @@ class _TeamWidgetState extends State<TeamWidget> {
                                                     context)
                                                 ? 250
                                                 : 380,
-                                        fit: BoxFit.cover,
-                                        filterQuality: FilterQuality.high,
+                                                fit: BoxFit.cover,
+                                                  filterQuality: FilterQuality.high,
+                                        progressIndicatorBuilder: (context, url,
+                                                downloadProgress) =>
+                                            CircularProgressIndicator(
+                                                value:
+                                                    downloadProgress.progress),
+                                        errorWidget: (context, url, error) =>
+                                            Icon(Icons.error, color: Colors.white,),
                                       ),
+                                      // Image.network(
+                                      //   alignment: Alignment.topCenter,
+                                      //   "https://d1373q3uxwse19.cloudfront.net/website/team/188842fb4b284083a824122e9597d458_s.png",
+                                      //   height: height,
+                                      //   width: ResponsiveLayout.isMediumScreen(
+                                      //           context)
+                                      //       ? 280
+                                      //       : ResponsiveLayout.isSmallScreen(
+                                      //               context)
+                                      //           ? 250
+                                      //           : 380,
+                                      //   fit: BoxFit.cover,
+                                      //   filterQuality: FilterQuality.high,
+                                      // ),
                                       AnimatedPositioned(
                                         bottom: _controller.hoverIndex == index
                                             ? 0
@@ -237,7 +258,8 @@ class _TeamWidgetState extends State<TeamWidget> {
                                               radius: Radius.circular(8),
                                               thumbColor:
                                                   MaterialStateProperty.all(
-                                                      Color.fromARGB(142, 7, 7, 7)),
+                                                      Color.fromARGB(
+                                                          142, 7, 7, 7)),
                                               minThumbLength: 30,
                                             )),
                                             child: SingleChildScrollView(
@@ -289,28 +311,20 @@ class _TeamWidgetState extends State<TeamWidget> {
                                         "  ${teamList[index]["designation"]}",
                                         style: GoogleFonts.openSans(
                                           fontWeight: FontWeight.w700,
-                                          color:
-                                              Color.fromARGB(214, 233, 233, 233),
-                                          fontSize: Constant.mediumbody(context),
+                                          color: Color.fromARGB(
+                                              214, 233, 233, 233),
+                                          fontSize:
+                                              Constant.mediumbody(context),
                                         ),
-                                          maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
                                       ),
-                                      
                                     ),
                                   ],
                                 )
                               ],
                             ),
-                          )
-                              .animate(
-                                  target: _controller.isTeam
-                                      ? 1
-                                      : 0) // Ensure animation triggers
-                              .then(
-                                          delay: (400 * index)
-                                              .ms) // Staggered delay
-                                      .fadeIn( duration: 1200.ms);
+                          );
                         },
                       ),
                     ),
