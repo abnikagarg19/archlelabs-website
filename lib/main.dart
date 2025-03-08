@@ -23,6 +23,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     precacheImage(const AssetImage("assets/images/robo.png"), context);
     precacheImage(const AssetImage('assets/images/about us.gif'), context);
+
+     precacheImage(const AssetImage('assets/team/tejas.avif'), context);
+          precacheImage(const AssetImage('assets/team/alois.avif'), context);
+          precacheImage(const AssetImage('assets/team/antara.avif'), context);
+
+          precacheImage(const AssetImage('assets/team/mohan.avif'), context);
+                    precacheImage(const AssetImage('assets/team/joel.avif'), context);
+
+
     return GetMaterialApp(
       title: 'Archle Labs',
       debugShowCheckedModeBanner: false,
