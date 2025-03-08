@@ -188,9 +188,9 @@ class StartedWidget extends StatelessWidget {
 }
 
 final String text1 = """
-Archle Labs, founded by Alois Sajo Devasagayam, emerged during the COVID-19 pandemic to address critical gaps in healthcare,
- particularly the silent struggles of the elderly and their caregivers. Inspired by the profound sacrifices of a devoted 
- caregiver tending to bedridden parents, the venture was driven by a vision to harness technology for transformative,
+Archle Labs, founded by Alois Sajo Devasagayam, emerged during the COVID-19 pandemic to address critical gaps in,
+healthcare particularly the silent struggles of the elderly and their caregivers. Inspired by the profound sacrifices of a 
+ devoted caregiver tending to bedridden parents, the venture was driven by a vision to harness technology for transformative,
   human-centered healthcare solutions. With early momentum fueled by a mentor-investor’s belief—whose untimely passing
    became a defining catalyst—Archle Labs evolved from a promising concept into an unshakable mission to revolutionize
   healthcare accessibility. Despite formidable challenges, the unwavering commitment of key stakeholders,

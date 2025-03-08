@@ -238,13 +238,13 @@ class _HomeWidgetsState extends State<HomeWidgets> {
 
                             // Image with slow appearance effect
                             AnimatedOpacity(
-                              opacity: _controller.offset.value > 600
+                              opacity: _controller.offset.value > 500
                                   ? 1
                                   : 0, // Gradual fade-in
                               duration: Duration(
                                   milliseconds: 1200), // Smooth transition
                               child: Image(
-                                image: (_controller.offset.value > 600)
+                                image: (_controller.offset.value > 500)
                                     ? _image2
                                     : _image,
                                 width: width,
@@ -285,7 +285,7 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                                 .animate(
                                     delay: 0.ms,
                                     target:
-                                        _controller.offset.value > 1200 ? 1 : 0)
+                                        _controller.offset.value > 1000 ? 1 : 0)
                                 .moveY(
                                     begin: 300,
                                     end: 0,
@@ -378,7 +378,7 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                             // StartedWidget(),
                             // OurFocus(),
                             AboutusWidget(),
-                           // TeamWidget(),
+                            TeamWidget(),
                             ArticlesWidget(),
                             ContactUs(),
                             Footer()

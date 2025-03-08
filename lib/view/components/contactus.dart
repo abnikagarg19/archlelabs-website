@@ -1438,7 +1438,7 @@ class _ContactUsState extends State<ContactUs>
                     padding:
                         const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(1),
                       color: i == selectIndex
                           ? AppTheme.whiteColor
                           : (i == hoverIndex

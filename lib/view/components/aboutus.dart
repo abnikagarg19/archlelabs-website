@@ -129,23 +129,22 @@ class AboutusWidget extends StatelessWidget {
                             Stack(
                               clipBehavior: Clip.none,
                               children: [
-                                AnimatedContainer(
-                                  duration: Duration(milliseconds: 600),
+                                Container(
+                                  
                                   width: 350,
-                                  height: _controller.isAboutuseVisble
-                                      ? 500
-                                      : 0, // Height transitions from 0 to 400
+                                  height: 
+                                     500
+                                    ,
                                   child: Image.asset(
                                     "assets/images/space2.png",
                                     fit: BoxFit.fitHeight,
                                   ),
                                 ),
-                                AnimatedPositioned(
+                                Positioned(
                                   top: 80,
-                                  right: _controller.isAboutuseVisble
-                                      ? -370
-                                      : -900,
-                                  duration: Duration(milliseconds: 600),
+                                  right: 
+                                       -370
+                                    ,
                                   child: Text(
                                     "About Us",
                                     style: GoogleFonts.openSans(
@@ -153,7 +152,7 @@ class AboutusWidget extends StatelessWidget {
                                       fontWeight: FontWeight.w600,
                                       fontSize: Constant.bigFont94(context),
                                       letterSpacing: 3,
-                                    ),
+                                    )
                                   ),
                                 )
                               ],
@@ -188,12 +187,16 @@ class AboutusWidget extends StatelessWidget {
                                     .animate(
                                       target:
                                           _controller.isAboutuseVisble ? 1 : 0,
-                                    ) // Ensure animation triggers
-                                    .moveX(
-                                        begin: 300,
-                                        end: 0,
-                                        duration: 800.ms,
-                                        curve: Curves.linear),
+                                    )  .fadeIn(
+                                              delay: 200.ms,
+                                              duration: 600.ms,
+                                              curve: Curves.linear,
+                                            ),
+                                    // .moveX(
+                                    //     begin: 300,
+                                    //     end: 0,
+                                    //     duration: 800.ms,
+                                    //     curve: Curves.linear),
                               ],
                             ),
                           ),
@@ -240,20 +243,11 @@ class AboutusWidget extends StatelessWidget {
                                                       ? 1
                                                       : 0,
                                             )
-                                           
-                                            .moveY(
-                                              begin:
-                                                  50, // Moves from lower position
-                                              end: 0,
+                                            .fadeIn(
                                               delay: 200.ms,
-                                              duration: 500.ms,
-                                              curve: Curves.easeOut,
-                                            ) .fadeIn(
                                               duration: 600.ms,
-                                              curve: Curves
-                                                  .easeOut, // Smooth fade-in
+                                              curve: Curves.linear,
                                             ),
-                                           
                                         const SizedBox(height: 10),
                                         Text(
                                           "To revolutionize medical science, forging a future where no challenge is insurmountable and every life thrives.",
@@ -270,18 +264,10 @@ class AboutusWidget extends StatelessWidget {
                                                       ? 1
                                                       : 0,
                                             )
-                                            
-                                            .moveY(
-                                              begin:
-                                                  50, // Moves from lower position
-                                              end: 0,
+                                           .fadeIn(
                                               delay: 600.ms,
-                                              duration: 500.ms,
-                                              curve: Curves.easeOut,
-                                            ).fadeIn(
                                               duration: 600.ms,
-                                              curve: Curves
-                                                  .easeOut, // Smooth fade-in
+                                              curve: Curves.linear,
                                             ),
                                         const SizedBox(height: 30),
                                         Text(
@@ -299,17 +285,10 @@ class AboutusWidget extends StatelessWidget {
                                                       ? 1
                                                       : 0,
                                             )
-                                          
-                                            .moveY(
-                                              begin: 50,
-                                              end: 0,
+                                           .fadeIn(
                                               delay: 1000.ms,
-                                              duration: 500.ms,
-                                              curve: Curves.easeOut,
-                                            ).fadeIn(
                                               duration: 600.ms,
-                                              curve: Curves
-                                                  .easeOut, // Smooth fade-in
+                                              curve: Curves.linear,
                                             ),
                                         const SizedBox(height: 10),
                                         Text(
@@ -327,14 +306,8 @@ class AboutusWidget extends StatelessWidget {
                                                       ? 1
                                                       : 0,
                                             )
-                                            
-                                            .moveY(
-                                              begin: 50,
-                                              end: 0,
+                                            .fadeIn(
                                               delay: 1400.ms,
-                                              duration: 500.ms,
-                                              curve: Curves.easeOut,
-                                            ) .fadeIn(
                                               duration: 600.ms,
                                               curve: Curves.linear,
                                             )
