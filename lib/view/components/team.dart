@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_svg/svg.dart';
@@ -46,7 +45,7 @@ class _TeamWidgetState extends State<TeamWidget> {
       "name": "Alois D Sajo",
       "designation": "Founder/CEO",
       "linkedin": "https://www.linkedin.com/in/aloissajodevasagayam/",
-      "image": "assets/team/alois.webp",
+      "image": "assets/team/alois.avif",
       "des":
           "As the Founder & CEO of Archle Labs, I don’t just build products ,I create social impact. At the helm of a company redefining healthcare innovation, I bring a fusion of strategy,  product development, and user experience design to create solutions that drive meaningful innovation in the market. My journey spans leading social enterprises, crafting market -effective strategies, and assembling high-caliber teams that thrive on curiosity and first-principle thinking. When I’m not immersed in building the next advancement, you’ll find me exploring history,  diving into new cultures, exploring science, philosophy etc. I believe true innovation comes from questioning everything and daring to solve problems others shy away from."
     },
@@ -54,7 +53,7 @@ class _TeamWidgetState extends State<TeamWidget> {
       "name": "Dr.Siri Karthika R",
       "designation": "Health Director",
       "linkedin": "www.linkedin.com/in/siri-karthika",
-      "image": "assets/team/siri.jpg",
+      "image": "assets/team/siri.avif",
       "des":
           "I blend medical expertise with bold innovation, ensuring research meets real-world patient needs. An MBBS graduate and University Rank holder in Pediatrics, I have an insatiable curiosity for epigenetics, neuroscience, and the quirks of human behavior. When I’m not deep in research, you’ll find me lifting weights, experimenting in the kitchen, or proving that a little eccentricity makes everything more interesting, even healthcare."
     },
@@ -62,7 +61,7 @@ class _TeamWidgetState extends State<TeamWidget> {
       "name": "Joel Prithvi Ignatius",
       "designation": "Data Scientist",
       "linkedin": "https://www.linkedin.com/in/joel-prithvi/",
-      "image": "assets/team/joel.jpg",
+      "image": "assets/team/joel.avif",
       "des":
           "I’m a Data Scientist with 2.5 years of experience, specializing in transforming raw data into actionable insights, building machine learning models and automating processes to solve real-world challenges. I’m a Master's graduate in Big Data and Business Analytics, and have had experience helping a Fortune 500 company cut costs through analytics. Off-duty, I’m either shredding on my guitar (100+ shows), cooking up beats, shooting hoops, or deep diving into an anime binge."
     },
@@ -70,7 +69,7 @@ class _TeamWidgetState extends State<TeamWidget> {
       "name": "Tejas Prataprao Chavan",
       "designation": "R&D Mechatronics engineer",
       "linkedin": "https://www.linkedin.com/in/tejaspchavan",
-      "image": "assets/team/tejas.jpg",
+      "image": "assets/team/tejas.avif",
       "des":
           "I breathe life into machines, blending robotics, embedded systems, and AI-driven automation to create intelligent, high-performance solutions. From designing circuits to developing full-scale prototypes, I bridge the gap between mechanics and intelligence. With published research, design accolades, and innovations, I thrive on solving complex challenges—preferably with a strong coffee, a sketchbook in hand, and a deep dive into cinematography."
     },
@@ -78,7 +77,7 @@ class _TeamWidgetState extends State<TeamWidget> {
       "name": "Antara",
       "designation": "UX/UI Designer",
       "linkedin": "https://www.linkedin.com/in/antara-banik/",
-      "image": "assets/team/antara.jpg",
+      "image": "assets/team/antara.avif",
       "des":
           "I design with empathy, curiosity, and just the right amount of obsession over the tiniest details. As a self-taught UX designer, I love decoding human behavior and transforming complex ideas into seamless, intuitive experiences. When I'm not crafting digital interfaces, you’ll find me lost in books about psychology, experimenting with colors, or perfecting my legendary rajma chawal recipe that is certified best by my family. I believe great design isn’t just about how things look, it’s about how they make people feel."
     },
@@ -271,6 +270,7 @@ class _TeamWidgetState extends State<TeamWidget> {
                                     fontSize: Constant.body(context),
                                   ),
                                   maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
                                 ),
                                 SizedBox(height: 6),
                                 Row(
@@ -283,14 +283,19 @@ class _TeamWidgetState extends State<TeamWidget> {
                                         height: 16,
                                       ),
                                     ),
-                                    Text(
-                                      "  ${teamList[index]["designation"]}",
-                                      style: GoogleFonts.openSans(
-                                        fontWeight: FontWeight.w700,
-                                        color:
-                                            Color.fromARGB(214, 233, 233, 233),
-                                        fontSize: Constant.mediumbody(context),
+                                    Flexible(
+                                      child: Text(
+                                        "  ${teamList[index]["designation"]}",
+                                        style: GoogleFonts.openSans(
+                                          fontWeight: FontWeight.w700,
+                                          color:
+                                              Color.fromARGB(214, 233, 233, 233),
+                                          fontSize: Constant.mediumbody(context),
+                                        ),
+                                          maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
                                       ),
+                                      
                                     ),
                                   ],
                                 )

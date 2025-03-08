@@ -244,7 +244,7 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                               duration: Duration(
                                   milliseconds: 1200), // Smooth transition
                               child: Image(
-                                image: (_controller.offset.value > 500)
+                                image: (_controller.offset.value > 600)
                                     ? _image2
                                     : _image,
                                 width: width,

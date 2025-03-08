@@ -1,8 +1,10 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:archlelabswebsite/models/TeamModel.dart';
+import 'package:archlelabswebsite/utils/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../models/BlogModel.dart';
@@ -17,11 +19,36 @@ class HomeController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    Globals.scrollController.addListener(_onScroll);
 
     print("dhn");
-   // getTeams();
+    // getTeams();
     getDesignations();
     getAllBlogs();
+  }
+
+  Timer? _scrollEndTimer;
+
+  void _onScroll() {
+    offset.value = Globals.scrollController.offset;
+
+    /// Reset previous timer if scrolling continues
+    _scrollEndTimer?.cancel();
+
+    /// Wait for 500ms after scrolling stops, then keep image visible for a bit
+    _scrollEndTimer = Timer(Duration(milliseconds: 500), () {
+      Future.delayed(Duration(seconds: 1), () {
+        offset.value =
+            Globals.scrollController.offset; // Ensure image stays for a bit
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    Globals.scrollController.dispose();
+    _scrollEndTimer?.cancel();
+    super.dispose();
   }
 
   hovering(index) {
@@ -112,19 +139,20 @@ class HomeController extends GetxController {
     isOurStory = value;
     update();
   }
-bool isTeam = false;
+
+  bool isTeam = false;
   changeIsTeam(value) {
     isTeam = value;
     update();
   }
- bool isVlaueSection = false;
+
+  bool isVlaueSection = false;
   changeisVlaueSection(value) {
     isVlaueSection = value;
     update();
   }
 
-
- bool isMissionSection= false;
+  bool isMissionSection = false;
   changeisMissionSection(value) {
     isMissionSection = value;
     update();
@@ -323,7 +351,6 @@ bool isTeam = false;
   }
 
   createJob() {
- 
     DialogHelper.showLoading();
     HomepageService()
         .createJob(firstNameJob.text, lastNameJob.text, emailJob.text,

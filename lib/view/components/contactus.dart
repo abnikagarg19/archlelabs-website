@@ -101,7 +101,7 @@ class _ContactUsState extends State<ContactUs>
                     "assets/images/contact.png",
                   ),
                   opacity: 0.5,
-                  fit: BoxFit.fill)),
+                  fit: BoxFit.cover)),
           child: Center(
             child: Container(
               margin: EdgeInsets.only(bottom: 80),
