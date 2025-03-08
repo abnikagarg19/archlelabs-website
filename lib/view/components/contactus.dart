@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'dart:typed_data';
 
+import 'package:archlelabswebsite/utils/dailog.dart';
 import 'package:archlelabswebsite/utils/globals.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:file_picker/file_picker.dart';
@@ -938,7 +939,7 @@ class _ContactUsState extends State<ContactUs>
                         children: [
                           Expanded(
                             child: DropdownButtonHideUnderline(
-                              child: DropdownButton2<String>(
+                              child: DropdownButtonFormField2<String>(
                                 isExpanded: true,
                                 hint: Text(
                                   'Select Designation',
@@ -953,6 +954,13 @@ class _ContactUsState extends State<ContactUs>
                                     child: Text(data["job_title"].toString()),
                                   );
                                 }).toList(),
+                                validator: (value) {
+                                  if (value == null) {
+                                    return 'Designation is required';
+                                  }
+                                  return null;
+                                },
+                                
                                 value: selectedDesignation,
                                 onChanged: (String? value) {
                                   setState(() {
@@ -972,7 +980,9 @@ class _ContactUsState extends State<ContactUs>
                                         .toString();
                                   });
                                 },
+                                decoration: InputDecoration(border: InputBorder.none, errorStyle: GoogleFonts.inter(fontSize: 12),),
                                 buttonStyleData: ButtonStyleData(
+                                  
                                   height: 30,
                                   width: 200,
                                   padding:
@@ -1209,6 +1219,10 @@ class _ContactUsState extends State<ContactUs>
             InkWell(
               onTap: () {
                 if (hireFormKey.currentState!.validate()) {
+                  if(_controller.fileeJob==null){
+                    DialogHelper.showErroDialog(description: "Select Resume");
+                    return;
+                  }
                   _controller.createJob();
                 }
               },
@@ -1236,16 +1250,13 @@ class _ContactUsState extends State<ContactUs>
   }
 
   void showCustomDialog() {
-
     Get.dialog(
       Dialog(
-        backgroundColor: AppTheme.black,
-        
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(2), // Border radius
-        ),
-        child: FunkyOverlay(designationList: designationData)
-      ),
+          backgroundColor: AppTheme.black,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(2), // Border radius
+          ),
+          child: FunkyOverlay(designationList: designationData)),
     );
   }
 
@@ -1257,7 +1268,8 @@ class _ContactUsState extends State<ContactUs>
     });
     //}
   }
- Widget buildLargeLeftSide(constraints, context) {
+
+  Widget buildLargeLeftSide(constraints, context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -1492,9 +1504,10 @@ buildFilePicker(context, ontap) {
     ),
   );
 }
+
 class FunkyOverlay extends StatefulWidget {
-   FunkyOverlay({super.key, required this.designationList});
-var designationList ;
+  FunkyOverlay({super.key, required this.designationList});
+  var designationList;
 
   @override
   State<StatefulWidget> createState() => FunkyOverlayState();
@@ -1504,7 +1517,6 @@ class FunkyOverlayState extends State<FunkyOverlay>
     with SingleTickerProviderStateMixin {
   AnimationController? controller;
   Animation<double>? scaleAnimation;
-  
 
   @override
   void initState() {
@@ -1521,166 +1533,113 @@ class FunkyOverlayState extends State<FunkyOverlay>
 
     controller!.forward();
   }
-    ScrollController _scrollController = ScrollController();
+
+  ScrollController _scrollController = ScrollController();
 
   @override
-  Widget build(BuildContext context,) {
+  Widget build(
+    BuildContext context,
+  ) {
     return Center(
       child: Material(
         color: Colors.transparent,
         child: ScaleTransition(
           scale: scaleAnimation!,
-          child:  Stack(
-          children: [
-            SingleChildScrollView(
-              controller: _scrollController, // Attach ScrollController
+          child: Stack(
+            children: [
+              SingleChildScrollView(
+                controller: _scrollController, // Attach ScrollController
 
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Image.asset(
-                      "assets/images/Group 26.png",
-                    ),
-                    SizedBox(
-                      width: 40,
-                    ),
-                    Expanded(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(height: 30),
-                          Align(
-                              alignment: Alignment.bottomRight,
-                              child: InkWell(
-                                  onTap: () {
-                                    Get.back();
-                                  },
-                                  child: SvgPicture.asset(
-                                      "assets/images/cross.svg"))),
-                          SizedBox(height: 30),
-                          Text(
-                            "FULL TIME PROGRAMME",
-                            style: GoogleFonts.openSans(
-                              color: AppTheme.whiteColor,
-                              fontWeight: FontWeight.w400,
-                              fontSize: Constant.smallbheadingText(context),
-                              letterSpacing: 3,
-                            ),
-                          ),
-                          SizedBox(height: 10),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text(
-                                 widget.designationList["job_title"],
-                                style: GoogleFonts.openSans(
-                                    color: AppTheme.whiteColor,
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: Constant.headingText(context),
-                                    letterSpacing: 3,
-                                    height: 0),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(bottom: 8, left: 10),
-                                child: Image.asset(
-                                  "assets/images/Group 41.png",
-                                  height: 20,
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 40),
-                          Container(
-                            constraints: BoxConstraints(maxWidth: 800),
-                            child: Text(
-                               widget.designationList["description"],
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Image.asset(
+                        "assets/images/Group 26.png",
+                      ),
+                      SizedBox(
+                        width: 40,
+                      ),
+                      Expanded(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(height: 30),
+                            SizedBox(height: 30),
+                            Text(
+                              "FULL TIME PROGRAMME",
                               style: GoogleFonts.openSans(
                                 color: AppTheme.whiteColor,
                                 fontWeight: FontWeight.w400,
-                                fontSize: Constant.body(context),
-                                height: 1.6,
+                                fontSize: Constant.smallbheadingText(context),
+                                letterSpacing: 3,
                               ),
-                              textAlign: TextAlign.justify,
                             ),
-                          ),
-                          SizedBox(height: 30),
-                          Row(
-                            children: [
-                              Text(
-                                "LOCATION- ",
-                                style: GoogleFonts.openSans(
-                                  color: AppTheme.whiteColor,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: Constant.TextSize20(context),
-                                  letterSpacing: 3,
+                            SizedBox(height: 10),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(
+                                  widget.designationList["job_title"],
+                                  style: GoogleFonts.openSans(
+                                      color: AppTheme.whiteColor,
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: Constant.headingText(context),
+                                      letterSpacing: 3,
+                                      height: 0),
                                 ),
-                              ),
-                              Text(
-                                widget.designationList["location"],
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      bottom: 8, left: 10),
+                                  child: Image.asset(
+                                    "assets/images/Group 41.png",
+                                    height: 20,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 40),
+                            Container(
+                              constraints: BoxConstraints(maxWidth: 800),
+                              child: Text(
+                                widget.designationList["description"],
                                 style: GoogleFonts.openSans(
                                   color: AppTheme.whiteColor,
-                                  fontSize: Constant.TextSize20(context),
-                                  height: 1.5,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: Constant.body(context),
+                                  height: 1.6,
                                 ),
                                 textAlign: TextAlign.justify,
                               ),
-                            ],
-                          ),
-                          SizedBox(height: 80),
-                          Container(
-                              constraints: BoxConstraints(maxWidth: 800),
-                              child: Row(
-                                children: [
-                                  Expanded(
-                                    child: Divider(
-                                      color: AppTheme.whiteColor,
-                                      thickness: 0.3,
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 10),
-                                    child: Image.asset(
-                                      "assets/images/arrow.png",
-                                      height: 20,
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 10),
-                                    child: Image.asset(
-                                      "assets/images/arrow.png",
-                                      height: 20,
-                                    ),
-                                  ),
-                                ],
-                              )),
-                          SizedBox(height: 80),
-                          Text(
-                            "Your Qualifications",
-                            style: GoogleFonts.openSans(
-                              color: AppTheme.whiteColor,
-                              fontWeight: FontWeight.w700,
-                              fontSize: Constant.textFourtyEight(context),
-                              letterSpacing: 3,
                             ),
-                          ),
-                          SizedBox(height: 20),
-                          ...List.generate(
-                            widget.designationList["keyresponsibilty"].length,
-                            (index) {
-                              return buildSection(
-                                   widget.designationList["keyresponsibilty"][index],
-                                  context);
-                            },
-                          ),
-                          SizedBox(height: 80),
-                          Align(
-                            alignment: Alignment.bottomRight,
-                            child: Container(
+                            SizedBox(height: 30),
+                            Row(
+                              children: [
+                                Text(
+                                  "LOCATION- ",
+                                  style: GoogleFonts.openSans(
+                                    color: AppTheme.whiteColor,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: Constant.TextSize20(context),
+                                    letterSpacing: 3,
+                                  ),
+                                ),
+                                Text(
+                                  widget.designationList["location"],
+                                  style: GoogleFonts.openSans(
+                                    color: AppTheme.whiteColor,
+                                    fontSize: Constant.TextSize20(context),
+                                    height: 1.5,
+                                  ),
+                                  textAlign: TextAlign.justify,
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 80),
+                            Container(
                                 constraints: BoxConstraints(maxWidth: 800),
                                 child: Row(
                                   children: [
@@ -1690,154 +1649,219 @@ class FunkyOverlayState extends State<FunkyOverlay>
                                         thickness: 0.3,
                                       ),
                                     ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 10),
+                                      child: Image.asset(
+                                        "assets/images/arrow.png",
+                                        height: 20,
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 10),
+                                      child: Image.asset(
+                                        "assets/images/arrow.png",
+                                        height: 20,
+                                      ),
+                                    ),
                                   ],
                                 )),
-                          ),
-                          SizedBox(height: 80),
-                          Text(
-                            "Your Skills",
-                            style: GoogleFonts.openSans(
-                              color: AppTheme.whiteColor,
-                              fontWeight: FontWeight.w700,
-                              fontSize: Constant.textFourtyEight(context),
-                              letterSpacing: 3,
-                            ),
-                          ),
-                          SizedBox(height: 60),
-                          GridView.builder(
-                            primary: false,
-                            shrinkWrap: true,
-                            gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 3, // 3 columns per row
-                              crossAxisSpacing: 100, // Space between columns
-
-                              childAspectRatio:
-                                  2.2, // Adjust aspect ratio to balance title & description
-                            ),
-                            itemCount:  widget.designationList["skills"].length,
-                            itemBuilder: (context, index) {
-                              return buildCard(
-                                   widget.designationList["skills"][index]['title']!,
-                                   widget.designationList["skills"][index]
-                                      ['description']!,
-                                  context);
-                            },
-                          ),
-                          SizedBox(height: 80),
-                          Container(
-                              constraints: BoxConstraints(maxWidth: 800),
-                              child: Divider(
+                            SizedBox(height: 80),
+                            Text(
+                              "Your Qualifications",
+                              style: GoogleFonts.openSans(
                                 color: AppTheme.whiteColor,
-                                thickness: 0.3,
-                              )),
-                          SizedBox(height: 80),
-                          Text(
-                            "Key Responsibilities",
-                            style: GoogleFonts.openSans(
-                              color: AppTheme.whiteColor,
-                              fontWeight: FontWeight.w700,
-                              fontSize: Constant.textFourtyEight(context),
-                              letterSpacing: 3,
+                                fontWeight: FontWeight.w700,
+                                fontSize: Constant.textFourtyEight(context),
+                                letterSpacing: 3,
+                              ),
                             ),
-                          ),
-                          SizedBox(height: 20),
-                          ...List.generate(
-                             widget.designationList["qualification"].length,
-                            (index) {
-                              return buildSection(
-                                   widget.designationList["qualification"][index],
-                                  context);
-                            },
-                          ),
-                          SizedBox(height: 80),
-                          Align(
-                            alignment: Alignment.bottomRight,
-                            child: Container(
-                                constraints: BoxConstraints(maxWidth: 800),
-                                child: Row(
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.only(right: 10),
-                                      child: Image.asset(
-                                        "assets/images/leftarrow.png",
-                                        height: 20,
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(right: 10),
-                                      child: Image.asset(
-                                        "assets/images/leftarrow.png",
-                                        height: 20,
-                                      ),
-                                    ),
-                                    Expanded(
-                                      child: Divider(
-                                        color: AppTheme.whiteColor,
-                                        thickness: 0.3,
-                                      ),
-                                    ),
-                                  ],
-                                )),
-                          ),
-                          SizedBox(height: 80),
-                          Text(
-                            "What we Offer",
-                            style: GoogleFonts.openSans(
-                              color: AppTheme.whiteColor,
-                              fontWeight: FontWeight.w700,
-                              fontSize: Constant.textFourtyEight(context),
-                              letterSpacing: 3,
+                            SizedBox(height: 20),
+                            ...List.generate(
+                              widget.designationList["keyresponsibilty"].length,
+                              (index) {
+                                return buildSection(
+                                    widget.designationList["keyresponsibilty"]
+                                        [index],
+                                    context);
+                              },
                             ),
-                          ),
-                          SizedBox(height: 30),
-                          GridView.builder(
-                            primary: false,
-                            shrinkWrap: true,
-                            gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 3, // 3 columns per row
-                              crossAxisSpacing: 100, // Space between columns
+                            SizedBox(height: 80),
+                            Align(
+                              alignment: Alignment.bottomRight,
+                              child: Container(
+                                  constraints: BoxConstraints(maxWidth: 800),
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: Divider(
+                                          color: AppTheme.whiteColor,
+                                          thickness: 0.3,
+                                        ),
+                                      ),
+                                    ],
+                                  )),
+                            ),
+                            SizedBox(height: 80),
+                            Text(
+                              "Your Skills",
+                              style: GoogleFonts.openSans(
+                                color: AppTheme.whiteColor,
+                                fontWeight: FontWeight.w700,
+                                fontSize: Constant.textFourtyEight(context),
+                                letterSpacing: 3,
+                              ),
+                            ),
+                            SizedBox(height: 60),
+                            GridView.builder(
+                              primary: false,
+                              shrinkWrap: true,
+                              gridDelegate:
+                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 3, // 3 columns per row
+                                crossAxisSpacing: 100, // Space between columns
 
-                              childAspectRatio:
-                                  2.2, // Adjust aspect ratio to balance title & description
+                                childAspectRatio:
+                                    2.2, // Adjust aspect ratio to balance title & description
+                              ),
+                              itemCount:
+                                  widget.designationList["skills"].length,
+                              itemBuilder: (context, index) {
+                                return buildCard(
+                                    widget.designationList["skills"][index]
+                                        ['title']!,
+                                    widget.designationList["skills"][index]
+                                        ['description']!,
+                                    context);
+                              },
                             ),
-                            itemCount:  widget.designationList["offer"].length,
-                            itemBuilder: (context, index) {
-                              return buildCard(
-                                   widget.designationList["offer"][index]['title']!,
-                                   widget.designationList["offer"][index]
-                                      ['description']!,
-                                  context);
-                            },
-                          ),
-                          SizedBox(height: 30),
-                        ],
+                            SizedBox(height: 80),
+                            Container(
+                                constraints: BoxConstraints(maxWidth: 800),
+                                child: Divider(
+                                  color: AppTheme.whiteColor,
+                                  thickness: 0.3,
+                                )),
+                            SizedBox(height: 80),
+                            Text(
+                              "Key Responsibilities",
+                              style: GoogleFonts.openSans(
+                                color: AppTheme.whiteColor,
+                                fontWeight: FontWeight.w700,
+                                fontSize: Constant.textFourtyEight(context),
+                                letterSpacing: 3,
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                            ...List.generate(
+                              widget.designationList["qualification"].length,
+                              (index) {
+                                return buildSection(
+                                    widget.designationList["qualification"]
+                                        [index],
+                                    context);
+                              },
+                            ),
+                            SizedBox(height: 80),
+                            Align(
+                              alignment: Alignment.bottomRight,
+                              child: Container(
+                                  constraints: BoxConstraints(maxWidth: 800),
+                                  child: Row(
+                                    children: [
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(right: 10),
+                                        child: Image.asset(
+                                          "assets/images/leftarrow.png",
+                                          height: 20,
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(right: 10),
+                                        child: Image.asset(
+                                          "assets/images/leftarrow.png",
+                                          height: 20,
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: Divider(
+                                          color: AppTheme.whiteColor,
+                                          thickness: 0.3,
+                                        ),
+                                      ),
+                                    ],
+                                  )),
+                            ),
+                            SizedBox(height: 80),
+                            Text(
+                              "What we Offer",
+                              style: GoogleFonts.openSans(
+                                color: AppTheme.whiteColor,
+                                fontWeight: FontWeight.w700,
+                                fontSize: Constant.textFourtyEight(context),
+                                letterSpacing: 3,
+                              ),
+                            ),
+                            SizedBox(height: 30),
+                            GridView.builder(
+                              primary: false,
+                              shrinkWrap: true,
+                              gridDelegate:
+                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 3, // 3 columns per row
+                                crossAxisSpacing: 100, // Space between columns
+
+                                childAspectRatio:
+                                    2.2, // Adjust aspect ratio to balance title & description
+                              ),
+                              itemCount: widget.designationList["offer"].length,
+                              itemBuilder: (context, index) {
+                                return buildCard(
+                                    widget.designationList["offer"][index]
+                                        ['title']!,
+                                    widget.designationList["offer"][index]
+                                        ['description']!,
+                                    context);
+                              },
+                            ),
+                            SizedBox(height: 30),
+                          ],
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      width: 40,
-                    ),
-                  ],
+                      SizedBox(
+                        width: 40,
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-           Positioned(
-            bottom: 20,
-            right: 20,
-            child: FloatingActionButton(
-              onPressed: () {
-                _scrollController.animateTo(
-                  0, // Scroll to top
-                  duration: Duration(milliseconds: 500),
-                  curve: Curves.easeInOut,
-                );
-              },
-              backgroundColor: Colors.white,
-              child: Icon(Icons.arrow_upward, color: Colors.black),
-            ),
-          ),],
-        ),
+              Positioned(
+                bottom: 20,
+                right: 20,
+                child: FloatingActionButton(
+                  onPressed: () {
+                    _scrollController.animateTo(
+                      0, // Scroll to top
+                      duration: Duration(milliseconds: 500),
+                      curve: Curves.easeInOut,
+                    );
+                  },
+                  backgroundColor: Colors.white,
+                  child: Icon(Icons.arrow_upward, color: Colors.black),
+                ),
+              ),
+              Positioned(
+                top: 20,
+                right: 20,
+                child: InkWell(
+                    onTap: () {
+                      Get.back();
+                    },
+                    child: SvgPicture.asset("assets/images/cross.svg")),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -1894,6 +1918,4 @@ class FunkyOverlayState extends State<FunkyOverlay>
       ),
     );
   }
-
- 
 }

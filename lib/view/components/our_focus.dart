@@ -43,7 +43,7 @@ class OurFocus extends StatelessWidget {
     {
       "title": "Comprehensive Out Patient services ",
       "details":
-          "Designing innovative systems to enhance independence and quality of life by assisting with Activities of Daily Living."
+          "Leveraging technology to transform outpatient care, optimizing resource allocation, and reducing wait times for enhanced operational efficiency."
     }
   ];
   Widget _ourFocus(context, width) {
@@ -52,7 +52,7 @@ class OurFocus extends StatelessWidget {
         return VisibilityDetector(
           onVisibilityChanged: (VisibilityInfo info) {
             print(info);
-            if (info.visibleFraction > 0.1) {
+            if (info.visibleFraction > 0.2) {
               print("visible");
               _controller.changeisOurFocus(); // o
             } //else {

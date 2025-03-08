@@ -16,8 +16,10 @@ class DialogHelper {
     Fluttertoast.showToast(
         msg: description!,
         toastLength: Toast.LENGTH_SHORT,
+        webPosition: "center",
         gravity: ToastGravity.TOP,
         timeInSecForIosWeb: 1,
+
         backgroundColor: AppTheme.whiteColor,
         textColor: Colors.black,
         fontSize: 16.0);
@@ -153,18 +155,18 @@ class DialogHelper {
 
   static void showSuccessDialog(VoidCallback ontap,heading, title) {
     Get.dialog(
-      transitionCurve: FlippedCurve(Curves.bounceIn),
-      transitionDuration: Duration(milliseconds: 500),
+      transitionCurve: FlippedCurve(Curves.decelerate),
+      transitionDuration: Duration(milliseconds: 800),
       Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 40),
+            padding: EdgeInsets.symmetric(horizontal: 80),
             child: Container(
               decoration: BoxDecoration(
-                color: AppTheme.whiteColor,
+                color: AppTheme.black,
                 borderRadius: BorderRadius.all(
-                  Radius.circular(16),
+                  Radius.circular(1),
                 ),
               ),
               child: Padding(
@@ -173,23 +175,23 @@ class DialogHelper {
                 child: Column(children: [
                   Icon(
                     Icons.check_circle,
-                    size: 80,
+                    size: 60,
                     color: Colors.green,
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 30),
                   Text(
                     heading,
                     style: GoogleFonts.openSans(
-                      color: AppTheme.black,
+                      color: AppTheme.whiteColor,
                       decoration: TextDecoration.none,
                       fontSize: Constant.mediumbody(Get.context!),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 20),
                   Text(
                     title,
                     style: GoogleFonts.openSans(
-                      color: AppTheme.black,   decoration: TextDecoration.none,
+                      color: AppTheme.whiteColor,   decoration: TextDecoration.none,
                       fontSize: Constant.smallbody(Get.context!),
                     ),
                     textAlign: TextAlign.center,

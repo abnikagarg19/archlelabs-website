@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
         // fontFamily: GoogleFonts.bebasNeue().fontFamily,
         fontFamily: 'Bebasnue',
         useMaterial3: false,
+        primaryColor: Colors.black
       ),
       getPages: appRoutes(),
       initialRoute: Routes.home,

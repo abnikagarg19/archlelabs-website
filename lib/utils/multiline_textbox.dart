@@ -43,7 +43,7 @@ class _InputTextFieldMaxlinesState extends State<InputTextFieldMaxlines> {
         readOnly: widget.readOnly,
         maxLength: widget.maxlength,
         controller: widget.textEditingController,
-        cursorColor: AppTheme.primaryColor,
+        cursorColor: AppTheme.black, style: GoogleFonts.openSans(),
         keyboardType: TextInputType.multiline,
         onChanged: (value) {
           setState(() {
@@ -63,7 +63,7 @@ class _InputTextFieldMaxlinesState extends State<InputTextFieldMaxlines> {
               width: 1.0,
             ),
             borderRadius: BorderRadius.circular(2),
-          ),
+          ),errorStyle: GoogleFonts.inter(fontSize: 12),
           enabledBorder: OutlineInputBorder(
             borderSide: const BorderSide(
               color: Color.fromRGBO(54, 58, 61, 1),

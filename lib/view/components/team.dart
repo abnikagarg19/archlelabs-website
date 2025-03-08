@@ -237,8 +237,7 @@ class _TeamWidgetState extends State<TeamWidget> {
                                               radius: Radius.circular(8),
                                               thumbColor:
                                                   MaterialStateProperty.all(
-                                                      Color.fromARGB(
-                                                          142, 181, 180, 180)),
+                                                      Color.fromARGB(142, 7, 7, 7)),
                                               minThumbLength: 30,
                                             )),
                                             child: SingleChildScrollView(

@@ -37,13 +37,13 @@ class _InputTextFieldMaxlinesState extends State<BorderedTextbox> {
         validator: widget.validation,
         onTap: widget.onTap,
         readOnly: widget.readOnly,
-      
+       style: GoogleFonts.openSans(),
         controller: widget.textEditingController,
-        cursorColor: AppTheme.primaryColor,
+        cursorColor: AppTheme.black,
        
       
         decoration: InputDecoration(
-       
+       errorStyle: GoogleFonts.inter(fontSize: 12),
           hintStyle: GoogleFonts.openSans(
               color: AppTheme.textBlackColor, fontSize: 13),
           errorBorder: OutlineInputBorder(
@@ -55,7 +55,7 @@ class _InputTextFieldMaxlinesState extends State<BorderedTextbox> {
           ),
           enabledBorder: OutlineInputBorder(
             borderSide: const BorderSide(
-              color: Color.fromRGBO(54, 58, 61, 1),
+              color: Color.fromRGBO(0, 0, 0, 1),
               width: 1,
             ),
             borderRadius: BorderRadius.circular(2),
@@ -63,7 +63,7 @@ class _InputTextFieldMaxlinesState extends State<BorderedTextbox> {
           isDense: true,
           focusedBorder: OutlineInputBorder(
             borderSide: const BorderSide(
-              color: Color.fromRGBO(54, 58, 61, 1),
+               color: Color.fromRGBO(0, 0, 0, 1),
               width: 1,
             ),
             borderRadius: BorderRadius.circular(2),
@@ -71,7 +71,7 @@ class _InputTextFieldMaxlinesState extends State<BorderedTextbox> {
           border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(2),
               borderSide: BorderSide(
-                color: Color.fromRGBO(54, 58, 61, 1),
+                 color: Color.fromRGBO(0, 0, 0, 1),
                 width: 1,
               )),
               

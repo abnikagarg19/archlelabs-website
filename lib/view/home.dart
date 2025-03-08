@@ -259,11 +259,7 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                                       target: _controller.offset.value > 600
                                           ? 1
                                           : 0)
-                                  .moveY(
-                                      begin: 300,
-                                      end: 0,
-                                      duration: 1400.ms,
-                                      curve: Curves.linear)
+                                 
                                   .fadeIn(
                                     duration: 1400.ms,
                                   ),

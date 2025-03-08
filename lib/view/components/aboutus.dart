@@ -240,11 +240,7 @@ class AboutusWidget extends StatelessWidget {
                                                       ? 1
                                                       : 0,
                                             )
-                                            .fadeIn(
-                                              duration: 600.ms,
-                                              curve: Curves
-                                                  .easeOut, // Smooth fade-in
-                                            )
+                                           
                                             .moveY(
                                               begin:
                                                   50, // Moves from lower position
@@ -252,7 +248,12 @@ class AboutusWidget extends StatelessWidget {
                                               delay: 200.ms,
                                               duration: 500.ms,
                                               curve: Curves.easeOut,
+                                            ) .fadeIn(
+                                              duration: 600.ms,
+                                              curve: Curves
+                                                  .easeOut, // Smooth fade-in
                                             ),
+                                           
                                         const SizedBox(height: 10),
                                         Text(
                                           "To revolutionize medical science, forging a future where no challenge is insurmountable and every life thrives.",
@@ -269,10 +270,7 @@ class AboutusWidget extends StatelessWidget {
                                                       ? 1
                                                       : 0,
                                             )
-                                            .fadeIn(
-                                              duration: 600.ms,
-                                              curve: Curves.easeOut,
-                                            )
+                                            
                                             .moveY(
                                               begin:
                                                   50, // Moves from lower position
@@ -280,6 +278,10 @@ class AboutusWidget extends StatelessWidget {
                                               delay: 600.ms,
                                               duration: 500.ms,
                                               curve: Curves.easeOut,
+                                            ).fadeIn(
+                                              duration: 600.ms,
+                                              curve: Curves
+                                                  .easeOut, // Smooth fade-in
                                             ),
                                         const SizedBox(height: 30),
                                         Text(
@@ -297,16 +299,17 @@ class AboutusWidget extends StatelessWidget {
                                                       ? 1
                                                       : 0,
                                             )
-                                            .fadeIn(
-                                              duration: 600.ms,
-                                              curve: Curves.linear,
-                                            )
+                                          
                                             .moveY(
                                               begin: 50,
                                               end: 0,
                                               delay: 1000.ms,
                                               duration: 500.ms,
                                               curve: Curves.easeOut,
+                                            ).fadeIn(
+                                              duration: 600.ms,
+                                              curve: Curves
+                                                  .easeOut, // Smooth fade-in
                                             ),
                                         const SizedBox(height: 10),
                                         Text(
@@ -324,17 +327,17 @@ class AboutusWidget extends StatelessWidget {
                                                       ? 1
                                                       : 0,
                                             )
-                                            .fadeIn(
-                                              duration: 600.ms,
-                                              curve: Curves.linear,
-                                            )
+                                            
                                             .moveY(
                                               begin: 50,
                                               end: 0,
                                               delay: 1400.ms,
                                               duration: 500.ms,
                                               curve: Curves.easeOut,
-                                            ),
+                                            ) .fadeIn(
+                                              duration: 600.ms,
+                                              curve: Curves.linear,
+                                            )
                                       ],
                                     )
                                   : buildTextSmallContent(

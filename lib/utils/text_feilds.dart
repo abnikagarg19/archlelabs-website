@@ -45,7 +45,8 @@ class MyTextField extends StatelessWidget {
         controller: textEditingController,
         obscureText: obsecureText,
         validator: validation,
-        cursorColor: AppTheme.primaryColor,
+        style: GoogleFonts.openSans(),
+        cursorColor: AppTheme.black,
         // cursorHeight: 20.h,
         //  textAlignVertical: TextAlignVertical.center,
     
@@ -53,27 +54,29 @@ class MyTextField extends StatelessWidget {
           
             counterText: '',
             errorStyle: GoogleFonts.inter(fontSize: 12),
+           
+            
           
             hintStyle: GoogleFonts.openSans(color: AppTheme.textBlackColor, fontSize: 13),
             // enabledBorder: OutlineInputBorder(
             //   borderSide: const BorderSide(
-            //      color: Color.fromRGBO(54, 58, 61, 1),
+            //        color: Color.fromRGBO(0, 0, 0, 1),
             //     width: 1,
             //   ),
             //   borderRadius: BorderRadius.circular(12),
             // ),
            
-            // focusedBorder: OutlineInputBorder(
-            //   borderSide: const BorderSide(
-            //     color: Color.fromRGBO(54, 58, 61, 1),
-            //     width: 1,
-            //   ),
-            //   borderRadius: BorderRadius.circular(12),
-            // ),
+            focusedBorder: UnderlineInputBorder(
+              borderSide: const BorderSide(
+                   color: Color.fromRGBO(0, 0, 0, 1),
+                width: 1,
+              ),
+             
+            ),
             // border: OutlineInputBorder(
             //     borderRadius: BorderRadius.circular(12),
             //     borderSide: BorderSide(
-            //       color: Color.fromRGBO(54, 58, 61, 1),
+            //         color: Color.fromRGBO(0, 0, 0, 1),
             //       width: 1,
             //     )),
                  isDense: true,
