@@ -90,6 +90,11 @@ flutter:
     - assets/images/
     - assets/team/
     - assets/images/robo.png
+    - assets/team/alois.jpg
+    - assets/team/mohan.jpg
+    - assets/team/antara.jpg
+    - assets/team/joel.jpg
+    - assets/team/tejas.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
