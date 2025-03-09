@@ -46,7 +46,7 @@ class _TeamWidgetState extends State<TeamWidget> {
       "name": "Alois D Sajo",
       "designation": "Founder/CEO",
       "linkedin": "https://www.linkedin.com/in/aloissajodevasagayam/",
-      "image": "assets/team/alois.webp",
+      "image": "assets/team/alois.avif",
       "des":
           "As the Founder & CEO of Archle Labs, I don’t just build products ,I create social impact. At the helm of a company redefining healthcare innovation, I bring a fusion of strategy,  product development, and user experience design to create solutions that drive meaningful innovation in the market. My journey spans leading social enterprises, crafting market -effective strategies, and assembling high-caliber teams that thrive on curiosity and first-principle thinking. When I’m not immersed in building the next advancement, you’ll find me exploring history,  diving into new cultures, exploring science, philosophy etc. I believe true innovation comes from questioning everything and daring to solve problems others shy away from."
     },
@@ -54,7 +54,7 @@ class _TeamWidgetState extends State<TeamWidget> {
       "name": "Dr.Siri Karthika R",
       "designation": "Health Director",
       "linkedin": "www.linkedin.com/in/siri-karthika",
-      "image": "assets/team/siri.jpg",
+      "image": "assets/team/siri.avif",
       "des":
           "I blend medical expertise with bold innovation, ensuring research meets real-world patient needs. An MBBS graduate and University Rank holder in Pediatrics, I have an insatiable curiosity for epigenetics, neuroscience, and the quirks of human behavior. When I’m not deep in research, you’ll find me lifting weights, experimenting in the kitchen, or proving that a little eccentricity makes everything more interesting, even healthcare."
     },
