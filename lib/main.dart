@@ -24,12 +24,12 @@ class MyApp extends StatelessWidget {
     precacheImage(const AssetImage("assets/images/robo.png"), context);
     precacheImage(const AssetImage('assets/images/about us.gif'), context);
 
-     precacheImage(const AssetImage('assets/team/tejas.avif'), context);
-          precacheImage(const AssetImage('assets/team/alois.avif'), context);
-          precacheImage(const AssetImage('assets/team/antara.avif'), context);
+     precacheImage(const AssetImage('assets/team/tejas.jpg'), context);
+          precacheImage(const AssetImage('assets/team/alois.webp'), context);
+          precacheImage(const AssetImage('assets/team/antara.jpg'), context);
 
-          precacheImage(const AssetImage('assets/team/mohan.avif'), context);
-                    precacheImage(const AssetImage('assets/team/joel.avif'), context);
+          precacheImage(const AssetImage('assets/team/mohan.jpg'), context);
+                    precacheImage(const AssetImage('assets/team/joel.jpg'), context);
 
 
     return GetMaterialApp(

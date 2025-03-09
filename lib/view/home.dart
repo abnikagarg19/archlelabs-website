@@ -209,157 +209,149 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                 onNotification: _controller.updateOffsetAccordingToScroll,
                 child: Stack(
                   children: [
-                    
-                            Obx(
-                      () => Positioned(
-                            top: -.35 * _controller.offset.value,
-                            child:  LayoutBuilder(builder: (_context, constraints) {
-                                return Column(
-                                  children: [
-                                    SizedBox(
-                                      height: 90,
-                                    ),
-                                    Text(
-                                      "Unlocking the future\nof Innovations",
-                                      style: TextStyle(
-                                          color: AppTheme.whiteColor,
-                                          height: 1.5,
-                                          fontSize:constraints.maxWidth>800? Constant.mainHeading(context):30,
-                                          letterSpacing: 5),
-                                      textAlign: TextAlign.center,
+                    Obx(() => Positioned(
+                          top: -.35 * _controller.offset.value,
+                          child:
+                              LayoutBuilder(builder: (_context, constraints) {
+                            return Column(
+                              children: [
+                                SizedBox(
+                                  height: 90,
+                                ),
+                                Text(
+                                  "Unlocking the future\nof Innovations",
+                                  style: TextStyle(
+                                      color: AppTheme.whiteColor,
+                                      height: 1.5,
+                                      fontSize: constraints.maxWidth > 800
+                                          ? Constant.mainHeading(context)
+                                          : 24,
+                                      letterSpacing: 5),
+                                  textAlign: TextAlign.center,
+                                )
+                                    .animate(
+                                      delay: 0.ms,
                                     )
-                                        .animate(
-                                          delay: 0.ms,
-                                        )
-                                        .moveY(
-                                            begin: 400,
-                                            end: 0,
-                                            duration: 1200.ms,
-                                            curve: Curves.linear)
-                                        .fadeIn(),
-                                                          
-                                    // Image with slow appearance effect
-                                   if(constraints.maxWidth>800)
-                                    AnimatedOpacity(
-                                      opacity: _controller.offset.value > 500
-                                          ? 1
-                                          : 0, // Gradual fade-in
-                                      duration: Duration(
-                                          milliseconds: 1200), // Smooth transition
-                                      child: Image(
-                                        image: (_controller.offset.value > 600)
-                                            ? _image2
-                                            : _image,
-                                        width: width,
-                                        gaplessPlayback: true,
-                                       height: 800,
-                                        fit: MediaQuery.of(context).size.width > 800
-                                            ? BoxFit.fitWidth
-                                            : BoxFit.cover,
-                                      )
-                                          .animate(
-                                              delay: 300.ms,
-                                              target: _controller.offset.value > 600
-                                                  ? 1
-                                                  : 0)
-                                         
-                                          .fadeIn(
-                                            duration: 1400.ms,
-                                          ),
-                                    )
-                                  else
-                                    AnimatedOpacity(
-                                      opacity: _controller.offset.value > 50
-                                          ? 1
-                                          : 0, // Gradual fade-in
-                                      duration: Duration(
-                                          milliseconds: 1200), // Smooth transition
-                                      child: Image(
-                                        image: (_controller.offset.value > 100)
-                                            ? _image2
-                                            : _image,
-                                        width: width,
-                                        gaplessPlayback: true,
+                                    .moveY(
+                                        begin: 400,
+                                        end: 0,
+                                        duration: 1200.ms,
+                                        curve: Curves.linear)
+                                    .fadeIn(),
+
+                                // Image with slow appearance effect
+                                if (constraints.maxWidth > 800)
+                                  AnimatedOpacity(
+                                    opacity: _controller.offset.value > 500
+                                        ? 1
+                                        : 0, // Gradual fade-in
+                                    duration: Duration(
+                                        milliseconds:
+                                            1200), // Smooth transition
+                                    child: Image(
+                                      image: (_controller.offset.value > 600)
+                                          ? _image2
+                                          : _image,
+                                      width: width,
+                                      gaplessPlayback: true,
                                       //  height: 800,
-                                        fit: MediaQuery.of(context).size.width > 800
-                                            ? BoxFit.fitWidth
-                                            : BoxFit.cover,
-                                      )
-                                          .animate(
-                                              delay: 300.ms,
-                                              target: _controller.offset.value > 50
-                                                  ? 1
-                                                  : 0)
-                                         
-                                          .fadeIn(
-                                            duration: 1400.ms,
-                                          ),
-                                    ),
-                                     if(constraints.maxWidth>800)
-                                      Container(
-                                      margin: EdgeInsets.symmetric(vertical: 40),
-                                      constraints: BoxConstraints(
-                                          maxWidth:
-                                              MediaQuery.of(context).size.width * .8),
-                                      child: Text(
-                                        "We revolutionize healthcare with rigorous research and bold innovation.By merging expertise\nacross science, technology, and medicine,we create transformative solutions that tackle the world’s\n most urgent medical challenges, driving scalable, real-world impact ",
-                                        style: GoogleFonts.openSans(
-                                            color: const Color.fromARGB(
-                                                255, 255, 255, 255),
-                                            fontSize: Constant.TextSize20(context),
-                                            height: 2.5),
-                                        textAlign: TextAlign.center,
-                                      ),
+                                      fit: MediaQuery.of(context).size.width >
+                                              800
+                                          ? BoxFit.fitWidth
+                                          : BoxFit.cover,
                                     )
                                         .animate(
-                                            delay: 0.ms,
+                                            delay: 300.ms,
                                             target:
-                                                _controller.offset.value > 1000 ? 1 : 0)
-                                        .moveY(
-                                            begin: 300,
-                                            end: 0,
-                                            duration: 1400.ms,
-                                            curve: Curves.linear)
+                                                _controller.offset.value > 600
+                                                    ? 1
+                                                    : 0)
                                         .fadeIn(
                                           duration: 1400.ms,
-                                        )
-                                    else
-                                     Container(
-                                      margin: EdgeInsets.symmetric(vertical: 40),
-                                      constraints: BoxConstraints(
-                                          maxWidth:
-                                              MediaQuery.of(context).size.width * .8),
-                                      child: Text(
-                                        "We revolutionize healthcare with rigorous research and bold innovation.By merging expertise\nacross science, technology, and medicine,we create transformative solutions that tackle the world’s\n most urgent medical challenges, driving scalable, real-world impact ",
-                                        style: GoogleFonts.openSans(
-                                            color: const Color.fromARGB(
-                                                255, 255, 255, 255),
-                                            fontSize: Constant.TextSize20(context),
-                                            height: 2.5),
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    )
-                                        .animate(
-                                            delay: 0.ms,
-                                            target:
-                                                _controller.offset.value > 100 ? 1 : 0)
-                                        .moveY(
-                                            begin: 100,
-                                            end: 0,
-                                            duration: 600.ms,
-                                            curve: Curves.linear)
-                                        .fadeIn(
-                                          duration: 600.ms,
                                         ),
-                                   
-                                  ],
-                                );
-                              }
-                            ),
-                          )
-                      
-                      ),
-                    
+                                  )
+                                else
+                                  Image(
+                                    image: (_controller.offset.value > 100)
+                                        ? _image2
+                                        : _image,
+                                    width: width,
+                                    gaplessPlayback: true,
+                                    //  height: 800,
+                                    fit: BoxFit.cover,
+                                  )
+                                      .animate(
+                                         )
+                                      .fadeIn(
+                                        duration: 400.ms,
+                                      ),
+                                if (constraints.maxWidth > 800)
+                                  Container(
+                                    margin: EdgeInsets.symmetric(vertical: 40),
+                                    constraints: BoxConstraints(
+                                        maxWidth:
+                                            MediaQuery.of(context).size.width *
+                                                .8),
+                                    child: Text(
+                                      "We revolutionize healthcare with rigorous research and bold innovation.By merging expertise\nacross science, technology, and medicine,we create transformative solutions that tackle the world’s\n most urgent medical challenges, driving scalable, real-world impact ",
+                                      style: GoogleFonts.openSans(
+                                          color: const Color.fromARGB(
+                                              255, 255, 255, 255),
+                                          fontSize:
+                                              Constant.TextSize20(context),
+                                          height: 2.5),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  )
+                                      .animate(
+                                          delay: 0.ms,
+                                          target:
+                                              _controller.offset.value > 1000
+                                                  ? 1
+                                                  : 0)
+                                      .moveY(
+                                          begin: 300,
+                                          end: 0,
+                                          duration: 1400.ms,
+                                          curve: Curves.linear)
+                                      .fadeIn(
+                                        duration: 1400.ms,
+                                      )
+                                else
+                                  Container(
+                                    margin: EdgeInsets.symmetric(vertical: 40),
+                                    constraints: BoxConstraints(
+                                        maxWidth:
+                                            MediaQuery.of(context).size.width *
+                                                .8),
+                                    child: Text(
+                                      "We revolutionize healthcare with rigorous research and bold innovation.By merging expertise\nacross science, technology, and medicine,we create transformative solutions that tackle the world’s\n most urgent medical challenges, driving scalable, real-world impact ",
+                                      style: GoogleFonts.openSans(
+                                          color: const Color.fromARGB(
+                                              255, 255, 255, 255),
+                                          fontSize:
+                                              Constant.TextSize20(context),
+                                          height: 2.5),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  )
+                                      .animate(
+                                          delay: 0.ms,
+                                          target: _controller.offset.value > 70
+                                              ? 1
+                                              : 0)
+                                      .moveY(
+                                          begin: 100,
+                                          end: 0,
+                                          duration: 600.ms,
+                                          curve: Curves.linear)
+                                      .fadeIn(
+                                        duration: 600.ms,
+                                      ),
+                              ],
+                            );
+                          }),
+                        )),
 
                     // Positioned(
                     //   top: -.25 * offset,
@@ -391,22 +383,22 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                         child: Column(
                           children: [
                             //   Header(),
-                         //   if (ResponsiveLayout.isLargeScreen(context))
-                              Container(
-                                key: Globals.homekey,
-                                child: SizedBox(
-                                  height: height + 1200,
-                                ),
+                            //  if (ResponsiveLayout.isLargeScreen(context))
+                            //     Container(
+                            //       key: Globals.homekey,
+                            //       child: SizedBox(
+                            //         height: height + 1200,
+                            //       ),
+                            //     ),
+                            // if (ResponsiveLayout.isLargeScreen(context))
+                            if (ResponsiveLayout.isLargeScreen(context))
+                              SizedBox(
+                                height: height + height + 1200,
+                              )
+                            else
+                              SizedBox(
+                                height: height ,
                               ),
-                            // if (ResponsiveLayout.isLargeScreen(context))
-                            // if (ResponsiveLayout.isLargeScreen(context))
-                            SizedBox(
-                              height: height,
-                            ),
-                            // else
-                            //    SizedBox(
-                            //   height: height+ 500,
-                            // ),
                             StartedWidget(),
                             OurFocus(),
                             // Text(
