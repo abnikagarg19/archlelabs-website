@@ -22,7 +22,7 @@ class HomeController extends GetxController {
     Globals.scrollController.addListener(_onScroll);
 
     print("dhn");
-    // getTeams();
+    s getTeams();
     getDesignations();
     getAllBlogs();
   }
