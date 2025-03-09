@@ -234,7 +234,7 @@ class _TeamWidgetState extends State<TeamWidget> {
                                                           : 380,
                                                   fit: BoxFit.cover,
                                                   filterQuality:
-                                                      FilterQuality.high,
+                                                      FilterQuality.low,
                                                   alignment:
                                                       Alignment.topCenter,
                                                   progressIndicatorBuilder: (context,
