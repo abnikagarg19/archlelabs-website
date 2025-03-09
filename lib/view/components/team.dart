@@ -1,13 +1,12 @@
-import 'package:cached_network_image/cached_network_image.dart';
+import 'dart:math';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_avif/flutter_avif.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:visibility_detector/visibility_detector.dart';
-import 'dart:math';
+
 import '../../controller/homeController.dart';
 import '../../responsive/layouts.dart';
 import '../../theme/app_theme.dart';
@@ -223,14 +222,17 @@ class _TeamWidgetState extends State<TeamWidget> {
                                       // ),
                                       Image.asset(
                                         alignment: Alignment.topCenter,
-                                         "${teamList[index]["image"]}",
+                                        "${teamList[index]["image"]}",
                                         height: height,
                                         width: ResponsiveLayout.isMediumScreen(
                                                 context)
                                             ? 280
                                             : ResponsiveLayout.isSmallScreen(
                                                     context)
-                                                ? 250
+                                                ? MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.35
                                                 : 380,
                                         fit: BoxFit.cover,
                                         filterQuality: FilterQuality.high,
