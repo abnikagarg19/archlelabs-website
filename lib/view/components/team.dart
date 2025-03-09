@@ -187,16 +187,16 @@ class _TeamWidgetState extends State<TeamWidget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 MouseRegion(
-                                  onEnter: (_) {
-                                    setState(() {
-                                      _controller.hovering(index);
-                                    });
-                                  },
-                                  onExit: (_) {
-                                    setState(() {
-                                      _controller.exithovering(index);
-                                    });
-                                  },
+                                  // onEnter: (_) {
+                                  //   setState(() {
+                                  //     _controller.hovering(index);
+                                  //   });
+                                  // },
+                                  // onExit: (_) {
+                                  //   setState(() {
+                                  //     _controller.exithovering(index);
+                                  //   });
+                                  // },
                                   child: Stack(
                                     children: [
                                       // CachedNetworkImage(
