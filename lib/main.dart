@@ -22,14 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     precacheImage(const AssetImage("assets/images/robo.png"), context);
-    precacheImage(const AssetImage('assets/images/about us.gif'), context);
-
-     precacheImage(const AssetImage('assets/team/tejas.jpg'), context);
-          precacheImage(const AssetImage('assets/team/alois.webp'), context);
-          precacheImage(const AssetImage('assets/team/antara.jpg'), context);
-
-          precacheImage(const AssetImage('assets/team/mohan.jpg'), context);
-                    precacheImage(const AssetImage('assets/team/joel.jpg'), context);
+   
 
 
     return GetMaterialApp(

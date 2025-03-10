@@ -328,11 +328,11 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                                           MediaQuery.of(context).size.width *
                                               .8),
                                   child: Text(
-                                    "We revolutionize healthcare with rigorous research and bold innovation.By merging expertise\nacross science, technology, and medicine,we create transformative solutions that tackle the world’s\n most urgent medical challenges, driving scalable, real-world impact ",
-                                    style: GoogleFonts.openSans(
+                                  "We revolutionize healthcare with rigorous research and bold innovation.By merging expertise z̄across science, technology, and medicine,we create transformative solutions that tackle the world’s  most urgent medical challenges, driving scalable, real-world impact ",
+                                      style: GoogleFonts.openSans(
                                         color: const Color.fromARGB(
                                             255, 255, 255, 255),
-                                        fontSize: Constant.TextSize20(context),
+                                        fontSize: 16,
                                         height: 2.5),
                                     textAlign: TextAlign.center,
                                   ),

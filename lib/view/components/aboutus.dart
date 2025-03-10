@@ -130,11 +130,8 @@ class AboutusWidget extends StatelessWidget {
                               clipBehavior: Clip.none,
                               children: [
                                 Container(
-                                  
                                   width: 350,
-                                  height: 
-                                     500
-                                    ,
+                                  height: 500,
                                   child: Image.asset(
                                     "assets/images/space2.png",
                                     fit: BoxFit.fitHeight,
@@ -142,29 +139,29 @@ class AboutusWidget extends StatelessWidget {
                                 ),
                                 Positioned(
                                   top: 80,
-                                  right: 
-                                       -370
-                                    ,
-                                  child: Text(
-                                    "About Us",
-                                    style: GoogleFonts.openSans(
-                                      color: AppTheme.black,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: Constant.bigFont94(context),
-                                      letterSpacing: 3,
-                                    )
-                                  ),
+                                  right: -370,
+                                  child: Text("About Us",
+                                      style: GoogleFonts.openSans(
+                                        color: AppTheme.black,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: Constant.bigFont94(context),
+                                        letterSpacing: 3,
+                                      )),
                                 )
                               ],
                             ),
-                          SizedBox(
-                            width: 50,
-                          ),
+                          if (constraints.maxWidth > 800)
+                            SizedBox(
+                              width: 50,
+                            ),
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                const SizedBox(height: 180),
+                                if (constraints.maxWidth < 800)
+                                  const SizedBox(height: 30)
+                                else
+                                  const SizedBox(height: 180),
                                 if (constraints.maxWidth < 800)
                                   Text(
                                     "About Us",
@@ -183,20 +180,22 @@ class AboutusWidget extends StatelessWidget {
                                     fontSize: Constant.TextSize20(context),
                                     height: 1.5,
                                   ),
+                                  textAlign: TextAlign.justify,
                                 )
                                     .animate(
                                       target:
                                           _controller.isAboutuseVisble ? 1 : 0,
-                                    )  .fadeIn(
-                                              delay: 200.ms,
-                                              duration: 600.ms,
-                                              curve: Curves.linear,
-                                            ),
-                                    // .moveX(
-                                    //     begin: 300,
-                                    //     end: 0,
-                                    //     duration: 800.ms,
-                                    //     curve: Curves.linear),
+                                    )
+                                    .fadeIn(
+                                      delay: 200.ms,
+                                      duration: 600.ms,
+                                      curve: Curves.linear,
+                                    ),
+                                // .moveX(
+                                //     begin: 300,
+                                //     end: 0,
+                                //     duration: 800.ms,
+                                //     curve: Curves.linear),
                               ],
                             ),
                           ),
@@ -218,13 +217,15 @@ class AboutusWidget extends StatelessWidget {
                         //   _controller.changeisMissionSection(false); // o
                         // }
                       },
-                      child: Row(
+                      child:  Flex(
+                  direction:
+                      constraints.maxWidth > 800 ? Axis.horizontal : Axis.vertical,
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Expanded(
-                              child: constraints.maxWidth > 800
-                                  ? Column(
+                              flex: constraints.maxWidth > 800 ? 6 : 0,
+                              child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
@@ -264,7 +265,7 @@ class AboutusWidget extends StatelessWidget {
                                                       ? 1
                                                       : 0,
                                             )
-                                           .fadeIn(
+                                            .fadeIn(
                                               delay: 600.ms,
                                               duration: 600.ms,
                                               curve: Curves.linear,
@@ -285,7 +286,7 @@ class AboutusWidget extends StatelessWidget {
                                                       ? 1
                                                       : 0,
                                             )
-                                           .fadeIn(
+                                            .fadeIn(
                                               delay: 1000.ms,
                                               duration: 600.ms,
                                               curve: Curves.linear,
@@ -313,15 +314,19 @@ class AboutusWidget extends StatelessWidget {
                                             )
                                       ],
                                     )
-                                  : buildTextSmallContent(
-                                      "OUR VALUES",
-                                      "To revolutionize medical science, forging a future where no challenge is insurmountable and every life thrives.",
-                                      context),
+                                 
                             ),
+                            if(constraints.maxWidth > 800)
                             SizedBox(
                                 width:
                                     60), // Optional spacing between text and image
+
+                                     if(constraints.maxWidth < 800)
+                            SizedBox(
+                                height:
+                                    30),
                             Expanded(
+                              flex: constraints.maxWidth > 800 ? 6 : 0,
                               // Ensures the image respects the size constraints
 
                               child: Image.asset(
@@ -366,7 +371,7 @@ class AboutusWidget extends StatelessWidget {
                               ResponsiveLayout.isMediumScreen(context)
                                   ? 200
                                   : ResponsiveLayout.isSmallScreen(context)
-                                      ? 280
+                                      ? 210
                                       : 200,
                           mainAxisSpacing: 0,
                           crossAxisCount:
@@ -376,7 +381,7 @@ class AboutusWidget extends StatelessWidget {
                                   : 5,
                         ),
                         childrenDelegate: SliverChildBuilderDelegate(
-                          childCount: valuesList.length,
+                          childCount:constraints.maxWidth>800? valuesList.length:9,
                           (context, index) {
                             int totalColumns =
                                 ResponsiveLayout.isMediumScreen(context) ||
@@ -438,6 +443,8 @@ class AboutusWidget extends StatelessWidget {
                                           : AppTheme.black,
                                       fontSize: 12,
                                     ),
+                                    maxLines: 5,
+                                    overflow: TextOverflow.ellipsis,
                                   )
                                       .animate(
                                           target: _controller.isVlaueSection
@@ -469,8 +476,13 @@ class AboutusWidget extends StatelessWidget {
                         ),
                       ),
                     ),
+                    if(constraints.maxWidth>800)
                     SizedBox(
                       height: 80,
+                    )
+                    else
+                     SizedBox(
+                      height: 20,
                     ),
                     Text(
                       "Our team of scientists, engineers, and healthcare professionals works collaboratively to expand the horizons of diagnostics, therapeutics, and primary care services/ comprehensive care services. Through rigorous research, forward-thinking partnerships, and a relentless drive for breakthroughs, we continuously push the boundaries of healthcare and medical science—creating transformative technologies that will redefine patient care worldwide.",

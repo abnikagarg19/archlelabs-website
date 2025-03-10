@@ -31,7 +31,7 @@ class _TeamWidgetState extends State<TeamWidget> {
     return ResponsiveLayout(
       largeScreen: _team(context, 1200),
       // We will make this in a bit
-      smallScreen: _team(context, MediaQuery.of(context).size.width * .9),
+      smallScreen: _team(context, MediaQuery.of(context).size.width * .7),
       mediumScreen: _team(context, 770.0),
     );
   }
@@ -165,7 +165,7 @@ class _TeamWidgetState extends State<TeamWidget> {
                                           .isMediumScreen(context)
                                       ? 280
                                       : ResponsiveLayout.isSmallScreen(context)
-                                          ? 360
+                                          ? 500
                                           : 400,
                                   mainAxisSpacing: 20,
                                   crossAxisCount:
@@ -173,7 +173,7 @@ class _TeamWidgetState extends State<TeamWidget> {
                                                   context) ||
                                               ResponsiveLayout.isSmallScreen(
                                                   context)
-                                          ? 2
+                                          ? 1
                                           : 4,
                                 ),
                                 childrenDelegate: SliverChildBuilderDelegate(
@@ -185,7 +185,7 @@ class _TeamWidgetState extends State<TeamWidget> {
                                             ? 220
                                             : ResponsiveLayout.isSmallScreen(
                                                     context)
-                                                ? 280
+                                                ? 380
                                                 : 320;
 
                                     // Generate a random delay between 100ms and 600ms
@@ -200,7 +200,7 @@ class _TeamWidgetState extends State<TeamWidget> {
                                               }},
                                       child: Column(
                                         crossAxisAlignment:
-                                            CrossAxisAlignment.start,
+                                            CrossAxisAlignment.center,
                                         children: [
                                           MouseRegion(
                                             
@@ -235,7 +235,7 @@ class _TeamWidgetState extends State<TeamWidget> {
                                                       : ResponsiveLayout
                                                               .isSmallScreen(
                                                                   context)
-                                                          ? 250
+                                                          ? double.infinity
                                                           : 380,
                                                   fit: BoxFit.cover,
                                                   filterQuality:
@@ -344,15 +344,18 @@ class _TeamWidgetState extends State<TeamWidget> {
                                             ),
                                           ), // Smooth fade-in effect
                                           SizedBox(height: 8),
-                                          Text(
-                                            "${_controller.teamList.first.data![index].name!}",
-                                            style: GoogleFonts.openSans(
-                                              fontWeight: FontWeight.w600,
-                                              color: AppTheme.whiteColor,
-                                              fontSize: Constant.body(context),
+                                          Align(
+                                            alignment:Alignment.bottomLeft,
+                                            child: Text(
+                                              "${_controller.teamList.first.data![index].name!}",
+                                              style: GoogleFonts.openSans(
+                                                fontWeight: FontWeight.w600,
+                                                color: AppTheme.whiteColor,
+                                                fontSize: Constant.body(context),
+                                              ),
+                                              maxLines: 1,
+                                              overflow: TextOverflow.ellipsis,
                                             ),
-                                            maxLines: 1,
-                                            overflow: TextOverflow.ellipsis,
                                           ),
                                           SizedBox(height: 6),
                                           Row(
