@@ -33,7 +33,7 @@ class StartedWidget extends StatelessWidget {
           if (info.visibleFraction > 0.1) {
             print("visible");
             _controller.changeOurStory(true); // o
-          } 
+          }
         },
         // decoration: BoxDecoration(
         //     image: DecorationImage(
@@ -89,8 +89,10 @@ class StartedWidget extends StatelessWidget {
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                        Flexible(child:  buildText(
-                              _controller.isOurStory ? 1 : 0, text1,context),)
+                          Flexible(
+                            child: buildText(
+                                _controller.isOurStory ? 1 : 0, MediaQuery.of(context).size.width>800?text1:textmobile, context),
+                          )
                           // SizedBox(
                           //   width: 40,
                           // ),
@@ -200,29 +202,21 @@ healthcare particularly the silent struggles of the elderly and their caregivers
       innovations toward full-scale implementation. What began as a spark of empathy is now a pioneering force,
        shaping the future of healthcare with a resolute commitment to making superior medical care universally accessible.
   """;
+final String textmobile = """
+Archle Labs, founded by Alois Sajo Devasagayam,
+emerged during the COVID-19 pandemic to address critical gaps in, healthcare particularly the silent struggles of the elderly and their caregivers. Inspired by the profound sacrifices of 
+a devoted caregiver tending to bedridden parents, the venture was driven by a vision to harness technology for transformative,
+  human-centered healthcare solutions. With early momentum fueled by a mentor-investor’s belief—whose untimely passing became a defining 
+catalyst—Archle Labs evolved from a promising concept into an unshakable mission to revolutionize healthcare accessibility.
+Despite formidable challenges, the unwavering commitment of key stakeholders, combined with
+medical expertise and strategic collaborations, refined the vision into tangible, real-world
+    solutions bridging the gap between patient care and caregiver support. Now in the product development phase,the company continues to
+   attract investor interest and forge strategic partnerships, relentlessly advancing its
+      innovations toward full-scale implementation. What began as a spark of empathy is now a
+      pioneering force shaping the future of healthcare with a resolute commitment to making superior medical care universally accessible.
+  """;
 
-final String text2 =
-    """What began as a spark of empathy is steadily transforming into a force for change,
- driven by a resolute commitment to making superior medical care accessible to all.With an initial focus on remote elderly care,
-  the venture gained momentum through the belief and guidance of a mentor-investor, whose untimely passing became a defining 
-  moment—transforming a promising idea into an unshakable mission to revolutionize healthcare accessibility. """;
-
-final String text3 =
-    """This realization underscored the need for technology-driven solutions
-    that extend beyond patient care to also empower caregivers. Now in the product development
-    phase, the company is evolving with a dedicated core-team  committed to pioneering healthcare solutions.
-    Attracting investor interest and strategic partnerships, it remains focused on refining innovations, expanding
-    collaborations, and securing resources for full-scale implementation. """;
-
-final String text4 =
-    """Despite numerous challenges, unwavering commitment propelled the venture forward.
-    The expertise of key stakeholders refined the vision, while insights from medical
-    professionals strengthened solution development. Strategic connections
-    further opened doors to opportunities, enabling structured planning, product refinement,
-    and system design. These collective efforts ultimately led to the creation of advanced, real-world 
-  healthcare solutions that bridge the gap between patient needs and caregiver support. """;
-
-buildText(isshow, text,context) {
+buildText(isshow, text, context) {
   List<String> lines = text.split("\n"); // Split text into lines
 
   return Column(
