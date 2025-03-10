@@ -23,18 +23,24 @@ void scrollToSection(String section) {
    else if (section == "Our Focus") {
     targetKey = Globals.container4Key;
   } 
+   else if (section == "Our Team") {
+    targetKey = Globals.teamSection;
+  } 
+   else if (section == "Contact us") {
+    targetKey = Globals.container3Key;
+  } 
   else {
-    targetKey = Globals.container2Key;
+    targetKey = Globals.container3Key;
   }
 
 scrollToContainer(targetKey);
 }
 
-final navLinks = ["Home", "Our Focus","About Us", "Articles", "Contact us"];
+final navLinks = ["Home", "Our Focus","About Us", "Articles", "Our Team", "Contact us"];
 List<Widget> navItem() {
   return navLinks.map((text) {
     return Padding(
-      padding: EdgeInsets.only(left: 80),
+      padding: EdgeInsets.only(left: 60),
       child: InkWell(
         onTap: () {
           if (Get.currentRoute != "/") {
@@ -54,7 +60,7 @@ List<Widget> navItem() {
         child: Text(text,
             style: GoogleFonts.openSans(
                 color: AppTheme.whiteColor,
-                fontSize: 20,
+                fontSize: 18,
                 fontWeight: FontWeight.w500)),
       ),
     );

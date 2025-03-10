@@ -90,7 +90,7 @@ class StartedWidget extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                         Flexible(child:  buildText(
-                              _controller.isOurStory ? 1 : 0, text1),)
+                              _controller.isOurStory ? 1 : 0, text1,context),)
                           // SizedBox(
                           //   width: 40,
                           // ),
@@ -222,7 +222,7 @@ final String text4 =
     and system design. These collective efforts ultimately led to the creation of advanced, real-world 
   healthcare solutions that bridge the gap between patient needs and caregiver support. """;
 
-buildText(isshow, text) {
+buildText(isshow, text,context) {
   List<String> lines = text.split("\n"); // Split text into lines
 
   return Column(
@@ -233,7 +233,7 @@ buildText(isshow, text) {
         line.trim(),
         style: GoogleFonts.openSans(
           color: Colors.white,
-          fontSize: 20,
+          fontSize: Constant.TextSize20(context),
           height: 2.5,
         ),
         textAlign: TextAlign.justify,

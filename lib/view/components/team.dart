@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:archlelabswebsite/utils/globals.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -122,7 +123,7 @@ class _TeamWidgetState extends State<TeamWidget> {
             // _controller.changeIsTeam(false); // o
             //  }
           },
-          key: Key("Team"),
+          key: Globals.teamSection,
           child: Container(
               constraints: BoxConstraints(maxWidth: width),
               color: AppTheme.black,
@@ -192,7 +193,11 @@ class _TeamWidgetState extends State<TeamWidget> {
                                         Random().nextInt(500) + 300;
 
                                     return GestureDetector(
-                                      onTap: () {},
+                                      onTap: () { if (kIsWeb) {
+                                                setState(() {
+                                                  _controller.hovering(index);
+                                                });
+                                              }},
                                       child: Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,

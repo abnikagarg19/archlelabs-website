@@ -1665,20 +1665,20 @@ class FunkyOverlayState extends State<FunkyOverlay>
                                             thickness: 0.3,
                                           ),
                                         ),
-                                        Padding(
-                                          padding: const EdgeInsets.only(left: 10),
-                                          child: Image.asset(
-                                            "assets/images/arrow.png",
-                                            height: 20,
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.only(left: 10),
-                                          child: Image.asset(
-                                            "assets/images/arrow.png",
-                                            height: 20,
-                                          ),
-                                        ),
+                                        // Padding(
+                                        //   padding: const EdgeInsets.only(left: 10),
+                                        //   child: Image.asset(
+                                        //     "assets/images/arrow.png",
+                                        //     height: 20,
+                                        //   ),
+                                        // ),
+                                        // Padding(
+                                        //   padding: const EdgeInsets.only(left: 10),
+                                        //   child: Image.asset(
+                                        //     "assets/images/arrow.png",
+                                        //     height: 20,
+                                        //   ),
+                                        // ),
                                       ],
                                     )),
                                 SizedBox(height: eigthy),
@@ -1784,22 +1784,22 @@ class FunkyOverlayState extends State<FunkyOverlay>
                                       constraints: BoxConstraints(maxWidth: 800),
                                       child: Row(
                                         children: [
-                                          Padding(
-                                            padding:
-                                                const EdgeInsets.only(right: 10),
-                                            child: Image.asset(
-                                              "assets/images/leftarrow.png",
-                                              height: 20,
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding:
-                                                const EdgeInsets.only(right: 10),
-                                            child: Image.asset(
-                                              "assets/images/leftarrow.png",
-                                              height: 20,
-                                            ),
-                                          ),
+                                          // Padding(
+                                          //   padding:
+                                          //       const EdgeInsets.only(right: 10),
+                                          //   child: Image.asset(
+                                          //     "assets/images/leftarrow.png",
+                                          //     height: 20,
+                                          //   ),
+                                          // ),
+                                          // Padding(
+                                          //   padding:
+                                          //       const EdgeInsets.only(right: 10),
+                                          //   child: Image.asset(
+                                          //     "assets/images/leftarrow.png",
+                                          //     height: 20,
+                                          //   ),
+                                          // ),
                                           Expanded(
                                             child: Divider(
                                               color: AppTheme.whiteColor,
