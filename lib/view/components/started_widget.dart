@@ -54,14 +54,14 @@ class StartedWidget extends StatelessWidget {
                 bottom: 0,
                 right: 0,
                 left: 0,
-                child: Image.asset(
-                  "assets/images/started.gif",
+                child: Image.network(
+                  "https://archlelungbucket.s3.ap-south-1.amazonaws.com/website/assests/Untitled+video+-+Made+with+Clipchamp+(5)+(1)+(1)+(1).gif",
                   fit: BoxFit.cover,
                   alignment: Alignment.bottomRight,
                 ),
               )
-                  .animate(target: _controller.isOurStory ? 1 : 0)
-                  .fadeIn(delay: 200.ms, duration: 600.ms),
+                ,
+                 
 
               // Additional Overlay Image
 
@@ -227,8 +227,9 @@ buildText(isshow, text, context) {
         line.trim(),
         style: GoogleFonts.openSans(
           color: Colors.white,
-          fontSize: Constant.TextSize20(context),
-          height: 2.5,
+          fontWeight: FontWeight.w300,
+           fontSize: Constant.TextSize20(context),
+                                    height: 2.5,
         ),
         textAlign: TextAlign.justify,
       )

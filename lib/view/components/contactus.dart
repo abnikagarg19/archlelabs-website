@@ -1257,6 +1257,7 @@ class _ContactUsState extends State<ContactUs>
   void showCustomDialog() {
     Get.dialog(
       Dialog(
+        insetPadding: EdgeInsets.symmetric(horizontal: 20),
           backgroundColor: AppTheme.black,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(2), // Border radius
@@ -1728,6 +1729,7 @@ class FunkyOverlayState extends State<FunkyOverlay>
                                   ),
                                 ),
                                 SizedBox(height: eigthy),
+                                 if( constraints.maxWidth>800)
                                 GridView.builder(
                                   primary: false,
                                   shrinkWrap: true,
@@ -1737,7 +1739,7 @@ class FunkyOverlayState extends State<FunkyOverlay>
                                     crossAxisSpacing: 100, // Space between columns
         
                                     childAspectRatio:
-                                        2.2, // Adjust aspect ratio to balance title & description
+                                        1.6, // Adjust aspect ratio to balance title & description
                                   ),
                                   itemCount:
                                       widget.designationList["skills"].length,
@@ -1748,6 +1750,21 @@ class FunkyOverlayState extends State<FunkyOverlay>
                                         widget.designationList["skills"][index]
                                             ['description']!,
                                         context);
+                                  },
+                                )
+                                 else 
+                                 ...List.generate(
+                                  widget.designationList["skills"].length,
+                                  (index) {
+                                  return Padding(
+                                    padding: const EdgeInsets.symmetric(vertical: 16),
+                                    child: buildCard(
+                                          widget.designationList["skills"][index]
+                                              ['title']!,
+                                          widget.designationList["skills"][index]
+                                              ['description']!,
+                                          context),
+                                  );
                                   },
                                 ),
                                 SizedBox(height: eigthy),
@@ -1820,6 +1837,7 @@ class FunkyOverlayState extends State<FunkyOverlay>
                                   ),
                                 ),
                                 SizedBox(height: thirty),
+                                if( constraints.maxWidth>800)
                                 GridView.builder(
                                   primary: false,
                                   shrinkWrap: true,
@@ -1829,7 +1847,7 @@ class FunkyOverlayState extends State<FunkyOverlay>
                                     crossAxisSpacing: 100, // Space between columns
         
                                     childAspectRatio:
-                                        2.2, // Adjust aspect ratio to balance title & description
+                                       1.8, // Adjust aspect ratio to balance title & description
                                   ),
                                   itemCount: widget.designationList["offer"].length,
                                   itemBuilder: (context, index) {
@@ -1839,6 +1857,21 @@ class FunkyOverlayState extends State<FunkyOverlay>
                                         widget.designationList["offer"][index]
                                             ['description']!,
                                         context);
+                                  },
+                                )
+                                else 
+                                 ...List.generate(
+                                  widget.designationList["offer"].length,
+                                  (index) {
+                                  return Padding(
+                                    padding: const EdgeInsets.symmetric(vertical: 16),
+                                    child: buildCard(
+                                          widget.designationList["offer"][index]
+                                              ['title']!,
+                                          widget.designationList["offer"][index]
+                                              ['description']!,
+                                          context),
+                                  );
                                   },
                                 ),
                                 SizedBox(height: thirty),
@@ -1887,7 +1920,7 @@ class FunkyOverlayState extends State<FunkyOverlay>
 
   Widget buildCard(String title, String description, context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(

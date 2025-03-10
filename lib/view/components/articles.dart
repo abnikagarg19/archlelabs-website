@@ -40,14 +40,14 @@ class ArticlesWidget extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: AppTheme.whiteColor,
                     image: DecorationImage(
-                        image: AssetImage(
-                          "assets/images/art.gif",
+                        image: NetworkImage(
+                          "https://archlelungbucket.s3.ap-south-1.amazonaws.com/website/assests/finalDNA.gif",
                         ),
                         fit: BoxFit.cover)),
                 child: ClipRRect(
                   child: BackdropFilter(
                    
-                    filter: ImageFilter.blur(sigmaX: 30.0, sigmaY: 30.0),
+                    filter: ImageFilter.blur(sigmaX: 20.0, sigmaY: 20.0),
                     child: Center(
                       child: Container(
                         
