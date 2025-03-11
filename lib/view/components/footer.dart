@@ -60,7 +60,7 @@ class Footer extends StatelessWidget {
                   ),
                   fit: BoxFit.fill)),
           child: Center(
-            child: Container(   
+            child: Container(
               constraints: BoxConstraints(maxWidth: width),
               child: Column(
                 children: [
@@ -98,7 +98,7 @@ class Footer extends StatelessWidget {
                                   fontSize: Constant.smallbheadingText(context),
                                   fontWeight: FontWeight.w300,
                                 ),
-                              ),  
+                              ),
                               SizedBox(
                                 height: 20,
                               ),
@@ -112,8 +112,10 @@ class Footer extends StatelessWidget {
                                 : MainAxisAlignment.start,
                             children: [
                               Expanded(
-                                child: Column(crossAxisAlignment:constraints.maxWidth > 800? CrossAxisAlignment.end:CrossAxisAlignment.start,
-                              
+                                child: Column(
+                                  crossAxisAlignment: constraints.maxWidth > 800
+                                      ? CrossAxisAlignment.end
+                                      : CrossAxisAlignment.start,
                                   children: [
                                     SizedBox(
                                       height: 40,
@@ -123,10 +125,48 @@ class Footer extends StatelessWidget {
                                       height:
                                           constraints.maxWidth > 800 ? 150 : 70,
                                       fit: BoxFit.cover,
-                                      width:
-                                          constraints.maxWidth > 800 ? null : 150,
+                                      width: constraints.maxWidth > 800
+                                          ? null
+                                          : 150,
+                                    ), if(constraints.maxWidth < 800.0 )
+                                    SizedBox(
+                                      height: 30,
                                     ),
-                                    
+                                    if(constraints.maxWidth < 800.0 )
+                                      Row(
+                                      mainAxisAlignment:
+                                          constraints.maxWidth > 800
+                                              ? MainAxisAlignment.end
+                                              : MainAxisAlignment.start,
+                                      children: [
+                                        Image.asset(
+                                          "assets/images/skill4.png",
+                                          height: constraints.maxWidth > 800
+                                              ? 120
+                                              : 50,
+                                          fit: BoxFit.cover,
+                                          //  width: constraints.maxWidth > 800 ? null : 150,
+                                        ),
+                                        Image.asset(
+                                          "assets/images/skill2.png",
+                                          height: constraints.maxWidth > 800
+                                              ? 120
+                                              : 50,
+                                          fit: BoxFit.cover,
+                                          //  width: constraints.maxWidth > 800 ? null : 150,
+                                        ),
+                                      ],
+                                    ), if(constraints.maxWidth < 800.0 )
+                                    SizedBox(
+                                      height: 30,
+                                    ), if(constraints.maxWidth < 800.0 )
+                                    Image.asset(
+                                      "assets/images/skill3.png",
+                                      height:
+                                          constraints.maxWidth > 800 ? 100 : 60,
+                                      fit: BoxFit.cover,
+                                      //  width: constraints.maxWidth > 800 ? null : 150,
+                                    ),
                                   ],
                                 ),
                               ),
@@ -135,14 +175,14 @@ class Footer extends StatelessWidget {
                     ],
                   ),
                   Flex(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: constraints.maxWidth> 800? CrossAxisAlignment.start:CrossAxisAlignment.end,
                     mainAxisAlignment: MainAxisAlignment.start,
-                    direction: constraints.maxWidth > 800
+                    direction: constraints.maxWidth> 800
                         ? Axis.horizontal
-                        : Axis.vertical,
+                        : Axis.horizontal,
                     children: [
                       Expanded(
-                        flex: constraints.maxWidth > 800.0 ? 1 : 0,
+                        flex: constraints.maxWidth > 800.0 ? 1 : 1,
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.start,
@@ -150,7 +190,6 @@ class Footer extends StatelessWidget {
                               SizedBox(
                                 height: 60,
                               ),
-                            
                               InkWell(
                                 onTap: () {
                                   _launchMailClient("alois@archlelabs.com");
@@ -245,53 +284,57 @@ class Footer extends StatelessWidget {
                             ]),
                       ),
                       Expanded(
-                          flex: constraints.maxWidth > 800 ? 1 : 0,
+                          flex: constraints.maxWidth > 800 ? 1 : 1,
                           child: Row(
                             mainAxisAlignment: constraints.maxWidth > 800
                                 ? MainAxisAlignment.end
                                 : MainAxisAlignment.start,
                             children: [
                               Expanded(
-                                child: Column(crossAxisAlignment:constraints.maxWidth > 800? CrossAxisAlignment.end:CrossAxisAlignment.start,
-                              
+                                child: Column(
+                                  crossAxisAlignment: constraints.maxWidth > 800
+                                      ? CrossAxisAlignment.end
+                                      : CrossAxisAlignment.end,
                                   children: [
-                                   
-                                       SizedBox(
+                                    SizedBox(
                                       height: 40,
                                     ),
+                                     if(constraints.maxWidth > 800.0 )
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      mainAxisAlignment:
+                                          constraints.maxWidth > 800
+                                              ? MainAxisAlignment.end
+                                              : MainAxisAlignment.start,
                                       children: [
                                         Image.asset(
                                           "assets/images/skill4.png",
-                                                                             height:
-                                                constraints.maxWidth > 800 ? 120 : 70,
+                                          height: constraints.maxWidth > 800
+                                              ? 120
+                                              : 50,
                                           fit: BoxFit.cover,
                                           //  width: constraints.maxWidth > 800 ? null : 150,
                                         ),
-                                          Image.asset(
-                                      "assets/images/skill2.png",
-                                       height:
-                                            constraints.maxWidth > 800 ? 120 : 70,
-                                      fit: BoxFit.cover,
-                                      //  width: constraints.maxWidth > 800 ? null : 150,
-                                    ),
+                                        Image.asset(
+                                          "assets/images/skill2.png",
+                                          height: constraints.maxWidth > 800
+                                              ? 120
+                                              : 50,
+                                          fit: BoxFit.cover,
+                                          //  width: constraints.maxWidth > 800 ? null : 150,
+                                        ),
                                       ],
-                                    ),
+                                    ),   if(constraints.maxWidth > 800.0 )
                                     SizedBox(
                                       height: 10,
-                                    ),
+                                    ),   if(constraints.maxWidth > 800.0 )
                                     Image.asset(
                                       "assets/images/skill3.png",
                                       height:
-                                            constraints.maxWidth > 800 ? 100 : 60,
+                                          constraints.maxWidth > 800 ? 100 : 60,
                                       fit: BoxFit.cover,
                                       //  width: constraints.maxWidth > 800 ? null : 150,
                                     ),
-                                    SizedBox(
-                                      height: 20,
-                                    ),
-                                  
+                                   
                                   ],
                                 ),
                               ),
@@ -305,4 +348,4 @@ class Footer extends StatelessWidget {
           ));
     });
   }
-}   
+}

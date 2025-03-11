@@ -82,11 +82,13 @@ class AboutusWidget extends StatelessWidget {
               // Background GIF
               Positioned(
                 top: 0,
-                bottom:constraints.maxWidth>800? 500:800,
+                bottom: constraints.maxWidth > 800 ? 500 : 800,
                 right: 0,
                 left: 0,
                 child: Image.asset(
-                 constraints.maxWidth>800? "assets/images/aboutus3.gif": "assets/images/aboutus3mobile.gif",
+                  constraints.maxWidth > 800
+                      ? "assets/images/aboutus3.gif"
+                      : "assets/images/ss.png",
                   fit: BoxFit.cover,
                   alignment: Alignment.bottomRight,
                 ),
@@ -104,76 +106,99 @@ class AboutusWidget extends StatelessWidget {
                   child: Container(
                       color: const Color.fromRGBO(255, 255, 255, 0.54))),
               // Content Section
-              Center(
-                  child: Container(
-                constraints: BoxConstraints(maxWidth: width),
-                alignment: Alignment.center,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    VisibilityDetector(
-                      key: Globals.container1Key,
-                      onVisibilityChanged: (VisibilityInfo info) {
-                        print(info.visibleFraction);
-                        if (info.visibleFraction > 0.05) {
-                          print("visible");
-                          _controller.changeAboutus(); // o
-                        } //else {
-                        // _controller.changenotAboutus(); // o
-                        // }
-                      },
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          if (constraints.maxWidth > 800)
-                            Stack(
-                              clipBehavior: Clip.none,
-                              children: [
-                                Container(
-                                  width: 350,
-                                  height: 500,
-                                  child: Image.asset(
-                                    "assets/images/space2.png",
-                                    fit: BoxFit.fitHeight,
-                                  ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  VisibilityDetector(
+                    key: Globals.container1Key,
+                    onVisibilityChanged: (VisibilityInfo info) {
+                      print(info.visibleFraction);
+                      if (info.visibleFraction > 0.05) {
+                        print("visible");
+                        _controller.changeAboutus(); // o
+                      } //else {
+                      // _controller.changenotAboutus(); // o
+                      // }
+                    },
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        if (constraints.maxWidth > 800)
+                          Stack(
+                            clipBehavior: Clip.none,
+                            children: [
+                              Container(
+                                width: 350,
+                                height: 500,
+                                child: Image.asset(
+                                  "assets/images/space2.png",
+                                  fit: BoxFit.fitHeight,
                                 ),
-                                Positioned(
-                                  top: 80,
-                                  right: -370,
-                                  child: Text("About Us",
-                                      style: GoogleFonts.openSans(
-                                        color: AppTheme.black,
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: Constant.bigFont94(context),
-                                        letterSpacing: 3,
-                                      )),
-                                )
-                              ],
-                            ),
-                          if (constraints.maxWidth > 800)
-                            SizedBox(
-                              width: 50,
-                            ),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                if (constraints.maxWidth < 800)
-                                  const SizedBox(height: 30)
-                                else
-                                  const SizedBox(height: 180),
-                                if (constraints.maxWidth < 800)
-                                  Text(
-                                    "About Us",
+                              ),
+                              Positioned(
+                                top: 100,
+                                right: -370,
+                                child: Text("About Us",
                                     style: GoogleFonts.openSans(
                                       color: AppTheme.black,
                                       fontWeight: FontWeight.w600,
                                       fontSize: Constant.bigFont94(context),
                                       letterSpacing: 3,
+                                    )),
+                              )
+                            ],
+                          ),
+                        if (constraints.maxWidth > 800)
+                          SizedBox(
+                            width: 50,
+                          ),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              if (constraints.maxWidth < 800)
+                                const SizedBox(height: 0)
+                              else
+                                const SizedBox(height: 180),
+                              if (constraints.maxWidth < 800)
+                                Stack(
+                                  clipBehavior: Clip.none,
+                                  children: [
+                                    Container(
+                                      width: 150,
+                                      height: 250,
+                                      child: Image.asset(
+                                        "assets/images/space2.png",
+                                        fit: BoxFit.fitHeight,
+                                      ),
                                     ),
-                                  ),
-                                const SizedBox(height: 40),
-                                Text(
+                                    Positioned(
+                                      top: 80,
+                                      left: 110,
+                                      child: Text("About Us",
+                                          style: GoogleFonts.openSans(
+                                            color: AppTheme.black,
+                                            fontWeight: FontWeight.w600,
+                                            fontSize:
+                                                Constant.bigFont94(context),
+                                            letterSpacing: 3,
+                                          )),
+                                    )
+                                  ],
+                                ),
+                              // Text(
+                              //   "About Us",
+                              //   style: GoogleFonts.openSans(
+                              //     color: AppTheme.black,
+                              //     fontWeight: FontWeight.w600,
+                              //     fontSize: Constant.bigFont94(context),
+                              //     letterSpacing: 3,
+                              //   ),
+                              // ),
+                              const SizedBox(height: 40),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 16),
+                                child: Text(
                                   "Archle Labs is an advanced research center for health and life sciences engineering, committed to revolutionizing the healthcare field. We combine cutting-edge technology, interdisciplinary expertise fueled by  unwavering passion for innovation to tackle the world’s most pressing medical challenges. By developing novel solutions and services, we aim to elevate human health, enhance patient outcomes, and transform global healthcare practices.",
                                   style: GoogleFonts.openSans(
                                     color: AppTheme.black,
@@ -191,144 +216,136 @@ class AboutusWidget extends StatelessWidget {
                                       duration: 600.ms,
                                       curve: Curves.linear,
                                     ),
-                                // .moveX(
-                                //     begin: 300,
-                                //     end: 0,
-                                //     duration: 800.ms,
-                                //     curve: Curves.linear),
-                              ],
-                            ),
+                              ),
+                              // .moveX(
+                              //     begin: 300,
+                              //     end: 0,
+                              //     duration: 800.ms,
+                              //     curve: Curves.linear),
+                            ],
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                    SizedBox(
-                      height: 60,
-                    ),
-                    VisibilityDetector(
-                      key: Key("mission"),
-                      onVisibilityChanged: (VisibilityInfo info) {
-                        print(info);
-                        if (info.visibleFraction > 0.05) {
-                          print("visible");
-                          _controller.changeisMissionSection(true); // o
-                        }
-                        // } else {
-                        //   _controller.changeisMissionSection(false); // o
-                        // }
-                      },
-                      child:  Flex(
-                  direction:
-                      constraints.maxWidth > 800 ? Axis.horizontal : Axis.vertical,
+                  ),
+                  SizedBox(
+                    height: 60,
+                  ),
+                  VisibilityDetector(
+                    key: Key("mission"),
+                    onVisibilityChanged: (VisibilityInfo info) {
+                      print(info);
+                      if (info.visibleFraction > 0.05) {
+                        print("visible");
+                        _controller.changeisMissionSection(true); // o
+                      }
+                      // } else {
+                      //   _controller.changeisMissionSection(false); // o
+                      // }
+                    },
+                    child: Container(
+                     constraints: BoxConstraints(maxWidth: width),
+                      child: Flex(
+                          direction: constraints.maxWidth > 800
+                              ? Axis.horizontal
+                              : Axis.vertical,
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Expanded(
-                              flex: constraints.maxWidth > 800 ? 6 : 0,
-                              child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          "Our Vision",
-                                          style: GoogleFonts.bebasNeue(
-                                            color: AppTheme.black,
-                                            fontSize: Constant.subheadingText(
-                                                context),
-                                            letterSpacing: 5,
-                                          ),
-                                        )
-                                            .animate(
-                                              target:
-                                                  _controller.isMissionSection
-                                                      ? 1
-                                                      : 0,
-                                            )
-                                            .fadeIn(
-                                              delay: 200.ms,
-                                              duration: 600.ms,
-                                              curve: Curves.linear,
-                                            ),
-                                        const SizedBox(height: 10),
-                                        Text(
-                                          "To revolutionize medical science, forging a future where no challenge is insurmountable and every life thrives.",
-                                          style: GoogleFonts.openSans(
-                                            color: AppTheme.black,
-                                            fontSize:
-                                                Constant.TextSize20(context),
-                                            height: 1.5,
-                                          ),
-                                        )
-                                            .animate(
-                                              target:
-                                                  _controller.isMissionSection
-                                                      ? 1
-                                                      : 0,
-                                            )
-                                            .fadeIn(
-                                              delay: 600.ms,
-                                              duration: 600.ms,
-                                              curve: Curves.linear,
-                                            ),
-                                        const SizedBox(height: 30),
-                                        Text(
-                                          "Our Mission",
-                                          style: GoogleFonts.bebasNeue(
-                                            color: AppTheme.black,
-                                            fontSize: Constant.subheadingText(
-                                                context),
-                                            letterSpacing: 5,
-                                          ),
-                                        )
-                                            .animate(
-                                              target:
-                                                  _controller.isMissionSection
-                                                      ? 1
-                                                      : 0,
-                                            )
-                                            .fadeIn(
-                                              delay: 1000.ms,
-                                              duration: 600.ms,
-                                              curve: Curves.linear,
-                                            ),
-                                        const SizedBox(height: 10),
-                                        Text(
-                                          "Our mission is to harness rigorous, interdisciplinary research and advanced engineering methodologies to drive transformative solutions for complex healthcare challenges—ultimately fostering equitable access and vibrant global health.",
-                                          style: GoogleFonts.openSans(
-                                            color: AppTheme.black,
-                                            fontSize:
-                                                Constant.TextSize20(context),
-                                            height: 1.5,
-                                          ),
-                                        )
-                                            .animate(
-                                              target:
-                                                  _controller.isMissionSection
-                                                      ? 1
-                                                      : 0,
-                                            )
-                                            .fadeIn(
-                                              delay: 1400.ms,
-                                              duration: 600.ms,
-                                              curve: Curves.linear,
-                                            )
-                                      ],
+                                flex: constraints.maxWidth > 800 ? 6 : 0,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Our Vision",
+                                      style: GoogleFonts.bebasNeue(
+                                        color: AppTheme.black,
+                                        fontSize:
+                                            Constant.subheadingText(context),
+                                        letterSpacing: 5,
+                                      ),
                                     )
-                                 
-                            ),
-                            if(constraints.maxWidth > 800)
-                            SizedBox(
-                                width:
-                                    60), // Optional spacing between text and image
-
-                                     if(constraints.maxWidth < 800)
-                            SizedBox(
-                                height:
-                                    30),
+                                        .animate(
+                                          target: _controller.isMissionSection
+                                              ? 1
+                                              : 0,
+                                        )
+                                        .fadeIn(
+                                          delay: 200.ms,
+                                          duration: 600.ms,
+                                          curve: Curves.linear,
+                                        ),
+                                    const SizedBox(height: 10),
+                                    Text(
+                                      "To revolutionize medical science, forging a future where no challenge is insurmountable and every life thrives.",
+                                      style: GoogleFonts.openSans(
+                                        color: AppTheme.black,
+                                        fontSize: Constant.TextSize20(context),
+                                        height: 1.5,
+                                      ),
+                                    )
+                                        .animate(
+                                          target: _controller.isMissionSection
+                                              ? 1
+                                              : 0,
+                                        )
+                                        .fadeIn(
+                                          delay: 600.ms,
+                                          duration: 600.ms,
+                                          curve: Curves.linear,
+                                        ),
+                                    const SizedBox(height: 30),
+                                    Text(
+                                      "Our Mission",
+                                      style: GoogleFonts.bebasNeue(
+                                        color: AppTheme.black,
+                                        fontSize:
+                                            Constant.subheadingText(context),
+                                        letterSpacing: 5,
+                                      ),
+                                    )
+                                        .animate(
+                                          target: _controller.isMissionSection
+                                              ? 1
+                                              : 0,
+                                        )
+                                        .fadeIn(
+                                          delay: 1000.ms,
+                                          duration: 600.ms,
+                                          curve: Curves.linear,
+                                        ),
+                                    const SizedBox(height: 10),
+                                    Text(
+                                      "Our mission is to harness rigorous, interdisciplinary research and advanced engineering methodologies to drive transformative solutions for complex healthcare challenges—ultimately fostering equitable access and vibrant global health.",
+                                      style: GoogleFonts.openSans(
+                                        color: AppTheme.black,
+                                        fontSize: Constant.TextSize20(context),
+                                        height: 1.5,
+                                      ),
+                                    )
+                                        .animate(
+                                          target: _controller.isMissionSection
+                                              ? 1
+                                              : 0,
+                                        )
+                                        .fadeIn(
+                                          delay: 1400.ms,
+                                          duration: 600.ms,
+                                          curve: Curves.linear,
+                                        )
+                                  ],
+                                )),
+                            if (constraints.maxWidth > 800)
+                              SizedBox(
+                                  width:
+                                      60), // Optional spacing between text and image
+                      
+                            if (constraints.maxWidth < 800) SizedBox(height: 30),
                             Expanded(
                               flex: constraints.maxWidth > 800 ? 6 : 0,
                               // Ensures the image respects the size constraints
-
+                      
                               child: Image.asset(
                                 "assets/images/space.png",
                                 fit: BoxFit.cover,
@@ -343,17 +360,19 @@ class AboutusWidget extends StatelessWidget {
                                     curve: Curves.linear),
                           ]),
                     ),
-                    const SizedBox(height: 50),
-                    Text(
-                      "Our Values",
-                      style: GoogleFonts.bebasNeue(
-                        color: AppTheme.black,
-                        fontSize: Constant.subheadingText(context),
-                        letterSpacing: 5,
-                      ),
+                  ),
+                  const SizedBox(height: 50),
+                  Text(
+                    "Our Values",
+                    style: GoogleFonts.bebasNeue(
+                      color: AppTheme.black,
+                      fontSize: Constant.subheadingText(context),
+                      letterSpacing: 5,
                     ),
-                    const SizedBox(height: 50),
-                    VisibilityDetector(
+                  ),
+                  const SizedBox(height: 50),
+                  Container(constraints: BoxConstraints(maxWidth: width),
+                    child: VisibilityDetector(
                       key: Key("value"),
                       onVisibilityChanged: (VisibilityInfo info) {
                         if (info.visibleFraction > 0.05) {
@@ -367,12 +386,11 @@ class AboutusWidget extends StatelessWidget {
                         physics: NeverScrollableScrollPhysics(),
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisSpacing: 0,
-                          mainAxisExtent:
-                              ResponsiveLayout.isMediumScreen(context)
-                                  ? 200
-                                  : ResponsiveLayout.isSmallScreen(context)
-                                      ? 210
-                                      : 200,
+                          mainAxisExtent: ResponsiveLayout.isMediumScreen(context)
+                              ? 200
+                              : ResponsiveLayout.isSmallScreen(context)
+                                  ? 210
+                                  : 200,
                           mainAxisSpacing: 0,
                           crossAxisCount:
                               ResponsiveLayout.isMediumScreen(context) ||
@@ -381,7 +399,8 @@ class AboutusWidget extends StatelessWidget {
                                   : 5,
                         ),
                         childrenDelegate: SliverChildBuilderDelegate(
-                          childCount:constraints.maxWidth>800? valuesList.length:9,
+                          childCount:
+                              constraints.maxWidth > 800 ? valuesList.length : 9,
                           (context, index) {
                             int totalColumns =
                                 ResponsiveLayout.isMediumScreen(context) ||
@@ -390,12 +409,12 @@ class AboutusWidget extends StatelessWidget {
                                     : 5;
                             int row =
                                 index ~/ totalColumns; // Determine row number
-
+                    
                             // Movement logic
                             double beginY = (row == 0)
                                 ? -100.0
                                 : 100.0; // Top row moves down, bottom row moves up
-
+                    
                             return Container(
                               decoration: BoxDecoration(
                                 color: index % 2 != 0
@@ -403,10 +422,9 @@ class AboutusWidget extends StatelessWidget {
                                     : AppTheme.black,
                               ),
                               padding: EdgeInsets.symmetric(
-                                vertical:
-                                    ResponsiveLayout.isLargeScreen(context)
-                                        ? 30
-                                        : 12,
+                                vertical: ResponsiveLayout.isLargeScreen(context)
+                                    ? 30
+                                    : 12,
                                 horizontal:
                                     ResponsiveLayout.isLargeScreen(context)
                                         ? 30
@@ -426,9 +444,8 @@ class AboutusWidget extends StatelessWidget {
                                     ),
                                   )
                                       .animate(
-                                          target: _controller.isVlaueSection
-                                              ? 1
-                                              : 0)
+                                          target:
+                                              _controller.isVlaueSection ? 1 : 0)
                                       .then(
                                           delay: (Random().nextInt(10) * 100)
                                               .ms) // Staggered delay
@@ -447,9 +464,8 @@ class AboutusWidget extends StatelessWidget {
                                     overflow: TextOverflow.ellipsis,
                                   )
                                       .animate(
-                                          target: _controller.isVlaueSection
-                                              ? 1
-                                              : 0)
+                                          target:
+                                              _controller.isVlaueSection ? 1 : 0)
                                       .then(
                                           delay: (Random().nextInt(10) * 100)
                                               .ms) // Staggered delay
@@ -462,7 +478,7 @@ class AboutusWidget extends StatelessWidget {
                                     target: _controller.isVlaueSection
                                         ? 1
                                         : 0) // Start animation when visible
-
+                    
                                 .fadeIn(
                                     duration: 400.ms) // Gradual fade-in effect
                                 .moveY(
@@ -476,15 +492,17 @@ class AboutusWidget extends StatelessWidget {
                         ),
                       ),
                     ),
-                    if(constraints.maxWidth>800)
+                  ),
+                  if (constraints.maxWidth > 800)
                     SizedBox(
                       height: 80,
                     )
-                    else
-                     SizedBox(
+                  else
+                    SizedBox(
                       height: 20,
                     ),
-                    Text(
+                  Container(constraints: BoxConstraints(maxWidth: width),
+                    child: Text(
                       "Our team of scientists, engineers, and healthcare professionals works collaboratively to expand the horizons of diagnostics, therapeutics, and primary care services/ comprehensive care services. Through rigorous research, forward-thinking partnerships, and a relentless drive for breakthroughs, we continuously push the boundaries of healthcare and medical science—creating transformative technologies that will redefine patient care worldwide.",
                       style: GoogleFonts.openSans(
                         color: AppTheme.black,
@@ -493,12 +511,12 @@ class AboutusWidget extends StatelessWidget {
                       ),
                       textAlign: TextAlign.justify,
                     ),
-                    SizedBox(
-                      height: 80,
-                    ),
-                  ],
-                ),
-              )),
+                  ),
+                  SizedBox(
+                    height: 80,
+                  ),
+                ],
+              ),
               //                ).animate(target: _controller.isAboutuseVisble ? 1 : 0,) // Ensure animation triggers
               //  .moveY(begin: 300, end: 0, duration: 800.ms, curve: Curves.linear),
             ],
