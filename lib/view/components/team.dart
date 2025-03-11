@@ -140,7 +140,7 @@ class _TeamWidgetState extends State<TeamWidget> {
                       height: 70,
                     ),
                     Text(
-                      "Meet our team",
+                      "Our team",
                       style: GoogleFonts.bebasNeue(
                           color: AppTheme.whiteColor,
                           fontSize: Constant.headingText(context),
@@ -163,16 +163,16 @@ class _TeamWidgetState extends State<TeamWidget> {
                                   crossAxisSpacing: 60,
                                   mainAxisExtent: ResponsiveLayout
                                           .isMediumScreen(context)
-                                      ? 280
+                                      ? 480
                                       : ResponsiveLayout.isSmallScreen(context)
                                           ? 500
                                           : 400,
                                   mainAxisSpacing: 20,
                                   crossAxisCount:
-                                      ResponsiveLayout.isMediumScreen(
-                                                  context) ||
-                                              ResponsiveLayout.isSmallScreen(
-                                                  context)
+                                      ResponsiveLayout
+                                          .isMediumScreen(context)
+                                      ? 2
+                                      : ResponsiveLayout.isSmallScreen(context)
                                           ? 1
                                           : 4,
                                 ),
@@ -182,7 +182,7 @@ class _TeamWidgetState extends State<TeamWidget> {
                                   (context, index) {
                                     double height =
                                         ResponsiveLayout.isMediumScreen(context)
-                                            ? 220
+                                            ? 380
                                             : ResponsiveLayout.isSmallScreen(
                                                     context)
                                                 ? 380
@@ -231,7 +231,7 @@ class _TeamWidgetState extends State<TeamWidget> {
                                                   width: ResponsiveLayout
                                                           .isMediumScreen(
                                                               context)
-                                                      ? 280
+                                                      ? double.infinity
                                                       : ResponsiveLayout
                                                               .isSmallScreen(
                                                                   context)
@@ -239,7 +239,7 @@ class _TeamWidgetState extends State<TeamWidget> {
                                                           : 380,
                                                   fit: BoxFit.cover,
                                                   filterQuality:
-                                                      FilterQuality.low,
+                                                      FilterQuality.high,
                                                   alignment:
                                                       Alignment.topCenter,
                                                   progressIndicatorBuilder: (context,

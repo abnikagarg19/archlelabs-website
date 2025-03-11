@@ -82,11 +82,11 @@ class AboutusWidget extends StatelessWidget {
               // Background GIF
               Positioned(
                 top: 0,
-                bottom: 500,
+                bottom:constraints.maxWidth>800? 500:800,
                 right: 0,
                 left: 0,
                 child: Image.asset(
-                  "assets/images/aboutus3.gif",
+                 constraints.maxWidth>800? "assets/images/aboutus3.gif": "assets/images/aboutus3mobile.gif",
                   fit: BoxFit.cover,
                   alignment: Alignment.bottomRight,
                 ),

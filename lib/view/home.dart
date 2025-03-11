@@ -279,7 +279,7 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                                       : _image,
                                   width: width,
                                   gaplessPlayback: true,
-                                  //  height: 800,
+                                    height: 300,
                                   fit: BoxFit.cover,
                                 )
                                     .animate(
@@ -321,6 +321,7 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                                       duration: 1400.ms,
                                     )
                               else
+                              if( _controller.offset.value < 1000 &&_controller.offset.value > 70)
                                 Container(
                                   margin: EdgeInsets.symmetric(vertical: 40),
                                   constraints: BoxConstraints(

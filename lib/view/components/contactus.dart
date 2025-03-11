@@ -99,9 +99,10 @@ class _ContactUsState extends State<ContactUs>
           decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage(
-                    "assets/images/contact.png",
+                    "assets/images/map.png",
                   ),
                   opacity: 1,
+                  colorFilter: ColorFilter.mode(Color.fromARGB(174, 0, 0, 0), BlendMode.darken),
                   fit: BoxFit.cover)),
           child: Center(
             child: Container(

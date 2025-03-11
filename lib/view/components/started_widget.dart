@@ -190,31 +190,26 @@ class StartedWidget extends StatelessWidget {
 }
 
  final String text1 = """
-Archle Labs, founded by Alois Sajo Devasagayam, emerged during the COVID-19 pandemic to address critical gaps in,
-healthcare particularly the silent struggles of the elderly and their caregivers. Inspired by the profound sacrifices of a 
-devoted caregiver tending to bedridden parents, the venture was driven by a vision to harness technology for transformative,
-human-centered healthcare solutions. With early momentum fueled by a mentor-investor’s belief—whose untimely passing
-became a defining catalyst—Archle Labs evolved from a promising concept into an unshakable mission to revolutionize
-healthcare accessibility. Despite formidable challenges, the unwavering commitment of key stakeholders,
-combined with medical expertise and strategic collaborations, refined the vision into tangible, real-world
-solutions bridging the gap between patient care and caregiver support. Now in the product development phase,
-the company continues to attract investor interest and forge strategic partnerships, relentlessly advancing its
-innovations toward full-scale implementation. What began as a spark of empathy is now a pioneering force,
-shaping the future of healthcare with a resolute commitment to making superior medical care universally accessible.
+Archle Labs, founded by Alois Sajo Devasagayam, emerged during the COVID-19 pandemic to address critical gaps in, healthcare
+particularly the silent struggles of the elderly and their caregivers. Inspired by the profound sacrifices of a devoted caregiver tending
+to bedridden parents,the venture was driven by a vision to harness technology for transformative,human-centered healthcare
+solutions. With early momentum fueled by a mentor-investor’s belief—whose untimely passing became a defining catalyst—
+Archle Labs evolved from a promising concept into an unshakable mission to revolutionize healthcare accessibility.
+Despite formidable challenges, the unwavering commitment of key stakeholders,combined with medical expertise and strategic
+collaborations, refined the vision into tangible, real-world solutions bridging the gap between patient care  and caregiver support. 
+Now in the product development phase, the company continues to attract investor interest and forget strategic partnerships,
+relentlessly advancing its innovations toward full-scale implementation. What began as a spark of empathy is now a pioneering
+force, shaping the future of healthcare with a resolute commitment to making superior medical care universally accessible.
 """;
 final String textmobile = """
-Archle Labs, founded by Alois Sajo Devasagayam, emerged during the COVID-19 pandemic to address critical gaps in, healthcare particularly the silent struggles of the elderly and their caregivers. 
-Inspired by the profound sacrifices of a devoted caregiver tending to bedridden parents, the venture was driven by a vision to harness technology for transformative, human-centered healthcare solutions. With early momentum fueled by a mentor-investor’s belief—whose untimely passing
-became a defining catalyst—Archle Labs evolved from a promising concept into an unshakable mission to revolutionize healthcare accessibility. Despite formidable challenges,  the  unwavering
-commitment of key stakeholders, combined with medical expertise and strategic collaborations, refined the vision into tangible, real-world solutions bridging the gap between patient care and caregiver support. Now in the product development
-phase,the company continues to attract investor interest and forge strategic partnerships, relentlessly advancing its innovations toward full-scale implementation. 
-What began as a spark of empathy is now a pioneering force shaping the future of healthcare with a resolute commitment to making superior medical care universally accessible.""";
+Archle Labs, founded by Alois Sajo Devasagayam, emerged during the COVID-19 pandemic to address critical gaps in, healthcare particularly the silent struggles of the elderly and their. caregivers Inspired by the profound sacrifices of a devoted caregiver tending to bedridden parents, the venture was driven by a vision to harness technology for transformative, human-centered healthcare solutions. With early momentum fueled by a mentor-investor’s belief whose untimely passing became a defining catalyst—Archle Labs evolved from a promising concept into an unshakable mission to revolutionize healthcare accessibility. Despite formidable challenges,
+the unwavering commitment of key stakeholders, combined with medical expertise and strategic collaborations, refined the vision into tangible, real-world solutions bridging the gap between patient care and caregiver support. Now in the product development phase,the company continues to attract investor interest and forge strategic partnerships, relentlessly advancing its innovations toward full-scale implementation.  What began as a spark of empathy is now a pioneering force shaping the future of healthcare with a resolute commitment to making superior medical care universally accessible.""";
 
 buildText(isshow, text, context) {
   List<String> lines = text.split("\n"); // Split text into lines
 
   return Column(
-    crossAxisAlignment: CrossAxisAlignment.center,
+    crossAxisAlignment: CrossAxisAlignment.start,
     children: lines.map((line) {
       int index = lines.indexOf(line);
       return Text(
