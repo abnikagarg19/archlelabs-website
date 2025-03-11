@@ -218,7 +218,7 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                                 height: 90,
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.only(bottom: 30),
                                 child: Text(
                                   "Unlocking the future\nof Innovations",
                                   style: TextStyle(
