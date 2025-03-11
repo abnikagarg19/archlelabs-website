@@ -176,7 +176,7 @@ class DialogHelper {
                   Icon(
                     Icons.check_circle,
                     size: 60,
-                    color: Colors.green,
+                    color: Colors.white,
                   ),
                   SizedBox(height: 30),
                   Text(
