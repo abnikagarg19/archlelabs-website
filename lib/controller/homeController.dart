@@ -284,6 +284,7 @@ class HomeController extends GetxController {
     fileePressRelase = files;
     fileePressRelasename = name;
     update();
+
   }
 
   clearePressRelase() {
@@ -334,7 +335,7 @@ class HomeController extends GetxController {
   selectFileeJob(files, name) {
     fileeJob = files;
     filejobName = name;
-    update();
+   Get.forceAppUpdate();
   }
 
   cleareJob() {
