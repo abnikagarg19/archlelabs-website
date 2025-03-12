@@ -1192,15 +1192,15 @@ class _ContactUsState extends State<ContactUs>
                             if (result != null) {
                               Uint8List? fileBytes = result.files.first.bytes;
                               String fileName = result.files.first.name;
-                              _controller.selectFileeJob(fileBytes, fileName);
+                              _controller.selectFileeJob(fileBytes!, fileName);
                             } else {
                               // User canceled the picker
                             }
                           },
                         ),
-                        Flexible(
+                       Obx(() =>  Flexible(
                           child: Text(
-                            "  ${_controller.filejobName}",
+                            "  ${_controller.filejobName.value}",
                             style: GoogleFonts.openSans(
                               color: AppTheme.black,
                               fontWeight: FontWeight.w600,
@@ -1209,7 +1209,7 @@ class _ContactUsState extends State<ContactUs>
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                           ),
-                        ),
+                        ),),
                       ],
                     ),
                     SizedBox(

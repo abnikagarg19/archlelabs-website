@@ -120,113 +120,158 @@ class AboutusWidget extends StatelessWidget {
                       // _controller.changenotAboutus(); // o
                       // }
                     },
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        if (constraints.maxWidth > 800)
-                          Stack(
-                            clipBehavior: Clip.none,
-                            children: [
-                              Container(
-                                width: 350,
-                                height: 500,
-                                child: Image.asset(
-                                  "assets/images/space2.png",
-                                  fit: BoxFit.fitHeight,
-                                ),
+                    child: constraints.maxWidth > 800
+                        ? Center(
+                          child: Container( constraints: BoxConstraints(maxWidth: width),
+                            child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Stack(
+                                    clipBehavior: Clip.none,
+                                    children: [
+                                      Container(
+                                        width: 350,
+                                        height: 500,
+                                        child: Image.asset(
+                                          "assets/images/space2.png",
+                                          fit: BoxFit.fitHeight,
+                                        ),
+                                      ),
+                                      Positioned(
+                                        top: 100,
+                                        right: -370,
+                                        child: Text("About Us",
+                                            style: GoogleFonts.openSans(
+                                              color: AppTheme.black,
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: Constant.bigFont94(context),
+                                              letterSpacing: 3,
+                                            )),
+                                      )
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    width: 50,
+                                  ),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        const SizedBox(height: 240),
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 16),
+                                          child: Text(
+                                            "Archle Labs is an advanced research center for health and life sciences engineering, committed to revolutionizing the healthcare field. We combine cutting-edge technology, interdisciplinary expertise fueled by  unwavering passion for innovation to tackle the world’s most pressing medical challenges. By developing novel solutions and services, we aim to elevate human health, enhance patient outcomes, and transform global healthcare practices.",
+                                            style: GoogleFonts.openSans(
+                                              color: AppTheme.black,
+                                              fontSize:
+                                                  Constant.TextSize20(context),
+                                              height: 1.5,
+                                            ),
+                                            textAlign: TextAlign.justify,
+                                          )
+                                              .animate(
+                                                target: _controller.isAboutuseVisble
+                                                    ? 1
+                                                    : 0,
+                                              )
+                                              .fadeIn(
+                                                delay: 200.ms,
+                                                duration: 600.ms,
+                                                curve: Curves.linear,
+                                              ),
+                                        ),
+                                        // .moveX(
+                                        //     begin: 300,
+                                        //     end: 0,
+                                        //     duration: 800.ms,
+                                        //     curve: Curves.linear),
+                                      ],
+                                    ),
+                                  ),
+                                ],
                               ),
-                              Positioned(
-                                top: 100,
-                                right: -370,
-                                child: Text("About Us",
-                                    style: GoogleFonts.openSans(
-                                      color: AppTheme.black,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: Constant.bigFont94(context),
-                                      letterSpacing: 3,
-                                    )),
-                              )
-                            ],
                           ),
-                        if (constraints.maxWidth > 800)
-                          SizedBox(
-                            width: 50,
-                          ),
-                        Expanded(
-                          child: Column(
+                        )
+                        : Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              if (constraints.maxWidth < 800)
-                                const SizedBox(height: 0)
-                              else
-                                const SizedBox(height: 180),
-                              if (constraints.maxWidth < 800)
-                                Stack(
-                                  clipBehavior: Clip.none,
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Container(
-                                      width: 150,
-                                      height: 250,
-                                      child: Image.asset(
-                                        "assets/images/space2.png",
-                                        fit: BoxFit.fitHeight,
+                                  
+                                  
+                                      Stack(
+                                        clipBehavior: Clip.none,
+                                        children: [
+                                          Container(
+                                            width: 150,
+                                            height: 250,
+                                            child: Image.asset(
+                                              "assets/images/space2.png",
+                                              fit: BoxFit.fitHeight,
+                                            ),
+                                          ),
+                                          Positioned(
+                                            top: 80,
+                                            left: 110,
+                                            child: Text("About Us",
+                                                style: GoogleFonts.openSans(
+                                                  color: AppTheme.black,
+                                                  fontWeight: FontWeight.w600,
+                                                  fontSize: Constant.bigFont94(
+                                                      context),
+                                                  letterSpacing: 3,
+                                                )),
+                                          )
+                                        ],
                                       ),
+                                    // Text(
+                                    //   "About Us",
+                                    //   style: GoogleFonts.openSans(
+                                    //     color: AppTheme.black,
+                                    //     fontWeight: FontWeight.w600,
+                                    //     fontSize: Constant.bigFont94(context),
+                                    //     letterSpacing: 3,
+                                    //   ),
+                                    // ),
+                                    const SizedBox(height: 40),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 16),
+                                      child: Text(
+                                        "Archle Labs is an advanced research center for health and life sciences engineering, committed to revolutionizing the healthcare field. We combine cutting-edge technology, interdisciplinary expertise fueled by  unwavering passion for innovation to tackle the world’s most pressing medical challenges. By developing novel solutions and services, we aim to elevate human health, enhance patient outcomes, and transform global healthcare practices.",
+                                        style: GoogleFonts.openSans(
+                                          color: AppTheme.black,
+                                          fontSize:
+                                              Constant.TextSize20(context),
+                                          height: 1.5,
+                                        ),
+                                        textAlign: TextAlign.justify,
+                                      )
+                                          .animate(
+                                            target: _controller.isAboutuseVisble
+                                                ? 1
+                                                : 0,
+                                          )
+                                          .fadeIn(
+                                            delay: 200.ms,
+                                            duration: 600.ms,
+                                            curve: Curves.linear,
+                                          ),
                                     ),
-                                    Positioned(
-                                      top: 80,
-                                      left: 110,
-                                      child: Text("About Us",
-                                          style: GoogleFonts.openSans(
-                                            color: AppTheme.black,
-                                            fontWeight: FontWeight.w600,
-                                            fontSize:
-                                                Constant.bigFont94(context),
-                                            letterSpacing: 3,
-                                          )),
-                                    )
+                                    // .moveX(
+                                    //     begin: 300,
+                                    //     end: 0,
+                                    //     duration: 800.ms,
+                                    //     curve: Curves.linear),
                                   ],
                                 ),
-                              // Text(
-                              //   "About Us",
-                              //   style: GoogleFonts.openSans(
-                              //     color: AppTheme.black,
-                              //     fontWeight: FontWeight.w600,
-                              //     fontSize: Constant.bigFont94(context),
-                              //     letterSpacing: 3,
-                              //   ),
-                              // ),
-                              const SizedBox(height: 40),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 16),
-                                child: Text(
-                                  "Archle Labs is an advanced research center for health and life sciences engineering, committed to revolutionizing the healthcare field. We combine cutting-edge technology, interdisciplinary expertise fueled by  unwavering passion for innovation to tackle the world’s most pressing medical challenges. By developing novel solutions and services, we aim to elevate human health, enhance patient outcomes, and transform global healthcare practices.",
-                                  style: GoogleFonts.openSans(
-                                    color: AppTheme.black,
-                                    fontSize: Constant.TextSize20(context),
-                                    height: 1.5,
-                                  ),
-                                  textAlign: TextAlign.justify,
-                                )
-                                    .animate(
-                                      target:
-                                          _controller.isAboutuseVisble ? 1 : 0,
-                                    )
-                                    .fadeIn(
-                                      delay: 200.ms,
-                                      duration: 600.ms,
-                                      curve: Curves.linear,
-                                    ),
                               ),
-                              // .moveX(
-                              //     begin: 300,
-                              //     end: 0,
-                              //     duration: 800.ms,
-                              //     curve: Curves.linear),
                             ],
                           ),
-                        ),
-                      ],
-                    ),
                   ),
                   SizedBox(
                     height: 60,
@@ -244,7 +289,7 @@ class AboutusWidget extends StatelessWidget {
                       // }
                     },
                     child: Container(
-                     constraints: BoxConstraints(maxWidth: width),
+                      constraints: BoxConstraints(maxWidth: width),
                       child: Flex(
                           direction: constraints.maxWidth > 800
                               ? Axis.horizontal
@@ -340,12 +385,13 @@ class AboutusWidget extends StatelessWidget {
                               SizedBox(
                                   width:
                                       60), // Optional spacing between text and image
-                      
-                            if (constraints.maxWidth < 800) SizedBox(height: 30),
+
+                            if (constraints.maxWidth < 800)
+                              SizedBox(height: 30),
                             Expanded(
                               flex: constraints.maxWidth > 800 ? 6 : 0,
                               // Ensures the image respects the size constraints
-                      
+
                               child: Image.asset(
                                 "assets/images/space.png",
                                 fit: BoxFit.cover,
@@ -371,7 +417,8 @@ class AboutusWidget extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 50),
-                  Container(constraints: BoxConstraints(maxWidth: width),
+                  Container(
+                    constraints: BoxConstraints(maxWidth: width),
                     child: VisibilityDetector(
                       key: Key("value"),
                       onVisibilityChanged: (VisibilityInfo info) {
@@ -386,11 +433,12 @@ class AboutusWidget extends StatelessWidget {
                         physics: NeverScrollableScrollPhysics(),
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisSpacing: 0,
-                          mainAxisExtent: ResponsiveLayout.isMediumScreen(context)
-                              ? 200
-                              : ResponsiveLayout.isSmallScreen(context)
-                                  ? 210
-                                  : 200,
+                          mainAxisExtent:
+                              ResponsiveLayout.isMediumScreen(context)
+                                  ? 200
+                                  : ResponsiveLayout.isSmallScreen(context)
+                                      ? 210
+                                      : 200,
                           mainAxisSpacing: 0,
                           crossAxisCount:
                               ResponsiveLayout.isMediumScreen(context) ||
@@ -399,8 +447,9 @@ class AboutusWidget extends StatelessWidget {
                                   : 5,
                         ),
                         childrenDelegate: SliverChildBuilderDelegate(
-                          childCount:
-                              constraints.maxWidth > 800 ? valuesList.length : 9,
+                          childCount: constraints.maxWidth > 800
+                              ? valuesList.length
+                              : 9,
                           (context, index) {
                             int totalColumns =
                                 ResponsiveLayout.isMediumScreen(context) ||
@@ -409,12 +458,12 @@ class AboutusWidget extends StatelessWidget {
                                     : 5;
                             int row =
                                 index ~/ totalColumns; // Determine row number
-                    
+
                             // Movement logic
                             double beginY = (row == 0)
                                 ? -100.0
                                 : 100.0; // Top row moves down, bottom row moves up
-                    
+
                             return Container(
                               decoration: BoxDecoration(
                                 color: index % 2 != 0
@@ -422,9 +471,10 @@ class AboutusWidget extends StatelessWidget {
                                     : AppTheme.black,
                               ),
                               padding: EdgeInsets.symmetric(
-                                vertical: ResponsiveLayout.isLargeScreen(context)
-                                    ? 30
-                                    : 12,
+                                vertical:
+                                    ResponsiveLayout.isLargeScreen(context)
+                                        ? 30
+                                        : 12,
                                 horizontal:
                                     ResponsiveLayout.isLargeScreen(context)
                                         ? 30
@@ -444,8 +494,9 @@ class AboutusWidget extends StatelessWidget {
                                     ),
                                   )
                                       .animate(
-                                          target:
-                                              _controller.isVlaueSection ? 1 : 0)
+                                          target: _controller.isVlaueSection
+                                              ? 1
+                                              : 0)
                                       .then(
                                           delay: (Random().nextInt(10) * 100)
                                               .ms) // Staggered delay
@@ -464,8 +515,9 @@ class AboutusWidget extends StatelessWidget {
                                     overflow: TextOverflow.ellipsis,
                                   )
                                       .animate(
-                                          target:
-                                              _controller.isVlaueSection ? 1 : 0)
+                                          target: _controller.isVlaueSection
+                                              ? 1
+                                              : 0)
                                       .then(
                                           delay: (Random().nextInt(10) * 100)
                                               .ms) // Staggered delay
@@ -478,7 +530,7 @@ class AboutusWidget extends StatelessWidget {
                                     target: _controller.isVlaueSection
                                         ? 1
                                         : 0) // Start animation when visible
-                    
+
                                 .fadeIn(
                                     duration: 400.ms) // Gradual fade-in effect
                                 .moveY(
@@ -501,7 +553,8 @@ class AboutusWidget extends StatelessWidget {
                     SizedBox(
                       height: 20,
                     ),
-                  Container(constraints: BoxConstraints(maxWidth: width),
+                  Container(
+                    constraints: BoxConstraints(maxWidth: width),
                     child: Text(
                       "Our team of scientists, engineers, and healthcare professionals works collaboratively to expand the horizons of diagnostics, therapeutics, and primary care services/ comprehensive care services. Through rigorous research, forward-thinking partnerships, and a relentless drive for breakthroughs, we continuously push the boundaries of healthcare and medical science—creating transformative technologies that will redefine patient care worldwide.",
                       style: GoogleFonts.openSans(

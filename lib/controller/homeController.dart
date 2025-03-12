@@ -330,14 +330,21 @@ class HomeController extends GetxController {
   final emailJob = TextEditingController();
   final phoneJob = TextEditingController();
   final designation = TextEditingController();
-  String filejobName = "";
-  Uint8List? fileeJob;
-  selectFileeJob(files, name) {
-    fileeJob = files;
-    filejobName = name;
-   Get.forceAppUpdate();
-  }
+  // String filejobName = "";
+  // Uint8List? fileeJob;
+  // selectFileeJob(files, name) {
+  //   fileeJob = files;
+  //   filejobName = name;
+  //  Get.forceAppUpdate();
+  // }
+ var filejobName = ''.obs;
+  var fileeJob = Rx<Uint8List?>(null);
 
+  selectFileeJob(Uint8List files, String name) {
+    fileeJob.value = files;
+    filejobName.value = name;
+    Get.forceAppUpdate(); // to trigger the update
+  }
   cleareJob() {
     firstNameJob.clear();
     lastNameJob.clear();
@@ -346,8 +353,8 @@ class HomeController extends GetxController {
     designation.clear();
     linkedin.clear();
     phoneJob.clear();
-    fileeJob = null;
-    filejobName = "";
+    fileeJob.value = null;
+    filejobName.value = "";
     update();
   }
 
