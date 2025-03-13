@@ -227,16 +227,16 @@ class OurFocus extends StatelessWidget {
                     SizedBox(
                       height: 100,
                     ),
-                    Text(
-                      "Cutting-Edge Research",
-                      style: GoogleFonts.bebasNeue(
-                        color: AppTheme.whiteColor,
-                        fontWeight: FontWeight.w500,
-                        letterSpacing: 5,
-                        fontSize: Constant.subheadingText(context),
-                      ),
-                    ),
-                    const SizedBox(height: 10),
+                    // Text(
+                    //   "Cutting-Edge Research",
+                    //   style: GoogleFonts.bebasNeue(
+                    //     color: AppTheme.whiteColor,
+                    //     fontWeight: FontWeight.w500,
+                    //     letterSpacing: 5,
+                    //     fontSize: Constant.subheadingText(context),
+                    //   ),
+                    // ),
+                    // const SizedBox(height: 10),
                     // Text(
                     //   "We blend interdisciplinary thinking and frontier technologies to accelerate breakthroughs in diagnostics, therapeutics, and primary care.",
                     //   style: GoogleFonts.openSans(
@@ -249,7 +249,7 @@ class OurFocus extends StatelessWidget {
                      Container(
                     constraints: BoxConstraints(maxWidth: width),
                     child: Text(
-                      "Our team of scientists, engineers, and healthcare professionals works collaboratively to expand the horizons of diagnostics, therapeutics, and primary care services/ comprehensive care services. Through rigorous research, forward-thinking partnerships, and a relentless drive for breakthroughs, we continuously push the boundaries of healthcare and medical science—creating transformative technologies that will redefine patient care worldwide.",
+                      "Our team of scientists, engineers, and healthcare professionals works collaboratively to expand the horizons of diagnostics, therapeutics, and primary care services comprehensive care services. Through rigorous research, forward-thinking partnerships, and a relentless drive for breakthroughs, we continuously push the boundaries of healthcare and medical science—creating transformative technologies that will redefine patient care worldwide.",
                       style: GoogleFonts.openSans(
                           fontWeight: FontWeight.w300,
                           color: const Color.fromARGB(255, 255, 255, 255),
@@ -261,27 +261,27 @@ class OurFocus extends StatelessWidget {
                     SizedBox(
                       height: 50,
                     ),
-                    Text(
-                      "Global Impact through equitable health",
-                      style: GoogleFonts.bebasNeue(
-                        color: AppTheme.whiteColor,
-                        fontWeight: FontWeight.w500,
-                        letterSpacing: 5,
-                        fontSize: Constant.subheadingText(context),
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
-                      "Redefine healthcare with scalable, sustainable models that transcend financial and geographical barriers. By fusing advanced technology with a human-first approach, we close critical gaps in access, delivering equitable, high-impact medical solutions.",
-                      style: GoogleFonts.openSans(
-                          fontWeight: FontWeight.w300,
-                          color: const Color.fromARGB(255, 255, 255, 255),
-                          fontSize: Constant.TextSize20(context),
-                          height: 1.5),
-                    ),
-                    SizedBox(
-                      height: 50,
-                    ),
+                    // Text(
+                    //   "Global Impact through equitable health",
+                    //   style: GoogleFonts.bebasNeue(
+                    //     color: AppTheme.whiteColor,
+                    //     fontWeight: FontWeight.w500,
+                    //     letterSpacing: 5,
+                    //     fontSize: Constant.subheadingText(context),
+                    //   ),
+                    // ),
+                    // const SizedBox(height: 10),
+                    // Text(
+                    //   "Redefine healthcare with scalable, sustainable models that transcend financial and geographical barriers. By fusing advanced technology with a human-first approach, we close critical gaps in access, delivering equitable, high-impact medical solutions.",
+                    //   style: GoogleFonts.openSans(
+                    //       fontWeight: FontWeight.w300,
+                    //       color: const Color.fromARGB(255, 255, 255, 255),
+                    //       fontSize: Constant.TextSize20(context),
+                    //       height: 1.5),
+                    // ),
+                    // SizedBox(
+                    //   height: 50,
+                    // ),
                      SizedBox(
                       height: 50,
                     ),
