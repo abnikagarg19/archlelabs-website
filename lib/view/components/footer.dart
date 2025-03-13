@@ -81,7 +81,7 @@ class Footer extends StatelessWidget {
                                 height: 60,
                               ),
                               Text(
-                                "Collaboration Starts here",
+                                "Collaboration Starts Here",
                                 style: GoogleFonts.openSans(
                                   color: AppTheme.whiteColor,
                                   fontSize: Constant.textFourtyEight(context),

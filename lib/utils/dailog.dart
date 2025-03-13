@@ -19,7 +19,7 @@ class DialogHelper {
         webPosition: "center",
         gravity: ToastGravity.TOP,
         timeInSecForIosWeb: 1,
-
+webBgColor:"linear-gradient(to right, #FFFFFF, #FFFFFF)",
         backgroundColor: AppTheme.whiteColor,
         textColor: Colors.black,
         fontSize: 16.0);

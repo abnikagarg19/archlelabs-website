@@ -204,7 +204,7 @@ class _ContactUsState extends State<ContactUs>
                     MyTextField(
                         inputFormatters: [
                           FilteringTextInputFormatter.allow(
-                              RegExp("[a-zA-Z0-9]")),
+                              RegExp("[0-9]")),
                         ],
                         textEditingController: _controller.phonePress,
                         validation: (value) {
@@ -459,8 +459,8 @@ class _ContactUsState extends State<ContactUs>
                     ),
                     MyTextField(
                         inputFormatters: [
-                          FilteringTextInputFormatter.allow(
-                              RegExp("[a-zA-Z0-9]")),
+                           FilteringTextInputFormatter.allow(
+                              RegExp("[0-9]")),
                         ],
                         textEditingController: _controller.phoneQuery,
                         validation: (value) {
@@ -752,10 +752,10 @@ class _ContactUsState extends State<ContactUs>
                       height: 30,
                     ),
                     MyTextField(
-                        // inputFormatters: [
-                        //   FilteringTextInputFormatter.allow(
-                        //       RegExp("[a-zA-Z0-9]")),
-                        // ],
+                        inputFormatters: [
+                           FilteringTextInputFormatter.allow(
+                              RegExp("[0-9]")),
+                        ],
                         textEditingController: _controller.phoneInvestor,
                         validation: (value) {
                           if (value == null || value.isEmpty) {
@@ -1077,10 +1077,10 @@ class _ContactUsState extends State<ContactUs>
                       height: 30,
                     ),
                     MyTextField(
-                        // inputFormatters: [
-                        //   FilteringTextInputFormatter.allow(
-                        //       RegExp("[a-zA-Z0-9]")),
-                        // ],
+                        inputFormatters: [
+                          FilteringTextInputFormatter.allow(
+                              RegExp("[0-9]")),
+                        ],
                         textEditingController: _controller.phoneJob,
                         validation: (value) {
                           if (value == null || value.isEmpty) {

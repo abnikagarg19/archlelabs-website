@@ -29,7 +29,7 @@ class AboutusWidget extends StatelessWidget {
     {
       "title": "Relentless Innovation",
       "details":
-          "We push boundaries to create breakthrough healthcare solutions"
+          "We push boundaries to create breakthrough healthcare solutions."
     },
     {
       "title": "User-Centric Design",
@@ -44,7 +44,7 @@ class AboutusWidget extends StatelessWidget {
     {
       "title": "Sustainability and Responsibility",
       "details":
-          "We innovate ethically, minimizing environmental impact and improving public health"
+          "We innovate ethically, minimizing environmental impact and improving public health."
     },
     {
       "title": "Collaboration and Diversity",
@@ -56,7 +56,7 @@ class AboutusWidget extends StatelessWidget {
     },
     {
       "title": "Precision and Reliability",
-      "details": "We ensure accuracy and consistency in every solution"
+      "details": "We ensure accuracy and consistency in every solution."
     },
     {
       "title": "Timeless Quality",
