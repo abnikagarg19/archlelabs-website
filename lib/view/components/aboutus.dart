@@ -553,21 +553,10 @@ class AboutusWidget extends StatelessWidget {
                     SizedBox(
                       height: 20,
                     ),
-                  Container(
-                    constraints: BoxConstraints(maxWidth: width),
-                    child: Text(
-                      "Our team of scientists, engineers, and healthcare professionals works collaboratively to expand the horizons of diagnostics, therapeutics, and primary care services/ comprehensive care services. Through rigorous research, forward-thinking partnerships, and a relentless drive for breakthroughs, we continuously push the boundaries of healthcare and medical science—creating transformative technologies that will redefine patient care worldwide.",
-                      style: GoogleFonts.openSans(
-                        color: AppTheme.black,
-                        fontSize: Constant.mediumbody(context),
-                        height: 2,
-                      ),
-                      textAlign: TextAlign.justify,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 80,
-                  ),
+                 
+                  // SizedBox(
+                  //   height: 80,
+                  // ),
                 ],
               ),
               //                ).animate(target: _controller.isAboutuseVisble ? 1 : 0,) // Ensure animation triggers

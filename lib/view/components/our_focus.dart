@@ -237,15 +237,27 @@ class OurFocus extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 10),
-                    Text(
-                      "We blend interdisciplinary thinking and frontier technologies to accelerate breakthroughs in diagnostics, therapeutics, and primary care.",
+                    // Text(
+                    //   "We blend interdisciplinary thinking and frontier technologies to accelerate breakthroughs in diagnostics, therapeutics, and primary care.",
+                    //   style: GoogleFonts.openSans(
+                    //     color: AppTheme.whiteColor,
+                    //     fontWeight: FontWeight.w300,
+                    //     fontSize: Constant.TextSize20(context),
+                    //     height: 1.5,
+                    //   ),
+                    // ),
+                     Container(
+                    constraints: BoxConstraints(maxWidth: width),
+                    child: Text(
+                      "Our team of scientists, engineers, and healthcare professionals works collaboratively to expand the horizons of diagnostics, therapeutics, and primary care services/ comprehensive care services. Through rigorous research, forward-thinking partnerships, and a relentless drive for breakthroughs, we continuously push the boundaries of healthcare and medical science—creating transformative technologies that will redefine patient care worldwide.",
                       style: GoogleFonts.openSans(
-                        color: AppTheme.whiteColor,
-                        fontWeight: FontWeight.w300,
-                        fontSize: Constant.TextSize20(context),
-                        height: 1.5,
-                      ),
+                          fontWeight: FontWeight.w300,
+                          color: const Color.fromARGB(255, 255, 255, 255),
+                          fontSize: Constant.TextSize20(context),
+                          height: 1.5),
+                      textAlign: TextAlign.justify,
                     ),
+                  ),
                     SizedBox(
                       height: 50,
                     ),
@@ -268,6 +280,9 @@ class OurFocus extends StatelessWidget {
                           height: 1.5),
                     ),
                     SizedBox(
+                      height: 50,
+                    ),
+                     SizedBox(
                       height: 50,
                     ),
                   ],
