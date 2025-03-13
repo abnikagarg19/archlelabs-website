@@ -337,7 +337,7 @@ class HomeController extends GetxController {
   //   filejobName = name;
   //  Get.forceAppUpdate();
   // }
- var filejobName = ''.obs;
+ RxString filejobName =  ''.obs;
   var fileeJob = Rx<Uint8List?>(null);
 
   selectFileeJob(Uint8List files, String name) {
