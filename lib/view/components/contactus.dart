@@ -1695,10 +1695,10 @@ class FunkyOverlayState extends State<FunkyOverlay>
                                 ),
                                 SizedBox(height: 20),
                                 ...List.generate(
-                                  widget.designationList["keyresponsibilty"].length,
+                                  widget.designationList["qualification"].length,
                                   (index) {
                                     return buildSection(
-                                        widget.designationList["keyresponsibilty"]
+                                        widget.designationList["qualification"]
                                             [index],
                                         context);
                                   },
@@ -1787,10 +1787,10 @@ class FunkyOverlayState extends State<FunkyOverlay>
                                 ),
                                 SizedBox(height: 20),
                                 ...List.generate(
-                                  widget.designationList["qualification"].length,
+                                  widget.designationList["keyresponsibilty"].length,
                                   (index) {
                                     return buildSection(
-                                        widget.designationList["qualification"]
+                                        widget.designationList["keyresponsibilty"]
                                             [index],
                                         context);
                                   },

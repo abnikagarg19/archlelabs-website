@@ -22,7 +22,7 @@ class HomeController extends GetxController {
     Globals.scrollController.addListener(_onScroll);
 
     print("dhn");
-     getTeams();
+    getTeams();
     getDesignations();
     getAllBlogs();
   }
@@ -88,7 +88,7 @@ class HomeController extends GetxController {
   }
 
   List<TeamModel> teamList = [];
-
+  List<TeamModel> adviroteamList = [];
   final firstnameQuery = TextEditingController();
   final lastnameQuery = TextEditingController();
   final emailQuery = TextEditingController();
@@ -104,7 +104,7 @@ class HomeController extends GetxController {
           isLoaded = true;
           final decodedData = jsonDecode(value.body);
           teamList.add(TeamModel.fromJson(decodedData));
-
+         
           update();
           break;
         case 401:
@@ -284,7 +284,6 @@ class HomeController extends GetxController {
     fileePressRelase = files;
     fileePressRelasename = name;
     update();
-
   }
 
   clearePressRelase() {
@@ -337,7 +336,7 @@ class HomeController extends GetxController {
   //   filejobName = name;
   //  Get.forceAppUpdate();
   // }
- RxString filejobName =  ''.obs;
+  RxString filejobName = ''.obs;
   var fileeJob = Rx<Uint8List?>(null);
 
   selectFileeJob(Uint8List files, String name) {
@@ -345,6 +344,7 @@ class HomeController extends GetxController {
     filejobName.value = name;
     Get.forceAppUpdate(); // to trigger the update
   }
+
   cleareJob() {
     firstNameJob.clear();
     lastNameJob.clear();
