@@ -187,49 +187,49 @@ class Footer extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              SizedBox(
-                                height: 60,
-                              ),
-                              InkWell(
-                                onTap: () {
-                                  _launchMailClient("alois@archlelabs.com");
-                                },
-                                child: Row(
-                                  children: [
-                                    SvgPicture.asset(
-                                      "assets/images/email.svg",
-                                      height: 20,
-                                    ),
-                                    Text(
-                                      "  alois@archlelabs.com",
-                                      style: GoogleFonts.openSans(
-                                        color: AppTheme.whiteColor,
-                                        fontSize: Constant.mediumbody(context),
-                                        fontWeight: FontWeight.w300,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              SizedBox(
-                                height: 20,
-                              ),
-                              Row(
-                                children: [
-                                  SvgPicture.asset(
-                                    "assets/images/mingcute_phone-fill.svg",
-                                    height: 20,
-                                  ),
-                                  Text(
-                                    "  +91 9444725511",
-                                    style: GoogleFonts.openSans(
-                                      color: AppTheme.whiteColor,
-                                      fontSize: Constant.body(context),
-                                      fontWeight: FontWeight.w300,
-                                    ),
-                                  ),
-                                ],
-                              ),
+                              // SizedBox(
+                              //   height: 60,
+                              // ),
+                              // InkWell(
+                              //   onTap: () {
+                              //     _launchMailClient("alois@archlelabs.com");
+                              //   },
+                              //   child: Row(
+                              //     children: [
+                              //       SvgPicture.asset(
+                              //         "assets/images/email.svg",
+                              //         height: 20,
+                              //       ),
+                              //       Text(
+                              //         "  alois@archlelabs.com",
+                              //         style: GoogleFonts.openSans(
+                              //           color: AppTheme.whiteColor,
+                              //           fontSize: Constant.mediumbody(context),
+                              //           fontWeight: FontWeight.w300,
+                              //         ),
+                              //       ),
+                              //     ],
+                              //   ),
+                              // ),
+                              // SizedBox(
+                              //   height: 20,
+                              // ),
+                              // Row(
+                              //   children: [
+                              //     SvgPicture.asset(
+                              //       "assets/images/mingcute_phone-fill.svg",
+                              //       height: 20,
+                              //     ),
+                              //     Text(
+                              //       "  +91 9444725511",
+                              //       style: GoogleFonts.openSans(
+                              //         color: AppTheme.whiteColor,
+                              //         fontSize: Constant.body(context),
+                              //         fontWeight: FontWeight.w300,
+                              //       ),
+                              //     ),
+                              //   ],
+                              // ),
                               SizedBox(
                                 height: 24,
                               ),
