@@ -393,7 +393,7 @@ class AboutusWidget extends StatelessWidget {
                               // Ensures the image respects the size constraints
 
                               child: Image.asset(
-                                "assets/images/space.png",
+                                "assets/images/brain_processed.png",
                                 fit: BoxFit.cover,
                               ),
                             )

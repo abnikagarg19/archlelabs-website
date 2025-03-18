@@ -49,7 +49,7 @@ class _TeamWidgetState extends State<TeamWidget> {
       "name": "Dr. J. Amalorpavanathan",
       "designation": "Chief Medical Advisor",
       "linkedin": "",
-      "image": "assets/images/doctor.jpg",
+      "image": "assets/team/dr.png",
       "des":
           "Distinguished Vascular Surgeon and Organ Transplant Administrator with 20 years of experience in vascular surgery and 15 years at the helm of the Tamil Nadu Government organ transplant program (2008–2016). Armed with credentials including MBBS, MS, DNB, and MCh in Vascular Surgery, he masterfully combines clinical expertise with innovation and a deep commitment to community service. Guided by the motto “Nothing is impossible,” Amal inspires his team to work hard and continuously learn—all while maintaining a refreshing sense of humor, as evidenced by his legendary hitchhike to the Indo-Pakistan border."
     }
