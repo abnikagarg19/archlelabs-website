@@ -377,7 +377,7 @@ class _TeamWidgetState extends State<TeamWidget> {
                                             children: [
                                               InkWell(
                                                 onTap: () => launchurl(Uri.parse(
-                                                    "${teamList2[index]["linkedin"]}",
+                                                    "${teamList2[index]["linkedin"]}")),
                                                 child: SvgPicture.asset(
                                                   "assets/images/linkedin.svg",
                                                   height: 16,
@@ -385,7 +385,7 @@ class _TeamWidgetState extends State<TeamWidget> {
                                               ),
                                               Flexible(
                                                 child: Text(
-                                                 "  ${teamList2[index]["role"]}",
+                                                 "  ${teamList2[index]["designation"]}",
                                                   style: GoogleFonts.openSans(
                                                     fontWeight: FontWeight.w700,
                                                     color: Color.fromARGB(
