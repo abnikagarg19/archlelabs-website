@@ -54,6 +54,74 @@ class _TeamWidgetState extends State<TeamWidget> {
           "Distinguished Vascular Surgeon and Organ Transplant Administrator with 20 years of experience in vascular surgery and 15 years at the helm of the Tamil Nadu Government organ transplant program (2008–2016). Armed with credentials including MBBS, MS, DNB, and MCh in Vascular Surgery, he masterfully combines clinical expertise with innovation and a deep commitment to community service. Guided by the motto “Nothing is impossible,” Amal inspires his team to work hard and continuously learn—all while maintaining a refreshing sense of humor, as evidenced by his legendary hitchhike to the Indo-Pakistan border."
     }
   ];
+
+    final teamList2 = [
+    {
+      "name": "Alois D Sajo",
+      "designation": "Founder/CEO",
+      "linkedin": "https://www.linkedin.com/in/aloissajodevasagayam/",
+      "image": "assets/team/alois.jpg",
+      "des":
+          "As the Founder & CEO of Archle Labs, I don’t just build products ,I create social impact. At the helm of a company redefining healthcare innovation, I bring a fusion of strategy,  product development, and user experience design to create solutions that drive meaningful innovation in the market. My journey spans leading social enterprises, crafting market -effective strategies, and assembling high-caliber teams that thrive on curiosity and first-principle thinking. When I’m not immersed in building the next advancement, you’ll find me exploring history,  diving into new cultures, exploring science, philosophy etc. I believe true innovation comes from questioning everything and daring to solve problems others shy away from."
+    },
+    {
+      "name": "Dr.Siri Karthika R",
+      "designation": "Health Director",
+      "linkedin": "www.linkedin.com/in/siri-karthika",
+      "image": "assets/team/siri.jpg",
+      "des":
+          "I blend medical expertise with bold innovation, ensuring research meets real-world patient needs. An MBBS graduate and University Rank holder in Pediatrics, I have an insatiable curiosity for epigenetics, neuroscience, and the quirks of human behavior. When I’m not deep in research, you’ll find me lifting weights, experimenting in the kitchen, or proving that a little eccentricity makes everything more interesting, even healthcare."
+    },
+    {
+      "name": "Joel Prithvi Ignatius",
+      "designation": "Data Scientist",
+      "linkedin": "https://www.linkedin.com/in/joel-prithvi/",
+      "image": "assets/team/joel.jpg",
+      "des":
+          "I’m a Data Scientist with 2.5 years of experience, specializing in transforming raw data into actionable insights, building machine learning models and automating processes to solve real-world challenges. I’m a Master's graduate in Big Data and Business Analytics, and have had experience helping a Fortune 500 company cut costs through analytics. Off-duty, I’m either shredding on my guitar (100+ shows), cooking up beats, shooting hoops, or deep diving into an anime binge."
+    },
+    {
+      "name": "Tejas Prataprao Chavan",
+      "designation": "R&D Mechatronics engineer",
+      "linkedin": "https://www.linkedin.com/in/tejaspchavan",
+      "image": "assets/team/tejas.jpg",
+      "des":
+          "I breathe life into machines, blending robotics, embedded systems, and AI-driven automation to create intelligent, high-performance solutions. From designing circuits to developing full-scale prototypes, I bridge the gap between mechanics and intelligence. With published research, design accolades, and innovations, I thrive on solving complex challenges—preferably with a strong coffee, a sketchbook in hand, and a deep dive into cinematography."
+    },
+    {
+      "name": "Antara",
+      "designation": "UX/UI Designer",
+      "linkedin": "https://www.linkedin.com/in/antara-banik/",
+      "image": "assets/team/antara.jpg",
+      "des":
+          "I design with empathy, curiosity, and just the right amount of obsession over the tiniest details. As a self-taught UX designer, I love decoding human behavior and transforming complex ideas into seamless, intuitive experiences. When I'm not crafting digital interfaces, you’ll find me lost in books about psychology, experimenting with colors, or perfecting my legendary rajma chawal recipe that is certified best by my family. I believe great design isn’t just about how things look, it’s about how they make people feel."
+    },
+    {
+      "name": "Abnika Garg",
+      "designation": "Flutter Developer",
+      "linkedin": "https://www.linkedin.com/in/abnika-garg-135b0a165/",
+      "image": "assets/team/abnika_imresizer.jpg",
+      "des":
+          "I build sleek, high-performing apps with Flutter while keeping the backend running smoothly ensuring great user experience. With four years of experience and a B.Tech in ECE, I specialize in crafting responsive UIs, real-time features, and powerful APIs. When I’m not coding, I’m exploring new tech, solving puzzles, or on a never-ending quest to build something truly surprising."
+    },
+    {
+      "name": "Dr.Suneera C M",
+      "designation": "Principle NLP Scientist",
+      "linkedin": "https://www.linkedin.com/in/suneera-c-moideen/",
+      "image": "assets/team/suneera.jpg",
+      "des":
+          "As Principal NLP Scientist, I lead our AI team in crafting intelligent, user-friendly healthcare communication systems with a dash of linguistic wizardry. Armed with a PhD from NIT Calicut, six years of research, and honors like the ACM India Anveshan Setu Fellowship, I blend academic rigor with real-world innovation. When I’m not pioneering breakthrough projects, I embrace the delightful chaos of motherhood and a well-timed movie night ."
+    },
+    {
+      "name": "Mohan Raja",
+      "designation": "Application Developer",
+      "linkedin": "https://www.linkedin.com/in/mogeoeg2224/",
+      "image": "assets/team/mohan.jpg",
+      "des":
+          "I'm an Application Developer with 6.5 years of experience, turning complex backend challenges into seamless solutions. I've worked on projects like Marsh Insurance and FedEx, earned certifications in Microsoft AI, AWS, and CockroachDB, and even bagged the 2023 IAF Young Entrepreneur Award for CX. When I’m not coding, you’ll find me playing cricket, trekking, or whipping up a killer non-veg dish."
+    }
+  ];
+  
   Widget _team(context, width) {
     return LayoutBuilder(builder: (_context, constraints) {
       return GetBuilder<HomeController>(builder: (_controller) {
@@ -97,9 +165,9 @@ class _TeamWidgetState extends State<TeamWidget> {
 
                     // return _controller.teamList.isNotEmpty
                     //     ? _controller.teamList.first.data!.isNotEmpty
-                    (_controller.teamList.isNotEmpty)
-                        ? (_controller.teamList.first.data!.isNotEmpty)
-                            ? GridView.custom(
+                    // (_controller.teamList.isNotEmpty)
+                    //     ? (_controller.teamList.first.data!.isNotEmpty)
+                              GridView.custom(
                                 shrinkWrap: true,
                                 physics: NeverScrollableScrollPhysics(),
                                 gridDelegate:
@@ -121,7 +189,8 @@ class _TeamWidgetState extends State<TeamWidget> {
                                 ),
                                 childrenDelegate: SliverChildBuilderDelegate(
                                   childCount:
-                                      _controller.teamList.first.data!.length,
+                                        teamList2.length,
+                                      // _controller.teamList.first.data!.length,
                                   (context, index) {
                                     double height =
                                         ResponsiveLayout.isMediumScreen(context)
@@ -167,12 +236,44 @@ class _TeamWidgetState extends State<TeamWidget> {
                                             },
                                             child: Stack(
                                               children: [
-                                                CachedNetworkImage(
-                                                  imageUrl: _controller
-                                                      .teamList
-                                                      .first
-                                                      .data![index]
-                                                      .profileUrl!,
+                                                // CachedNetworkImage(
+                                                //   imageUrl: _controller
+                                                //       .teamList
+                                                //       .first
+                                                //       .data![index]
+                                                //       .profileUrl!,
+                                                //   height: height,
+                                                //   width: ResponsiveLayout
+                                                //           .isMediumScreen(
+                                                //               context)
+                                                //       ? double.infinity
+                                                //       : ResponsiveLayout
+                                                //               .isSmallScreen(
+                                                //                   context)
+                                                //           ? double.infinity
+                                                //           : 380,
+                                                //   fit: BoxFit.cover,
+                                                //   filterQuality:
+                                                //       FilterQuality.high,
+                                                //   alignment:
+                                                //       Alignment.topCenter,
+                                                //   progressIndicatorBuilder: (context,
+                                                //           url,
+                                                //           downloadProgress) =>
+                                                //       CircularProgressIndicator(
+                                                //           value:
+                                                //               downloadProgress
+                                                //                   .progress),
+                                                //   errorWidget:
+                                                //       (context, url, error) =>
+                                                //           Icon(
+                                                //     Icons.error,
+                                                //     color: Colors.white,
+                                                //   ),
+                                                // ),
+                                                Image.asset(
+                                                  alignment: Alignment.topCenter,
+                                                  "${teamList2[index]["image"]}",
                                                   height: height,
                                                   width: ResponsiveLayout
                                                           .isMediumScreen(
@@ -184,41 +285,8 @@ class _TeamWidgetState extends State<TeamWidget> {
                                                           ? double.infinity
                                                           : 380,
                                                   fit: BoxFit.cover,
-                                                  filterQuality:
-                                                      FilterQuality.high,
-                                                  alignment:
-                                                      Alignment.topCenter,
-                                                  progressIndicatorBuilder: (context,
-                                                          url,
-                                                          downloadProgress) =>
-                                                      CircularProgressIndicator(
-                                                          value:
-                                                              downloadProgress
-                                                                  .progress),
-                                                  errorWidget:
-                                                      (context, url, error) =>
-                                                          Icon(
-                                                    Icons.error,
-                                                    color: Colors.white,
-                                                  ),
+                                                  filterQuality: FilterQuality.high,
                                                 ),
-                                                // Image.asset(
-                                                //   alignment: Alignment.topCenter,
-                                                //   "${teamList[index]["image"]}",
-                                                //   height: height,
-                                                //   width: ResponsiveLayout.isMediumScreen(
-                                                //           context)
-                                                //       ? 280
-                                                //       : ResponsiveLayout.isSmallScreen(
-                                                //               context)
-                                                //           ? MediaQuery.of(context)
-                                                //                   .size
-                                                //                   .width *
-                                                //               0.35
-                                                //           : 380,
-                                                //   fit: BoxFit.cover,
-                                                //   filterQuality: FilterQuality.high,
-                                                // ),
                                                 AnimatedPositioned(
                                                   bottom: _controller
                                                               .hoverIndex ==
@@ -266,7 +334,7 @@ class _TeamWidgetState extends State<TeamWidget> {
                                                                   horizontal:
                                                                       16),
                                                           child: Text(
-                                                            "${_controller.teamList.first.data![index].description!}",
+                                                            "${teamList2[index]["des"]}",
                                                             style: GoogleFonts
                                                                 .openSans(
                                                                     color: Color
@@ -293,7 +361,7 @@ class _TeamWidgetState extends State<TeamWidget> {
                                           Align(
                                             alignment: Alignment.bottomLeft,
                                             child: Text(
-                                              "${_controller.teamList.first.data![index].name!}",
+                                             "${teamList2[index]["name"]}",
                                               style: GoogleFonts.openSans(
                                                 fontWeight: FontWeight.w600,
                                                 color: AppTheme.whiteColor,
@@ -309,7 +377,7 @@ class _TeamWidgetState extends State<TeamWidget> {
                                             children: [
                                               InkWell(
                                                 onTap: () => launchurl(Uri.parse(
-                                                    "${_controller.teamList.first.data![index].linkedin}")),
+                                                    "${teamList2[index]["linkedin"]}",
                                                 child: SvgPicture.asset(
                                                   "assets/images/linkedin.svg",
                                                   height: 16,
@@ -317,7 +385,7 @@ class _TeamWidgetState extends State<TeamWidget> {
                                               ),
                                               Flexible(
                                                 child: Text(
-                                                  "  ${_controller.teamList.first.data![index].role!}",
+                                                 "  ${teamList2[index]["role"]}",
                                                   style: GoogleFonts.openSans(
                                                     fontWeight: FontWeight.w700,
                                                     color: Color.fromARGB(
@@ -338,9 +406,9 @@ class _TeamWidgetState extends State<TeamWidget> {
                                     );
                                   },
                                 ),
-                              )
-                            : CircularProgressIndicator()
-                        : Container(),
+                              ),
+                        //     : CircularProgressIndicator()
+                        // : Container(),
                     SizedBox(
                       height: 70,
                     ),
