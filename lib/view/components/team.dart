@@ -100,7 +100,7 @@ class _TeamWidgetState extends State<TeamWidget> {
       "name": "Abnika Garg",
       "designation": "Flutter Developer",
       "linkedin": "https://www.linkedin.com/in/abnika-garg-135b0a165/",
-      "image": "assets/team/abnika_edit.jpg",
+      "image": "assets/team/abnika_edit.jpeg",
       "des":
           "I build sleek, high-performing apps with Flutter while keeping the backend running smoothly ensuring great user experience. With four years of experience and a B.Tech in ECE, I specialize in crafting responsive UIs, real-time features, and powerful APIs. When I’m not coding, I’m exploring new tech, solving puzzles, or on a never-ending quest to build something truly surprising."
     },
