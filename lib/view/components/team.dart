@@ -60,7 +60,7 @@ class _TeamWidgetState extends State<TeamWidget> {
       "name": "Alois D Sajo",
       "designation": "Founder/CEO",
       "linkedin": "https://www.linkedin.com/in/aloissajodevasagayam/",
-      "image": "assets/team/alois (1).jpg",
+      "image": "assets/team/alois_edit.webp",
       "des":
           "As the Founder & CEO of Archle Labs, I don’t just build products ,I create social impact. At the helm of a company redefining healthcare innovation, I bring a fusion of strategy,  product development, and user experience design to create solutions that drive meaningful innovation in the market. My journey spans leading social enterprises, crafting market -effective strategies, and assembling high-caliber teams that thrive on curiosity and first-principle thinking. When I’m not immersed in building the next advancement, you’ll find me exploring history,  diving into new cultures, exploring science, philosophy etc. I believe true innovation comes from questioning everything and daring to solve problems others shy away from."
     },
@@ -68,7 +68,7 @@ class _TeamWidgetState extends State<TeamWidget> {
       "name": "Dr.Siri Karthika R",
       "designation": "Health Director",
       "linkedin": "www.linkedin.com/in/siri-karthika",
-      "image": "assets/team/siri (1).jpg",
+      "image": "assets/team/siri_edit.jpg",
       "des":
           "I blend medical expertise with bold innovation, ensuring research meets real-world patient needs. An MBBS graduate and University Rank holder in Pediatrics, I have an insatiable curiosity for epigenetics, neuroscience, and the quirks of human behavior. When I’m not deep in research, you’ll find me lifting weights, experimenting in the kitchen, or proving that a little eccentricity makes everything more interesting, even healthcare."
     },
@@ -76,7 +76,7 @@ class _TeamWidgetState extends State<TeamWidget> {
       "name": "Joel Prithvi Ignatius",
       "designation": "Data Scientist",
       "linkedin": "https://www.linkedin.com/in/joel-prithvi/",
-      "image": "assets/team/joel (1).jpg",
+      "image": "assets/team/joel_edit.jpg",
       "des":
           "I’m a Data Scientist with 2.5 years of experience, specializing in transforming raw data into actionable insights, building machine learning models and automating processes to solve real-world challenges. I’m a Master's graduate in Big Data and Business Analytics, and have had experience helping a Fortune 500 company cut costs through analytics. Off-duty, I’m either shredding on my guitar (100+ shows), cooking up beats, shooting hoops, or deep diving into an anime binge."
     },
@@ -84,7 +84,7 @@ class _TeamWidgetState extends State<TeamWidget> {
       "name": "Tejas Prataprao Chavan",
       "designation": "R&D Mechatronics engineer",
       "linkedin": "https://www.linkedin.com/in/tejaspchavan",
-      "image": "assets/team/tejas (1) (1).jpg",
+      "image": "assets/team/tejas_edit.jpg",
       "des":
           "I breathe life into machines, blending robotics, embedded systems, and AI-driven automation to create intelligent, high-performance solutions. From designing circuits to developing full-scale prototypes, I bridge the gap between mechanics and intelligence. With published research, design accolades, and innovations, I thrive on solving complex challenges—preferably with a strong coffee, a sketchbook in hand, and a deep dive into cinematography."
     },
@@ -92,7 +92,7 @@ class _TeamWidgetState extends State<TeamWidget> {
       "name": "Antara",
       "designation": "UX/UI Designer",
       "linkedin": "https://www.linkedin.com/in/antara-banik/",
-      "image": "assets/team/antara (1).jpg",
+      "image": "assets/team/antara_edit.jpg",
       "des":
           "I design with empathy, curiosity, and just the right amount of obsession over the tiniest details. As a self-taught UX designer, I love decoding human behavior and transforming complex ideas into seamless, intuitive experiences. When I'm not crafting digital interfaces, you’ll find me lost in books about psychology, experimenting with colors, or perfecting my legendary rajma chawal recipe that is certified best by my family. I believe great design isn’t just about how things look, it’s about how they make people feel."
     },
@@ -100,7 +100,7 @@ class _TeamWidgetState extends State<TeamWidget> {
       "name": "Abnika Garg",
       "designation": "Flutter Developer",
       "linkedin": "https://www.linkedin.com/in/abnika-garg-135b0a165/",
-      "image": "assets/team/abnika_imresizer.jpg",
+      "image": "assets/team/abnika_edit.jpg",
       "des":
           "I build sleek, high-performing apps with Flutter while keeping the backend running smoothly ensuring great user experience. With four years of experience and a B.Tech in ECE, I specialize in crafting responsive UIs, real-time features, and powerful APIs. When I’m not coding, I’m exploring new tech, solving puzzles, or on a never-ending quest to build something truly surprising."
     },
@@ -108,7 +108,7 @@ class _TeamWidgetState extends State<TeamWidget> {
       "name": "Dr.Suneera C M",
       "designation": "Principle NLP Scientist",
       "linkedin": "https://www.linkedin.com/in/suneera-c-moideen/",
-      "image": "assets/team/suneera (1).jpg",
+      "image": "assets/team/suneera_edit.jpg",
       "des":
           "As Principal NLP Scientist, I lead our AI team in crafting intelligent, user-friendly healthcare communication systems with a dash of linguistic wizardry. Armed with a PhD from NIT Calicut, six years of research, and honors like the ACM India Anveshan Setu Fellowship, I blend academic rigor with real-world innovation. When I’m not pioneering breakthrough projects, I embrace the delightful chaos of motherhood and a well-timed movie night ."
     },
@@ -116,7 +116,7 @@ class _TeamWidgetState extends State<TeamWidget> {
       "name": "Mohan Raja",
       "designation": "Application Developer",
       "linkedin": "https://www.linkedin.com/in/mogeoeg2224/",
-      "image": "assets/team/mohanzz (1).jpg",
+      "image": "assets/team/mohan_edit.jpg",
       "des":
           "I'm an Application Developer with 6.5 years of experience, turning complex backend challenges into seamless solutions. I've worked on projects like Marsh Insurance and FedEx, earned certifications in Microsoft AI, AWS, and CockroachDB, and even bagged the 2023 IAF Young Entrepreneur Award for CX. When I’m not coding, you’ll find me playing cricket, trekking, or whipping up a killer non-veg dish."
     }
