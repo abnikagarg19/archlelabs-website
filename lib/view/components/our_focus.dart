@@ -101,7 +101,7 @@ class OurFocus extends StatelessWidget {
                                 ResponsiveLayout.isMediumScreen(context)
                                     ? 280
                                     : ResponsiveLayout.isSmallScreen(context)
-                                        ? 290
+                                        ? 320
                                         : 336,
                             mainAxisSpacing: 0,
 

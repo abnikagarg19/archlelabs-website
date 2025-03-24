@@ -216,7 +216,7 @@ class AboutusWidget extends StatelessWidget {
                                           ),
                                           Positioned(
                                             top: 80,
-                                            left: 110,
+                                            left: 90,
                                             child: Text("About Us",
                                                 style: GoogleFonts.openSans(
                                                   color: AppTheme.black,

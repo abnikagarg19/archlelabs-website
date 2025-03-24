@@ -54,8 +54,8 @@ class StartedWidget extends StatelessWidget {
                 bottom: 0,
                 right: 0,
                 left: 0,
-                child: Image.network(
-                  "https://archlelungbucket.s3.ap-south-1.amazonaws.com/website/assests/Untitled+video+-+Made+with+Clipchamp+(5)+(1)+(1)+(1).gif",
+                child: Image.asset(
+                  "assets/images/story.gif",
                   fit: BoxFit.cover,
                   alignment: Alignment.bottomRight,
                 ),
