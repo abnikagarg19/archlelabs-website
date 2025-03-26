@@ -92,7 +92,7 @@ class Footer extends StatelessWidget {
                                 height: 20,
                               ),
                               Text(
-                                "Innovators, interns, or investors—let’s create together",
+                                "Innovators, interns, or investors, Let’s create together",
                                 style: GoogleFonts.openSans(
                                   color: AppTheme.whiteColor,
                                   fontSize: Constant.smallbheadingText(context),

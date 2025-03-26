@@ -62,7 +62,7 @@ class _TeamWidgetState extends State<TeamWidget> {
       "linkedin": "https://www.linkedin.com/in/aloissajodevasagayam/",
       "image": "assets/team/alois_edit.webp",
       "des":
-          "As the Founder & CEO of Archle Labs, I don’t just build products ,I create social impact. At the helm of a company redefining healthcare innovation, I bring a fusion of strategy,  product development, and user experience design to create solutions that drive meaningful innovation in the market. My journey spans leading social enterprises, crafting market -effective strategies, and assembling high-caliber teams that thrive on curiosity and first-principle thinking. When I’m not immersed in building the next advancement, you’ll find me exploring history,  diving into new cultures, exploring science, philosophy etc. I believe true innovation comes from questioning everything and daring to solve problems others shy away from."
+          "As the Founder and CEO of Archle Labs, Alois Sajo is dedicated to creating meaningful social impact through innovative healthcare solutions. Leading a company at the forefront of redefining healthcare, he expertly integrates strategy, product development, and user experience design to deliver transformative market solutions. His journey includes leading successful social enterprises, developing effective market strategies, and building high-performing teams driven by curiosity and a commitment to first-principle thinking. When not focused on advancing the next breakthrough, he pursues interests in history, cultural exploration, and the fields of science and philosophy. Driven by a belief that true innovation stems from a willingness to challenge conventional thinking, he is deeply committed to making a lasting and positive impact."
     },
     {
       "name": "Dr.Siri Karthika R",
@@ -70,7 +70,7 @@ class _TeamWidgetState extends State<TeamWidget> {
       "linkedin": "www.linkedin.com/in/siri-karthika",
       "image": "assets/team/siri_edit.jpg",
       "des":
-          "I blend medical expertise with bold innovation, ensuring research meets real-world patient needs. An MBBS graduate and University Rank holder in Pediatrics, I have an insatiable curiosity for epigenetics, neuroscience, and the quirks of human behavior. When I’m not deep in research, you’ll find me lifting weights, experimenting in the kitchen, or proving that a little eccentricity makes everything more interesting, even healthcare."
+          "She combines her medical expertise with a deep commitment to improving community health, ensuring that her research directly addresses the needs of underserved populations. An MBBS graduate and University Rank holder in Pediatrics, Dr.Siri Karthika is driven by a passion for advancing knowledge in epigenetics, neuroscience, and human behavior, with a particular focus on how these fields can improve public health outcomes. Outside of her research, she is dedicated to promoting wellness, whether through fitness, exploring nutrition, or engaging with local health initiatives."
     },
     {
       "name": "Joel Prithvi Ignatius",
@@ -78,7 +78,7 @@ class _TeamWidgetState extends State<TeamWidget> {
       "linkedin": "https://www.linkedin.com/in/joel-prithvi/",
       "image": "assets/team/joel_edit.jpg",
       "des":
-          "I’m a Data Scientist with 2.5 years of experience, specializing in transforming raw data into actionable insights, building machine learning models and automating processes to solve real-world challenges. I’m a Master's graduate in Big Data and Business Analytics, and have had experience helping a Fortune 500 company cut costs through analytics. Off-duty, I’m either shredding on my guitar (100+ shows), cooking up beats, shooting hoops, or deep diving into an anime binge."
+          "As a Data Scientist, he specializes in transforming raw data into actionable insights, building machine learning models, and automating processes to solve real-world challenges. Holding a Master's in Big Data and Business Analytics, Joel has contributed to helping a Fortune 500 company reduce costs. Outside of work, he engages in various activities such as playing guitar, having performed at over 100 shows, shooting hoops, or immersing himself in anime, as he values balance and draws inspiration from diverse interests."
     },
     {
       "name": "Tejas Prataprao Chavan",
@@ -86,7 +86,7 @@ class _TeamWidgetState extends State<TeamWidget> {
       "linkedin": "https://www.linkedin.com/in/tejaspchavan",
       "image": "assets/team/tejas_edit.jpg",
       "des":
-          "I breathe life into machines, blending robotics, embedded systems, and AI-driven automation to create intelligent, high-performance solutions. From designing circuits to developing full-scale prototypes, I bridge the gap between mechanics and intelligence. With published research, design accolades, and innovations, I thrive on solving complex challenges—preferably with a strong coffee, a sketchbook in hand, and a deep dive into cinematography."
+          "Tejas Chavan seamlessly integrates robotics, embedded systems, and AI-driven automation to create intelligent, high-performance solutions. From designing intricate circuits to developing full-scale prototypes, he consistently bridges the gap between mechanics and advanced technology. With a range of published research, design accolades, and innovative contributions, he approaches complex challenges with a diverse skill set"
     },
     {
       "name": "Antara",
@@ -94,7 +94,7 @@ class _TeamWidgetState extends State<TeamWidget> {
       "linkedin": "https://www.linkedin.com/in/antara-banik/",
       "image": "assets/team/antara_edit.jpg",
       "des":
-          "I design with empathy, curiosity, and just the right amount of obsession over the tiniest details. As a self-taught UX designer, I love decoding human behavior and transforming complex ideas into seamless, intuitive experiences. When I'm not crafting digital interfaces, you’ll find me lost in books about psychology, experimenting with colors, or perfecting my legendary rajma chawal recipe that is certified best by my family. I believe great design isn’t just about how things look, it’s about how they make people feel."
+          "She approaches design with empathy, curiosity, and a meticulous attention to detail. Antara specializes in understanding human behavior and transforming complex concepts into seamless, intuitive experiences. Outside of her design work, she is deeply engaged in studying psychology and exploring color theory. She believes that great design goes beyond aesthetics; it’s about creating meaningful, impactful experiences that resonate with users."
     },
     {
       "name": "Abnika Garg",
@@ -110,7 +110,7 @@ class _TeamWidgetState extends State<TeamWidget> {
       "linkedin": "https://www.linkedin.com/in/suneera-c-moideen/",
       "image": "assets/team/suneera_edit.jpg",
       "des":
-          "As Principal NLP Scientist, I lead our AI team in crafting intelligent, user-friendly healthcare communication systems with a dash of linguistic wizardry. Armed with a PhD from NIT Calicut, six years of research, and honors like the ACM India Anveshan Setu Fellowship, I blend academic rigor with real-world innovation. When I’m not pioneering breakthrough projects, I embrace the delightful chaos of motherhood and a well-timed movie night ."
+          "Dr. Suneera, Principal NLP Scientist, leads the AI team in developing intelligent, user-centric healthcare communication systems. Her background includes a PhD from NIT Calicut, six years of research experience, and prestigious honors such as the ACM India Anveshan Setu Fellowship. She blends academic rigor with practical innovation to deliver impactful solutions in the field."
     },
     {
       "name": "Mohan Raja",
@@ -118,7 +118,7 @@ class _TeamWidgetState extends State<TeamWidget> {
       "linkedin": "https://www.linkedin.com/in/mogeoeg2224/",
       "image": "assets/team/mohan_edit.jpg",
       "des":
-          "I'm an Application Developer with 6.5 years of experience, turning complex backend challenges into seamless solutions. I've worked on projects like Marsh Insurance and FedEx, earned certifications in Microsoft AI, AWS, and CockroachDB, and even bagged the 2023 IAF Young Entrepreneur Award for CX. When I’m not coding, you’ll find me playing cricket, trekking, or whipping up a killer non-veg dish."
+          "As an Application Developer, he specializes in transforming complex backend challenges into seamless solutions. Mohan Raj has contributed to projects for organizations such as Marsh Insurance and FedEx, earned certifications in Microsoft AI, AWS, and CockroachDB, and is a recipient of the 2023 IAF Young Entrepreneur Award for CX."
     }
   ];
   

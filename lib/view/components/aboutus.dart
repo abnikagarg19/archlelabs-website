@@ -628,7 +628,7 @@ class AboutusWidget extends StatelessWidget {
         ),
         const SizedBox(height: 10),
         Text(
-          "Our mission is to harness rigorous, interdisciplinary research and advanced engineering methodologies to drive transformative solutions for complex healthcare challenges—ultimately fostering equitable access and vibrant global health.",
+          "Our mission is to harness rigorous, interdisciplinary research and advanced engineering methodologies to drive transformative solutions for complex healthcare challenges,ultimately fostering equitable access and vibrant global health.",
           style: GoogleFonts.openSans(
             color: AppTheme.black,
             fontSize: Constant.TextSize20(context),
