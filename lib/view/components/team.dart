@@ -119,6 +119,14 @@ class _TeamWidgetState extends State<TeamWidget> {
       "image": "assets/team/mohan_edit.jpg",
       "des":
           "As an Application Developer, he specializes in transforming complex backend challenges into seamless solutions. Mohan Raj has contributed to projects for organizations such as Marsh Insurance and FedEx, earned certifications in Microsoft AI, AWS, and CockroachDB, and is a recipient of the 2023 IAF Young Entrepreneur Award for CX."
+    },
+     {
+      "name": "Bhavya Minocha",
+      "designation": "Embedded Systems Engineer",
+      "linkedin": "https://www.linkedin.com/in/bhavya-minocha-17101022a/",
+      "image": "assets/team/Bhavya1 1.png",
+      "des":
+          "Bhavya Minocha is an Embedded Systems Engineer with 2+ years of experience in High-Speed PCB design and New Product Development, spanning Automotive, IoT, and Consumer Electronics. Designed 50+ boards, including vehicle diagnostics and weather monitoring systems, Bhavya thrives on solving complex hardware challenges with precision and creativity. When not engineering, they’re either drumming up beats (12+ years strong) or cooking a killer biryani."
     }
   ];
   
