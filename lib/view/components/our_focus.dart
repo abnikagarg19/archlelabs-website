@@ -249,7 +249,7 @@ class OurFocus extends StatelessWidget {
                      Container(
                     constraints: BoxConstraints(maxWidth: width),
                     child: Text(
-                      "Our team of scientists, engineers, and healthcare professionals works collaboratively to expand the horizons of diagnostics, therapeutics, and primary care services comprehensive care services. Through rigorous research, forward-thinking partnerships, and a relentless drive for breakthroughs, we continuously push the boundaries of healthcare and medical science—creating transformative technologies that will redefine patient care worldwide.",
+                      "Our team of scientists, engineers, and healthcare professionals works collaboratively to expand the horizons of diagnostics, therapeutics, and primary care services comprehensive care services. Through rigorous research, forward-thinking partnerships, and a relentless drive for breakthroughs, we continuously push the boundaries of healthcare and medical science,creating transformative technologies that will redefine patient care worldwide.",
                       style: GoogleFonts.openSans(
                           fontWeight: FontWeight.w300,
                           color: const Color.fromARGB(255, 255, 255, 255),
