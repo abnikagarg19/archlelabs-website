@@ -362,7 +362,7 @@ class HomeController extends GetxController {
     DialogHelper.showLoading();
     HomepageService()
         .createJob(firstNameJob.text, lastNameJob.text, emailJob.text,
-            phoneJob.text, designation, linkedin.text, exp.text, fileeJob)
+            phoneJob.text, designation, linkedin.text, exp.text, fileeJob.value)
         .then((value) {
       DialogHelper.hideLoading();
       switch (value.statusCode) {
