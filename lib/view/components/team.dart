@@ -127,6 +127,14 @@ class _TeamWidgetState extends State<TeamWidget> {
       "image": "assets/team/Bhavya1 1.png",
       "des":
           "Bhavya Minocha is an Embedded Systems Engineer with 2+ years of experience in High-Speed PCB design and New Product Development, spanning Automotive, IoT, and Consumer Electronics. Designed 50+ boards, including vehicle diagnostics and weather monitoring systems, Bhavya thrives on solving complex hardware challenges with precision and creativity. When not engineering, they’re either drumming up beats (12+ years strong) or cooking a killer biryani."
+    },
+    {
+      "name": "Dr. Ashwin Kamble",
+      "designation": "Principal Biomedical Scientist",
+      "linkedin": "https://www.linkedin.com/in/dr-ashwin-kamble-ph-d-096a7a1b/",
+      "image": "assets/team/ASHWINedited 1.png",
+      "des":
+          "Dr. Ashwin Kamble is a Senior Biomedical Engineer with extensive MedTech R&D experience. He holds a PhD in Signal Processing from VNIT, Nagpur, specializing in imagined speech recognition from EEG signals for patient-friendly communication. At a MedTech startup incubated at SINE, IIT Bombay, he contributed to developing advanced cardiovascular and nephrology diagnostic devices. His expertise includes brain-computer interfaces and he has published several research papers in reputed journals."
     }
   ];
   
