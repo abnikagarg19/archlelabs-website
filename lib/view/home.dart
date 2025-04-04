@@ -91,8 +91,8 @@ class _HomeWidgetsState extends State<HomeWidgets> {
     );
   }
 
-  final _image = AssetImage('assets/images/robo.png');
-  final _image2 = AssetImage('assets/images/robohover.png');
+  final _image = AssetImage('assets/images/robo test 2.png');
+  final _image2 = AssetImage('assets/images/robo test 2.png');
 
   @override
   void initState() {
