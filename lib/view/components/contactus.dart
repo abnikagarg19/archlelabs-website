@@ -542,51 +542,51 @@ class _ContactUsState extends State<ContactUs>
                     SizedBox(
                       height: 20,
                     ),
-                    Text(
-                      "Upload Relevant files",
-                      style: GoogleFonts.openSans(
-                        color: AppTheme.black,
-                        fontWeight: FontWeight.w600,
-                        fontSize: Constant.smallbody(context),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Row(
-                      children: [
-                        buildFilePicker(
-                          context,
-                          () async {
-                            FilePickerResult? result =
-                                await FilePicker.platform.pickFiles();
+                    // Text(
+                    //   "Upload Relevant files",
+                    //   style: GoogleFonts.openSans(
+                    //     color: AppTheme.black,
+                    //     fontWeight: FontWeight.w600,
+                    //     fontSize: Constant.smallbody(context),
+                    //   ),
+                    // ),
+                    // SizedBox(
+                    //   height: 20,
+                    // ),
+                    // Row(
+                    //   children: [
+                    //     buildFilePicker(
+                    //       context,
+                    //       () async {
+                    //         FilePickerResult? result =
+                    //             await FilePicker.platform.pickFiles();
 
-                            if (result != null) {
-                              Uint8List? fileBytes = result.files.first.bytes;
-                              String fileName = result.files.first.name;
-                              _controller.selectFile(fileBytes, fileName);
-                            } else {
-                              // User canceled the picker
-                            }
-                          },
-                        ),
-                        Flexible(
-                          child: Text(
-                            "  ${_controller.filequeryname}",
-                            style: GoogleFonts.openSans(
-                              color: AppTheme.black,
-                              fontWeight: FontWeight.w600,
-                              fontSize: Constant.smallbody(context),
-                            ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 40,
-                    ),
+                    //         if (result != null) {
+                    //           Uint8List? fileBytes = result.files.first.bytes;
+                    //           String fileName = result.files.first.name;
+                    //           _controller.selectFile(fileBytes, fileName);
+                    //         } else {
+                    //           // User canceled the picker
+                    //         }
+                    //       },
+                    //     ),
+                    //     Flexible(
+                    //       child: Text(
+                    //         "  ${_controller.filequeryname}",
+                    //         style: GoogleFonts.openSans(
+                    //           color: AppTheme.black,
+                    //           fontWeight: FontWeight.w600,
+                    //           fontSize: Constant.smallbody(context),
+                    //         ),
+                    //         maxLines: 1,
+                    //         overflow: TextOverflow.ellipsis,
+                    //       ),
+                    //     ),
+                    //   ],
+                    // ),
+                    // SizedBox(
+                    //   height: 40,
+                    // ),
                   ],
                 ),
               ),

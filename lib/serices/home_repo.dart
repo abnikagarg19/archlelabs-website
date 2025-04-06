@@ -87,7 +87,7 @@ class HomepageService {
   }
 
   Future<Response> createQuery(
-      firstName, lastname, email, phone, subject, query, file) async {
+      firstName, lastname, email, phone, subject, query) async {
     var ur = AppUrls.BASE_URL +
         AppUrls.queryForm +
         "?firstname=$firstName&lastname=$lastname&emailid=$email&phonenumber=$phone&subject=$subject&queries=$query";
@@ -95,13 +95,13 @@ class HomepageService {
     try {
       // var dio = aa.Dio();
       var request = http.MultipartRequest('POST', Uri.parse(ur));
-      var multipartFile = http.MultipartFile.fromBytes(
-        'filedata', // This should match the parameter name in your FastAPI endpoint
-        file,
-        filename: "aa.png",
-        contentType: MediaType('application', 'octet-stream'),
-      );
-      request.files.add(multipartFile);
+      // var multipartFile = http.MultipartFile.fromBytes(
+      //   'filedata', // This should match the parameter name in your FastAPI endpoint
+      //   file,
+      //   filename: "aa.png",
+      //   contentType: MediaType('application', 'octet-stream'),
+      // );
+      // request.files.add(multipartFile);
 
       // Send the request
       var response2 = await request.send();

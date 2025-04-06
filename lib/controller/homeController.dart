@@ -196,7 +196,7 @@ class HomeController extends GetxController {
     DialogHelper.showLoading();
     HomepageService()
         .createQuery(firstnameQuery.text, lastnameQuery.text, emailQuery.text,
-            phoneQuery.text, subjectQuery.text, queryQuery.text, filequery)
+            phoneQuery.text, subjectQuery.text, queryQuery.text)
         .then((value) {
       DialogHelper.hideLoading();
       switch (value.statusCode) {
