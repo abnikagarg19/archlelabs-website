@@ -120,14 +120,14 @@ class _TeamWidgetState extends State<TeamWidget> {
       "des":
           "Mohan Raj, an Application Developer, specializes in transforming complex backend challenges into seamless, efficient solutions. He has contributed to projects for organizations such as Marsh Insurance and FedEx, and holds certifications in Microsoft AI, AWS, and CockroachDB. In recognition of his innovative work in customer experience, he received the 2023 IAF Young Entrepreneur Award for CX.",
     },
-    {
-      "name": "Bhavya Minocha",
-      "designation": "Embedded Systems Engineer",
-      "linkedin": "https://www.linkedin.com/in/bhavya-minocha-17101022a/",
-      "image": "assets/team/Bhavya1 1.png",
-      "des":
-          "Bhavya Minocha, an Embedded Systems Engineer, specializes in high-speed PCB design and new product development across Automotive, IoT, and Consumer Electronics. With over 50 boards designed—including vehicle diagnostics and weather monitoring systems—Bhavya consistently delivers innovative hardware solutions marked by precision, reliability, and creative problem-solving. Outside of engineering, Bhavya is deeply committed to the discipline of music, having studied drumming for over 12 years—an interest that reinforces focus, rhythm, and structured thinking in professional pursuits."
-    },
+    // {
+    //   "name": "Bhavya Minocha",
+    //   "designation": "Embedded Systems Engineer",
+    //   "linkedin": "https://www.linkedin.com/in/bhavya-minocha-17101022a/",
+    //   "image": "assets/team/Bhavya1 1.png",
+    //   "des":
+    //       "Bhavya Minocha, an Embedded Systems Engineer, specializes in high-speed PCB design and new product development across Automotive, IoT, and Consumer Electronics. With over 50 boards designed—including vehicle diagnostics and weather monitoring systems—Bhavya consistently delivers innovative hardware solutions marked by precision, reliability, and creative problem-solving. Outside of engineering, Bhavya is deeply committed to the discipline of music, having studied drumming for over 12 years—an interest that reinforces focus, rhythm, and structured thinking in professional pursuits."
+   // },
     {
       "name": "Dr. Ashwin Kamble",
       "designation": "Principal Biomedical Scientist",
