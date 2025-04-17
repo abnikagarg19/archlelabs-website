@@ -122,8 +122,9 @@ class AboutusWidget extends StatelessWidget {
                     },
                     child: constraints.maxWidth > 800
                         ? Center(
-                          child: Container( constraints: BoxConstraints(maxWidth: width),
-                            child: Row(
+                            child: Container(
+                              constraints: BoxConstraints(maxWidth: width),
+                              child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Stack(
@@ -144,7 +145,8 @@ class AboutusWidget extends StatelessWidget {
                                             style: GoogleFonts.openSans(
                                               color: AppTheme.black,
                                               fontWeight: FontWeight.w600,
-                                              fontSize: Constant.bigFont94(context),
+                                              fontSize:
+                                                  Constant.bigFont94(context),
                                               letterSpacing: 3,
                                             )),
                                       )
@@ -155,14 +157,15 @@ class AboutusWidget extends StatelessWidget {
                                   ),
                                   Expanded(
                                     child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         const SizedBox(height: 240),
                                         Padding(
                                           padding: const EdgeInsets.symmetric(
                                               horizontal: 16),
                                           child: Text(
-                                            "Archle Labs is an advanced research center for health and life sciences engineering, committed to revolutionizing the healthcare field. We combine cutting-edge technology, interdisciplinary expertise fueled by  unwavering passion for innovation to tackle the world’s most pressing medical challenges. By developing novel solutions and services, we aim to elevate human health, enhance patient outcomes, and transform global healthcare practices.",
+                                            "Archle Labs is a deep tech research and development company at the forefront of health and life sciences engineering, dedicated to revolutionizing the healthcare landscape. By integrating advanced technologies, interdisciplinary science, and a bold research driven approach, we develop breakthrough solutions that address the world’s most critical medical challenges, advancing human health, improving patient outcomes, and transforming global healthcare systems.",
                                             style: GoogleFonts.openSans(
                                               color: AppTheme.black,
                                               fontSize:
@@ -172,9 +175,10 @@ class AboutusWidget extends StatelessWidget {
                                             textAlign: TextAlign.justify,
                                           )
                                               .animate(
-                                                target: _controller.isAboutuseVisble
-                                                    ? 1
-                                                    : 0,
+                                                target:
+                                                    _controller.isAboutuseVisble
+                                                        ? 1
+                                                        : 0,
                                               )
                                               .fadeIn(
                                                 delay: 200.ms,
@@ -192,8 +196,8 @@ class AboutusWidget extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                          ),
-                        )
+                            ),
+                          )
                         : Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -201,33 +205,31 @@ class AboutusWidget extends StatelessWidget {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                  
-                                  
-                                      Stack(
-                                        clipBehavior: Clip.none,
-                                        children: [
-                                          Container(
-                                            width: 150,
-                                            height: 250,
-                                            child: Image.asset(
-                                              "assets/images/space2.png",
-                                              fit: BoxFit.fitHeight,
-                                            ),
+                                    Stack(
+                                      clipBehavior: Clip.none,
+                                      children: [
+                                        Container(
+                                          width: 150,
+                                          height: 250,
+                                          child: Image.asset(
+                                            "assets/images/space2.png",
+                                            fit: BoxFit.fitHeight,
                                           ),
-                                          Positioned(
-                                            top: 80,
-                                            left: 90,
-                                            child: Text("About Us",
-                                                style: GoogleFonts.openSans(
-                                                  color: AppTheme.black,
-                                                  fontWeight: FontWeight.w600,
-                                                  fontSize: Constant.bigFont94(
-                                                      context),
-                                                  letterSpacing: 3,
-                                                )),
-                                          )
-                                        ],
-                                      ),
+                                        ),
+                                        Positioned(
+                                          top: 80,
+                                          left: 90,
+                                          child: Text("About Us",
+                                              style: GoogleFonts.openSans(
+                                                color: AppTheme.black,
+                                                fontWeight: FontWeight.w600,
+                                                fontSize:
+                                                    Constant.bigFont94(context),
+                                                letterSpacing: 3,
+                                              )),
+                                        )
+                                      ],
+                                    ),
                                     // Text(
                                     //   "About Us",
                                     //   style: GoogleFonts.openSans(
@@ -242,7 +244,7 @@ class AboutusWidget extends StatelessWidget {
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 16),
                                       child: Text(
-                                        "Archle Labs is an advanced research center for health and life sciences engineering, committed to revolutionizing the healthcare field. We combine cutting-edge technology, interdisciplinary expertise fueled by  unwavering passion for innovation to tackle the world’s most pressing medical challenges. By developing novel solutions and services, we aim to elevate human health, enhance patient outcomes, and transform global healthcare practices.",
+                                        "Archle Labs is a deep tech research and development company at the forefront of health and life sciences engineering, dedicated to revolutionizing the healthcare landscape. By integrating advanced technologies, interdisciplinary science, and a bold research driven approach, we develop breakthrough solutions that address the world’s most critical medical challenges, advancing human health, improving patient outcomes, and transforming global healthcare systems.",
                                         style: GoogleFonts.openSans(
                                           color: AppTheme.black,
                                           fontSize:
@@ -553,7 +555,7 @@ class AboutusWidget extends StatelessWidget {
                     SizedBox(
                       height: 20,
                     ),
-                 
+
                   // SizedBox(
                   //   height: 80,
                   // ),
