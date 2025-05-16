@@ -88,14 +88,14 @@ class _TeamWidgetState extends State<TeamWidget> {
       "des":
           "Tejas Chavan seamlessly integrates robotics, embedded systems, and AI-driven automation to create intelligent, high-performance solutions. From designing intricate circuits to developing full-scale prototypes, he consistently bridges the gap between mechanics and advanced technology. With a range of published research, design accolades, and innovative contributions, he approaches complex challenges with a diverse skill set and a relentless drive for practical innovation."
     },
-    {
-      "name": "Antara",
-      "designation": "UX/UI Designer",
-      "linkedin": "https://www.linkedin.com/in/antara-banik/",
-      "image": "assets/team/antara_edit.jpg",
-      "des":
-          "Antara approaches design with empathy, curiosity, and a meticulous attention to detail. Specializing in understanding human behavior, she transforms complex concepts into seamless, intuitive experiences. Outside of her design work, she is deeply engaged in studying psychology and exploring color theory. She believes that great design goes beyond aesthetics—it's about creating meaningful, impactful experiences that truly resonate with users."
-    },
+    // {
+    //   "name": "Antara",
+    //   "designation": "UX/UI Designer",
+    //   "linkedin": "https://www.linkedin.com/in/antara-banik/",
+    //   "image": "assets/team/antara_edit.jpg",
+    //   "des":
+    //       "Antara approaches design with empathy, curiosity, and a meticulous attention to detail. Specializing in understanding human behavior, she transforms complex concepts into seamless, intuitive experiences. Outside of her design work, she is deeply engaged in studying psychology and exploring color theory. She believes that great design goes beyond aesthetics—it's about creating meaningful, impactful experiences that truly resonate with users."
+    // },
     {
       "name": "Abnika Garg",
       "designation": "Flutter Developer",
@@ -104,14 +104,14 @@ class _TeamWidgetState extends State<TeamWidget> {
       "des":
           "Abnika Garg is a Flutter Developer who builds sleek, high-performing applications with a strong focus on user experience and backend efficiency. With a B.Tech in Electronics and Communication Engineering, she specializes in crafting responsive user interfaces, integrating real-time features, and developing robust APIs. Outside of development, she stays curious—exploring emerging technologies, tackling complex puzzles, and continuously striving to create innovative and impactful digital solutions."
     },
-    {
-      "name": "Dr.Suneera C M",
-      "designation": "Principle NLP Scientist",
-      "linkedin": "https://www.linkedin.com/in/suneera-c-moideen/",
-      "image": "assets/team/suneera_edit.jpg",
-      "des":
-          "Dr. Suneera, Principal NLP Scientist, leads the AI team in developing intelligent, user-centric healthcare communication systems. With a PhD from NIT Calicut and six years of research experience, she brings both depth and innovation to her work. Honored with accolades like the ACM India Anveshan Setu Fellowship, she seamlessly blends academic rigor with practical application to deliver impactful solutions in the healthcare AI space."
-    },
+    // {
+    //   "name": "Dr.Suneera C M",
+    //   "designation": "Principle NLP Scientist",
+    //   "linkedin": "https://www.linkedin.com/in/suneera-c-moideen/",
+    //   "image": "assets/team/suneera_edit.jpg",
+    //   "des":
+    //       "Dr. Suneera, Principal NLP Scientist, leads the AI team in developing intelligent, user-centric healthcare communication systems. With a PhD from NIT Calicut and six years of research experience, she brings both depth and innovation to her work. Honored with accolades like the ACM India Anveshan Setu Fellowship, she seamlessly blends academic rigor with practical application to deliver impactful solutions in the healthcare AI space."
+    // },
     {
       "name": "Mohan Raja",
       "designation": "Application Developer",
@@ -128,14 +128,14 @@ class _TeamWidgetState extends State<TeamWidget> {
     //   "des":
     //       "Bhavya Minocha, an Embedded Systems Engineer, specializes in high-speed PCB design and new product development across Automotive, IoT, and Consumer Electronics. With over 50 boards designed—including vehicle diagnostics and weather monitoring systems—Bhavya consistently delivers innovative hardware solutions marked by precision, reliability, and creative problem-solving. Outside of engineering, Bhavya is deeply committed to the discipline of music, having studied drumming for over 12 years—an interest that reinforces focus, rhythm, and structured thinking in professional pursuits."
    // },
-    {
-      "name": "Dr. Ashwin Kamble",
-      "designation": "Principal Biomedical Scientist",
-      "linkedin": "https://www.linkedin.com/in/dr-ashwin-kamble-ph-d-096a7a1b/",
-      "image": "assets/team/ASHWINedited 1.png",
-      "des":
-          "Dr. Ashwin Kamble, Senior Biomedical Engineer, holds a PhD in Signal Processing from VNIT, Nagpur, with a specialization in imagined speech recognition using EEG signals to enable patient-friendly communication. At a MedTech startup incubated at SINE, IIT Bombay, he played a key role in the development of advanced diagnostic devices in cardiovascular and nephrology care. His work spans brain-computer interfaces and cutting-edge biomedical signal processing, with multiple publications in reputed journals highlighting his contributions to the field."
-    }
+    // {
+    //   "name": "Dr. Ashwin Kamble",
+    //   "designation": "Principal Biomedical Scientist",
+    //   "linkedin": "https://www.linkedin.com/in/dr-ashwin-kamble-ph-d-096a7a1b/",
+    //   "image": "assets/team/ASHWINedited 1.png",
+    //   "des":
+    //       "Dr. Ashwin Kamble, Senior Biomedical Engineer, holds a PhD in Signal Processing from VNIT, Nagpur, with a specialization in imagined speech recognition using EEG signals to enable patient-friendly communication. At a MedTech startup incubated at SINE, IIT Bombay, he played a key role in the development of advanced diagnostic devices in cardiovascular and nephrology care. His work spans brain-computer interfaces and cutting-edge biomedical signal processing, with multiple publications in reputed journals highlighting his contributions to the field."
+    // }
   ];
 
   Widget _team(context, width) {
