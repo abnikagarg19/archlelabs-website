@@ -3,6 +3,7 @@ import 'package:archlelabswebsite/responsive/layouts.dart';
 import 'package:archlelabswebsite/theme/app_theme.dart';
 import 'package:archlelabswebsite/utils/constants.dart';
 import 'package:archlelabswebsite/view/components/navbar.dart';
+import 'package:archlelabswebsite/view/components/product.dart';
 import 'package:archlelabswebsite/view/components/team.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -402,6 +403,7 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                                 ),
                               StartedWidget(),
                               OurFocus(),
+                             
                               // Text(
                               //   "Unlocking the future\nof Innovations",
                               //   style: TextStyle(

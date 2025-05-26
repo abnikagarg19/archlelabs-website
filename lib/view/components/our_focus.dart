@@ -30,21 +30,21 @@ class OurFocus extends StatelessWidget {
       "details":
           "Developing advanced, user-friendly diagnostic tools that enable swift and accurate detection of critical health conditions"
     },
-    {
-      "title": "ADL Technologies",
-      "details":
-          "Designing innovative systems to enhance independence and quality of life by assisting with Activities of Daily Living."
-    },
-    {
-      "title": "Advanced Triage & PHS",
-      "details":
-          "Equipping clinicians with efficient and responsive triage platforms that prioritize patient needs and deliver timely, high-quality care."
-    },
-    {
-      "title": "Comprehensive Out Patient services ",
-      "details":
-          "Leveraging technology to transform outpatient care, optimizing resource allocation, and reducing wait times for enhanced operational efficiency."
-    }
+    // {
+    //   "title": "ADL Technologies",
+    //   "details":
+    //       "Designing innovative systems to enhance independence and quality of life by assisting with Activities of Daily Living."
+    // },
+    // {
+    //   "title": "Advanced Triage & PHS",
+    //   "details":
+    //       "Equipping clinicians with efficient and responsive triage platforms that prioritize patient needs and deliver timely, high-quality care."
+    // },
+    // {
+    //   "title": "Comprehensive Out Patient services ",
+    //   "details":
+    //       "Leveraging technology to transform outpatient care, optimizing resource allocation, and reducing wait times for enhanced operational efficiency."
+    // }
   ];
   Widget _ourFocus(context, width) {
     return LayoutBuilder(builder: (context, constraints) {
@@ -69,24 +69,180 @@ class OurFocus extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                     SizedBox(
+                      height: 60,
+                    ),
+                    Text(
+                      "OUR Products",
+                      style: GoogleFonts.bebasNeue(
+                          color: AppTheme.whiteColor,
+                          fontSize: Constant.headingText(context),
+                          letterSpacing: 5),
+                      textAlign: TextAlign.center,
+                    ),
+                  
+
+                    Flex(
+                      direction: constraints.maxWidth > 800
+                          ? Axis.horizontal
+                          : Axis.vertical,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Expanded(
+                          flex: constraints.maxWidth > 800 ? 6 : 0,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Healthcare Application",
+                                style: GoogleFonts.quicksand(
+                                  color: AppTheme.whiteColor,
+                                  fontWeight: FontWeight.w600,
+                                  letterSpacing: 2,
+                                  fontSize: Constant.body(context),
+                                ),
+                              ),
+                              const SizedBox(height: 10),
+                              Text(
+                                "Archle Labs is building an end-to-end digital AI healthcare platform in a mobile application that brings diagnosis,  mental health support, doctor consultations on your phone",
+                                style: GoogleFonts.openSans(
+                                  color: AppTheme.whiteColor,
+                                  fontWeight: FontWeight.w300,
+                                  fontSize: Constant.body(context),
+                                  height: 1.5,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 5),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      decoration: BoxDecoration(
+                                          color: AppTheme.whiteColor,
+                                          shape: BoxShape.circle),
+                                      height: 4,
+                                      width: 4,
+                                    ),
+                                    SizedBox(width: 12),
+                                    Text(
+                                      "Advanced triaging and health coaching ",
+                                      style: GoogleFonts.openSans(
+                                        color: AppTheme.whiteColor,
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: Constant.body(context),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 5),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      decoration: BoxDecoration(
+                                          color: AppTheme.whiteColor,
+                                          shape: BoxShape.circle),
+                                      height: 4,
+                                      width: 4,
+                                    ),
+                                    SizedBox(width: 12),
+                                    Text(
+                                      "Personalized  programs for chronic & preventive care",
+                                      style: GoogleFonts.openSans(
+                                        color: AppTheme.whiteColor,
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: Constant.body(context),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 5),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      decoration: BoxDecoration(
+                                          color: AppTheme.whiteColor,
+                                          shape: BoxShape.circle),
+                                      height: 4,
+                                      width: 4,
+                                    ),
+                                    SizedBox(width: 12),
+                                    Text(
+                                      "Integrated lab diagnostics & pharmacies",
+                                      style: GoogleFonts.openSans(
+                                        color: AppTheme.whiteColor,
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: Constant.body(context),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 5),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      decoration: BoxDecoration(
+                                          color: AppTheme.whiteColor,
+                                          shape: BoxShape.circle),
+                                      height: 4,
+                                      width: 4,
+                                    ),
+                                    SizedBox(width: 12),
+                                    Text(
+                                      "Certified medical professionals when needed ",
+                                      style: GoogleFonts.openSans(
+                                        color: AppTheme.whiteColor,
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: Constant.body(context),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ), if (constraints.maxWidth > 800)
+                              SizedBox(
+                                  width:
+                                      60), // Optional spacing between text and image
+
+                            if (constraints.maxWidth < 800)
+                              SizedBox(height: 30),
+                         Expanded(
+                          flex: constraints.maxWidth > 800 ? 6 : 0,child: Image.asset("assets/images/mmm.png", height: 350,))
+                      ],
+                    ),
                     SizedBox(
                       height: 60,
                     ),
-                    Center(
-                      child: Text(
-                        "Our Focus",
-                        style: GoogleFonts.bebasNeue(
-                            color: AppTheme.whiteColor,
-                            fontSize: Constant.headingText(context),
-                            letterSpacing: 5),
-                        textAlign: TextAlign.center,
-                      ),
+                    
+                    Text(
+                      "Coming Soon",
+                      style: GoogleFonts.bebasNeue(
+                          color: AppTheme.whiteColor,
+                          fontSize: Constant.headingText(context),
+                          letterSpacing: 5),
+                      textAlign: TextAlign.center,
                     ),
                     SizedBox(
                       height: 70,
                     ),
                     Align(
-                      alignment: Alignment.center,
+                      alignment: Alignment.topLeft,
                       child: Container(
                         constraints: BoxConstraints(maxWidth: 700),
                         child: GridView.custom(
@@ -227,29 +383,10 @@ class OurFocus extends StatelessWidget {
                     SizedBox(
                       height: 100,
                     ),
-                    // Text(
-                    //   "Cutting-Edge Research",
-                    //   style: GoogleFonts.bebasNeue(
-                    //     color: AppTheme.whiteColor,
-                    //     fontWeight: FontWeight.w500,
-                    //     letterSpacing: 5,
-                    //     fontSize: Constant.subheadingText(context),
-                    //   ),
-                    // ),
-                    // const SizedBox(height: 10),
-                    // Text(
-                    //   "We blend interdisciplinary thinking and frontier technologies to accelerate breakthroughs in diagnostics, therapeutics, and primary care.",
-                    //   style: GoogleFonts.openSans(
-                    //     color: AppTheme.whiteColor,
-                    //     fontWeight: FontWeight.w300,
-                    //     fontSize: Constant.TextSize20(context),
-                    //     height: 1.5,
-                    //   ),
-                    // ),
-                     Container(
+ Container(
                     constraints: BoxConstraints(maxWidth: width),
                     child: Text(
-                      "Our team of scientists, engineers, and healthcare professionals works collaboratively to expand the horizons of diagnostics, therapeutics, and primary care services comprehensive care services. Through rigorous research, forward-thinking partnerships, and a relentless drive for breakthroughs, we continuously push the boundaries of healthcare and medical science,creating transformative technologies that will redefine patient care worldwide.",
+                      "Next- gen medical device, leveraging technology to transform healthcare access and reduce wait times for enhanced operational efficiency.",
                       style: GoogleFonts.openSans(
                           fontWeight: FontWeight.w300,
                           color: const Color.fromARGB(255, 255, 255, 255),
@@ -261,27 +398,50 @@ class OurFocus extends StatelessWidget {
                     SizedBox(
                       height: 50,
                     ),
-                    // Text(
-                    //   "Global Impact through equitable health",
-                    //   style: GoogleFonts.bebasNeue(
-                    //     color: AppTheme.whiteColor,
-                    //     fontWeight: FontWeight.w500,
-                    //     letterSpacing: 5,
-                    //     fontSize: Constant.subheadingText(context),
-                    //   ),
-                    // ),
-                    // const SizedBox(height: 10),
-                    // Text(
-                    //   "Redefine healthcare with scalable, sustainable models that transcend financial and geographical barriers. By fusing advanced technology with a human-first approach, we close critical gaps in access, delivering equitable, high-impact medical solutions.",
-                    //   style: GoogleFonts.openSans(
-                    //       fontWeight: FontWeight.w300,
-                    //       color: const Color.fromARGB(255, 255, 255, 255),
-                    //       fontSize: Constant.TextSize20(context),
-                    //       height: 1.5),
-                    // ),
-                    // SizedBox(
-                    //   height: 50,
-                    // ),
+                    Text(
+                      "Cutting-Edge Research",
+                      style: GoogleFonts.bebasNeue(
+                        color: AppTheme.whiteColor,
+                        fontWeight: FontWeight.w500,
+                        letterSpacing: 5,
+                        fontSize: Constant.subheadingText(context),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      "We blend interdisciplinary thinking and frontier technologies to accelerate breakthroughs in diagnostics, therapeutics, and primary care.",
+                      style: GoogleFonts.openSans(
+                        color: AppTheme.whiteColor,
+                        fontWeight: FontWeight.w300,
+                        fontSize: Constant.TextSize20(context),
+                        height: 1.5,
+                      ),
+                    ),
+                    
+                    SizedBox(
+                      height: 50,
+                    ),
+                    Text(
+                      "Global Impact through equitable health",
+                      style: GoogleFonts.bebasNeue(
+                        color: AppTheme.whiteColor,
+                        fontWeight: FontWeight.w500,
+                        letterSpacing: 5,
+                        fontSize: Constant.subheadingText(context),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      "Redefine healthcare with scalable, sustainable models that transcend financial and geographical barriers. By fusing advanced technology with a human-first approach, we close critical gaps in access, delivering equitable, high-impact medical solutions.",
+                      style: GoogleFonts.openSans(
+                          fontWeight: FontWeight.w300,
+                          color: const Color.fromARGB(255, 255, 255, 255),
+                          fontSize: Constant.TextSize20(context),
+                          height: 1.5),
+                    ),
+                    SizedBox(
+                      height: 50,
+                    ),
                      SizedBox(
                       height: 50,
                     ),

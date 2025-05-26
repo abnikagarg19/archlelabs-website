@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:archlelabswebsite/utils/globals.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/foundation.dart';
@@ -9,7 +8,6 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:visibility_detector/visibility_detector.dart';
-
 import '../../controller/homeController.dart';
 import '../../responsive/layouts.dart';
 import '../../theme/app_theme.dart';

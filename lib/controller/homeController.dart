@@ -22,9 +22,9 @@ class HomeController extends GetxController {
     Globals.scrollController.addListener(_onScroll);
 
     print("dhn");
-    getTeams();
-    getDesignations();
-    getAllBlogs();
+   // getTeams();
+    ///getDesignations();
+    //getAllBlogs();
   }
 
   Timer? _scrollEndTimer;
