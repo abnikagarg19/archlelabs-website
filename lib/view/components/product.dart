@@ -81,20 +81,22 @@ class OurProduct extends StatelessWidget {
                           letterSpacing: 1),
                     ),
                     SizedBox(
-                      height: 40,
+                      height: 10,
                     ),
                     Flex(
                       direction: constraints.maxWidth > 800
                           ? Axis.horizontal
                           : Axis.vertical,
-                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Expanded(
-                            flex: constraints.maxWidth > 800 ? 6 : 0,
-                            child: Image.asset(
-                              "assets/images/mothrai.png",
-                              height: 250,
+                            flex: constraints.maxWidth > 800 ? 5 : 0,
+                            child: Align(alignment: Alignment.centerLeft,
+                              child: Image.asset(
+                                "assets/images/mothrai.png",
+                               height: 300,
+                              ),
                             )),
                         if (constraints.maxWidth > 800)
                           SizedBox(
