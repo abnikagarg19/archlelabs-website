@@ -72,13 +72,20 @@ class OurProduct extends StatelessWidget {
                     SizedBox(
                       height: 60,
                     ),
-                    Text(
-                      "Mother AI",
-                      style: GoogleFonts.quicksand(
-                          color: AppTheme.whiteColor,
-                          fontWeight: FontWeight.w700,
-                          fontSize: Constant.textFourtyEight(context),
-                          letterSpacing: 1),
+                    Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Mother AI",
+                          style: GoogleFonts.quicksand(
+                              color: AppTheme.whiteColor,
+                              fontWeight: FontWeight.w700,
+                              fontSize: Constant.textFourtyEight(context),
+                              letterSpacing: 1),
+                        ),   if (constraints.maxWidth < 800) Image.asset(
+                                "assets/images/mothrai.png",
+                               height: 100,
+                              ),
+                      ],
                     ),
                     SizedBox(
                       height: 10,
@@ -90,12 +97,13 @@ class OurProduct extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
+                          if (constraints.maxWidth > 800)
                         Expanded(
                             flex: constraints.maxWidth > 800 ? 5 : 0,
                             child: Align(alignment: Alignment.centerLeft,
                               child: Image.asset(
                                 "assets/images/mothrai.png",
-                               height: 300,
+                               height:constraints.maxWidth > 800 ? 300 : 80,
                               ),
                             )),
                         if (constraints.maxWidth > 800)

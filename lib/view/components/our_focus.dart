@@ -102,7 +102,7 @@ class OurFocus extends StatelessWidget {
                           ],
                         ),
                         Image.asset(
-                          "assets/images/aeon.png",
+                          "assets/images/aeon.png",width: constraints.maxWidth > 800 ? null : 150,
                         ),
                       ],
                     ),
@@ -271,7 +271,7 @@ class OurFocus extends StatelessWidget {
                         Expanded(
                             flex: constraints.maxWidth > 800 ? 6 : 0,
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
+                              mainAxisAlignment:constraints.maxWidth > 800 ? MainAxisAlignment.end:MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 Image.asset(
