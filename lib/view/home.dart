@@ -403,6 +403,7 @@ class _HomeWidgetsState extends State<HomeWidgets> {
                                 ),
                               StartedWidget(),
                               OurFocus(),
+                              OurProduct(),
                              
                               // Text(
                               //   "Unlocking the future\nof Innovations",

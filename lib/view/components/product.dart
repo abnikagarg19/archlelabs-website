@@ -73,15 +73,16 @@ class OurProduct extends StatelessWidget {
                       height: 60,
                     ),
                     Text(
-                      "OUR Products",
-                      style: GoogleFonts.bebasNeue(
+                      "Mother AI",
+                      style: GoogleFonts.quicksand(
                           color: AppTheme.whiteColor,
-                          fontSize: Constant.headingText(context),
-                          letterSpacing: 5),
-                      textAlign: TextAlign.center,
+                          fontWeight: FontWeight.w700,
+                          fontSize: Constant.textFourtyEight(context),
+                          letterSpacing: 1),
                     ),
-                  
-
+                    SizedBox(
+                      height: 40,
+                    ),
                     Flex(
                       direction: constraints.maxWidth > 800
                           ? Axis.horizontal
@@ -90,140 +91,29 @@ class OurProduct extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Expanded(
-                          flex: constraints.maxWidth > 800 ? 6 : 0,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Healthcare Application",
-                                style: GoogleFonts.quicksand(
-                                  color: AppTheme.whiteColor,
-                                  fontWeight: FontWeight.w600,
-                                  letterSpacing: 2,
-                                  fontSize: Constant.body(context),
-                                ),
-                              ),
-                              const SizedBox(height: 10),
-                              Text(
-                                "Archle Labs is building an end-to-end digital AI healthcare platform in a mobile application that brings diagnosis,  mental health support, doctor consultations on your phone",
-                                style: GoogleFonts.openSans(
-                                  color: AppTheme.whiteColor,
-                                  fontWeight: FontWeight.w300,
-                                  fontSize: Constant.body(context),
-                                  height: 1.5,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 20,
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 5),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                          color: AppTheme.whiteColor,
-                                          shape: BoxShape.circle),
-                                      height: 4,
-                                      width: 4,
-                                    ),
-                                    SizedBox(width: 12),
-                                    Text(
-                                      "Advanced triaging and health coaching ",
-                                      style: GoogleFonts.openSans(
-                                        color: AppTheme.whiteColor,
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: Constant.body(context),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 5),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                          color: AppTheme.whiteColor,
-                                          shape: BoxShape.circle),
-                                      height: 4,
-                                      width: 4,
-                                    ),
-                                    SizedBox(width: 12),
-                                    Text(
-                                      "Personalized  programs for chronic & preventive care",
-                                      style: GoogleFonts.openSans(
-                                        color: AppTheme.whiteColor,
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: Constant.body(context),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 5),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                          color: AppTheme.whiteColor,
-                                          shape: BoxShape.circle),
-                                      height: 4,
-                                      width: 4,
-                                    ),
-                                    SizedBox(width: 12),
-                                    Text(
-                                      "Integrated lab diagnostics & pharmacies",
-                                      style: GoogleFonts.openSans(
-                                        color: AppTheme.whiteColor,
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: Constant.body(context),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 5),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                          color: AppTheme.whiteColor,
-                                          shape: BoxShape.circle),
-                                      height: 4,
-                                      width: 4,
-                                    ),
-                                    SizedBox(width: 12),
-                                    Text(
-                                      "Certified medical professionals when needed ",
-                                      style: GoogleFonts.openSans(
-                                        color: AppTheme.whiteColor,
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: Constant.body(context),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ), if (constraints.maxWidth > 800)
-                              SizedBox(
-                                  width:
-                                      60), // Optional spacing between text and image
+                            flex: constraints.maxWidth > 800 ? 6 : 0,
+                            child: Image.asset(
+                              "assets/images/mothrai.png",
+                              height: 250,
+                            )),
+                        if (constraints.maxWidth > 800)
+                          SizedBox(
+                              width:
+                                  60), // Optional spacing between text and image
 
-                            if (constraints.maxWidth < 800)
-                              SizedBox(height: 30),
-                         Expanded(
-                          flex: constraints.maxWidth > 800 ? 6 : 0,child: Image.asset("assets/images/mmm.png", height: 350,))
+                        if (constraints.maxWidth < 800) SizedBox(height: 30),
+                        Expanded(
+                          flex: constraints.maxWidth > 800 ? 6 : 0,
+                          child: Text(
+                            "Archle Labs has launched Mother AI as a strategic R&D venture to accelerate discovery, harness global community expertise, and democratize access to advanced healthcare AI. By openly releasing every line of code and model weight, we eliminate commercial gatekeeping and empower clinicians, researchers, and developers everywhere to customize privacy preserving language and vision models for their local contexts, from on-device diagnostics and triage chatbots to population health forecasting. Our mission is clear: ensure that no community is left behind by technology and that equitable, high quality care becomes a universal standard.",
+                            style: GoogleFonts.openSans(
+                              color: AppTheme.whiteColor,
+                              fontWeight: FontWeight.w300,
+                              fontSize: Constant.body(context),
+                              height: 1.5,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                     // Text(
