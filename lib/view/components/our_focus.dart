@@ -97,20 +97,20 @@ class OurFocus extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "Aeon Lyf App",
+                                  "Our Intelligent Healthcare Super app",
                                   style: GoogleFonts.quicksand(
                                       color: AppTheme.black,
                                       fontWeight: FontWeight.w700,
                                       fontSize:
                                           Constant.textFourtyEight(context),
-                                      letterSpacing: 1),
+                                      ),
                                 ),
                                 SizedBox(
                                   height: 8,
                                 ),
                                 Container(
                                   height: 4,
-                                  width: 50,
+                                  width: 100,
                                   decoration: BoxDecoration(
                                       color: Color.fromRGBO(17, 196, 48, 1)),
                                 ),
